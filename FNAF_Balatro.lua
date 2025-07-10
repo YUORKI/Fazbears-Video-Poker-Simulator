@@ -1,0 +1,6 @@
+assert(SMODS.load_file("src/jokers.lua"))()
+assert(SMODS.load_file("src/enhancers.lua"))()
+assert(SMODS.load_file("src/seals.lua"))()
+assert(SMODS.load_file("src/atlas.lua"))()
+assert(SMODS.load_file("src/tarot.lua"))()
+assert(SMODS.load_file("src/items.lua"))()
