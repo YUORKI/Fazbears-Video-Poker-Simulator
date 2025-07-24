@@ -4,6 +4,9 @@ SMODS.Seal {
     atlas = 'Enhancers',
     pos = { x = 5, y = 0 },
     badge_colour = G.C.GREEN,
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
+    end,
 }
 
 SMODS.Seal {
@@ -11,6 +14,9 @@ SMODS.Seal {
     atlas = 'Enhancers',
     pos = { x = 3, y = 0 },
     badge_colour = HEX('bea233'),
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
+    end,
     calculate = function(self, card, context)
         if context.discard and context.other_card == card and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
             G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1

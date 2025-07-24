@@ -33,6 +33,21 @@ return {
                     "{C:attention}#2#",
                 },
             },
+
+            c_fnaf_grabber = {
+                name = "Monty Grabber",
+                text = {
+                    "Draw {C:attention}#1#{} cards",
+                    "{C:inactive}(Must have #1# or + on deck)",
+                },
+            },
+
+            c_fnaf_boost = {
+                name = "Card Booster Pack",
+                text = {
+                    "Creates {C:attention}#1#{} cards"
+                },
+            },
         },
 
         Tarot = {
@@ -70,7 +85,9 @@ return {
             j_fnaf_r_freddy = {
                 name = "Rockstar Freddy",
                 text = {
-                    '{C:chips}+#1#{} Chips per {C:money}Gold{} Seal',
+                    "Gives {C:chips}+#1#{} Chips for",
+                    "each {C:attention}Gold Seal",
+                    "in your {C:attention}full deck",
                     "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
                 },
             },
@@ -201,9 +218,10 @@ return {
             j_fnaf_missing = {
                 name = "Missing Poster",
                 text = {
-                    "Playing a hand with 5 Face cards",
-                    "will have a 1 in 2 chance to create a ",
-                    "random consumable card",
+                    "Playing a hand with {C:attention}#3#{} Face cards",
+                    "have a {C:green}#1# in #2#{} chance to create ",
+                    "a {C:attention}consumable{} card",
+                    "{C:inactive}(Spectral cards not included)",
                 },
             },
             j_fnaf_orville = {
@@ -247,9 +265,9 @@ return {
         },
 
         Other = {
-            k_fnaf_plus_tarot = {
+            k_fnaf_plus_item = {
                 text = {
-                    "+1 Tarot",
+                    "+1 Item",
                 },
             },
             fnaf_security_seal = {
@@ -275,7 +293,9 @@ return {
             fnaf_sprite_WIP = {
                 name = "WIP: Sprite",
                 text = {
-                    "Sprite is in Work in Progress or Placeholder",
+                    "Sprite is in ",
+                    "Work in Progress",
+                    "or Placeholder",
                 },
             },
         },

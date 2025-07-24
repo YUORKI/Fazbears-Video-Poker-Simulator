@@ -1,16 +1,17 @@
 ---@diagnostic disable: undefined-global
-SMODS.Joker{
-    key = 'endo_01', --joker key
+SMODS.Joker {
+    key = 'endo_01',
     atlas = 'Joker',
-	pos = { x = 7, y = 0 },
+    pos = { x = 7, y = 0 },
     rarity = 1,
     cost = 2,
-    unlocked = true, --where it is unlocked or not: if true, 
-    discovered = true, --whether or not it starts discovered
-    blueprint_compat = true, --can it be blueprinted/brainstormed/other
-    eternal_compat = true, --can it be eternal
+    unlocked = true,
+    discovered = true,
+    blueprint_compat = true,
+    eternal_compat = true,
     config = { extra = { mult = 4 }, },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.mult } }
     end,
     calculate = function(self, card, context)
@@ -22,18 +23,19 @@ SMODS.Joker{
     end
 }
 
-SMODS.Joker{
-    key = 'endo_02', --joker key
+SMODS.Joker {
+    key = 'endo_02',
     atlas = 'Joker',
-	pos = { x = 0, y = 1 },
+    pos = { x = 0, y = 1 },
     rarity = 1,
     cost = 2,
-    unlocked = true, --where it is unlocked or not: if true, 
-    discovered = true, --whether or not it starts discovered
-    blueprint_compat = true, --can it be blueprinted/brainstormed/other
-    eternal_compat = true, --can it be eternal
+    unlocked = true,
+    discovered = true,
+    blueprint_compat = true,
+    eternal_compat = true,
     config = { extra = { chip_mod = 100 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.chip_mod } }
     end,
     calculate = function(self, card, context)
@@ -45,18 +47,19 @@ SMODS.Joker{
     end
 }
 
-SMODS.Joker{
-    key = 'balloon_boy', --joker key
+SMODS.Joker {
+    key = 'balloon_boy',
     atlas = 'Joker',
-	pos = { x = 0, y = 0 },
+    pos = { x = 0, y = 0 },
     rarity = 1,
     cost = 3,
-    unlocked = true, --where it is unlocked or not: if true, 
-    discovered = false, --whether or not it starts discovered
-    blueprint_compat = true, --can it be blueprinted/brainstormed/other
-    eternal_compat = true, --can it be eternal
-    config = { extra = { chip_mod = 300 , h_size = -2 } },
+    unlocked = true,
+    discovered = false,
+    blueprint_compat = true,
+    eternal_compat = true,
+    config = { extra = { chip_mod = 300, h_size = -2 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.chip_mod, card.ability.extra.h_size } }
     end,
     calculate = function(self, card, context)
@@ -75,14 +78,15 @@ SMODS.Joker{
 }
 
 
-SMODS.Joker{
+SMODS.Joker {
     key = 'pizzabot',
     atlas = 'Joker',
-	pos = { x = 5, y = 0 },
+    pos = { x = 5, y = 0 },
     blueprint_compat = true,
     rarity = 2,
     cost = 5,
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = G.P_CENTERS.m_fnaf_pizza
     end,
     calculate = function(self, card, context)
@@ -99,7 +103,7 @@ SMODS.Joker{
             return {
                 message = localize('k_plus_pizza'),
                 colour = G.C.SECONDARY_SET.Enhanced,
-                func = function() -- This is for timing purposes, everything here runs after the message
+                func = function()
                     G.E_MANAGER:add_event(Event({
                         func = function()
                             G.deck.config.card_limit = G.deck.config.card_limit + 1
@@ -114,25 +118,25 @@ SMODS.Joker{
     end
 }
 
-SMODS.Joker{
-    key = 'dee_dee', --joker key
+SMODS.Joker {
+    key = 'dee_dee',
     atlas = 'Joker',
-	pos = { x = 6, y = 1 },
+    pos = { x = 6, y = 1 },
     blueprint_compat = true,
     rarity = 3,
     cost = 10,
     config = { extra = { creates = 1 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.creates } }
     end,
     calculate = function(self, card, context)
-        if context.end_of_round and G.GAME.blind.boss and context.main_eval 
-        and #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
-
+        if context.end_of_round and G.GAME.blind.boss and context.main_eval
+            and #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
             local jokers_to_create = math.min(card.ability.extra.creates,
                 G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer))
             G.GAME.joker_buffer = G.GAME.joker_buffer + jokers_to_create
-            
+
             G.E_MANAGER:add_event(Event({
                 func = function()
                     for _ = 1, jokers_to_create do
@@ -150,7 +154,6 @@ SMODS.Joker{
                 message = localize('k_plus_joker'),
                 colour = G.C.BLUE,
             }
-
         end
     end,
 }
@@ -158,7 +161,7 @@ SMODS.Joker{
 SMODS.Joker {
     key = "glitchtrap",
     atlas = 'Joker',
-	pos = { x = 5, y = 1 },
+    pos = { x = 5, y = 1 },
     blueprint_compat = false,
     rarity = 3,
     cost = 8,
@@ -170,14 +173,14 @@ SMODS.Joker {
             local faces = 0
             for _, scored_card in ipairs(context.scoring_hand) do
                 scored_card:set_ability('m_fnaf_glitch', nil, true)
-                    G.E_MANAGER:add_event(Event({
-                        func = function()
-                            scored_card:juice_up()
-                            return true
-                        end
-                    }))
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        scored_card:juice_up()
+                        return true
+                    end
+                }))
             end
-            return { message = 'Glitched', colour = G.C.PURPLE}
+            return { message = 'Glitched', colour = G.C.PURPLE }
         end
     end
 }
@@ -185,19 +188,20 @@ SMODS.Joker {
 SMODS.Joker {
     key = "cassie",
     atlas = 'Joker',
-	pos = { x = 5, y = 4 },
+    pos = { x = 5, y = 4 },
     blueprint_compat = true,
     rarity = 2,
     cost = 4,
     config = { extra = { odds = 3 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_WIP", set = "Other"}
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         return { vars = { G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
     end,
-    calculate = function(self, card, context)        
+    calculate = function(self, card, context)
         if context.joker_main and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
-            if context.using_consumeable and not context.blueprint 
-            and context.consumeable.ability.set == 'fnaf_item' and (pseudorandom('fnaf_cassie') < G.GAME.probabilities.normal / card.ability.extra.odds) then
+            if context.using_consumeable and not context.blueprint
+                and context.consumeable.ability.set == 'fnaf_item' and (pseudorandom('fnaf_cassie') < G.GAME.probabilities.normal / card.ability.extra.odds) then
                 G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
                 G.E_MANAGER:add_event(Event({
                     func = (function()
@@ -220,19 +224,20 @@ SMODS.Joker {
 SMODS.Joker {
     key = "jackie",
     atlas = 'Joker',
-	pos = { x = 8, y = 0 },
+    pos = { x = 8, y = 0 },
     blueprint_compat = true,
     rarity = 2,
     cost = 5,
     config = { extra = { cards = 3 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.cards } }
     end,
-    calculate = function(self, card, context)        
+    calculate = function(self, card, context)
         if context.drawing_cards and G.GAME.current_round.hands_left == 1 then
             for i = 1, card.ability.extra.cards do
-				draw_card(G.deck, G.hand, 100, 'up', true)
-			end
+                draw_card(G.deck, G.hand, 100, 'up', true)
+            end
         end
     end,
 }
@@ -240,12 +245,13 @@ SMODS.Joker {
 SMODS.Joker {
     key = "logbook",
     atlas = 'Joker',
-	pos = { x = 5, y = 5 },
+    pos = { x = 5, y = 5 },
     blueprint_compat = false,
     rarity = 3,
     cost = 7,
     config = { extra = { seal = 'fnaf_guard' } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
     end,
     calculate = function(self, card, context)
@@ -265,9 +271,9 @@ SMODS.Joker {
             end
             if faces > 0 then
                 return {
-                        message = 'Promoted?',
-                        colour = HEX('bea233')
-                    }
+                    message = 'Promoted?',
+                    colour = HEX('bea233')
+                }
             end
         end
     end
@@ -277,12 +283,13 @@ SMODS.Joker {
 SMODS.Joker {
     key = "gator",
     atlas = 'Joker',
-	pos = { x = 0, y = 2 },
+    pos = { x = 0, y = 2 },
     blueprint_compat = false,
     rarity = 2,
     cost = 7,
     config = { extra = { xmult = 1, xmult_gain = 0.1 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.xmult_gain, card.ability.extra.xmult } }
     end,
     calculate = function(self, card, context)
@@ -307,13 +314,14 @@ SMODS.Joker {
 SMODS.Joker {
     key = "ennard",
     atlas = 'Joker',
-	pos = { x = 1, y = 1 },
-     
+    pos = { x = 1, y = 1 },
+
     blueprint_compat = false,
     rarity = 3,
     cost = 6,
     config = { extra = { price = 1 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.price } }
     end,
     calculate = function(self, card, context)
@@ -334,13 +342,14 @@ SMODS.Joker {
 SMODS.Joker {
     key = "learning",
     atlas = 'Joker',
-	pos = { x = 7, y = 2 },
-     
+    pos = { x = 7, y = 2 },
+
     blueprint_compat = false,
     rarity = 3,
     cost = 9,
     config = { extra = { odds = 20 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { G.GAME and G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
     end,
     calculate = function(self, card, context)
@@ -356,13 +365,14 @@ SMODS.Joker {
 SMODS.Joker {
     key = "glam_chica",
     atlas = 'Joker',
-	pos = { x = 2, y = 0 },
-     
+    pos = { x = 2, y = 0 },
+
     blueprint_compat = false,
     rarity = 2,
     cost = 7,
     config = { extra = { Xmult_gain = 0.15, Xmult = 1 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.Xmult_gain, card.ability.extra.Xmult } }
     end,
     calculate = function(self, card, context)
@@ -402,21 +412,22 @@ SMODS.Joker {
 SMODS.Joker {
     key = "pickles",
     atlas = 'Joker',
-	pos = { x = 1, y = 5 },
+    pos = { x = 1, y = 5 },
     blueprint_compat = false,
     rarity = 1,
     cost = 1,
     config = { extra = { slots = 1 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.slots } }
     end,
-    
+
     calculate = function(self, card, context)
         if G.GAME.round_resets.blind_ante >= 38
         then
             G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
             G.GAME.round_resets.blind_ante = 1
-            return { message = 'the pickle', colour = G.C.GREEN}
+            return { message = 'the pickle', colour = G.C.GREEN }
         end
     end,
 
@@ -431,13 +442,14 @@ SMODS.Joker {
 SMODS.Joker {
     key = "s_puppet",
     atlas = 'Joker',
-	pos = { x = 4, y = 3 },
-     
+    pos = { x = 4, y = 3 },
+
     blueprint_compat = false,
     rarity = 3,
     cost = 8,
     config = { extra = { seal = 'fnaf_security' } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         info_queue[#info_queue + 1] = G.P_CENTERS.m_fnaf_kid
     end,
@@ -464,13 +476,14 @@ SMODS.Joker {
 SMODS.Joker {
     key = "toy_chica",
     atlas = 'Joker',
-	pos = { x = 7, y = 3 },
-     
+    pos = { x = 7, y = 3 },
+
     blueprint_compat = false,
     rarity = 2,
     cost = 3,
     config = { extra = { chips = 0, chip_mod = 30 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.chips, card.ability.extra.chip_mod } }
     end,
     calculate = function(self, card, context)
@@ -490,12 +503,13 @@ SMODS.Joker {
     key = "r_freddy",
     atlas = 'Joker',
     pos = { x = 7, y = 1 },
-     
+
     blueprint_compat = true,
     rarity = 2,
     cost = 6,
     config = { extra = { seal = 'Gold', chips_mod = 25, chips = 0 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
 
         local gold_tally = 0
@@ -504,7 +518,7 @@ SMODS.Joker {
                 if playing_card.seal == card.ability.extra.seal then gold_tally = gold_tally + 1 end
             end
         end
-        return { vars = { card.ability.extra.chips_mod,  card.ability.extra.chips } }
+        return { vars = { card.ability.extra.chips_mod, card.ability.extra.chips } }
     end,
     calculate = function(self, card, context)
         if context.joker_main then
@@ -517,9 +531,9 @@ SMODS.Joker {
             }
         end
     end,
-    in_pool = function(self, args) --equivalent to `enhancement_gate = 'm_stone'`
+    in_pool = function(self, args)
         for _, playing_card in ipairs(G.playing_cards or {}) do
-            if playing_card.seal == card.ability.extra.seal then
+            if playing_card.seal == self.config.extra.seal then
                 return true
             end
         end
@@ -530,13 +544,14 @@ SMODS.Joker {
 SMODS.Joker {
     key = "eleanor",
     atlas = 'Joker',
-	pos = { x = 6, y = 2 },
-     
+    pos = { x = 6, y = 2 },
+
     blueprint_compat = false,
     rarity = 2,
     cost = 7,
     config = { extra = { xmult = 3, driver_amount = 20 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         local elanor_tally = 0
         for _, playing_card in pairs(G.playing_cards or {}) do
             if next(SMODS.get_enhancements(playing_card)) then elanor_tally = elanor_tally + 1 end
@@ -564,23 +579,24 @@ SMODS.Joker {
     key = "m_hippo",
     atlas = 'Joker',
     pos = { x = 9, y = 1 },
-     
+
     blueprint_compat = true,
     rarity = 2,
     cost = 7,
     config = { extra = { poker_hand = 'Flush House', poker_hand2 = 'Five of a Kind', poker_hand3 = 'Flush Five' } },
     loc_vars = function(self, info_queue, card)
-        return { 
-            vars = { 
-                localize(card.ability.extra.poker_hand, 'poker_hands'), 
-                localize(card.ability.extra.poker_hand2, 'poker_hands'), 
-                localize(card.ability.extra.poker_hand3, 'poker_hands') 
-            } 
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        return {
+            vars = {
+                localize(card.ability.extra.poker_hand, 'poker_hands'),
+                localize(card.ability.extra.poker_hand2, 'poker_hands'),
+                localize(card.ability.extra.poker_hand3, 'poker_hands')
+            }
         }
     end,
     calculate = function(self, card, context)
         local valid_hand = false
-        if context.joker_main and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then 
+        if context.joker_main and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
             if next(context.poker_hands[card.ability.extra.poker_hand]) then
                 valid_hand = true
             elseif next(context.poker_hands[card.ability.extra.poker_hand2]) then
@@ -595,7 +611,7 @@ SMODS.Joker {
                     func = (function()
                         SMODS.add_card {
                             set = 'Spectral',
-                            key_append = 'vremade_seance' -- Optional, useful for manipulating the random seed and checking the source of the creation in `in_pool`.
+                            key_append = 'vremade_seance'
                         }
                         G.GAME.consumeable_buffer = 0
                         return true
@@ -606,7 +622,7 @@ SMODS.Joker {
                     colour = G.C.SECONDARY_SET.Spectral,
                     valid_hand = false
                 }
-            end            
+            end
         end
     end,
 }
@@ -615,26 +631,44 @@ SMODS.Joker {
     key = "missing",
     blueprint_compat = true,
     rarity = 3,
-    cost = 8,    
+    cost = 8,
     atlas = 'Joker',
     pos = { x = 1, y = 4 },
-    config = { extra = { odds = 2 } },
+    config = { extra = { odds = 2, faces = 5 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_WIP", set = "Other"}
-        return { vars = { G.GAME and G.GAME.probabilities.normal or 1, card.ability.extra.odds} }
+        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
+        return { vars = { G.GAME and G.GAME.probabilities.normal or 1, card.ability.extra.odds, card.ability.extra.faces } }
     end,
+    calculate = function(self, card, context)
+        if context.before and context.main_eval and not context.blueprint then
+            local faces = 0
+            local _type = pseudorandom_element({ 'Tarot', 'Planet', 'fnaf_item' }, pseudoseed('fnaf_missing'))
+            for _, scored_card in ipairs(context.scoring_hand) do
+                if scored_card:is_face() then
+                    faces = faces + 1
+                    if faces == card.ability.extra.faces and G.consumeables.config.card_limit > #G.consumeables.cards
+                        and SMODS.pseudorandom_probability(card, 'fnaf_missing', G.GAME.probabilities.normal, card.ability.extra.odds) then
+                        trigger = 1
+                        SMODS.add_card({ set = _type })
+                        return { message = 'found', colour = HEX('363636') }
+                    end
+                end
+            end
+        end
+    end
 }
 
 SMODS.Joker {
     key = "orville",
     blueprint_compat = true,
     rarity = 2,
-    cost = 5,    
+    cost = 5,
     atlas = 'Joker',
     pos = { x = 2, y = 4 },
-     
+
     config = { extra = { odds = 2 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
     end,
     calculate = function(self, card, context)
         if context.after and context.main_eval and not context.blueprint then
@@ -645,7 +679,7 @@ SMODS.Joker {
                     scored_card:set_ability(SMODS.poll_enhancement({ guaranteed = true }), nil, true)
                 end
             end
-            return { message = 'MAGIC', colour = G.C.ORANGE}
+            return { message = 'MAGIC', colour = G.C.ORANGE }
         end
     end,
 }
@@ -656,10 +690,11 @@ SMODS.Joker {
     rarity = 1,
     cost = 5,
     atlas = 'Joker',
-    pos = { x = 9, y = 0 },    
+    pos = { x = 9, y = 0 },
     config = { extra = { broke = 40 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_WIP", set = "Other"}
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         return { vars = { card.ability.extra.broke } }
     end,
     add_to_deck = function(self, card, from_debuff)
@@ -671,11 +706,11 @@ SMODS.Joker {
 }
 
 --local function reset_fnaf_helpy()
-    ---if G.GAME.dollars < 0 and context.end_of_round 
-    ---and G.GAME.blind.boss then  
-        --G.STATE = G.STATES.GAME_OVER
-        --G.STATE_COMPLETE = false
-    ---end
+---if G.GAME.dollars < 0 and context.end_of_round
+---and G.GAME.blind.boss then
+--G.STATE = G.STATES.GAME_OVER
+--G.STATE_COMPLETE = false
+---end
 --end
 
 
@@ -683,15 +718,16 @@ SMODS.Joker {
 
 SMODS.Joker {
     key = "bonnie",
-    atlas = 'Joker',    
+    atlas = 'Joker',
     pos = { x = 4, y = 8 },
     soul_pos = { x = 4, y = 9 },
-     
+
     blueprint_compat = false,
     rarity = 4,
     cost = 20,
     config = { extra = { odds = 10 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.odds } }
     end,
     add_to_deck = function(self, card, from_debuff)
@@ -712,14 +748,16 @@ SMODS.Joker {
 
 SMODS.Joker {
     key = "golden",
-    atlas = 'Joker',    
+    atlas = 'Joker',
     pos = { x = 7, y = 8 },
     soul_pos = { x = 7, y = 9 },
-     
+
     blueprint_compat = false,
     rarity = 4,
     cost = 20,
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         if card.area and card.area == G.jokers then
             local other_joker
             for i = 1, #G.jokers.cards do
@@ -742,8 +780,7 @@ SMODS.Joker {
                 }
             }
             return { main_end = main_end }
-        end        
-        info_queue[#info_queue + 1] = {key = "fnaf_WIP", set = "Other"}
+        end
     end,
     calculate = function(self, card, context)
         local other_joker = nil
@@ -758,5 +795,5 @@ SMODS.Joker {
 }
 
 --function SMODS.current_mod.reset_game_globals(run_start)
-    --reset_fnaf_helpy()    -- See Mail-In Rebate
+--reset_fnaf_helpy()    -- See Mail-In Rebate
 --end
