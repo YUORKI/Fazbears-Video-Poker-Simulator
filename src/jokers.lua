@@ -235,9 +235,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.drawing_cards and G.GAME.current_round.hands_left == 1 then
-            for i = 1, card.ability.extra.cards do
-                draw_card(G.deck, G.hand, 100, 'up', true)
-            end
+            SMODS.draw_cards(card.ability.extra.cards)
         end
     end,
 }
