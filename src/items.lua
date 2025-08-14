@@ -57,9 +57,7 @@ SMODS.Consumable{
         return { vars = { card.ability.extra.cards } }
     end,
     use = function(self, card, area, copier)
-        for i = 1, card.ability.extra.cards do
-			draw_card(G.deck, G.hand, 100, 'up', true)
-		end
+        SMODS.draw_cards(card.ability.extra.cards)
     end,
     can_use = function(self, card)
         return #G.deck.cards >= 3
