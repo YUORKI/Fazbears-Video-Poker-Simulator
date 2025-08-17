@@ -26,3 +26,4 @@ SMODS.Atlas{
     px = 71, --width of one card
     py = 95 -- height of one card
 }
+
