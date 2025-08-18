@@ -255,10 +255,20 @@ return {
                 },
             },
 
+            j_fnaf_chica = {
+                name = "Chica",
+                text = {
+                    "{C:attention}Pizza cards{} have {C:green,E:1,S:1.1}#1#{} more {C:attention}usages"
+                },
+            },
+
+
             j_fnaf_golden = {
                 name = "Golden Freddy",
                 text = {
-                    "Retrigger all jokers"
+                    "Your {C:attention}UCN{} sore will be used as {C:red,s:1.1}Mult{}",
+                    "{C:inactive}(Currently {C:red,s:1.1} #1# {C:inactive} Mult)",
+                    "{C:red,s:1.1}Import your UCN data in your mod folder"
                 },
             }
             

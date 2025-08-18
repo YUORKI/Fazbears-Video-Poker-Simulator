@@ -1,4 +1,8 @@
 ---@diagnostic disable: undefined-global
+
+
+
+
 SMODS.Enhancement {
     key = 'pizza',
     atlas = 'Enhancers',
@@ -17,14 +21,19 @@ SMODS.Enhancement {
         if context.main_scoring and context.cardarea == G.play then
             if card.ability.extra.hands_left > 0 then
                 card.ability.extra.hands_left = card.ability.extra.hands_left - 1
-                if card.ability.extra.hands_left == 0 then
-                    card.ability.bonus = 0
-                    return { message = 'Expired', colour = G.C.FILTER }
-                end
+            elseif card.ability.extra.hands_left <= 0 then
+                SMODS.debuff_card(card, true, 'source')
+                return { message = 'Expired' }
             end
         end
     end,
+    set_ability = function(self, card, initial, delay_sprites)
+        if next(SMODS.find_card('j_fnaf_chica')) then
+            card.ability.extra.hands_left = 15
+        end
+    end
 }
+
 
 SMODS.Enhancement {
     key = 'glitch',
