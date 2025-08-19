@@ -1,5 +1,11 @@
 ---@diagnostic disable: undefined-global
 
+require ('fetch.lua')
+
+local score = SMODS.load_file(src/CN)
+
+INI.parse(score).hs
+
 SMODS.Joker {
     key = "bonnie",
     atlas = 'Joker',
