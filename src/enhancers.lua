@@ -1,8 +1,5 @@
 ---@diagnostic disable: undefined-global
 
-
-
-
 SMODS.Enhancement {
     key = 'pizza',
     atlas = 'Enhancers',
