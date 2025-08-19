@@ -61,7 +61,7 @@ SMODS.Joker {
     blueprint_compat = false,
     rarity = 4,
     cost = 20,
-    config = { extra = { mult = hs or 1 }, },
+    config = { extra = { mult = score or 1 }, },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
