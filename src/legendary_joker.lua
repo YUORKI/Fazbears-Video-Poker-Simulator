@@ -2,7 +2,7 @@
 
 
 local data = {}
-    for line in NFS.read("imported/game_data.txt") do
+    for line in NFS.lines(SMODS.current_mod.path.."/imported/game_data.txt") do
         local key, value = string.match(line, "(.*)=(.*)")
         if key and value then
             data[key] = value
