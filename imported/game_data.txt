@@ -4,23 +4,23 @@
 -- (also just drag and drop the same values that appear in the file
 
 -- FNAF 1
-Beatgame = 0 -- beat night 5 
-Beat6 = 0 -- beat night 6 
-Beat7 = 0 -- beat 4/20 
+beatgame = 0 -- beat night 5 
+beat6 = 0 -- beat night 6 
+beat7 = 0 -- beat 4/20 
 
 --FNAF 2 
 beatgame2 = 0-- beat night 5 (star 1)
 beat6_2 = 0 --beat night 6 
 
 --FNAF WORLD
-Tokens = 0
+tokens = 0
 
 -- FNAF 6 
 -- your total lawsuits
-Spent = 0
-Maxsuits = 0
+spent = 0
+maxsuits = 0
 
 --UCN
 -- your UCN high score
      
-Hs = 10
+hs = 10
