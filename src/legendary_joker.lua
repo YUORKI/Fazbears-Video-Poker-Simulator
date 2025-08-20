@@ -1,6 +1,15 @@
 ---@diagnostic disable: undefined-global
 
 
+local data = {}
+    for line in NFS.read("imported/game_data.txt") do
+        local key, value = string.match(line, "(.*)=(.*)")
+        if key and value then
+            data[key] = value
+        end
+    end
+    
+
 SMODS.Joker {
     key = "bonnie",
     atlas = 'Joker',
@@ -56,7 +65,7 @@ SMODS.Joker {
     blueprint_compat = false,
     rarity = 4,
     cost = 20,
-    config = { extra = { mult = Hs or 1 }, },
+    config = { extra = { mult = data.hs or 1 }, },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
