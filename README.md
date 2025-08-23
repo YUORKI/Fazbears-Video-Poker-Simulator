@@ -9,8 +9,8 @@ Currently, this mod adds:
 - 2 Tarot Cards
 - 3 Enhanced Cards
 - 2 Seals
-- 1 new consumable:
-- Item cards : 1 of them
+- 1 consumable types:
+- - 3 Item cards : used for utility during rounds
 
 ## Installation
 
