@@ -1,4 +1,4 @@
-# FNAF BALATRO (placeholder)
+# Fazbear's Video Poker Simulator
 
 **THIS MOD IS CURRENTLY IN DEVELOPMENT**
 
