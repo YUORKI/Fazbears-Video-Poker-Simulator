@@ -1,12 +1,12 @@
 {
   "id": "FNAF Balatro",
-  "name": "FNAF Balatro",
-  "display_name": "FNAF Balatro",
+  "name": "Fazbear's Video Poker Simulator",
+  "display_name": "Fazbear's Video Poker Simulator",
   "author": ["YUORKI"],
   "description": "Overhaul the game to be FNAF themed",
   "prefix": "fnaf",
   "main_file": "FNAF_Balatro.lua",
-  "priority": 1987,
+  "priority": 0,
   "badge_colour": "F4A6C7",
   "version": "0.0.1",
   "dependencies": ["Steamodded (>=1.0.0~BETA-0509c)"]
