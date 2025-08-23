@@ -5,7 +5,7 @@
 A Balatro mod that aims to add FNAF themed content to balatro
 
 Currently, this mod adds:
-- 24 Jokers
+- 27 Jokers
 - 2 Tarot Cards
 - 3 Enhanced Cards
 - 2 Seals
@@ -22,7 +22,7 @@ Afterwards, simply drag the files from the latest release and put it in your Mod
 
 ## Credits
 
-Creator : YUORKI (loser)
+Creator : [YUORKI](https://yuorki.carrd.co/) (loser)
 
 [LasagnaCake](https://lasagnacake.github.io/) for helping with feedback (and attempting to code for the mod to read save files imported) 
 
