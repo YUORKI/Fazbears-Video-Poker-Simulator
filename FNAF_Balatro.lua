@@ -5,6 +5,3 @@ assert(SMODS.load_file("src/seals.lua"))()
 assert(SMODS.load_file("src/atlas.lua"))()
 assert(SMODS.load_file("src/tarot.lua"))()
 assert(SMODS.load_file("src/items.lua"))()
-assert(SMODS.load_file("src/fetch.lua"))()
-
-assert(SMODS.load_file("imported/game_data.lua"))()

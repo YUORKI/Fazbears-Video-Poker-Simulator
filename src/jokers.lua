@@ -541,6 +541,8 @@ SMODS.Joker {
     end
 }
 
+
+
 SMODS.Joker {
     key = "eleanor",
     atlas = 'Joker',
@@ -683,6 +685,83 @@ SMODS.Joker {
         end
     end,
 }
+
+SMODS.Joker {
+    key = "toy_bonnie",
+    blueprint_compat = false,
+    rarity = 2,
+    cost = 5,
+    atlas = 'Joker',
+    pos = { x = 3, y = 5 },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue+1] = G.P_CENTERS.m_wild
+    end,
+}
+
+local is_suit_ref = Card.is_suit
+function Card.is_suit(self, ...)
+   local ret = is_suit_ref(self,...)
+   if self:get_id() == 7 and next(SMODS.find_card("j_fnaf_toy_bonnie")) then
+      return true
+   end
+   return ret
+end
+
+
+SMODS.Joker {
+    key = "c_baby",
+    blueprint_compat = true,
+    rarity = 2,
+    cost = 5,
+    atlas = 'Joker',
+    pos = { x = 5, y = 2 },
+    config = {extra = { chips = 100 } },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
+        return { vars = { card.ability.extra.chips } }
+    end,
+    calculate = function(self, card, context)
+        local suitCount = 0
+        local HeartSuit = false
+        local SpadesSuit = false
+        local DiamondsSuit = false
+        local ClubsSuit = false
+        if context.cardarea == G.jokers and context.joker_main  then
+            for _, scored_card in ipairs(context.scoring_hand) do
+                if context.other_card:is_suit("Hearts") and HeartSuit == false then
+                    suitCount = suitCount + 1
+                    HeartSuit = true
+                end
+                
+                if context.other_card:is_suit("Spades") and SpadesSuit == false then
+                    suitCount = suitCount + 1
+                    SpadesSuit = true
+                end
+
+                if context.other_card:is_suit("Diamonds") and DiamondsSuit == false then
+                    suitCount = suitCount + 1
+                    DiamondsSuit = true
+                end
+
+                if context.other_card:is_suit("Clubs") and ClubsSuit == false then
+                    suitCount = suitCount + 1
+                    ClubsSuit = true
+                end
+
+            end
+            
+            if suitCount >= 4 then
+                return {
+                    chips = card.ability.extra.chip_mod
+                }
+            end
+
+        end
+    end,
+}
+
 
 SMODS.Joker {
     key = "helpy",

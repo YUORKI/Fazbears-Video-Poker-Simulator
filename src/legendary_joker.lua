@@ -50,7 +50,6 @@ SMODS.Joker {
     cost = 20,
     config = { extra = { hands_left = 10 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.hands_left } }
     end,    
@@ -65,7 +64,7 @@ SMODS.Joker {
     blueprint_compat = false,
     rarity = 4,
     cost = 20,
-    config = { extra = { mult = data.hs or 1 }, },
+    config = { extra = { mult = tonumber(data.hs) or 1 }, },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }

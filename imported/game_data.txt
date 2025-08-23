@@ -25,4 +25,4 @@ maxsuits=0
 
 --UCN
      
-hs=10
+hs=0

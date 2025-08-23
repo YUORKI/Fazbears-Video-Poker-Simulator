@@ -190,6 +190,12 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
                 },
             },
+            j_fnaf_toy_bonnie = {
+                name = "Toy Bonnie",
+                text = {
+                    "{C:attention}7s{} works similar to {C:attention}Wild Cards{}",
+                },
+            },
             j_fnaf_m_hippo = {
                 name = "Mystic Hippo",
                 text = {
@@ -243,6 +249,14 @@ return {
                 text = {
                     "{C:attention}Face{} cards get a",
                     "{C:attention}Guard badge{} when scored",
+                },
+            },
+            j_fnaf_c_baby = {
+                name = "Circus Baby",
+                text = {
+                    '{C:chips}+#1#{} Chips',
+                    "if your hand has all {C:attention}Suits{}",
+                    '{C:inactive}(Hearts / Diamonds / Spades / Clubs)'
                 },
             },
 
