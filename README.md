@@ -8,7 +8,7 @@
 >
 >*Not only that, our breakrooms contain the best recreation for our employees, such as cable TV, a Fazbear™ pimball machine, and our patented Fazbear™ exclusive **Video Poker Machine**™ for our employees who feel a little lucky!*
 >
-><sup>*Employees are only allowed to play during their 15-minute break. Afterward, they are demanded to leave the breakroom and return to their shift or else they suffer a warning by management, resulting in punishment such as: revoked break privileges, docked salary, disciplinary actions, unpaid overtime or being fired.*</sup>
+><sup><sup>*Employees are only allowed to play during their 15-minute break. Afterward, they are demanded to leave the breakroom and return to their shift or else they suffer a warning by management, resulting in punishment such as: revoked break privileges, docked salary, disciplinary actions, unpaid overtime or being fired.*</sup></sup>
 
 **Fazbear's Video Poker Simulator** is a Balatro mod that aims to add Five Nights at Freddy's™ themed content to balatro, such as new Jokers, Enhancements, Seals and Comsumables
 
