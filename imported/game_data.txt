@@ -3,26 +3,72 @@
 -- save files can be found at: C:\Users\[user]\AppData\Roaming\MMFApplications (same place you installed the mod)
 -- (also just drag and drop the same values that appear in the file
 
--- FNAF 1
+-- FNAF 1 (freddy)
 
 beatgame=0 
 beat6=0 
 beat7=0 
 
---FNAF 2 
+--FNAF 2 (freddy2)
 
+beatgame_2=0
+beat6_2=0
+ch0=0
+ch1=0
+ch2=0
+ch3=0
+ch4=0
+ch5=0
+ch6=0
+ch7=0
+ch8=0
+ch9=0
+ch10=0 
+
+--FNAF 3 (freddy3)
+
+--FNAF 4 (fn4)
+
+--FNAF WORLD (info)
+
+beatgame1=0
 beatgame2=0
-beat6_2=0 
+beatgame3=0
+beatgame6=0
+beatgame5=0
+beatgame4=0
+gotpearl=0
+all=0
+beatgame7=0
 
---FNAF WORLD
-
-tokens=0
-
--- FNAF 6 
+-- FNAF 6 ( FNAF6 | CERT )
 
 spent=0
 maxsuits=0
 
---UCN
+--UCN (CN)
      
 hs=0
+ch0_UCN=0
+ch1_UCN=0
+ch2_UCN=0
+ch3_UCN=0
+ch4_UCN=0
+ch5_UCN=0
+ch6_UCN=0
+ch7_UCN=0
+ch8_UCN=0
+ch9_UCN=0
+ch10_UCN=0
+ch11_UCN=0
+ch12_UCN=0
+ch13_UCN=0
+ch14_UCN=0
+ch15_UCN=0
+ch16_UCN=0
+
+-- Freddy in Space 2 ( FIS2 )
+
+-- Security Breach: Fury's Rage ( SB )
+
+-- Freddy in Space 3 ( c3save )
