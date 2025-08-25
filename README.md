@@ -18,7 +18,7 @@ Currently, this mod adds:
 - 3 Enhanced Cards
 - 2 Seals
 - 1 consumable types (containing their own booster pack):
-- - 3 Item cards : used for utility during rounds
+ - 3 Item cards : used for utility during rounds
 
 ## Installation
 
