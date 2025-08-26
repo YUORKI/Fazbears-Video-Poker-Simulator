@@ -31,7 +31,7 @@ SMODS.ConsumableType {
 SMODS.UndiscoveredSprite{
     key = 'fnaf_item',
     atlas = 'TarotFnaf',
-    pos = {x = 2, y = 0}
+    pos = {x = 0, y = 2}
 }
 
 SMODS.Consumable{

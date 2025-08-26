@@ -288,6 +288,24 @@ return {
             
         },
 
+        Voucher = { 
+            v_fnaf_collection = {
+                name = "Collection",
+                text = {
+                    "{C:attention}+#1#{} Booster slot",
+                    "available in shop",
+                },
+            },
+            v_fnaf_starter_deck = {
+                name = "Starter Deck",
+                text = {
+                    "{C:tarot}Tarot{} cards may",
+                    "appear in any of",
+                    "the {C:attention}Item Packs",
+                },
+            }
+        },
+
         Other = {
             k_fnaf_plus_item = {
                 text = {
@@ -306,6 +324,14 @@ return {
                     "Creates the {C:green}Item{} card",
                     "when {C:attention}discarded",
                     "{C:inactive}(Must have room)",
+                },
+            },
+            p_fnaf_item_normal = {
+                name = "Item Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:green} Item{} cards to",
+                    "be used immediately",
                 },
             },
             fnaf_WIP = {
