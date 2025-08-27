@@ -1,0 +1,13 @@
+test=0
+night=0
+beat5=0
+beat6=0
+beat7=0
+beat8=0
+scene=0
+s1=0
+s2=0
+s3=0
+s4=0
+s5=0
+s6=0

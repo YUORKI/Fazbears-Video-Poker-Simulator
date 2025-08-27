@@ -1,0 +1,9 @@
+beatgame1=0
+beatgame2=0
+beatgame3=0
+beatgame6=0
+beatgame5=0
+beatgame4=0
+gotpearl=0
+all=0
+beatgame7=0
