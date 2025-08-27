@@ -44,7 +44,7 @@ SMODS.Atlas{
 
 SMODS.Atlas{
     key = "BoosterFnaf",
-    path = "boosters.png",
+    path = "Boosters.png",
     px = 71,
     py = 95
 }
