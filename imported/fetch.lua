@@ -32,3 +32,14 @@ return INI
 -- oh ok so I can't import a text file so I gonna do this manualy
 -- so this entire file is useless them
 
+-- nevermind I found a use for it
+
+local UCN = {}
+    for line in NFS.lines(SMODS.current_mod.path.."/imported/game_data.txt") do
+        local key, value = string.match(line, "ch(.*)_UCN=(.*)")
+        if key and value then
+            data[key] = value
+        end
+    end
+    
+
