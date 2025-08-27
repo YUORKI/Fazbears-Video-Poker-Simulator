@@ -82,7 +82,7 @@ SMODS.Enhancement {
 SMODS.Enhancement {
     key = 'kid',    
     atlas = 'Enhancers',
-    pos = { x = 3, y = 0 },
+    pos = { x = 2, y = 0 },
     display_size = { w = 71 * 0.7, h = 95 * 0.7 },
     config = { x_chips = 1.2 },
     loc_vars = function(self, info_queue, card)

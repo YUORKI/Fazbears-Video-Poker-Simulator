@@ -260,6 +260,13 @@ return {
                 },
             },
 
+            j_fnaf_rock_chica = {
+                name = "Rockstar Chica",
+                text = {
+                    "{C:attention}Pizza cards{} have {C:green,E:1,S:1.1}#1#{} more {C:attention}usages"
+                },
+            },
+
             -- Legendary
 
             j_fnaf_bonnie = {
@@ -272,10 +279,26 @@ return {
             j_fnaf_chica = {
                 name = "Chica",
                 text = {
-                    "{C:attention}Pizza cards{} have {C:green,E:1,S:1.1}#1#{} more {C:attention}usages"
+                    "???"
                 },
             },
 
+            j_fnaf_foxy = {
+                name = "Foxy",
+                text = {
+                    "Retrigger all played cards"
+                },
+            },
+
+            j_fnaf_freddy = {
+                name = "Freddy",
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult per Marks of Completion",
+                    "in fnaf games (Clickteam)",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                    "{C:red,s:1.1}Import your data in your mod folder"
+                },
+            },
 
             j_fnaf_golden = {
                 name = "Golden Freddy",
@@ -334,6 +357,22 @@ return {
                     "be used immediately",
                 },
             },
+            p_fnaf_item_jumbo = {
+                name = "Item Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:green} Item{} cards to",
+                    "be used immediately",
+                },
+            },
+            p_fnaf_item_mega = {
+                name = "Item Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:green} Item{} cards to",
+                    "be used immediately",
+                },
+            },
             fnaf_WIP = {
                 name = "WIP: Code",
                 text = {
@@ -346,6 +385,14 @@ return {
                     "Sprite is in ",
                     "Work in Progress",
                     "or Placeholder",
+                },
+            },
+            fnaf_game_support = {
+                name = "Game Data Supported",
+                text = {
+                    "This mod supports",
+                    "FNAF 1",
+                    "UCN",
                 },
             },
         },

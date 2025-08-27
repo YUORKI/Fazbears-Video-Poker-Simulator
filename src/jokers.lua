@@ -708,6 +708,19 @@ function Card.is_suit(self, ...)
    return ret
 end
 
+SMODS.Joker {
+    key = "rock_chica",
+    blueprint_compat = false,
+    rarity = 3,
+    cost = 7,
+    atlas = 'Joker',
+    pos = { x = 8, y = 4 },
+    config = { extra = { hands_left = 10 } },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        return { vars = { card.ability.extra.hands_left } }
+    end,
+}
 
 SMODS.Joker {
     key = "c_baby",

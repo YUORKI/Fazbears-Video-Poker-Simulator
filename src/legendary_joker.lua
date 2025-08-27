@@ -1,11 +1,18 @@
 ---@diagnostic disable: undefined-global
 
-
-local data = {}
-    for line in NFS.lines(SMODS.current_mod.path.."/imported/game_data.txt") do
+local data_UCN = {}
+    for line in NFS.lines(SMODS.current_mod.path.."/imported/UCN.txt") do
         local key, value = string.match(line, "(.*)=(.*)")
         if key and value then
-            data[key] = value
+            data_UCN[key] = tonumber(value)
+        end
+    end
+
+local data_FNAF1 = {}
+    for line in NFS.lines(SMODS.current_mod.path.."/imported/FNAF1.txt") do
+        local key, value = string.match(line, "(.*)=(.*)")
+        if key and value then
+            data_FNAF1[key] = tonumber(value)
         end
     end
     
@@ -54,6 +61,33 @@ SMODS.Joker {
     end,    
 }
 
+local Freddy_Mult = 0 + data_FNAF1.beatgame + data_FNAF1.beat6 + data_FNAF1.beat7
+
+SMODS.Joker {
+    key = "freddy",
+    atlas = 'Joker',
+    pos = { x = 3, y = 8 },
+    soul_pos = { x = 3, y = 9 },
+    blueprint_compat = true,
+    rarity = 4,
+    cost = 20,
+    config = { extra = { xmult = 1, xmult_gain = 0.25 } },
+    loc_vars = function(self, info_queue, card)        
+        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_game_support", set = "Other" }
+        return { vars = { card.ability.extra.xmult_gain, card.ability.extra.xmult } }
+    end,    
+    calculate = function(self, card, context)
+        if context.joker_main then
+            card.ability.extra.xmult = card.ability.extra.xmult + Freddy_Mult * card.ability.extra.xmult_gain
+            return {
+                xmult = card.ability.extra.xmult
+            }
+        end
+    end
+}
+
 SMODS.Joker {
     key = "foxy",
     atlas = 'Joker',
@@ -74,7 +108,7 @@ SMODS.Joker {
                 repetitions = card.ability.extra.repetitions
             }
         end
-
+    end
 }
 
 SMODS.Joker {
@@ -86,7 +120,7 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 4,
     cost = 20,
-    config = { extra = { mult = tonumber(data.hs) or 1 }, },
+    config = { extra = { mult = data_UCN.hs or 1 }, },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
@@ -95,7 +129,6 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.joker_main then
             local score = card.ability.extra.mult
-
             if score > 10600 then
                 score = 10600
             end

@@ -1,4 +1,0 @@
-level=0
-beatgame=0
-beat6=0
-beat7=0

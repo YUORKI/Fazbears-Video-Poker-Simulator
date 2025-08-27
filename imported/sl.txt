@@ -1,3 +1,0 @@
-beat1=0
-keycard=0
-beat3=0
