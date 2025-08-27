@@ -25,7 +25,7 @@ SMODS.Enhancement {
         end
     end,
     set_ability = function(self, card, initial, delay_sprites)
-        if next(SMODS.find_card('j_fnaf_chica')) then
+        if next(SMODS.find_card('j_fnaf_rock_chica')) then
             card.ability.extra.hands_left = 15
         end
     end
