@@ -48,11 +48,34 @@ SMODS.Joker {
     blueprint_compat = false,
     rarity = 4,
     cost = 20,
-    config = { extra = { hands_left = 10 } },
-    loc_vars = function(self, info_queue, card)
+    loc_vars = function(self, info_queue, card)        
+        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.hands_left } }
     end,    
+}
+
+SMODS.Joker {
+    key = "foxy",
+    atlas = 'Joker',
+    pos = { x = 6, y = 8 },
+    soul_pos = { x = 6, y = 9 },
+
+    blueprint_compat = true,
+    rarity = 4,
+    cost = 20,
+    config = { extra = { repetitions = 1 }, },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+    end,
+    calculate = function(self, card, context)
+        if context.repetition and context.cardarea == G.play then
+            return {
+                repetitions = card.ability.extra.repetitions
+            }
+        end
+
 }
 
 SMODS.Joker {
@@ -61,7 +84,7 @@ SMODS.Joker {
     pos = { x = 7, y = 8 },
     soul_pos = { x = 7, y = 9 },
 
-    blueprint_compat = false,
+    blueprint_compat = true,
     rarity = 4,
     cost = 20,
     config = { extra = { mult = tonumber(data.hs) or 1 }, },
@@ -86,6 +109,3 @@ SMODS.Joker {
 
 }
 
---function SMODS.current_mod.reset_game_globals(run_start)
---reset_fnaf_helpy()    -- See Mail-In Rebate
---end
