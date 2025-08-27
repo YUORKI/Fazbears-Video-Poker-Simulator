@@ -51,7 +51,6 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)        
         info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        return { vars = { card.ability.extra.hands_left } }
     end,    
 }
 
