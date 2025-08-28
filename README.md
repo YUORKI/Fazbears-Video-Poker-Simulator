@@ -10,10 +10,10 @@
 >
 ><sup><sup>*Employees are only allowed to engage in any of the activites present in the breakroom during their 15-minute break. Afterward, they are demanded to leave the breakroom and return to their shift or else they suffer a warning by management, resulting in punishment such as: revoked break privileges, docked salary, disciplinary actions, unpaid overtime or being fired.*</sup></sup>
 
-**Fazbear's Video Poker Simulator** is a Balatro mod that aims to add Five Nights at Freddy's™ themed content to balatro, such as new Jokers, Enhancements, Seals and Comsumables
+**Fazbear's Video Poker Simulator** is a Balatro mod that aims to add Five Nights at Freddy's™ themed content to balatro, such as new Jokers, Enhancements, Seals and Consumables
 
 Currently, this mod adds:
-- 27 Jokers
+- 30 Jokers
 - 2 Tarot Cards
 - 3 Enhanced Cards
 - 2 Seals
@@ -22,9 +22,9 @@ Currently, this mod adds:
 
 ## Installation
 
-This mod requires both [Lovely](https://github.com/ethangreen-dev/lovely-injector) and [Steammodded](https://github.com/Steamopollys/Steamodded) **(Version 1.0.0-beta-0614a or later)** to be installed in your copy of Balatro.
+This mod requires both [Lovely](https://github.com/ethangreen-dev/lovely-injector) and [Steammodded](https://github.com/Steamopollys/Steamodded) **(Version 1.0.0-beta-0827c or later)** to be installed in your copy of Balatro.
 
-Afterwards, simply drag the files from the latest release and put it in your Mods folder (`%APPDATA%\Balatro\Mods`), and go to the (`imported\game_data.txt`) and add your data from your fnaf games on (`%APPDATA%\Roaming\MMFApplications`) (the file will guide you to import which one is which)
+Afterwards, simply drag the files from the latest release and put it in your Mods folder (`%APPDATA%\Balatro\Mods`), and go to the `imported` and add your data from your fnaf games on (`%APPDATA%\Roaming\MMFApplications`) (there will be a read me file explaining how to import it)
 
 ***IMPORTANT NOTE:*** **THIS MOD IS CURRENTLY IN DEVELOPMENT meaning it has bugs and content that is being worked on**
 
