@@ -61,7 +61,17 @@ SMODS.Joker {
     end,    
 }
 
-local Freddy_Mult = 0 + data_FNAF1.beatgame + data_FNAF1.beat6 + data_FNAF1.beat7
+local  Freddy_Mult = 0
+
+for _, sum in ipairs(data_FNAF1) do
+    Freddy_Mult = Freddy_Mult + sum
+end
+
+for _, sum in ipairs(data_UCN) do
+    Freddy_Mult = Freddy_Mult + sum
+end
+
+Freddy_Mult = Freddy_Mult - data_UCN.hs
 
 SMODS.Joker {
     key = "freddy",
