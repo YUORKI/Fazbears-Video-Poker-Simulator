@@ -73,13 +73,23 @@ return {
             j_fnaf_endo_01 = {
                 name = "Endo-01",
                 text = {
-                    "{C:red,s:1.1}+#1#{} Mult"
+                    "{C:chips}+#1#{} Chips"
                 },
             },
-            j_fnaf_endo_02 = {
-                name = "Endo-02",
+            j_fnaf_time_clock = {
+                name = "Time Punch Clock",
                 text = {
-                    '{C:chips}+#1#{} Chips'
+                    "{C:chips}+#1#{} Chips after scoring",
+                    "a {C:attention}Straight{} with all cards",
+                    "being numbered",
+                },
+            },
+            j_fnaf_frog = {
+                name = "Happy Frog",
+                text = {
+                    "{C:chips}+#1#{} Chips for each",
+                    "{C:attention}Blind{} skipped this run",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
                 },
             },
             j_fnaf_r_freddy = {

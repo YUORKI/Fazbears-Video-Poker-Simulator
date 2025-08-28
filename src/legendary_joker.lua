@@ -63,11 +63,11 @@ SMODS.Joker {
 
 local  Freddy_Mult = 0
 
-for _, sum in ipairs(data_FNAF1) do
+for _, sum in pairs(data_FNAF1) do
     Freddy_Mult = Freddy_Mult + sum
 end
 
-for _, sum in ipairs(data_UCN) do
+for _, sum in pairs(data_UCN) do
     Freddy_Mult = Freddy_Mult + sum
 end
 
@@ -81,7 +81,7 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 4,
     cost = 20,
-    config = { extra = { xmult = 1, xmult_gain = 0.25 } },
+    config = { extra = { xmult = 1 + (0.25 * Freddy_Mult), xmult_gain = 0.25 } },
     loc_vars = function(self, info_queue, card)        
         info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
@@ -90,7 +90,6 @@ SMODS.Joker {
     end,    
     calculate = function(self, card, context)
         if context.joker_main then
-            card.ability.extra.xmult = card.ability.extra.xmult + Freddy_Mult * card.ability.extra.xmult_gain
             return {
                 xmult = card.ability.extra.xmult
             }

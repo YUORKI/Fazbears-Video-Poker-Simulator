@@ -9,31 +9,7 @@ SMODS.Joker {
     discovered = true,
     blueprint_compat = true,
     eternal_compat = true,
-    config = { extra = { mult = 4 }, },
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        return { vars = { card.ability.extra.mult } }
-    end,
-    calculate = function(self, card, context)
-        if context.joker_main then
-            return {
-                mult = card.ability.extra.mult
-            }
-        end
-    end
-}
-
-SMODS.Joker {
-    key = 'endo_02',
-    atlas = 'Joker',
-    pos = { x = 0, y = 1 },
-    rarity = 1,
-    cost = 2,
-    unlocked = true,
-    discovered = true,
-    blueprint_compat = true,
-    eternal_compat = true,
-    config = { extra = { chip_mod = 100 } },
+    config = { extra = { chip_mod = 100 }, },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.chip_mod } }
@@ -542,41 +518,6 @@ SMODS.Joker {
 }
 
 
-
-SMODS.Joker {
-    key = "eleanor",
-    atlas = 'Joker',
-    pos = { x = 6, y = 2 },
-
-    blueprint_compat = false,
-    rarity = 2,
-    cost = 7,
-    config = { extra = { xmult = 3, driver_amount = 20 } },
-    loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        local elanor_tally = 0
-        for _, playing_card in pairs(G.playing_cards or {}) do
-            if next(SMODS.get_enhancements(playing_card)) then elanor_tally = elanor_tally + 1 end
-        end
-        return { vars = { card.ability.extra.xmult, card.ability.extra.driver_amount, elanor_tally } }
-    end,
-    calculate = function(self, card, context)
-        if context.joker_main then
-            local elanor_tally = 0
-            for _, playing_card in pairs(G.playing_cards) do
-                if next(SMODS.get_enhancements(playing_card)) then elanor_tally = elanor_tally + 1 end
-            end
-            if elanor_tally >= card.ability.extra.driver_amount then
-                return {
-                    xmult = card.ability.extra.xmult
-                }
-            end
-        end
-    end
-}
-
-
-
 SMODS.Joker {
     key = "m_hippo",
     atlas = 'Joker',
@@ -719,6 +660,46 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.hands_left } }
+    end,
+}
+
+SMODS.Joker {
+    key = "time_clock",
+    blueprint_compat = true,
+    rarity = 1,
+    cost = 3,
+    atlas = 'Joker',
+    pos = { x = 0, y = 5 },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
+    end,
+}
+
+SMODS.Joker {
+    key = "frog",
+    blueprint_compat = true,
+    rarity = 1,
+    cost = 3,
+    atlas = 'Joker',
+    pos = { x = 3, y = 4 },
+    config = { extra = { chip_mod = 50 }, },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
+        return { vars = { card.ability.extra.chip_mod, G.GAME.skips * card.ability.extra.chip_mod } }
+    end,
+    calculate = function(self, card, context)
+        if context.skip_blind and not context.blueprint then
+            return {
+                message = localize { type = 'variable', key = 'a_chips', vars = { 1 + G.GAME.skips * card.ability.extra.chip_mod } }
+            }
+        end
+        if context.joker_main then
+            return {
+                chip_mod = G.GAME.skips * card.ability.extra.chip_mod
+            }
+        end
     end,
 }
 
