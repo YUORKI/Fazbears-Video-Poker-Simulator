@@ -111,7 +111,7 @@ return {
                 text = {
                     "Spawns a random {C:attention}joker{}",
                     "at the start of a ante",
-                    "{C:inactive}(except legendaries, must have room)",
+                    "{C:inactive}(No legendaries, must have room)",
                 },
             },
             j_fnaf_glitchtrap = {
@@ -240,8 +240,8 @@ return {
             j_fnaf_jackie = {
                 name = "Jackie",
                 text = {
-                    "Draw {C:attention}#1#{} cards from the deck",
-                    "when in your last hand",
+                    "Draw {C:attention}+#1#{} cards when",
+                    "on your last hand",
                 },
             },
             j_fnaf_logbook = {
@@ -263,7 +263,8 @@ return {
             j_fnaf_rock_chica = {
                 name = "Rockstar Chica",
                 text = {
-                    "{C:attention}Pizza cards{} have {C:green,E:1,S:1.1}#1#{} more {C:attention}usages"
+                    "{C:attention}Pizza cards{}" ,
+                    "have {C:green,E:1,S:1.1}#1#{} more {C:attention}usages"
                 },
             },
 
