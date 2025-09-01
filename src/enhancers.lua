@@ -11,7 +11,6 @@ SMODS.Enhancement {
     always_scores = true,
     shatters = true,
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         return { vars = { card.ability.bonus, card.ability.extra.hands_left} }
     end,
     calculate = function(self, card, context)
@@ -39,7 +38,6 @@ SMODS.Enhancement {
     soul_pos = { x = 1, y = 0 },
     config = { extra = { max = 15, min = 0 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         local r_mults = {}
         for i = card.ability.extra.min, card.ability.extra.max do
             r_mults[#r_mults + 1] = tostring(i)

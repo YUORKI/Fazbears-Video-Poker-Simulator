@@ -41,6 +41,7 @@ SMODS.Consumable{
     pos = {x = 4, y = 1},
     config = { max_highlighted = 2, mod_conv = 'm_fnaf_pizza' },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]        
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
@@ -69,12 +70,27 @@ SMODS.Consumable{
     set = 'fnaf_item', 
     atlas = 'TarotFnaf', 
     pos = {x = 7, y = 1},
-    config = { extra = { cards = 3 } },
+    config = { extra = { cards = 2 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
-        info_queue[#info_queue + 1] = {key = "fnaf_WIP", set = "Other"}
         return { vars = { card.ability.extra.cards } }
     end,
+    use = function(self, card, area, copier)
+        local _edition = poll_edition('fnaf_item_boost_edition' .. G.GAME.round_resets.ante, 2, true)
+        local _seal = SMODS.poll_seal({ mod = 10 })
+        for i = 1, card.ability.extra.cards do
+            SMODS.add_card{ 
+                set = "Playing Card",
+                edition = _edition,
+                seal = _seal,
+                key_append = "fnaf_item_boost",
+            }
+            G.deck.config.card_limit = G.deck.config.card_limit + 1
+        end
+    end,
+    can_use = function(self, card)
+        return G.GAME.blind.in_blind
+    end
 }
 
 

@@ -56,7 +56,7 @@ SMODS.Joker {
     rarity = 4,
     cost = 20,
     loc_vars = function(self, info_queue, card)        
-        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
     end,    
 }
@@ -83,8 +83,7 @@ SMODS.Joker {
     cost = 20,
     config = { extra = { xmult = 1 + (0.25 * Freddy_Mult), xmult_gain = 0.25 } },
     loc_vars = function(self, info_queue, card)        
-        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_game_support", set = "Other" }
         return { vars = { card.ability.extra.xmult_gain, card.ability.extra.xmult } }
     end,    
@@ -108,8 +107,7 @@ SMODS.Joker {
     cost = 20,
     config = { extra = { repetitions = 1 }, },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
     end,
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.play then
@@ -131,7 +129,6 @@ SMODS.Joker {
     cost = 20,
     config = { extra = { mult = data_UCN.hs or 1 }, },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.mult or 1 } }
     end,

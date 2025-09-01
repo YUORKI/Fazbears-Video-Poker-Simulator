@@ -11,7 +11,6 @@ SMODS.Joker {
     eternal_compat = true,
     config = { extra = { chip_mod = 100 }, },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.chip_mod } }
     end,
     calculate = function(self, card, context)
@@ -103,7 +102,6 @@ SMODS.Joker {
     cost = 10,
     config = { extra = { creates = 1 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.creates } }
     end,
     calculate = function(self, card, context)
@@ -171,7 +169,7 @@ SMODS.Joker {
     config = { extra = { odds = 3 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
         return { vars = { G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
     end,
     calculate = function(self, card, context)
@@ -579,7 +577,6 @@ SMODS.Joker {
     pos = { x = 1, y = 4 },
     config = { extra = { odds = 2, faces = 5 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         return { vars = { G.GAME and G.GAME.probabilities.normal or 1, card.ability.extra.odds, card.ability.extra.faces } }
     end,
     calculate = function(self, card, context)
@@ -672,7 +669,7 @@ SMODS.Joker {
     pos = { x = 0, y = 5 },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
     end,
 }
 
@@ -686,18 +683,17 @@ SMODS.Joker {
     config = { extra = { chip_mod = 50 }, },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         return { vars = { card.ability.extra.chip_mod, G.GAME.skips * card.ability.extra.chip_mod } }
     end,
     calculate = function(self, card, context)
         if context.skip_blind and not context.blueprint then
             return {
-                message = localize { type = 'variable', key = 'a_chips', vars = { 1 + G.GAME.skips * card.ability.extra.chip_mod } }
+                message = localize { type = 'variable', key = 'a_chips', vars = { G.GAME.skips * card.ability.extra.chip_mod } }
             }
         end
         if context.joker_main then
             return {
-                chip_mod = G.GAME.skips * card.ability.extra.chip_mod
+                chips = G.GAME.skips * card.ability.extra.chip_mod
             }
         end
     end,
@@ -713,7 +709,7 @@ SMODS.Joker {
     config = {extra = { chips = 100 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
         return { vars = { card.ability.extra.chips } }
     end,
     calculate = function(self, card, context)
@@ -756,6 +752,7 @@ SMODS.Joker {
     end,
 }
 
+to_big = to_big or function(x) return x end -- in case talisman is not installed
 
 SMODS.Joker {
     key = "helpy",
@@ -767,8 +764,29 @@ SMODS.Joker {
     config = { extra = { broke = 40 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        info_queue[#info_queue + 1] = { key = "fnaf_WIP", set = "Other" }
         return { vars = { card.ability.extra.broke } }
+    end,
+    calculate = function(self, card, context)
+        if G.GAME.dollars < to_big(0) and context.end_of_round and G.GAME.blind.boss and not context.blueprint then
+            G.E_MANAGER:add_event(Event({
+                    func = function()
+                        play_sound('tarot1')
+                        card:juice_up(0.3, 0.4)
+                        G.E_MANAGER:add_event(Event({
+                            trigger = 'after',
+                            delay = 1.2,
+                            blockable = false,
+                            func = function()
+                                G.STATE = G.STATES.GAME_OVER
+                                G.STATE_COMPLETE = false
+                                return true
+                            end
+                        }))
+                    return true
+                end
+            }))
+           
+        end
     end,
     add_to_deck = function(self, card, from_debuff)
         G.GAME.bankrupt_at = G.GAME.bankrupt_at - card.ability.extra.broke
@@ -778,21 +796,3 @@ SMODS.Joker {
     end
 }
 
---local function reset_fnaf_helpy()
----if G.GAME.dollars < 0 and context.end_of_round
----and G.GAME.blind.boss then
---G.STATE = G.STATES.GAME_OVER
---G.STATE_COMPLETE = false
----end
---end
-
-
--- rarity 5
-
-
-
-
-
---function SMODS.current_mod.reset_game_globals(run_start)
---reset_fnaf_helpy()    -- See Mail-In Rebate
---end
