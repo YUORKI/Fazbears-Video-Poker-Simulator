@@ -91,7 +91,12 @@ SMODS.Joker {
         if context.joker_main then
             return {
                 xmult = card.ability.extra.xmult
+                sound = 'Freddy_score',
             }
+        end
+
+        if context.end_of_round and G.GAME.blind.boss and context.main_eval
+            play_sound(Freddy_endofblind)
         end
     end
 }

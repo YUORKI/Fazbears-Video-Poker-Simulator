@@ -113,6 +113,13 @@ SMODS.Joker {
 
             G.E_MANAGER:add_event(Event({
                 func = function()
+                    print("DeeDee Voiceline Triggered")
+                    play_sound(DeeDee1, 1, 1)
+                end
+            }))
+
+            G.E_MANAGER:add_event(Event({
+                func = function()
                     for _ = 1, jokers_to_create do
                         SMODS.add_card {
                             set = 'Joker',
@@ -154,7 +161,11 @@ SMODS.Joker {
                     end
                 }))
             end
-            return { message = 'Glitched', colour = G.C.PURPLE }
+            return { 
+                message = 'Glitched', 
+                colour = G.C.PURPLE,
+                sound = 'Glitchtrap_summon',
+            }
         end
     end
 }
@@ -274,7 +285,13 @@ SMODS.Joker {
             end
             if r_cards > 0 then
                 card.ability.extra.xmult = card.ability.extra.xmult + r_cards * card.ability.extra.xmult_gain
-                return { message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.extra.xmult } } }
+                return { 
+                    message = localize { 
+                        type = 'variable', 
+                        key = 'a_xmult', 
+                        vars = { card.ability.extra.xmult } 
+                    } 
+                }
             end
         end
         if context.joker_main then
@@ -355,6 +372,7 @@ SMODS.Joker {
             for _, scored_card in ipairs(context.scoring_hand) do
                 if SMODS.has_enhancement(scored_card, "m_fnaf_pizza") and not scored_card.debuff and not scored_card.vampired then
                     enhanced[#enhanced + 1] = scored_card
+                    play_sound(GlamChica_Pizza)
                     scored_card.vampired = true
                     SMODS.destroy_cards(scored_card)
                     G.E_MANAGER:add_event(Event({
@@ -370,8 +388,15 @@ SMODS.Joker {
             if #enhanced > 0 then
                 card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_gain * #enhanced
                 return {
-                    message = localize { type = 'variable', key = 'a_xmult', vars = { card.ability.extra.Xmult } },
+                    message = localize { 
+                        type = 'variable', 
+                        key = 'a_xmult', 
+                        vars = { 
+                            card.ability.extra.Xmult 
+                        } 
+                    },
                     colour = G.C.MULT
+                    sound = 'GlamChica_Eating'
                 }
             end
         end
@@ -619,7 +644,11 @@ SMODS.Joker {
                     scored_card:set_ability(SMODS.poll_enhancement({ guaranteed = true }), nil, true)
                 end
             end
-            return { message = 'MAGIC', colour = G.C.ORANGE }
+            return { 
+                message = 'MAGIC', 
+                colour = G.C.ORANGE,
+                sound = 'Orville01',
+            }
         end
     end,
 }
