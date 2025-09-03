@@ -106,7 +106,7 @@ SMODS.Consumable{
         G.FUNCS.reroll_boss()
     end,
     can_use = function(self, card)
-        return G.GAME.blind.in_blind
+        return  context.type == 'new_blind_choice'
     end
 }
 
