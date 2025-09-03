@@ -99,8 +99,8 @@ SMODS.Consumable{
     atlas = 'TarotFnaf', 
     pos = {x = 0, y = 2},
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
-        return { vars = { card.ability.extra.cards } }
+        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}        
+        info_queue[#info_queue + 1] = {key = "fnaf_code_WIP", set = "Other"}
     end,
     use = function(self, card, area, copier)
         G.FUNCS.reroll_boss()
