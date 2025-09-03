@@ -1,3 +1,4 @@
+---@diagnostic disable-next-line: undefined-global
 --- Freddy voicelines
 SMODS.Sound({
     key = "Freddy_summon", 
@@ -20,23 +21,66 @@ SMODS.Sound({
 })
 
 SMODS.Sound({
-    key = "Freddy_score", 
+    key = "freddy_score", 
     path = "Freddy_score.ogg",
 })
 
 SMODS.Sound({
-    key = "Freddy_score2", 
+    key = "freddy_score2", 
     path = "Freddy_score2.ogg",
 })
 
 SMODS.Sound({
-    key = "Freddy_score3", 
+    key = "freddy_score3", 
     path = "Freddy_score3.ogg",
 })
 
 SMODS.Sound({
-    key = "Freddy_endofblind", 
+    key = "freddy_endofblind", 
     path = "Freddy_endofblind.ogg",
+})
+
+
+--- Foxy voicelines
+
+SMODS.Sound({
+    key = "foxy_endofblind", 
+    path = "Foxy_endofblind.ogg",
+})
+
+SMODS.Sound({
+    key = "foxy_score", 
+    path = "Foxy_score.ogg",
+})
+
+SMODS.Sound({
+    key = "foxy_score2", 
+    path = "Foxy_score2.ogg",
+})
+
+SMODS.Sound({
+    key = "foxy_score3", 
+    path = "Foxy_score3.ogg",
+})
+
+SMODS.Sound({
+    key = "foxy_score4", 
+    path = "Foxy_score4.ogg",
+})
+
+SMODS.Sound({
+    key = "foxy_score5", 
+    path = "Foxy_score5.ogg",
+})
+
+SMODS.Sound({
+    key = "foxy_summon1", 
+    path = "Foxy_summon1.ogg",
+})
+
+SMODS.Sound({
+    key = "foxy_summon2", 
+    path = "Foxy_summon2.ogg",
 })
 
 --- Orville voicelines
@@ -61,6 +105,7 @@ SMODS.Sound({
     path = "Orville04.ogg",
 })
 
+
 --- Dee Dee voicelines
 
 SMODS.Sound({
@@ -72,6 +117,7 @@ SMODS.Sound({
     key = "DeeDee2", 
     path = "DeeDee2.ogg",
 })
+
 
 --- Glitchtrap voicelines
 
@@ -108,6 +154,7 @@ SMODS.Sound({
     path = "Monty_RockAndRoll.ogg",
 })
 
+
 --- GlamChica voicelines
 
 SMODS.Sound({
@@ -125,3 +172,19 @@ SMODS.Sound({
     path = "GlamChica_Eating.ogg",
 })
 
+
+--- Balloon Boy voicelines
+SMODS.Sound({
+    key = "bb_voice1", 
+    path = "BB_voice1.ogg",
+})
+
+SMODS.Sound({
+    key = "bb_voice2", 
+    path = "BB_voice2.ogg",
+})
+
+SMODS.Sound({
+    key = "bb_voice3", 
+    path = "BB_voice3.ogg",
+})

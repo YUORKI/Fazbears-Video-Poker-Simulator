@@ -39,8 +39,21 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main then
+            local bb_voice = math.random(1, 3)
             return {
-                chips = card.ability.extra.chip_mod
+                chips = card.ability.extra.chip_mod,
+                func = function()
+                    if (pseudorandom('fnaf_bb_voice') < 1 / 3) then
+                        card:juice_up(0.1, 0.2)
+                        if bb_voice == 1 then
+                            play_sound('fnaf_bb_voice1')
+                        elseif bb_voice == 2 then
+                            play_sound('fnaf_bb_voice2')
+                        elseif bb_voice == 3 then
+                            play_sound('fnaf_bb_voice3')
+                        end
+                    end
+                end
             }
         end
     end,
@@ -111,16 +124,11 @@ SMODS.Joker {
                 G.jokers.config.card_limit - (#G.jokers.cards + G.GAME.joker_buffer))
             G.GAME.joker_buffer = G.GAME.joker_buffer + jokers_to_create
 
-            G.E_MANAGER:add_event(Event({
-                func = function()
-                    print("DeeDee Voiceline Triggered")
-                    play_sound(DeeDee1, 1, 1)
-                end
-            }))
 
             G.E_MANAGER:add_event(Event({
                 func = function()
                     for _ = 1, jokers_to_create do
+                        play_sound('fnaf_DeeDee1')
                         SMODS.add_card {
                             set = 'Joker',
                             rarity = 'Common', 'Uncommon', 'Rare'
@@ -162,9 +170,9 @@ SMODS.Joker {
                 }))
             end
             return { 
-                message = 'Glitched', 
+                message = 'Glitched',
                 colour = G.C.PURPLE,
-                sound = 'Glitchtrap_summon',
+                sound = 'fnaf_Glitchtrap_summon',
             }
         end
     end
@@ -372,7 +380,7 @@ SMODS.Joker {
             for _, scored_card in ipairs(context.scoring_hand) do
                 if SMODS.has_enhancement(scored_card, "m_fnaf_pizza") and not scored_card.debuff and not scored_card.vampired then
                     enhanced[#enhanced + 1] = scored_card
-                    play_sound(GlamChica_Pizza)
+                    play_sound('fnaf_GlamChica_Pizza')
                     scored_card.vampired = true
                     SMODS.destroy_cards(scored_card)
                     G.E_MANAGER:add_event(Event({
@@ -396,7 +404,6 @@ SMODS.Joker {
                         } 
                     },
                     colour = G.C.MULT
-                    sound = 'GlamChica_Eating'
                 }
             end
         end
@@ -638,17 +645,25 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.after and context.main_eval and not context.blueprint then
             local enhanced = {}
+            local OrvilleUsed = 0
             for _, scored_card in ipairs(context.scoring_hand) do
                 if next(SMODS.get_enhancements(scored_card)) and not scored_card.debuff then
                     enhanced[#enhanced + 1] = scored_card
+                    OrvilleUsed = OrvilleUsed + 1
                     scored_card:set_ability(SMODS.poll_enhancement({ guaranteed = true }), nil, true)
                 end
             end
-            return { 
-                message = 'MAGIC', 
-                colour = G.C.ORANGE,
-                sound = 'Orville01',
-            }
+
+            if OrvilleUsed > 0 then
+                return { 
+                    message = 'MAGIC', 
+                    colour = G.C.ORANGE,
+                    sound = 'fnaf_Orville01',
+                }
+            else
+                return true
+            end
+            
         end
     end,
 }

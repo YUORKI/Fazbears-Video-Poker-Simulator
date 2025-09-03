@@ -58,7 +58,10 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)        
         info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-    end,    
+    end,
+    check_for_unlock = function(self, args)
+        return args.type == 'win_custom'
+    end
 }
 
 local  Freddy_Mult = 0
@@ -89,15 +92,31 @@ SMODS.Joker {
     end,    
     calculate = function(self, card, context)
         if context.joker_main then
+            local freddy_voice = math.random(1, 3)
             return {
-                xmult = card.ability.extra.xmult
-                sound = 'Freddy_score',
+                xmult = card.ability.extra.xmult,
+                func = function()
+                    if (pseudorandom('fnaf_freddy_scored') < 1 / 2) then
+                        card:juice_up(0.1, 0.2)
+                        if freddy_voice == 1 then
+                            play_sound('fnaf_freddy_score')
+                        elseif freddy_voice == 2 then
+                            play_sound('fnaf_freddy_score2')
+                        elseif freddy_voice == 3 then
+                            play_sound('fnaf_freddy_score3')
+                        end
+                    end
+                end
             }
         end
 
-        if context.end_of_round and G.GAME.blind.boss and context.main_eval
-            play_sound(Freddy_endofblind)
+        if context.end_of_round and G.GAME.blind.boss and context.main_eval and (pseudorandom('fnaf_endblind') < 1 / 2) then
+            card:juice_up(0.1, 0.2)
+            play_sound('fnaf_freddy_endofblind')
         end
+    end,
+    check_for_unlock = function(self, args)
+        return args.type == 'win_custom'
     end
 }
 
@@ -116,10 +135,35 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.play then
+            local foxy_voice = math.random(1, 5)
             return {
-                repetitions = card.ability.extra.repetitions
+                repetitions = card.ability.extra.repetitions,
+                func = function()
+                    if (pseudorandom('fnaf_foxy_scored') < 1 / 2) then
+                        card:juice_up(0.1, 0.2)
+                        if foxy_voice == 1 then
+                            play_sound('fnaf_foxy_score')
+                        elseif foxy_voice == 2 then
+                            play_sound('fnaf_foxy_score2')
+                        elseif foxy_voice == 3 then
+                            play_sound('fnaf_foxy_score3')
+                        elseif foxy_voice == 4 then
+                            play_sound('fnaf_foxy_score4')
+                        elseif foxy_voice == 5 then
+                            play_sound('fnaf_foxy_score5')
+                        end
+                    end
+                end
             }
         end
+
+        if context.end_of_round and G.GAME.blind.boss and context.main_eval and (pseudorandom('fnaf_endblind') < 1 / 2) then
+            card:juice_up(0.1, 0.2)
+            play_sound('fnaf_foxy_endofblind')
+        end
+    end,
+    check_for_unlock = function(self, args)
+        return args.type == 'win_custom'
     end
 }
 
@@ -148,6 +192,9 @@ SMODS.Joker {
                 mult = score
             }
         end
+    end,
+    check_for_unlock = function(self, args)
+        return args.type == 'win_custom'
     end
 
 }
