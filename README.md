@@ -17,8 +17,17 @@ Currently, this mod adds:
 - 2 Tarot Cards
 - 3 Enhanced Cards
 - 2 Seals
-- 1 consumable types (containing their own booster pack):
+- 1 Consumable types (containing their own booster pack):
   - 3 Item cards : used for utility during rounds
+ 
+### Planned content
+- More Jokers
+- Themed Boss Blinds
+- More Consumable
+  - Remenan cards (similar to [Stands](https://balatromods.miraheze.org/wiki/Cardsauce/Stands) on [Cardsauce](https://github.com/BarrierTrio/Cardsauce)) 
+  - Have Items Cards that interact with Jokers (similar to [Pokermon](https://github.com/InertSteak/Pokermon))
+- Challenges
+- Achievements
 
 ## Installation
 
