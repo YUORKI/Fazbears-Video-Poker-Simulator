@@ -722,18 +722,32 @@ SMODS.Joker {
         return { vars = { card.ability.extra.chips } }
     end,
     calculate = function(self, card, context)
-        if context.before and not context.blueprint and next(context.poker_hands['Straight']) then
-            local numberedcards = true
-            for _, scored_card in ipairs(context.scoring_hand) do
-                if scored_card:is_face() or scored_card:get_id() == 14 then
-                    numberedcards = false
-                end
-            end
+if context.cardarea == G.jokers and context.joker_main  then
+            if (next(context.poker_hands["Straight"]) and (function()
+    local rankFound = true
+    for i, c in ipairs(context.scoring_hand) do
+        if c:is_face() then
+            rankFound = false
+            break
         end
-        if context.joker_main and numberedcards == true then
-            return {
-                chips = card.ability.extra.chips
-            }
+    end
+    
+    return rankFound
+end)() and (function()
+    local rankFound = true
+    for i, c in ipairs(context.scoring_hand) do
+        if c:get_id() == 14 then
+            rankFound = false
+            break
+        end
+    end
+    
+    return rankFound
+end)()) then
+                return {
+                    chips = card.ability.extra.chips
+                }
+            end
         end
     end
 }
