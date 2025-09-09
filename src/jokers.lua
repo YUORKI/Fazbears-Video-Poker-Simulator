@@ -171,8 +171,12 @@ SMODS.Joker {
             end
             return { 
                 message = 'Glitched',
-                colour = G.C.PURPLE,
-                sound = 'fnaf_Glitchtrap_summon',
+                colour = G.C.PURPLE,                
+                func = function()
+                    if (pseudorandom('fnaf_freddy_scored') < 1 / 20) then
+                        sound = 'fnaf_Glitchtrap_summon'
+                    end
+                end
             }
         end
     end
@@ -711,10 +715,27 @@ SMODS.Joker {
     cost = 3,
     atlas = 'Joker',
     pos = { x = 0, y = 5 },
+    config = { extra = { chips = 100 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
+        return { vars = { card.ability.extra.chips } }
     end,
+    calculate = function(self, card, context)
+        if context.before and not context.blueprint and next(context.poker_hands['Straight']) then
+            local numberedcards = true
+            for _, scored_card in ipairs(context.scoring_hand) do
+                if scored_card:is_face() or scored_card:get_id() == 14 then
+                    numberedcards = false
+                end
+            end
+        end
+        if context.joker_main and numberedcards == true then
+            return {
+                chips = card.ability.extra.chips
+            }
+        end
+    end
 }
 
 SMODS.Joker {
@@ -757,41 +778,19 @@ SMODS.Joker {
         return { vars = { card.ability.extra.chips } }
     end,
     calculate = function(self, card, context)
-        local suitCount = 0
-        local HeartSuit = false
-        local SpadesSuit = false
-        local DiamondsSuit = false
-        local ClubsSuit = false
-        if context.cardarea == G.jokers and context.joker_main  then
-            for _, scored_card in ipairs(context.scoring_hand) do
-                if context.other_card:is_suit("Hearts") and HeartSuit == false then
-                    suitCount = suitCount + 1
-                    HeartSuit = true
+        if context.joker_main then
+            local all_black_suits = true
+            for _, playing_card in ipairs(G.hand.cards) do
+                if not playing_card:is_suit('Clubs', nil, true) and not playing_card:is_suit('Spades', nil, true) then
+                    all_black_suits = false
+                    break
                 end
-                
-                if context.other_card:is_suit("Spades") and SpadesSuit == false then
-                    suitCount = suitCount + 1
-                    SpadesSuit = true
-                end
-
-                if context.other_card:is_suit("Diamonds") and DiamondsSuit == false then
-                    suitCount = suitCount + 1
-                    DiamondsSuit = true
-                end
-
-                if context.other_card:is_suit("Clubs") and ClubsSuit == false then
-                    suitCount = suitCount + 1
-                    ClubsSuit = true
-                end
-
             end
-            
-            if suitCount >= 4 then
+            if all_black_suits then
                 return {
-                    chips = card.ability.extra.chip_mod
+                    xmult = card.ability.extra.xmult
                 }
             end
-
         end
     end,
 }
