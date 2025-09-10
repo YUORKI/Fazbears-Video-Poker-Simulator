@@ -718,10 +718,9 @@ SMODS.Joker {
     config = { extra = { chips = 100 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
         return { vars = { card.ability.extra.chips } }
     end,
-    calculate = function(self, card, context)
+    calculate = function(self, card, context) -- code made by Joker Forge. I dont know how the fuck this work
         if context.cardarea == G.jokers and context.joker_main  then
             if (next(context.poker_hands["Straight"]) and (function()
                 local rankFound = true
@@ -788,35 +787,52 @@ SMODS.Joker {
     config = {extra = { chips = 100 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
         return { vars = { card.ability.extra.chips } }
     end,
     calculate = function(self, card, context)
         if context.joker_main then
-            local Clubs = false
-            local Spades = false
-            local Diamonds = false
-            local Hearts = false
-            
-            for _, playing_card in ipairs(G.hand.cards) do
-                if playing_card:is_suit('Clubs', nil, true) then
-                    local Clubs = true
-                else if playing_card:is_suit('Spades', nil, true) then
-                    local Spades = true
-                else if playing_card:is_suit('Diamonds', nil, true) then
-                    local Diamonds = true
-                else if playing_card:is_suit('Hearts', nil, true) then
-                    local Hearts = true
+            local suits = {
+                ['Hearts'] = 0,
+                ['Diamonds'] = 0,
+                ['Spades'] = 0,
+                ['Clubs'] = 0
+            }
+            for i = 1, #context.scoring_hand do
+                if not SMODS.has_any_suit(context.scoring_hand[i]) then
+                    if context.scoring_hand[i]:is_suit('Hearts', true) and suits["Hearts"] == 0 then
+                        suits["Hearts"] = suits["Hearts"] + 1
+                    elseif context.scoring_hand[i]:is_suit('Diamonds', true) and suits["Diamonds"] == 0 then
+                        suits["Diamonds"] = suits["Diamonds"] + 1
+                    elseif context.scoring_hand[i]:is_suit('Spades', true) and suits["Spades"] == 0 then
+                        suits["Spades"] = suits["Spades"] + 1
+                    elseif context.scoring_hand[i]:is_suit('Clubs', true) and suits["Clubs"] == 0 then
+                        suits["Clubs"] = suits["Clubs"] + 1
+                    end
                 end
             end
-
-            if Clubs == true and Spades == true and Diamonds == true and Hearts == true then
+            for i = 1, #context.scoring_hand do
+                if SMODS.has_any_suit(context.scoring_hand[i]) then
+                    if context.scoring_hand[i]:is_suit('Hearts') and suits["Hearts"] == 0 then
+                        suits["Hearts"] = suits["Hearts"] + 1
+                    elseif context.scoring_hand[i]:is_suit('Diamonds') and suits["Diamonds"] == 0 then
+                        suits["Diamonds"] = suits["Diamonds"] + 1
+                    elseif context.scoring_hand[i]:is_suit('Spades') and suits["Spades"] == 0 then
+                        suits["Spades"] = suits["Spades"] + 1
+                    elseif context.scoring_hand[i]:is_suit('Clubs') and suits["Clubs"] == 0 then
+                        suits["Clubs"] = suits["Clubs"] + 1
+                    end
+                end
+            end
+            if suits["Hearts"] > 0 and
+                suits["Diamonds"] > 0 and
+                suits["Spades"] > 0 and
+                suits["Clubs"] > 0 then
                 return {
-                    xmult = card.ability.extra.xmult
+                    chips = card.ability.extra.chips
                 }
             end
         end
-    end,
+    end
 }
 
 to_big = to_big or function(x) return x end -- in case talisman is not installed
@@ -860,6 +876,6 @@ SMODS.Joker {
     end,
     remove_from_deck = function(self, card, from_debuff)
         G.GAME.bankrupt_at = G.GAME.bankrupt_at + card.ability.extra.broke
-    end
+    end,
 }
 

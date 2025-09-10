@@ -7,7 +7,7 @@ SMODS.Booster {
     pos = { x = 0, y = 0 },
     config = { extra = 3, choose = 1 },
     group_key = "k_item_pack",
-    draw_hand = false,
+    draw_hand = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         return {
@@ -67,7 +67,7 @@ SMODS.Booster {
     pos = { x = 1, y = 0 },
     config = { extra = 5, choose = 1 },
     group_key = "k_item_pack",
-    draw_hand = false,
+    draw_hand = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         return {
@@ -127,7 +127,7 @@ SMODS.Booster {
     pos = { x = 2, y = 0 },
     config = { extra = 5, choose = 2 },
     group_key = "k_item_pack",
-    draw_hand = false,
+    draw_hand = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         return {

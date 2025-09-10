@@ -188,8 +188,8 @@ return {
                 name = "Learning - Endo",
                 text = {
                     "Has a chance to upgrade",
-                    "played poker hand based on",
-                    "{C:green}times used in 20{}",
+                    "{C:attention}played poker{} hand based on",
+                    "{C:green}times used in #2#{}",
                 },
             },
             j_fnaf_gator = {

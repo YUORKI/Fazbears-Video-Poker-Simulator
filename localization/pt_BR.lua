@@ -119,9 +119,9 @@ return {
             j_fnaf_dee_dee = {
                 name = "Dee Dee",
                 text = {
-                    "Spawns a random {C:attention}joker{}",
-                    "at the start of a ante",
-                    "{C:inactive}(No legendaries, must have room)",
+                    "Cria um {C:attention}Curinga{} aleatório",
+                    "no começo de uma nova aposta",
+                    "{C:inactive}(Sem lendarias, Deve ter espaço)",
                 },
             },
             j_fnaf_glitchtrap = {
@@ -187,9 +187,9 @@ return {
             j_fnaf_learning = {
                 name = "Learning - Endo",
                 text = {
-                    "Has a chance to upgrade",
-                    "played poker hand based on",
-                    "{C:green}times used in 20{}",
+                    "Tem a chance de aprimorar",
+                    "{C:attention}mão de pôquer{} usada baseada",
+                    "{C:green}vezes usada em #2#{}",
                 },
             },
             j_fnaf_gator = {
@@ -203,7 +203,7 @@ return {
             j_fnaf_toy_bonnie = {
                 name = "Toy Bonnie",
                 text = {
-                    "{C:attention}7s{} works similar to {C:attention}Wild Cards{}",
+                    "{C:attention}7s{} funcionam como {C:attention}Naipe Curinga{}",
                 },
             },
             j_fnaf_m_hippo = {
@@ -283,7 +283,7 @@ return {
             j_fnaf_bonnie = {
                 name = "Bonnie",
                 text = {
-                    "{X:green,C:white} x#1# {} all {C:green,E:1,S:1.1}listed{} {C:green,E:1,S:1.1}probabilities"
+                    "{X:green,C:white} x#1# {} todas {C:green,E:1,S:1.1} probabilidades listadas"
                 },
             },
 
@@ -297,7 +297,7 @@ return {
             j_fnaf_foxy = {
                 name = "Foxy",
                 text = {
-                    "Retrigger all played cards"
+                    "Reativa todas as cartas jogadas"
                 },
             },
 
@@ -314,8 +314,8 @@ return {
             j_fnaf_golden = {
                 name = "Golden Freddy",
                 text = {
-                    "Seu pontuação da {C:attention}UCN{} sera usado como {C:red,s:1.1}Mult{}",
-                    "{C:inactive}(Currently {C:red,s:1.1} #1# {C:inactive} Mult)",
+                    "Seu pontuação da {C:attention}UCN{} sera usado como {C:red,s:1.1}Multi{}",
+                    "{C:inactive}(No momento {C:red,s:1.1} #1# {C:inactive} Multi)",
                     "{C:red,s:1.1}Import your UCN data in your mod folder"
                 },
             }

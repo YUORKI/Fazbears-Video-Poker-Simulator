@@ -61,7 +61,7 @@ SMODS.Consumable{
         SMODS.draw_cards(card.ability.extra.cards)
     end,
     can_use = function(self, card)
-        return #G.deck.cards >= 3
+        return #G.deck.cards >= 3 and (G.GAME.blind.in_blind)
     end
 }
 
