@@ -722,25 +722,25 @@ SMODS.Joker {
         return { vars = { card.ability.extra.chips } }
     end,
     calculate = function(self, card, context)
-if context.cardarea == G.jokers and context.joker_main  then
+        if context.cardarea == G.jokers and context.joker_main  then
             if (next(context.poker_hands["Straight"]) and (function()
-    local rankFound = true
-    for i, c in ipairs(context.scoring_hand) do
-        if c:is_face() then
-            rankFound = false
-            break
-        end
-    end
+                local rankFound = true
+            for i, c in ipairs(context.scoring_hand) do
+                if c:is_face() then
+                    rankFound = false
+                    break
+                end
+            end
     
-    return rankFound
-end)() and (function()
-    local rankFound = true
-    for i, c in ipairs(context.scoring_hand) do
-        if c:get_id() == 14 then
-            rankFound = false
-            break
-        end
-    end
+                return rankFound
+            end)() and (function()
+                local rankFound = true
+                for i, c in ipairs(context.scoring_hand) do
+                    if c:get_id() == 14 then
+                        rankFound = false
+                        break
+                    end
+                end
     
     return rankFound
 end)()) then
@@ -793,14 +793,24 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main then
-            local all_black_suits = true
+            local Clubs = false
+            local Spades = false
+            local Diamonds = false
+            local Hearts = false
+            
             for _, playing_card in ipairs(G.hand.cards) do
-                if not playing_card:is_suit('Clubs', nil, true) and not playing_card:is_suit('Spades', nil, true) then
-                    all_black_suits = false
-                    break
+                if playing_card:is_suit('Clubs', nil, true) then
+                    local Clubs = true
+                else if playing_card:is_suit('Spades', nil, true) then
+                    local Spades = true
+                else if playing_card:is_suit('Diamonds', nil, true) then
+                    local Diamonds = true
+                else if playing_card:is_suit('Hearts', nil, true) then
+                    local Hearts = true
                 end
             end
-            if all_black_suits then
+
+            if Clubs == true and Spades == true and Diamonds == true and Hearts == true then
                 return {
                     xmult = card.ability.extra.xmult
                 }
