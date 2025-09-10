@@ -42,6 +42,13 @@ return {
                 },
             },
 
+            c_fnaf_deathcoin = {
+                name = "Death Coin",
+                text = {
+                    "adds a Boss Reroll Tag",
+                },
+            },
+
             c_fnaf_boost = {
                 name = "Card Booster Pack",
                 text = {
@@ -369,7 +376,7 @@ return {
                 },
             },
             p_fnaf_item_jumbo = {
-                name = "Item Pack",
+                name = "Jumbo Item Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
                     "{C:attention}#2#{C:green} Item{} cards to",
@@ -377,7 +384,7 @@ return {
                 },
             },
             p_fnaf_item_mega = {
-                name = "Item Pack",
+                name = "Mega Item Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
                     "{C:attention}#2#{C:green} Item{} cards to",
