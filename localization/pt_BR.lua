@@ -1,0 +1,419 @@
+---@diagnostic disable: undefined-global
+return {
+    descriptions = {
+        Enhanced = {
+            m_fnaf_pizza = {
+                name = "Pizza Card",
+                text = {
+                    "{C:chips}+#1#{} Chips",
+                    "no rank or suit",                    
+                    "Expira depois {C:attention}#2#{} usos",
+                },
+            },
+            m_fnaf_glitch = {
+                name = "Glitch Card",
+                text = {
+                    "",
+                }
+            },
+            m_fnaf_kid = {
+                name = "Kid",
+                text = {
+                    "{X:chips,C:white} X#1# {} Chips",
+                }
+            }
+        },
+
+        fnaf_item = {
+            c_fnaf_pizza_maker = {
+                name = "Fredbear Pizza Maker",
+                text = {
+                    "Enhances {C:attention}#1#{} selected",
+                    "card into a",
+                    "{C:attention}#2#",
+                },
+            },
+
+            c_fnaf_grabber = {
+                name = "Monty Grabber",
+                text = {
+                    "Draw {C:attention}#1#{} cards",
+                    "{C:inactive}(Must have #1# or + on deck)",
+                },
+            },
+
+            c_fnaf_boost = {
+                name = "Card Booster Pack",
+                text = {
+                    "Creates {C:attention}#1#{} cards"
+                },
+            },
+        },
+
+        Tarot = {
+            c_fnaf_rabbit = {
+                name = "invalid_tarot_object",
+                text = {
+                    "Enhances {C:attention}#1#{} selected",
+                    "card into a",
+                    "{C:attention}#2#",
+                },
+            },            
+            c_fnaf_kid = {
+                name = "Kid",
+                text = {
+                    "Enhances {C:attention}#1#{} selected",
+                    "card into a",
+                    "{C:attention}#2#",
+                },
+            },
+        },
+
+        Joker = {
+            j_fnaf_endo_01 = {
+                name = "Endo-01",
+                text = {
+                    "{C:chips}+#1#{} Chips"
+                },
+            },
+            j_fnaf_time_clock = {
+                name = "Time Punch Clock",
+                text = {
+                    "{C:chips}+#1#{} Chips after scoring",
+                    "a {C:attention}Straight{} with all cards",
+                    "being numbered",
+                },
+            },
+            j_fnaf_frog = {
+                name = "Happy Frog",
+                text = {
+                    "{C:chips}+#1#{} Chips for each",
+                    "{C:attention}Blind{} skipped this run",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
+                },
+            },
+            j_fnaf_r_freddy = {
+                name = "Rockstar Freddy",
+                text = {
+                    "Gives {C:chips}+#1#{} Chips for",
+                    "each {C:attention}Gold Seal",
+                    "in your {C:attention}full deck",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
+                },
+            },
+            j_fnaf_balloon_boy = {
+                name = "Balloon Boy",
+                text = {
+                    '{C:chips}+#1#{} Chips',
+                    "{C:attention}#2#{} hand size",
+                },
+            },
+            j_fnaf_pizzabot = {
+                name = "Pizza Bot",
+                text = {
+                    "Adds one {C:attention}Pizza{} card",
+                    "to deck when",
+                    "{C:attention}Blind{} is selected",
+                },
+            },
+            j_fnaf_dee_dee = {
+                name = "Dee Dee",
+                text = {
+                    "Spawns a random {C:attention}joker{}",
+                    "at the start of a ante",
+                    "{C:inactive}(No legendaries, must have room)",
+                },
+            },
+            j_fnaf_glitchtrap = {
+                name = "Glitchtrap",
+                text = {
+                    "All active cards played",
+                    "will become {C:attention}Glitched",
+                },
+            },
+            j_fnaf_eleanor = {
+                name = "Eleanor",
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult if you have",
+                    "at least {C:attention}#2#{} Enhanced",
+                    "cards in your full deck",
+                    "{C:inactive}(Currently {C:attention}#3#{C:inactive})",
+                },
+            },
+            j_fnaf_vanessa = {
+                name = "Vanessa",
+                text = {
+                    "{C:red,s:1.1}+#1#{} Mult for every card ", 
+                    "trigger with {C:attention}Security Seal",
+                },
+            },
+            j_fnaf_ennard = {
+                name = "Ennard",
+                text = {
+                    "Gains {C:money}$#1#{} for", 
+                    "every card destroyed",
+                },
+            },
+            j_fnaf_glam_chica = {
+                name = "Glamrock Chica",
+                text = {
+                    "Gains {X:mult,C:white} X#1# {} Mult",
+                    "per {C:attention}Pizza Card{} played", 
+                    "{C:red,s:1.1}Destroy all those cards before scoring{}",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                },
+            },
+            j_fnaf_pickles = {
+                name = "Pickles",
+                text = {
+                    "{C:green}Jar of Pickles",
+                },
+            },
+            j_fnaf_s_puppet = {
+                name = "Security Puppet",
+                text = {
+                    "Adds a {C:attention}Security seal{} to {C:attention}kid{} cards",
+                    "held in hand at the {C:attention}end of the round{}",
+                },
+            }, 
+            j_fnaf_helpy = {
+                name = "Helpy",
+                text = {
+                    "Go up to {C:red}-$#1#{} in debt",
+                    "the run {C:red,s:1.1}ends{} if you're in debt",
+                    "after a boss blind",
+                },
+            },
+            j_fnaf_learning = {
+                name = "Learning - Endo",
+                text = {
+                    "Has a chance to upgrade",
+                    "played poker hand based on",
+                    "{C:green}times used in 20{}",
+                },
+            },
+            j_fnaf_gator = {
+                name = "Montgomery Gator",
+                text = {
+                    "Gains {X:mult,C:white} X#1# {} Mult for ",
+                    "every card destroyed",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                },
+            },
+            j_fnaf_toy_bonnie = {
+                name = "Toy Bonnie",
+                text = {
+                    "{C:attention}7s{} works similar to {C:attention}Wild Cards{}",
+                },
+            },
+            j_fnaf_m_hippo = {
+                name = "Mystic Hippo",
+                text = {
+                    "If the {C:attention}hand played{} is a",
+                    "{C:attention}Base secret Poker Hand{}",
+                    "create a {C:spectral}Spectral{} card",
+                    "{C:inactive}(Must have room)",
+                },
+            },
+            j_fnaf_cassie = {
+                name = "Cassie",
+                text = {
+                    "Using a {C:green}item{} has a",
+                    "{C:green}#1# in #2#{} chance",
+                    "to create another one",
+                },
+            },
+            j_fnaf_toy_chica = {
+                name = "Toy Chica",
+                text = {
+                    "{C:chips}+#2#{} Chips",
+                    "por cada carta destruida",
+                    "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
+                },
+            },
+            j_fnaf_missing = {
+                name = "Missing Poster",
+                text = {
+                    "Playing a hand with {C:attention}#3#{} Face cards",
+                    "have a {C:green}#1# in #2#{} chance to create ",
+                    "a {C:attention}consumable{} card",
+                    "{C:inactive}(Spectral cards not included)",
+                },
+            },
+            j_fnaf_orville = {
+                name = "Orville Elephant",
+                text = {
+                    "Switch the {C:attention}enhancement",
+                    "of all {C:attention}scoring{} cards played",
+                },
+            },
+            j_fnaf_jackie = {
+                name = "Jackie",
+                text = {
+                    "Draw {C:attention}+#1#{} cards when",
+                    "na sua ultima mão",
+                },
+            },
+            j_fnaf_logbook = {
+                name = "Survival Logbook",
+                text = {
+                    "{C:attention}Face{} cards get a",
+                    "{C:attention}Guard badge{} when scored",
+                },
+            },
+            j_fnaf_c_baby = {
+                name = "Circus Baby",
+                text = {
+                    '{C:chips}+#1#{} Chips',
+                    "if your hand has all {C:attention}Suits{}",
+                    '{C:inactive}(Hearts / Diamonds / Spades / Clubs)'
+                },
+            },
+
+            j_fnaf_rock_chica = {
+                name = "Rockstar Chica",
+                text = {
+                    "{C:attention}Pizza cards{}" ,
+                    "have {C:green,E:1,S:1.1}#1#{} more {C:attention}usages"
+                },
+            },
+
+            -- Legendary
+
+            j_fnaf_bonnie = {
+                name = "Bonnie",
+                text = {
+                    "{X:green,C:white} x#1# {} all {C:green,E:1,S:1.1}listed{} {C:green,E:1,S:1.1}probabilities"
+                },
+            },
+
+            j_fnaf_chica = {
+                name = "Chica",
+                text = {
+                    "???"
+                },
+            },
+
+            j_fnaf_foxy = {
+                name = "Foxy",
+                text = {
+                    "Retrigger all played cards"
+                },
+            },
+
+            j_fnaf_freddy = {
+                name = "Freddy",
+                text = {
+                    "{X:mult,C:white} X#1# {} Mult per Marks of Completion",
+                    "in fnaf games (Clickteam)",
+                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                    "{C:red,s:1.1}Import your data in your mod folder"
+                },
+            },
+
+            j_fnaf_golden = {
+                name = "Golden Freddy",
+                text = {
+                    "Seu pontuação da {C:attention}UCN{} sera usado como {C:red,s:1.1}Mult{}",
+                    "{C:inactive}(Currently {C:red,s:1.1} #1# {C:inactive} Mult)",
+                    "{C:red,s:1.1}Import your UCN data in your mod folder"
+                },
+            }
+            
+        },
+
+        Voucher = { 
+            v_fnaf_collection = {
+                name = "Collection",
+                text = {
+                    "{C:attention}+#1#{} Booster slot",
+                    "available in shop",
+                },
+            },
+            v_fnaf_starter_deck = {
+                name = "Starter Deck",
+                text = {
+                    "{C:tarot}Tarot{} cards may",
+                    "appear in any of",
+                    "the {C:attention}Item Packs",
+                },
+            }
+        },
+
+        Other = {
+            k_fnaf_plus_item = {
+                text = {
+                    "+1 Item",
+                },
+            },
+            fnaf_security_seal = {
+                name = "Security Seal",
+                text = {
+                    "Immune to {C:green}debuffs",
+                },
+            },
+            fnaf_guard_seal = {
+                name = "Guard Seal",
+                text = {
+                    "Cria um {C:green}Item{} card",
+                    "quando {C:attention}discartado",
+                    "{C:inactive}(Must have room)",
+                },
+            },
+            p_fnaf_item_normal = {
+                name = "Item Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:green} Item{} cards to",
+                    "be used immediately",
+                },
+            },
+            p_fnaf_item_jumbo = {
+                name = "Item Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:green} Item{} cards to",
+                    "be used immediately",
+                },
+            },
+            p_fnaf_item_mega = {
+                name = "Item Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:green} Item{} cards to",
+                    "be used immediately",
+                },
+            },
+            fnaf_code_WIP = {
+                name = "WIP: Code",
+                text = {
+                    "Code is in Work in Progress",
+                },
+            },
+            fnaf_sprite_WIP = {
+                name = "WIP: Sprite",
+                text = {
+                    "Sprite is in ",
+                    "Work in Progress",
+                    "or Placeholder",
+                },
+            },
+            fnaf_game_support = {
+                name = "Supporte de Game Data",
+                text = {
+                    "Esse mod suporta",
+                    "FNAF 1",
+                    "UCN",
+                },
+            },
+        },
+
+    },
+    
+    misc = {
+        labels = {
+            fnaf_security_seal = "Security Seal",
+            fnaf_guard_seal = "Guard Seal",
+        },
+    }
+}
