@@ -1,5 +1,5 @@
 SMODS.Consumable {
-    key = 'security',
+    key = 'secur_log',
     set = 'Spectral',
     atlas = 'TarotFnaf', 
     pos = {x = 4, y = 0},
@@ -79,3 +79,4 @@ SMODS.Consumable {
         }))
     end,
 }
+
