@@ -83,6 +83,25 @@ return {
                     "{C:attention}#2#",
                 },
             },
+        },        
+        
+        Spectral = { 
+            c_fnaf_secur_log = {
+                name = "Security Logbook",
+                text = {
+                    "Add a {C:gold}Guard Seal{}",
+                    "to {C:attention}#2#{} selected",
+                    "card in your hand",
+                },
+            },
+            c_fnaf_bracelet = {
+                name = "Bracelet",
+                text = {
+                    "Add a {C:uncommon}Security Seal{}",
+                    "to {C:attention}#2#{} selected",
+                    "card in your hand",
+                },
+            },
         },
 
         Joker = {
