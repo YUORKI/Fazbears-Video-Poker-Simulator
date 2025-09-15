@@ -45,7 +45,7 @@ return {
             c_fnaf_deathcoin = {
                 name = "Death Coin",
                 text = {
-                    "adds a Boss Reroll Tag",
+                    "adds a {C:attention}#1#",
                 },
             },
 
@@ -53,6 +53,15 @@ return {
                 name = "Card Booster Pack",
                 text = {
                     "Creates {C:attention}#1#{} cards"
+                },
+            },
+
+            c_fnaf_grabbag = {
+                name = "Grab Bag",
+                text = {
+                    "Creates up to {C:attention}#1#",
+                    "random {C:green}Item{} cards",
+                    "{C:inactive}(Must have room)",
                 },
             },
         },
@@ -108,11 +117,18 @@ return {
                     "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
                 },
             },
+            j_fnaf_bb = {
+                name = "Balloon Boy",
+                text = {
+                    "Don't",
+                },
+            },
             j_fnaf_balloon_boy = {
                 name = "Balloon Boy",
                 text = {
-                    '{C:chips}+#1#{} Chips',
-                    "{C:attention}#2#{} hand size",
+                    "{C:red}Utterly Annoying",
+                    "{X:chips,C:white}X#1#{} Chips",
+                    "{C:red}until (#2#/#3#) rounds later.",
                 },
             },
             j_fnaf_pizzabot = {
@@ -326,7 +342,6 @@ return {
                     "{C:red,s:1.1}Import your UCN data in your mod folder"
                 },
             }
-            
         },
 
         Voucher = { 
@@ -403,6 +418,12 @@ return {
                     "Sprite is in ",
                     "Work in Progress",
                     "or Placeholder",
+                },
+            },
+            fnaf_dont = {
+                name = "Don't",
+                text = {
+                    "Don't",
                 },
             },
             fnaf_game_support = {

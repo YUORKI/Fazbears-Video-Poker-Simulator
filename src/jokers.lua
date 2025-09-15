@@ -1,4 +1,21 @@
 ---@diagnostic disable: undefined-global
+
+local upd = Game.update
+function Game:update(dt)
+    upd(self, dt)
+    if G.jokers then
+        for i = 1, #G.jokers.cards do
+            if G.jokers.cards[i].ability.name == 'j_fnaf_balloon_boy' then
+                local _bb = G.jokers.cards[i]
+                local _bbc = G.P_CENTERS.j_fnaf_balloon_boy
+                if _bb.ability.extra.round < _bb.ability.extra.maxround and _bb.ability.eternal ~= true then
+                    _bb.ability.eternal = true
+                end
+            end
+        end
+    end
+end
+
 SMODS.Joker {
     key = 'endo_01',
     atlas = 'Joker',
@@ -23,6 +40,27 @@ SMODS.Joker {
 }
 
 SMODS.Joker {
+    key = 'bb',
+    atlas = 'Joker',
+    pos = { x = 0, y = 0 },
+    rarity = 1,
+    cost = 3,
+    unlocked = true,
+    discovered = false,
+    blueprint_compat = false,
+    eternal_compat = false,
+    perishable_compat = false,
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+    end,
+    add_to_deck = function(self, card, from_debuff)
+        SMODS.add_card('j_fnaf_balloon_boy')
+        card:start_dissolve({G.C.RED})
+        card = nil
+    end,
+}
+
+SMODS.Joker {
     key = 'balloon_boy',
     atlas = 'Joker',
     pos = { x = 0, y = 0 },
@@ -32,16 +70,18 @@ SMODS.Joker {
     discovered = false,
     blueprint_compat = true,
     eternal_compat = true,
-    config = { extra = { chip_mod = 300, h_size = -2 } },
+    perishable_compat = false,
+    no_collection = true,
+    config = { extra = { x_chips = 0.5, round = 0, maxround = 3}},
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        return { vars = { card.ability.extra.chip_mod, card.ability.extra.h_size } }
+        return { vars = { card.ability.extra.x_chips, center.ability.extra.round, center.ability.extra.maxround}}
     end,
     calculate = function(self, card, context)
         if context.joker_main then
             local bb_voice = math.random(1, 3)
             return {
-                chips = card.ability.extra.chip_mod,
+                x_chips = card.ability.extra.x_chips,
                 func = function()
                     if (pseudorandom('fnaf_bb_voice') < 1 / 3) then
                         card:juice_up(0.1, 0.2)
@@ -56,13 +96,14 @@ SMODS.Joker {
                 end
             }
         end
+
+        if context.setting_blind and not context.blueprint then
+            card.ability.extra.round = card.ability.extra.round + 1
+            if card.ability.extra.round >= card.ability.extra.maxround then
+                card.ability.eternal = nil
+            end
+        end
     end,
-    add_to_deck = function(self, card, from_debuff)
-        G.hand:change_size(card.ability.extra.h_size)
-    end,
-    remove_from_deck = function(self, card, from_debuff)
-        G.hand:change_size(-card.ability.extra.h_size)
-    end
 }
 
 

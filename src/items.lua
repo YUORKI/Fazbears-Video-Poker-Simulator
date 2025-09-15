@@ -94,13 +94,13 @@ SMODS.Consumable{
 }
 
 SMODS.Consumable{
-    key = 'deathcoin', 
-    set = 'fnaf_item', 
-    atlas = 'TarotFnaf', 
-    pos = {x = 0, y = 2},
+    key = 'deathcoin',
+    set = 'fnaf_item',
+    atlas = 'TarotFnaf',
+    pos = {x = 8, y = 1},
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}        
-        info_queue[#info_queue + 1] = {key = "fnaf_code_WIP", set = "Other"}
+        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
+        info_queue[#info_queue + 1] = { key = 'tag_boss', set = 'Tag' }
         return { vars = { localize { type = 'name_text', set = 'Tag', key = 'tag_boss' } } }
     end,
     use = function(self, card, area, copier)
@@ -113,6 +113,40 @@ SMODS.Consumable{
             end)
         }))
     end,
+    can_use = function(self, card)
+        return true
+    end
+}
+
+SMODS.Consumable {
+    key = 'grabbag',
+    set = 'fnaf_item',
+    atlas = 'TarotFnaf',
+    pos = {x = 0, y = 2},
+    config = { extra = { cards = 2 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.cards } }
+    end,
+    use = function(self, card, area, copier)
+        for i = 1, math.min(card.ability.extra.cards, G.consumeables.config.card_limit - #G.consumeables.cards) do
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.4,
+                func = function()
+                    if G.consumeables.config.card_limit > #G.consumeables.cards then
+                        play_sound('timpani')
+                        SMODS.add_card({ set = 'fnaf_item' })
+                        card:juice_up(0.3, 0.5)
+                    end
+                    return true
+                end
+            }))
+        end
+        delay(0.6)
+    end,
+    can_use = function(self, card)
+        return G.consumeables and #G.consumeables.cards < G.consumeables.config.card_limit
+    end
 }
 
 
