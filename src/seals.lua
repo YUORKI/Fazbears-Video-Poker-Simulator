@@ -12,7 +12,7 @@ SMODS.Seal {
     key = 'guard',
     atlas = 'Enhancers',
     pos = { x = 3, y = 0 },
-    badge_colour = HEX('bea233'),
+    badge_colour = G.C.GOLD,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
     end,
