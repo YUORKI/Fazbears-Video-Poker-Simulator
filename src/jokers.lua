@@ -548,6 +548,13 @@ SMODS.Joker {
             }
         end
     end,
+    add_to_deck = function(self, card, from_debuff)
+        local chica_summon = math.random(1, 3)
+        if (pseudorandom('fnaf_chica_summon') < 1 / 2) then
+            card:juice_up(0.1, 0.2)
+            play_sound('fnaf_TChica_summon')            
+        end
+    end,
 }
 
 SMODS.Joker {
@@ -589,7 +596,7 @@ SMODS.Joker {
             end
         end
         return false
-    end
+    end,
 }
 
 
