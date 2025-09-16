@@ -90,7 +90,7 @@ return {
                 name = "Security Logbook",
                 text = {
                     "Add a {C:gold}Guard Seal{}",
-                    "to {C:attention}#2#{} selected",
+                    "to {C:attention}1{} selected",
                     "card in your hand",
                 },
             },
@@ -98,7 +98,7 @@ return {
                 name = "Bracelet",
                 text = {
                     "Add a {C:uncommon}Security Seal{}",
-                    "to {C:attention}#2#{} selected",
+                    "to {C:attention}1{} selected",
                     "card in your hand",
                 },
             },
@@ -147,7 +147,7 @@ return {
                 text = {
                     "{C:red}Utterly Annoying",
                     "{X:chips,C:white}X#1#{} Chips",
-                    "{C:red}until (#2#/#3#) rounds later.",
+                    "{C:red}Eternal for (#2#/#3#) rounds.",
                 },
             },
             j_fnaf_pizzabot = {

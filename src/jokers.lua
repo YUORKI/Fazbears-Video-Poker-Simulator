@@ -52,9 +52,10 @@ SMODS.Joker {
     perishable_compat = false,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_dont", set = "Other" }
     end,
     add_to_deck = function(self, card, from_debuff)
-        SMODS.add_card('j_fnaf_balloon_boy')
+        SMODS.add_card{ key = 'j_fnaf_balloon_boy' }
         card:start_dissolve({G.C.RED})
         card = nil
     end,
@@ -75,7 +76,7 @@ SMODS.Joker {
     config = { extra = { x_chips = 0.5, round = 0, maxround = 3}},
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        return { vars = { card.ability.extra.x_chips, center.ability.extra.round, center.ability.extra.maxround}}
+        return { vars = { card.ability.extra.x_chips, card.ability.extra.round, card.ability.extra.maxround }}
     end,
     calculate = function(self, card, context)
         if context.joker_main then
@@ -104,6 +105,9 @@ SMODS.Joker {
             end
         end
     end,
+    in_pool = function(self, args)
+        return false
+    end
 }
 
 

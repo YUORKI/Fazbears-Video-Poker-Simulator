@@ -43,7 +43,7 @@ SMODS.Consumable {
     key = 'bracelet',
     set = 'Spectral',
     atlas = 'TarotFnaf', 
-    pos = {x = 5, y = 1},
+    pos = {x = 5, y = 0},
     config = { extra = { seal = 'fnaf_security' }, max_highlighted = 1 },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
