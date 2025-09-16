@@ -74,6 +74,10 @@ for _, sum in pairs(data_UCN) do
     Freddy_Mult = Freddy_Mult + sum
 end
 
+if Freddy_Mult > 19 then
+    score = 19
+end
+
 Freddy_Mult = Freddy_Mult - data_UCN.hs
 
 SMODS.Joker {
