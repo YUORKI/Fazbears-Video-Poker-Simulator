@@ -119,6 +119,18 @@ SMODS.Joker {
             play_sound('fnaf_freddy_endofblind')
         end
     end,
+    add_to_deck = function(self, card, from_debuff)
+        local freddy_spawn = math.random(1, 4)
+        if freddy_spawn == 1 then
+            play_sound('fnaf_Freddy_summon')
+        elseif freddy_spawn == 2 then
+            play_sound('fnaf_Freddy_summon2')
+        elseif freddy_spawn == 3 then
+            play_sound('fnaf_Freddy_summon3')       
+        elseif freddy_spawn == 4 then
+            play_sound('fnaf_Freddy_summon4')  
+        end
+    end,
     check_for_unlock = function(self, args)
         return args.type == 'win_custom'
     end
@@ -164,6 +176,14 @@ SMODS.Joker {
         if context.end_of_round and G.GAME.blind.boss and context.main_eval and (pseudorandom('fnaf_endblind') < 1 / 2) then
             card:juice_up(0.1, 0.2)
             play_sound('fnaf_foxy_endofblind')
+        end
+    end,
+    add_to_deck = function(self, card, from_debuff)
+        local foxy_spawn = math.random(1, 2)
+        if foxy_spawn == 1 then
+            play_sound('fnaf_foxy_summon1')
+        elseif foxy_spawn == 2 then
+            play_sound('fnaf_foxy_summon2')
         end
     end,
     check_for_unlock = function(self, args)
