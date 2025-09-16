@@ -1,4 +1,4 @@
-Lets quickly explain how you will import you files to the mod.
+Lets quickly explain how to import you save files to the mod.
 
 Go to %APPDATA%\Roaming\MMFApplications, and open up the files in there and 
 copy and past a variable (line of text, like level=0 ) that is in on the file, and paste it on to a text file in the mods folder
