@@ -332,7 +332,7 @@ return {
             j_fnaf_chica = {
                 name = "Chica",
                 text = {
-                    "???"
+                    "{C:attention}-#1#%{} All Blind Scores"
                 },
             },
 
