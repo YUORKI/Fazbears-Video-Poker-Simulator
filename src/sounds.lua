@@ -105,6 +105,16 @@ SMODS.Sound({
     path = "Chica_sfx4.ogg",
 })
 
+SMODS.Sound({
+    key = "Chica_score", 
+    path = "Chica_score.ogg",
+})
+
+SMODS.Sound({
+    key = "Chica_score2", 
+    path = "Chica_score2.ogg",
+})
+
 --- Orville voicelines
 
 SMODS.Sound({
