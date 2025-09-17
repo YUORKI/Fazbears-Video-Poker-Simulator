@@ -125,6 +125,7 @@ SMODS.Consumable {
     pos = {x = 0, y = 2},
     config = { extra = { cards = 2 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.cards } }
     end,
     use = function(self, card, area, copier)

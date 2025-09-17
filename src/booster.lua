@@ -10,6 +10,7 @@ SMODS.Booster {
     draw_hand = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return {
             vars = { cfg.choose, cfg.extra },
             key = self.key:sub(1, -3), -- This uses the description key of the booster without the number at the end
@@ -70,6 +71,7 @@ SMODS.Booster {
     draw_hand = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return {
             vars = { cfg.choose, cfg.extra },
             key = self.key:sub(1, -3), -- This uses the description key of the booster without the number at the end
@@ -130,6 +132,7 @@ SMODS.Booster {
     draw_hand = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return {
             vars = { cfg.choose, cfg.extra },
             key = self.key:sub(1, -3), -- This uses the description key of the booster without the number at the end

@@ -4,6 +4,7 @@ SMODS.Voucher {
     pos = { x = 2, y = 0 },
     config = { extra = { slots = 1 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.slots } }
     end,
     redeem = function(self, card)
@@ -16,11 +17,13 @@ SMODS.Voucher {
     end
 }
 
--- Omen Globe
 SMODS.Voucher {
     key = 'starter_deck',
     atlas = 'Vouchers',
     pos = { x = 2, y = 1 },
     unlocked = false,
     requires = { 'v_fnaf_collection' },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+    end,
 }

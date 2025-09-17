@@ -47,6 +47,7 @@ SMODS.Consumable {
     config = { extra = { seal = 'fnaf_security' }, max_highlighted = 1 },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.max_highlighted } }
     end,
     use = function(self, card, area, copier)
