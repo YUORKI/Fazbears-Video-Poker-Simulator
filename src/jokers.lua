@@ -346,8 +346,9 @@ SMODS.Joker {
                     message = localize { 
                         type = 'variable', 
                         key = 'a_xmult', 
-                        vars = { card.ability.extra.xmult } 
-                    } 
+                        vars = { card.ability.extra.xmult },
+                        sound = 'fnaf_Monty_laugh1'
+                    }
                 }
             end
         end
@@ -355,6 +356,24 @@ SMODS.Joker {
             return {
                 xmult = card.ability.extra.xmult
             }
+        end
+    end,
+    add_to_deck = function(self, card, from_debuff)
+        local Monty_spawn = math.random(1, 2)
+        card:juice_up(0.1, 0.2)
+        if Monty_spawn == 1 then
+            play_sound('fnaf_Monty_Rock')
+        elseif Monty_spawn == 2 then
+            play_sound('fnaf_Monty_RockAndRoll')
+        end
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        local Monty_spawn = math.random(1, 2)
+        card:juice_up(0.1, 0.2)
+        if Monty_spawn == 1 then
+            play_sound('fnaf_Monty_growl')
+        elseif Monty_spawn == 2 then
+            play_sound('fnaf_Monty_growl2')
         end
     end,
 }
@@ -429,7 +448,8 @@ SMODS.Joker {
             for _, scored_card in ipairs(context.scoring_hand) do
                 if SMODS.has_enhancement(scored_card, "m_fnaf_pizza") and not scored_card.debuff and not scored_card.vampired then
                     enhanced[#enhanced + 1] = scored_card
-                    play_sound('fnaf_GlamChica_Pizza')
+                    local _Glam_Pizza = {"fnaf_GlamChica_Pizza","fnaf_GlamChica_Pizza1","fnaf_GlamChica_Pizza2","fnaf_GlamChica_Pizza3"}
+                    play_sound(_Glam_Pizza[math.random(#_Glam_Pizza)])
                     scored_card.vampired = true
                     SMODS.destroy_cards(scored_card)
                     G.E_MANAGER:add_event(Event({
@@ -452,7 +472,12 @@ SMODS.Joker {
                             card.ability.extra.Xmult 
                         } 
                     },
-                    colour = G.C.MULT
+                    colour = G.C.MULT,
+                    func = function()
+                        card:juice_up(0.1, 0.2)
+                        local _GlamChica_yes = {"fnaf_GlamChica_Eating","fnaf_GlamChica_Eating2"}
+                        play_sound(_GlamChica_yes[math.random(#_GlamChica_yes)])
+                    end
                 }
             end
         end
@@ -714,7 +739,13 @@ SMODS.Joker {
                 return { 
                     message = 'MAGIC', 
                     colour = G.C.ORANGE,
-                    sound = 'fnaf_Orville01',
+                    func = function()
+                        if (pseudorandom('fnaf_orville_scored') < 1 / 5) then
+                            card:juice_up(0.1, 0.2)
+                            local _Orville_score = {"fnaf_Orville01","fnaf_Orville02","fnaf_Orville03","fnaf_Orville04"}
+                            play_sound(_Orville_score[math.random(#_Orville_score)])
+                        end
+                    end
                 }
             else
                 return true

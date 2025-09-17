@@ -197,7 +197,6 @@ SMODS.Joker {
         local foxy_spawn = math.random(1, 2)
         card:juice_up(0.1, 0.2)
         if foxy_spawn == 1 then
-            
             play_sound('fnaf_foxy_summon1')
         elseif foxy_spawn == 2 then
             play_sound('fnaf_foxy_summon2')

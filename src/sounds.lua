@@ -126,7 +126,7 @@ SMODS.Sound({
     path = "Chica_score2.ogg",
 })
 
---- Chica voicelines
+--- Golden Freddy voicelines
 
 SMODS.Sound({
     key = "Golden_score", 
@@ -201,6 +201,16 @@ SMODS.Sound({
 })
 
 SMODS.Sound({
+    key = "Monty_growl", 
+    path = "Monty_growl.ogg",
+})
+
+SMODS.Sound({
+    key = "Monty_growl2", 
+    path = "Monty_growl2.ogg",
+})
+
+SMODS.Sound({
     key = "Monty_Rock", 
     path = "Monty_Rock.ogg",
 })
@@ -224,8 +234,28 @@ SMODS.Sound({
 })
 
 SMODS.Sound({
+    key = "GlamChica_Pizza1", 
+    path = "GlamChica_Pizza1.ogg",
+})
+
+SMODS.Sound({
+    key = "GlamChica_Pizza2", 
+    path = "GlamChica_Pizza2.ogg",
+})
+
+SMODS.Sound({
+    key = "GlamChica_Pizza3", 
+    path = "GlamChica_Pizza3.ogg",
+})
+
+SMODS.Sound({
     key = "GlamChica_Eating", 
     path = "GlamChica_Eating.ogg",
+})
+
+SMODS.Sound({
+    key = "GlamChica_Eating2", 
+    path = "GlamChica_Eating2.ogg",
 })
 
 
