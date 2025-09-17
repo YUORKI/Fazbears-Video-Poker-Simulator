@@ -15,7 +15,7 @@ local data_FNAF1 = {}
             data_FNAF1[key] = tonumber(value)
         end
     end
-    
+  
 
 SMODS.Joker {
     key = "bonnie",
@@ -28,7 +28,6 @@ SMODS.Joker {
     cost = 20,
     config = { extra = { odds = 10 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.odds } }
     end,
     add_to_deck = function(self, card, from_debuff)
@@ -46,6 +45,11 @@ SMODS.Joker {
     end
 }
 
+Chica_sfx_ee = function()
+    local _chica_sound_ee = {"fnaf_Chica_sfx","fnaf_Chica_sfx2","fnaf_Chica_sfx3","fnaf_Chica_sfx4","fnaf_Chica_sfx5","fnaf_Chica_sfx6"}
+    play_sound(_chica_sound_ee[math.random(#_chica_sound_ee)])
+end
+
 SMODS.Joker {
     key = "chica",
     atlas = 'Joker',
@@ -55,35 +59,33 @@ SMODS.Joker {
     rarity = 4,
     cost = 20,
     config = { extra = { perc = 30  } },
-    loc_vars = function(self, info_queue, card)        
-        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+    loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.perc } }
     end,
     calculate = function(self, card, context)
         if context.setting_blind then
             G.GAME.blind.chips = G.GAME.blind.chips - ((card.ability.extra.perc / 100) * G.GAME.blind.chips)
-            local chica_spawn = math.random(1, 4)
-            if (pseudorandom('fnaf_chica_score') < 1 / 20) then
-                if chica_spawn == 1 then
-                    play_sound('fnaf_Chica_sfx')
-                elseif chica_spawn == 2 then
-                    play_sound('fnaf_Chica_sfx2')                    
-                elseif chica_spawn == 3 then
-                    play_sound('fnaf_Chica_sfx3')                    
-                elseif chica_spawn == 4 then
-                    play_sound('fnaf_Chica_sfx4')
+            G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+            return {
+                message = '-30% score',
+                colour = G.C.ORANGE,
+                func = function()
+                    if (pseudorandom('fnaf_Chica_scored') < 1 / 50) then
+                        card:juice_up(0.1, 0.2)
+                        Chica_sfx_ee()
+                    end
                 end
-            end
+            }
         end
     end,
     add_to_deck = function(self, card, from_debuff)
-        local chica_spawn = math.random(1, 2)
+        local chica_spawn = math.random(1, 100)
         if (pseudorandom('fnaf_chica_summon') < 1 / 2) then
-            if chica_spawn == 1 then
-                play_sound('fnaf_Chica_score')
-            elseif chica_spawn == 2 then
-                play_sound('fnaf_Chica_score2')
+            if chica_spawn > 85 then
+                Chica_sfx_ee()
+            else
+                local _chica_summon = {"fnaf_Chica_score","fnaf_Chica_score2"}
+                play_sound(_chica_summon[math.random(#_chica_summon)])
             end
         end
     end,
@@ -102,11 +104,11 @@ for _, sum in pairs(data_UCN) do
     Freddy_Mult = Freddy_Mult + sum
 end
 
-if Freddy_Mult > 19 then
-    score = 19
-end
-
 Freddy_Mult = Freddy_Mult - data_UCN.hs
+
+if Freddy_Mult > 19 then
+    Freddy_Mult = 19
+end
 
 SMODS.Joker {
     key = "freddy",
@@ -117,8 +119,7 @@ SMODS.Joker {
     rarity = 4,
     cost = 20,
     config = { extra = { xmult = 1 + (0.25 * Freddy_Mult), xmult_gain = 0.25 } },
-    loc_vars = function(self, info_queue, card)        
-        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
+    loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_game_support", set = "Other" }
         return { vars = { card.ability.extra.xmult_gain, card.ability.extra.xmult } }
     end,    
@@ -130,13 +131,8 @@ SMODS.Joker {
                 func = function()
                     if (pseudorandom('fnaf_freddy_scored') < 1 / 4) then
                         card:juice_up(0.1, 0.2)
-                        if freddy_voice == 1 then
-                            play_sound('fnaf_freddy_score')
-                        elseif freddy_voice == 2 then
-                            play_sound('fnaf_freddy_score2')
-                        elseif freddy_voice == 3 then
-                            play_sound('fnaf_freddy_score3')
-                        end
+                        local _freddy_score = {"fnaf_freddy_score","fnaf_freddy_score2","fnaf_freddy_score3"}
+                        play_sound(_freddy_score[math.random(#_freddy_score)])
                     end
                 end
             }
@@ -154,9 +150,9 @@ SMODS.Joker {
         elseif freddy_spawn == 2 then
             play_sound('fnaf_Freddy_summon2')
         elseif freddy_spawn == 3 then
-            play_sound('fnaf_Freddy_summon3')       
+            play_sound('fnaf_Freddy_summon3')
         elseif freddy_spawn == 4 then
-            play_sound('fnaf_Freddy_summon4')  
+            play_sound('fnaf_Freddy_summon4')
         end
     end,
     check_for_unlock = function(self, args)
@@ -185,17 +181,8 @@ SMODS.Joker {
                 func = function()
                     if (pseudorandom('fnaf_foxy_scored') < 1 / 4) then
                         card:juice_up(0.1, 0.2)
-                        if foxy_voice == 1 then
-                            play_sound('fnaf_foxy_score')
-                        elseif foxy_voice == 2 then
-                            play_sound('fnaf_foxy_score2')
-                        elseif foxy_voice == 3 then
-                            play_sound('fnaf_foxy_score3')
-                        elseif foxy_voice == 4 then
-                            play_sound('fnaf_foxy_score4')
-                        elseif foxy_voice == 5 then
-                            play_sound('fnaf_foxy_score5')
-                        end
+                        local _foxy_score = {"fnaf_foxy_score","fnaf_foxy_score2","fnaf_foxy_score3","fnaf_foxy_score4","fnaf_foxy_score5"}
+                        play_sound(_foxy_score[math.random(#_foxy_score)])
                     end
                 end
             }
@@ -208,7 +195,9 @@ SMODS.Joker {
     end,
     add_to_deck = function(self, card, from_debuff)
         local foxy_spawn = math.random(1, 2)
+        card:juice_up(0.1, 0.2)
         if foxy_spawn == 1 then
+            
             play_sound('fnaf_foxy_summon1')
         elseif foxy_spawn == 2 then
             play_sound('fnaf_foxy_summon2')
@@ -239,15 +228,8 @@ SMODS.Joker {
             if score > 10600 then
                 score = 10600
             end
-
             return {
                 mult = score
-                func = function()
-                    card:juice_up(0.1, 0.2)
-                    if (pseudorandom('fnaf_Golden_scored') < 1 / 4) then
-                         play_sound('fnaf_Golden_score')
-                    end
-                end
             }
         end
     end,

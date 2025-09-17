@@ -101,9 +101,20 @@ SMODS.Sound({
 })
 
 SMODS.Sound({
-    key = "Chica_sfx4", 
+    key = "Chica_sfx4",
     path = "Chica_sfx4.ogg",
 })
+
+SMODS.Sound({
+    key = "Chica_sfx5",
+    path = "Chica_sfx5.ogg",
+})
+
+SMODS.Sound({
+    key = "Chica_sfx6",
+    path = "Chica_sfx6.ogg",
+})
+
 
 SMODS.Sound({
     key = "Chica_score", 
