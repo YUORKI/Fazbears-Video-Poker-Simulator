@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 SMODS.Consumable {
     key = 'secur_log',
     set = 'Spectral',

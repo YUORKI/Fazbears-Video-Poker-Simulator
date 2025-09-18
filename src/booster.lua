@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-global
+
 SMODS.Booster {
     key = "item_normal_1",
     weight = 1,

@@ -1,4 +1,5 @@
 ---@diagnostic disable: undefined-global
+
 return {
     descriptions = {
         Enhanced = {
@@ -62,6 +63,15 @@ return {
                     "Creates up to {C:attention}#1#",
                     "random {C:green}Item{} cards",
                     "{C:inactive}(Must have room)",
+                },
+            },
+
+            c_fnaf_philately = {
+                name = "Philately collection",
+                text = {
+                    "Adds a {C:attention}Random Seal{}",
+                    "to {C:attention}1{} selected",
+                    "card in your hand",
                 },
             },
         },
@@ -461,6 +471,9 @@ return {
         labels = {
             fnaf_security_seal = "Security Seal",
             fnaf_guard_seal = "Guard Seal",
+        },
+        dictionary = {
+            k_item_pack = "Item Pack"
         },
     }
 }

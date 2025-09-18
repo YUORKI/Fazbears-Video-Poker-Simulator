@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 SMODS.ConsumableType {
     key = 'fnaf_item',
 
@@ -35,15 +36,56 @@ SMODS.UndiscoveredSprite{
 }
 
 SMODS.Consumable{
-    key = 'pizza_maker', 
-    set = 'fnaf_item', 
-    atlas = 'TarotFnaf', 
+    key = 'pizza_maker',
+    set = 'fnaf_item',
+    atlas = 'TarotFnaf',
     pos = {x = 4, y = 1},
     config = { max_highlighted = 2, mod_conv = 'm_fnaf_pizza' },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
-        info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]        
+        info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
+    end,
+}
+
+SMODS.Consumable{
+    key = 'philately',
+    set = 'fnaf_item',
+    atlas = 'TarotFnaf',
+    pos = {x = 1, y = 2},
+    config = { max_highlighted = 1 },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        return { vars = { card.ability.max_highlighted } }
+    end,
+    use = function(self, card, area, copier)
+        local conv_card = G.hand.highlighted[1]
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                play_sound('tarot1')
+                card:juice_up(0.3, 0.5)
+                return true
+            end
+        }))
+
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.1,
+            func = function()
+                conv_card:set_seal(SMODS.poll_seal ({guaranteed = true, type_key = 'fnaf_item_philately'}))
+                return true
+            end
+        }))
+
+        delay(0.5)
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.2,
+            func = function()
+                G.hand:unhighlight_all()
+                return true
+            end
+        }))
     end,
 }
 
@@ -66,12 +108,13 @@ SMODS.Consumable{
 }
 
 SMODS.Consumable{
-    key = 'boost', 
-    set = 'fnaf_item', 
-    atlas = 'TarotFnaf', 
+    key = 'boost',
+    set = 'fnaf_item',
+    atlas = 'TarotFnaf',
     pos = {x = 7, y = 1},
     config = { extra = { cards = 2 } },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
         info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         return { vars = { card.ability.extra.cards } }
     end,
@@ -122,7 +165,7 @@ SMODS.Consumable {
     key = 'grabbag',
     set = 'fnaf_item',
     atlas = 'TarotFnaf',
-    pos = {x = 0, y = 2},
+    pos = {x = 1, y = 2},
     config = { extra = { cards = 2 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
