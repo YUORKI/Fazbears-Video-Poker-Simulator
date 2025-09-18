@@ -7,7 +7,7 @@ SMODS.Booster {
     pos = { x = 0, y = 0 },
     config = { extra = 3, choose = 1 },
     group_key = "k_item_pack",
-    draw_hand = true,
+    select_card = 'consumeables',
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
@@ -68,7 +68,7 @@ SMODS.Booster {
     pos = { x = 1, y = 0 },
     config = { extra = 5, choose = 1 },
     group_key = "k_item_pack",
-    draw_hand = true,
+    select_card = 'consumeables',
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
@@ -129,7 +129,7 @@ SMODS.Booster {
     pos = { x = 2, y = 0 },
     config = { extra = 5, choose = 2 },
     group_key = "k_item_pack",
-    draw_hand = true,
+    select_card = 'consumeables',
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
