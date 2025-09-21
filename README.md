@@ -8,13 +8,15 @@
 >
 >*Not only that, our breakrooms contain the best recreation for our employees, such as cable TV, a Fazbear™ pimball machine, and our patented Fazbear™ exclusive **Video Poker Machine**™ for our employees who feel a little lucky!*
 >
-><sup><sup>*Employees are only allowed to engage in any of the activites present in the breakroom during their 15-minute break. Afterward, they are demanded to leave the breakroom and return to their shift or else they suffer a warning by management, resulting in punishment such as: revoked break privileges, docked salary, disciplinary actions, unpaid overtime or being fired.*</sup></sup>
+><sup><sup>*Employees are only allowed to engage in any of the activites present in the breakroom during their 15-minute break. Afterward, they are demanded to leave the breakroom and return to their shift. Not following this rule will result from a warning by management, resulting in punishment such as: revoked break privileges, docked salary, disciplinary actions, unpaid overtime or being fired.*</sup></sup>
 
 **Fazbear's Video Poker Simulator** is a Balatro mod that aims to add Five Nights at Freddy's™ themed content to balatro, such as new Jokers, Enhancements, Seals and Consumables
 
 Currently, this mod adds:
 - 30 Jokers
+- 2 Vouchers
 - 2 Tarot Cards
+- 2 Spectral Cards
 - 3 Enhanced Cards
 - 2 Seals
 - 1 Consumable types (containing their own booster pack):
@@ -24,10 +26,11 @@ Currently, this mod adds:
 - More Jokers
 - Themed Boss Blinds
 - More Consumable
-  - Remenan cards (similar to [Stands](https://balatromods.miraheze.org/wiki/Cardsauce/Stands) on [Cardsauce](https://github.com/BarrierTrio/Cardsauce)) 
+  - Remnant cards (similar to [Stands](https://balatromods.miraheze.org/wiki/Cardsauce/Stands) on [Cardsauce](https://github.com/BarrierTrio/Cardsauce)) 
   - Have Items Cards that interact with Jokers (similar to [Pokermon](https://github.com/InertSteak/Pokermon))
 - Challenges
 - Achievements
+- Config page
 
 ## Installation
 
