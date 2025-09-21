@@ -25,6 +25,7 @@ Currently, this mod adds:
   - 3 Item cards : used for utility during rounds
  
 ### Planned content
+- Finished Sprite work
 - More Jokers
 - Themed Boss Blinds
 - More Consumable
