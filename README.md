@@ -14,7 +14,9 @@
 
 Currently, this mod adds:
 - 30 Jokers
+- 2 Vouchers
 - 2 Tarot Cards
+- 2 Spectral Cards
 - 3 Enhanced Cards
 - 2 Seals
 - 1 Consumable types (containing their own booster pack):
@@ -24,10 +26,11 @@ Currently, this mod adds:
 - More Jokers
 - Themed Boss Blinds
 - More Consumable
-  - Remenan cards (similar to [Stands](https://balatromods.miraheze.org/wiki/Cardsauce/Stands) on [Cardsauce](https://github.com/BarrierTrio/Cardsauce)) 
+  - Remnant cards (similar to [Stands](https://balatromods.miraheze.org/wiki/Cardsauce/Stands) on [Cardsauce](https://github.com/BarrierTrio/Cardsauce)) 
   - Have Items Cards that interact with Jokers (similar to [Pokermon](https://github.com/InertSteak/Pokermon))
 - Challenges
 - Achievements
+- Config page
 
 ## Installation
 
