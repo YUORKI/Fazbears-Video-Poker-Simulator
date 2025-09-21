@@ -234,31 +234,33 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 2,
     cost = 4,
-    config = { extra = { odds = 3 } },
+    config = { extra = { odds = 4 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
         return { vars = { G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
     end,
     calculate = function(self, card, context)
-        if context.joker_main and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
-            if context.using_consumeable and not context.blueprint
-                and context.consumeable.ability.set == 'fnaf_item' and (pseudorandom('fnaf_cassie') < G.GAME.probabilities.normal / card.ability.extra.odds) then
-                G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
-                G.E_MANAGER:add_event(Event({
-                    func = (function()
-                        SMODS.add_card {
-                            set = 'fnaf_item',
-                            key_append = 'fnaf_cassie'
-                        }
-                        G.GAME.consumeable_buffer = 0
-                        return true
-                    end)
-                }))
-                return {
-                    message = "+1 Item"
-                }
-            end
+        if context.using_consumeable and not context.blueprint and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit 
+        and context.consumeable.ability.set == 'fnaf_item' and (pseudorandom('fnaf_cassie') < G.GAME.probabilities.normal / card.ability.extra.odds) then
+            G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+            G.E_MANAGER:add_event(Event({
+                trigger = 'before',
+                delay = 0.0,
+                func = (function()
+                    SMODS.add_card {
+                        set = 'fnaf_item',
+                        key_append = 'fnaf_cassie_item'
+                    }
+                    G.GAME.consumeable_buffer = 0
+                    return true
+                end)
+            }))
+            return {
+                message = "+1 Item",
+                colour = G.C.GREEN,
+            }
+            
         end
     end,
 }
