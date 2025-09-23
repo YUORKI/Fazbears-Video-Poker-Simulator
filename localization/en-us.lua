@@ -179,8 +179,9 @@ return {
             j_fnaf_glitchtrap = {
                 name = "Glitchtrap",
                 text = {
-                    "All active cards played",
-                    "will become {C:attention}Glitched",
+                    "All played {C:attention}ace{} cards",
+                    "become {C:attention}Glitched{}",
+                    "when scored",
                 },
             },
             j_fnaf_eleanor = {
