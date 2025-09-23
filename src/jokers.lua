@@ -197,32 +197,37 @@ SMODS.Joker {
     atlas = 'Joker',
     pos = { x = 5, y = 1 },
     blueprint_compat = false,
-    rarity = 3,
-    cost = 8,
+    rarity = 2,
+    cost = 5,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS.m_fnaf_glitch
     end,
     calculate = function(self, card, context)
-        if context.before and context.main_eval and not context.blueprint then
-            local faces = 0
+        if context.before and not context.blueprint then
+            local aces = 0
             for _, scored_card in ipairs(context.scoring_hand) do
-                scored_card:set_ability('m_fnaf_glitch', nil, true)
-                G.E_MANAGER:add_event(Event({
-                    func = function()
-                        scored_card:juice_up()
-                        return true
-                    end
-                }))
-            end
-            return { 
-                message = 'Glitched',
-                colour = G.C.PURPLE,                
-                func = function()
-                    if (pseudorandom('fnaf_freddy_scored') < 1 / 20) then
-                        sound = 'fnaf_Glitchtrap_summon'
-                    end
+                if scored_card:get_id() == 14 then
+                    aces = aces + 1
+                    scored_card:set_ability('m_fnaf_glitch', nil, true)
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            scored_card:juice_up()
+                            return true
+                        end
+                    }))
                 end
-            }
+            end
+            if aces > 0 then
+                return {
+                    message = 'Glitched',
+                    colour = G.C.PURPLE,                
+                    func = function()
+                        if (pseudorandom('fnaf_freddy_scored') < 1 / 20) then
+                            sound = 'fnaf_Glitchtrap_summon'
+                        end
+                    end
+                }
+            end
         end
     end
 }
@@ -237,7 +242,6 @@ SMODS.Joker {
     config = { extra = { odds = 4 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
         return { vars = { G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
     end,
     calculate = function(self, card, context)
