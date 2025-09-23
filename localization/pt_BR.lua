@@ -1,4 +1,5 @@
 ---@diagnostic disable: undefined-global
+
 return {
     descriptions = {
         Enhanced = {
@@ -7,7 +8,7 @@ return {
                 text = {
                     "{C:chips}+#1#{} Chips",
                     "no rank or suit",                    
-                    "Expira depois {C:attention}#2#{} usos",
+                    "Expires after {C:attention}#2#{} Usages",
                 },
             },
             m_fnaf_glitch = {
@@ -42,10 +43,35 @@ return {
                 },
             },
 
+            c_fnaf_deathcoin = {
+                name = "Death Coin",
+                text = {
+                    "adds a {C:attention}#1#",
+                },
+            },
+
             c_fnaf_boost = {
                 name = "Card Booster Pack",
                 text = {
                     "Creates {C:attention}#1#{} cards"
+                },
+            },
+
+            c_fnaf_grabbag = {
+                name = "Grab Bag",
+                text = {
+                    "Creates up to {C:attention}#1#",
+                    "random {C:green}Item{} cards",
+                    "{C:inactive}(Must have room)",
+                },
+            },
+
+            c_fnaf_philately = {
+                name = "Philately collection",
+                text = {
+                    "Adds a {C:attention}Random Seal{}",
+                    "to {C:attention}1{} selected",
+                    "card in your hand",
                 },
             },
         },
@@ -65,6 +91,25 @@ return {
                     "Enhances {C:attention}#1#{} selected",
                     "card into a",
                     "{C:attention}#2#",
+                },
+            },
+        },        
+        
+        Spectral = { 
+            c_fnaf_secur_log = {
+                name = "Security Logbook",
+                text = {
+                    "Add a {C:gold}Guard Seal{}",
+                    "to {C:attention}1{} selected",
+                    "card in your hand",
+                },
+            },
+            c_fnaf_bracelet = {
+                name = "Bracelet",
+                text = {
+                    "Add a {C:uncommon}Security Seal{}",
+                    "to {C:attention}1{} selected",
+                    "card in your hand",
                 },
             },
         },
@@ -101,11 +146,18 @@ return {
                     "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
                 },
             },
+            j_fnaf_bb = {
+                name = "Balloon Boy",
+                text = {
+                    "Não faça",
+                },
+            },
             j_fnaf_balloon_boy = {
                 name = "Balloon Boy",
                 text = {
-                    '{C:chips}+#1#{} Chips',
-                    "{C:attention}#2#{} hand size",
+                    "{C:red}Totalmente irritante",
+                    "{X:chips,C:white}X#1#{} Chips",
+                    "{C:red}Eterno por (#2#/#3#) rodadas.",
                 },
             },
             j_fnaf_pizzabot = {
@@ -127,31 +179,16 @@ return {
             j_fnaf_glitchtrap = {
                 name = "Glitchtrap",
                 text = {
-                    "All active cards played",
-                    "will become {C:attention}Glitched",
-                },
-            },
-            j_fnaf_eleanor = {
-                name = "Eleanor",
-                text = {
-                    "{X:mult,C:white} X#1# {} Mult if you have",
-                    "at least {C:attention}#2#{} Enhanced",
-                    "cards in your full deck",
-                    "{C:inactive}(Currently {C:attention}#3#{C:inactive})",
-                },
-            },
-            j_fnaf_vanessa = {
-                name = "Vanessa",
-                text = {
-                    "{C:red,s:1.1}+#1#{} Mult for every card ", 
-                    "trigger with {C:attention}Security Seal",
+                    "All played {C:attention}ace{} cards",
+                    "become {C:attention}Glitched{}",
+                    "when scored",
                 },
             },
             j_fnaf_ennard = {
                 name = "Ennard",
                 text = {
-                    "Gains {C:money}$#1#{} for", 
-                    "every card destroyed",
+                    "Ganha {C:money}$#1#{} por", 
+                    "cada carta destruida",
                 },
             },
             j_fnaf_glam_chica = {
@@ -166,7 +203,7 @@ return {
             j_fnaf_pickles = {
                 name = "Pickles",
                 text = {
-                    "{C:green}Jar of Pickles",
+                    "{C:green}Jarro de Pickles",
                 },
             },
             j_fnaf_s_puppet = {
@@ -290,7 +327,7 @@ return {
             j_fnaf_chica = {
                 name = "Chica",
                 text = {
-                    "???"
+                    "{C:attention}-#1#%{} All Blind Scores"
                 },
             },
 
@@ -319,7 +356,6 @@ return {
                     "{C:red,s:1.1}Import your UCN data in your mod folder"
                 },
             }
-            
         },
 
         Voucher = { 
@@ -349,14 +385,14 @@ return {
             fnaf_security_seal = {
                 name = "Security Seal",
                 text = {
-                    "Immune to {C:green}debuffs",
+                    "Immune a {C:green}debuffs",
                 },
             },
             fnaf_guard_seal = {
                 name = "Guard Seal",
                 text = {
-                    "Cria um {C:green}Item{} card",
-                    "quando {C:attention}discartado",
+                    "Creates the {C:green}Item{} card",
+                    "when {C:attention}discarded",
                     "{C:inactive}(Must have room)",
                 },
             },
@@ -369,7 +405,7 @@ return {
                 },
             },
             p_fnaf_item_jumbo = {
-                name = "Item Pack",
+                name = "Jumbo Item Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
                     "{C:attention}#2#{C:green} Item{} cards to",
@@ -377,7 +413,7 @@ return {
                 },
             },
             p_fnaf_item_mega = {
-                name = "Item Pack",
+                name = "Mega Item Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
                     "{C:attention}#2#{C:green} Item{} cards to",
@@ -398,6 +434,12 @@ return {
                     "or Placeholder",
                 },
             },
+            fnaf_dont = {
+                name = "Não faça",
+                text = {
+                    "Não faça",
+                },
+            },
             fnaf_game_support = {
                 name = "Supporte de Game Data",
                 text = {
@@ -414,6 +456,9 @@ return {
         labels = {
             fnaf_security_seal = "Security Seal",
             fnaf_guard_seal = "Guard Seal",
+        },
+        dictionary = {
+            k_item_pack = "Item Pack"
         },
     }
 }
