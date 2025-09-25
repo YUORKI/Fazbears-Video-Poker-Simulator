@@ -416,24 +416,21 @@ return {
                 name = "Item Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:green} Item cards{} to",
-                    "be used immediately",
+                    "{C:attention}#2#{C:green} Item cards{}",
                 },
             },
             p_fnaf_item_jumbo = {
                 name = "Jumbo Item Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:green} Item cards{} to",
-                    "be used immediately",
+                    "{C:attention}#2#{C:green} Item cards{}",
                 },
             },
             p_fnaf_item_mega = {
                 name = "Mega Item Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:green} Item cards{} to",
-                    "be used immediately",
+                    "{C:attention}#2#{C:green} Item cards{}",
                 },
             },
             fnaf_code_WIP = {
