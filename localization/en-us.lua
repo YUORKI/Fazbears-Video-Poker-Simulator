@@ -416,7 +416,7 @@ return {
                 name = "Item Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:green} Item{} cards to",
+                    "{C:attention}#2#{C:green} Item cards{} to",
                     "be used immediately",
                 },
             },
@@ -424,7 +424,7 @@ return {
                 name = "Jumbo Item Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:green} Item{} cards to",
+                    "{C:attention}#2#{C:green} Item cards{} to",
                     "be used immediately",
                 },
             },
@@ -432,7 +432,7 @@ return {
                 name = "Mega Item Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:green} Item{} cards to",
+                    "{C:attention}#2#{C:green} Item cards{} to",
                     "be used immediately",
                 },
             },
