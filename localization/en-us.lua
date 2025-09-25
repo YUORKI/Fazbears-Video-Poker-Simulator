@@ -264,7 +264,7 @@ return {
                 text = {
                     "If the {C:attention}hand played{} is a",
                     "{C:attention}Base secret Poker Hand{}",
-                    "create a {C:spectral}Spectral{} card",
+                    "creates a {C:spectral}Spectral{} card",
                     "{C:inactive}(Must have room)",
                 },
             },
