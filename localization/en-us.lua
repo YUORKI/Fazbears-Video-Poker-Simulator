@@ -225,8 +225,10 @@ return {
             j_fnaf_s_puppet = {
                 name = "Security Puppet",
                 text = {
-                    "Adds a {C:attention}Security seal{} to {C:attention}kid{} cards",
-                    "held in hand at the {C:attention}end of the round{}",
+                    "Adds a {C:attention}Security seal{},"
+                    "to {C:attention}kid{} cards",
+                    "held in hand at the",
+                    "{C:attention}end of the round{}",
                 },
             }, 
             j_fnaf_helpy = {
