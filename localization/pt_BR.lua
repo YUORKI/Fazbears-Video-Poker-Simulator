@@ -4,33 +4,33 @@ return {
     descriptions = {
         Enhanced = {
             m_fnaf_pizza = {
-                name = "Pizza Card",
+                name = "Carta Pizza",
                 text = {
-                    "{C:chips}+#1#{} Chips",
-                    "no rank or suit",                    
-                    "Expires after {C:attention}#2#{} Usages",
+                     "{C:chips}+#1#{} Fichas",
+                    "sem classe ou naipe",                   
+                    "Expira depois de {C:attention}#2#{} Usos",
                 },
             },
             m_fnaf_glitch = {
-                name = "Glitch Card",
+                name = "Carta Bugada",
                 text = {
                     "",
                 }
             },
             m_fnaf_kid = {
-                name = "Kid",
+                name = "Criança",
                 text = {
-                    "{X:chips,C:white} X#1# {} Chips",
+                    "{X:chips,C:white} X#1# {} Fichas",
                 }
             }
         },
 
         fnaf_item = {
             c_fnaf_pizza_maker = {
-                name = "Fredbear Pizza Maker",
+                name = "Máquina De Pizza Fredbear",
                 text = {
-                    "Enhances {C:attention}#1#{} selected",
-                    "card into a",
+                    "Aprimora {C:attention}#1#{} carta(s)",
+                    "selecionadas para",
                     "{C:attention}#2#",
                 },
             },
@@ -46,32 +46,32 @@ return {
             c_fnaf_deathcoin = {
                 name = "Death Coin",
                 text = {
-                    "adds a {C:attention}#1#",
+                    "Adiciona a {C:attention}#1#",
                 },
             },
 
             c_fnaf_boost = {
-                name = "Card Booster Pack",
+                name = "Booster Pack",
                 text = {
-                    "Creates {C:attention}#1#{} cards"
+                    "Cria até {C:attention}#1#{} cartas"
                 },
             },
 
             c_fnaf_grabbag = {
                 name = "Grab Bag",
                 text = {
-                    "Creates up to {C:attention}#1#",
-                    "random {C:green}Item{} cards",
-                    "{C:inactive}(Must have room)",
+                    "Cria até {C:attention}#1#",
+                    "cartas de {C:green}Item{} aleatórias",
+                    "{C:inactive}(Deve ter espaço)",
                 },
             },
 
             c_fnaf_philately = {
                 name = "Philately collection",
                 text = {
-                    "Adds a {C:attention}Random Seal{}",
-                    "to {C:attention}1{} selected",
-                    "card in your hand",
+                    "Adiciona um {C:attention}Selo Aleatório{}",
+                    "a {C:attention}1{} carta selecionada",
+                    "na sua mão",
                 },
             },
         },
@@ -99,9 +99,9 @@ return {
             c_fnaf_secur_log = {
                 name = "Security Logbook",
                 text = {
-                    "Add a {C:gold}Guard Seal{}",
-                    "to {C:attention}1{} selected",
-                    "card in your hand",
+                    "Adiciona um {C:gold}Guard Seal{}",
+                    "a {C:attention}1{} carta selecionada",
+                    "na sua mão",
                 },
             },
             c_fnaf_bracelet = {
@@ -118,32 +118,32 @@ return {
             j_fnaf_endo_01 = {
                 name = "Endo-01",
                 text = {
-                    "{C:chips}+#1#{} Chips"
+                    "{C:chips}+#1#{} Fichas"
                 },
             },
             j_fnaf_time_clock = {
-                name = "Time Punch Clock",
+                name = "Relógio de ponto",
                 text = {
-                    "{C:chips}+#1#{} Chips after scoring",
-                    "a {C:attention}Straight{} with all cards",
-                    "being numbered",
+                    "{C:chips}+#1#{} Fichas depois de pontuar",
+                    "uma {C:attention}Sequência{} com todas cartas",
+                    "sendo numeradas",
                 },
             },
             j_fnaf_frog = {
                 name = "Happy Frog",
                 text = {
-                    "{C:chips}+#1#{} Chips for each",
-                    "{C:attention}Blind{} skipped this run",
-                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
+                    "{C:chips}+#1#{} Fichas por cada",
+                    "{C:attention}Blind{} ignorado nesta rodada",
+                    "{C:inactive}(No momento, {C:chips}+#2#{C:inactive} Fichas)",
                 },
             },
             j_fnaf_r_freddy = {
                 name = "Rockstar Freddy",
                 text = {
-                    "Gives {C:chips}+#1#{} Chips for",
-                    "each {C:attention}Gold Seal",
-                    "in your {C:attention}full deck",
-                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
+                    "Dá {C:chips}+#1#{} Fichas para",
+                    "cada {C:attention}Selo Dourado",
+                    "do seu {C:attention}baralho completo",
+                    "{C:inactive}(No momento, {C:chips}+#2#{C:inactive} Fichas)",
                 },
             },
             j_fnaf_bb = {
@@ -163,9 +163,9 @@ return {
             j_fnaf_pizzabot = {
                 name = "Pizza Bot",
                 text = {
-                    "Adds one {C:attention}Pizza{} card",
-                    "to deck when",
-                    "{C:attention}Blind{} is selected",
+                    "Adiciona uma carta {C:attention}Pizza{}",
+                    "ao seu baralho quando",
+                    "o {C:attention}Blind{} é selecionado",
                 },
             },
             j_fnaf_dee_dee = {
@@ -179,9 +179,9 @@ return {
             j_fnaf_glitchtrap = {
                 name = "Glitchtrap",
                 text = {
-                    "All played {C:attention}ace{} cards",
-                    "become {C:attention}Glitched{}",
-                    "when scored",
+                    "Todas as cartas de {C:attention}Ases{}",
+                    "se tornam cartas {C:attention}Bugadas{}",
+                    "quando pontuadas",
                 },
             },
             j_fnaf_ennard = {
@@ -194,10 +194,10 @@ return {
             j_fnaf_glam_chica = {
                 name = "Glamrock Chica",
                 text = {
-                    "Gains {X:mult,C:white} X#1# {} Mult",
-                    "per {C:attention}Pizza Card{} played", 
-                    "{C:red,s:1.1}Destroy all those cards before scoring{}",
-                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                    "Ganha  {X:mult,C:white} X#1# {} Multi",
+                    "por {C:attention}Pizza Card{} jogada", 
+                    "{C:red,s:1.1}Destrói todas essas cartas antes de pontuar{}",
+                    "{C:inactive}(No momento, {X:mult,C:white} X#2# {C:inactive} Multi)",
                 },
             },
             j_fnaf_pickles = {
@@ -209,16 +209,19 @@ return {
             j_fnaf_s_puppet = {
                 name = "Security Puppet",
                 text = {
-                    "Adds a {C:attention}Security seal{} to {C:attention}kid{} cards",
-                    "held in hand at the {C:attention}end of the round{}",
+                    "Adds a {C:attention}Security seal{},"
+                    "to {C:attention}kid{} cards",
+                    "held in hand at the",
+                    "{C:attention}end of the round{}",
                 },
             }, 
             j_fnaf_helpy = {
                 name = "Helpy",
                 text = {
-                    "Go up to {C:red}-$#1#{} in debt",
-                    "the run {C:red,s:1.1}ends{} if you're in debt",
-                    "after a boss blind",
+                    "Tenha até {C:red}-$#1#{} em dívida",
+                    "essa rodada {C:red,s:1.1}termina{} se",
+                    "voce estiver em dívida",
+                    "Depois da Blind de Chefe",
                 },
             },
             j_fnaf_learning = {
@@ -232,9 +235,9 @@ return {
             j_fnaf_gator = {
                 name = "Montgomery Gator",
                 text = {
-                    "Gains {X:mult,C:white} X#1# {} Mult for ",
-                    "every card destroyed",
-                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                    "Ganha {X:mult,C:white} X#1# {} Multi por",
+                    "cada carta destruída",
+                    "{C:inactive}(No momento, {X:mult,C:white} X#2# {C:inactive} Multi)",
                 },
             },
             j_fnaf_toy_bonnie = {
@@ -246,35 +249,35 @@ return {
             j_fnaf_m_hippo = {
                 name = "Mystic Hippo",
                 text = {
-                    "If the {C:attention}hand played{} is a",
-                    "{C:attention}Base secret Poker Hand{}",
-                    "create a {C:spectral}Spectral{} card",
-                    "{C:inactive}(Must have room)",
+                    "Se a {C:attention}mão de pôquer{} for",
+                    "{C:attention}mão de pôquer secreta base{}, cria um(a)",
+                    "carta {C:spectral}Espectral{} aleatória",
+                    "{C:inactive}(Deve ter espaço)",
                 },
             },
             j_fnaf_cassie = {
                 name = "Cassie",
                 text = {
-                    "Using a {C:green}item{} has a",
-                    "{C:green}#1# in #2#{} chance",
-                    "to create another one",
+                    "Usar um {C:green}item{} tem uma",
+                    "Chance de {C:green}#1# in #2#{}",
+                    "de criar outro",
                 },
             },
             j_fnaf_toy_chica = {
                 name = "Toy Chica",
                 text = {
-                    "{C:chips}+#2#{} Chips",
+                    "{C:chips}+#2#{} Fichas",
                     "por cada carta destruida",
-                    "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
+                    "{C:inactive}(No momento {C:chips}++#1#{C:inactive} Fichas)",
                 },
             },
             j_fnaf_missing = {
                 name = "Missing Poster",
                 text = {
-                    "Playing a hand with {C:attention}#3#{} Face cards",
-                    "have a {C:green}#1# in #2#{} chance to create ",
-                    "a {C:attention}consumable{} card",
-                    "{C:inactive}(Spectral cards not included)",
+                    "Jogar uma mão com {C:attention}#3#{} Cartas de Realeza",
+                    "tem chance de {C:green}#1# em #2#{} de criar",
+                    "uma carta {C:attention}consumível{}",
+                    "{C:inactive}(Cartas Espectrais não incluidas)",
                 },
             },
             j_fnaf_orville = {
@@ -287,7 +290,7 @@ return {
             j_fnaf_jackie = {
                 name = "Jackie",
                 text = {
-                    "Draw {C:attention}+#1#{} cards when",
+                    "Compre {C:attention}+#1#{} cartas",
                     "na sua ultima mão",
                 },
             },
@@ -327,7 +330,7 @@ return {
             j_fnaf_chica = {
                 name = "Chica",
                 text = {
-                    "{C:attention}-#1#%{} All Blind Scores"
+                    "{C:attention}-#1#%{} Todas Pontuações de Blind"
                 },
             },
 
@@ -353,7 +356,7 @@ return {
                 text = {
                     "Seu pontuação da {C:attention}UCN{} sera usado como {C:red,s:1.1}Multi{}",
                     "{C:inactive}(No momento {C:red,s:1.1} #1# {C:inactive} Multi)",
-                    "{C:red,s:1.1}Import your UCN data in your mod folder"
+                    "{C:red,s:1.1}Importe sua data de UCN na sua pasta do mod"
                 },
             }
         },
@@ -362,16 +365,15 @@ return {
             v_fnaf_collection = {
                 name = "Collection",
                 text = {
-                    "{C:attention}+#1#{} Booster slot",
-                    "available in shop",
+                    "{C:attention}+#1#{} Espaço Booster",
                 },
             },
             v_fnaf_starter_deck = {
                 name = "Starter Deck",
                 text = {
-                    "{C:tarot}Tarot{} cards may",
-                    "appear in any of",
-                    "the {C:attention}Item Packs",
+                    "Cartas de {C:tarot}Tarô{} podem",
+                    "aparecer em qualquer um",
+                    "dos {C:attention}Pacotes de Item",
                 },
             }
         },
@@ -391,33 +393,30 @@ return {
             fnaf_guard_seal = {
                 name = "Guard Seal",
                 text = {
-                    "Creates the {C:green}Item{} card",
-                    "when {C:attention}discarded",
-                    "{C:inactive}(Must have room)",
+                    "Cria uma carta de {C:green}Item{}",
+                    "quando {C:attention}descartada",
+                    "{C:inactive}(Deve ter espaço)",
                 },
             },
             p_fnaf_item_normal = {
-                name = "Item Pack",
+                name = "Pacote de Item",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:green} Item{} cards to",
-                    "be used immediately",
+                    "Escolha {C:attention}#1#{} de até",
+                    "{C:attention}#2#{C:green} cartas de Item{}",
                 },
             },
             p_fnaf_item_jumbo = {
-                name = "Jumbo Item Pack",
+                name = "Pacote de Item Jumbo",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:green} Item{} cards to",
-                    "be used immediately",
+                    "Escolha {C:attention}#1#{} de até",
+                    "{C:attention}#2#{C:green} cartas de Item{}",
                 },
             },
             p_fnaf_item_mega = {
-                name = "Mega Item Pack",
+                name = "Pacote de Item Mega",
                 text = {
-                    "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:green} Item{} cards to",
-                    "be used immediately",
+                    "Escolha {C:attention}#1#{} de até",
+                    "{C:attention}#2#{C:green} cartas de Item{}",
                 },
             },
             fnaf_code_WIP = {
