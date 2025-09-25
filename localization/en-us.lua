@@ -379,7 +379,6 @@ return {
                 name = "Collection",
                 text = {
                     "{C:attention}+#1#{} Booster slot",
-                    "available in shop",
                 },
             },
             v_fnaf_starter_deck = {
