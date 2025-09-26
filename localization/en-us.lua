@@ -210,8 +210,7 @@ return {
             j_fnaf_glam_chica = {
                 name = "Glamrock Chica",
                 text = {
-                    "Gains {X:mult,C:white} X#1# {} Mult",
-                    "per {C:attention}Pizza Card{} played", 
+                    "Gains {X:mult,C:white} X#1# {} Mult per {C:attention}Pizza Card{} played", 
                     "{C:red,s:1.1}Destroy all those cards before scoring{}",
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
                 },
@@ -225,10 +224,10 @@ return {
             j_fnaf_s_puppet = {
                 name = "Security Puppet",
                 text = {
-                    "Adds a {C:attention}Security seal{},"
+                    "Adds a {C:attention}Security seal",
                     "to {C:attention}kid{} cards",
                     "held in hand at the",
-                    "{C:attention}end of the round{}",
+                    "{C:attention}end of the round",
                 },
             }, 
             j_fnaf_helpy = {
@@ -313,14 +312,14 @@ return {
                 name = "Survival Logbook",
                 text = {
                     "{C:attention}Face{} cards get a",
-                    "{C:attention}Guard badge{} when scored",
+                    "{C:attention}#1#{} when scored",
                 },
             },
             j_fnaf_c_baby = {
                 name = "Circus Baby",
                 text = {
                     '{C:chips}+#1#{} Chips',
-                    "if your hand has all {C:attention}Suits{}",
+                    "if your hand played has all {C:attention}Suits{}",
                     '{C:inactive}(Hearts / Diamonds / Spades / Clubs)'
                 },
             },
