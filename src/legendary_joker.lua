@@ -20,8 +20,8 @@ local data_FNAF1 = {}
 SMODS.Joker {
     key = "bonnie",
     atlas = 'Joker',
-    pos = { x = 4, y = 8 },
-    soul_pos = { x = 4, y = 9 },
+    pos = { x = 1, y = 3 },
+    soul_pos = { x = 1, y = 4 },
 
     blueprint_compat = false,
     rarity = 4,
@@ -53,8 +53,8 @@ end
 SMODS.Joker {
     key = "chica",
     atlas = 'Joker',
-    pos = { x = 5, y = 8 },
-    soul_pos = { x = 5, y = 9 },
+    pos = { x = 2, y = 3 },
+    soul_pos = { x = 2, y = 4 },
     blueprint_compat = false,
     rarity = 4,
     cost = 20,
@@ -113,8 +113,8 @@ end
 SMODS.Joker {
     key = "freddy",
     atlas = 'Joker',
-    pos = { x = 3, y = 8 },
-    soul_pos = { x = 3, y = 9 },
+    pos = { x = 0, y = 3 },
+    soul_pos = { x = 0, y = 4 },
     blueprint_compat = true,
     rarity = 4,
     cost = 20,
@@ -163,8 +163,8 @@ SMODS.Joker {
 SMODS.Joker {
     key = "foxy",
     atlas = 'Joker',
-    pos = { x = 6, y = 8 },
-    soul_pos = { x = 6, y = 9 },
+    pos = { x = 3, y = 3 },
+    soul_pos = { x = 3, y = 4 },
 
     blueprint_compat = true,
     rarity = 4,
@@ -209,8 +209,8 @@ SMODS.Joker {
 SMODS.Joker {
     key = "golden",
     atlas = 'Joker',
-    pos = { x = 7, y = 8 },
-    soul_pos = { x = 7, y = 9 },
+    pos = { x = 4, y = 3 },
+    soul_pos = { x = 4, y = 4 },
 
     blueprint_compat = true,
     rarity = 4,

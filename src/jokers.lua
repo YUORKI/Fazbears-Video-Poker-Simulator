@@ -154,7 +154,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = 'dee_dee',
     atlas = 'Joker',
-    pos = { x = 6, y = 1 },
+    pos = { x = 4, y = 0 },
     blueprint_compat = true,
     rarity = 3,
     cost = 10,
@@ -195,7 +195,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "glitchtrap",
     atlas = 'Joker',
-    pos = { x = 5, y = 1 },
+    pos = { x = 3, y = 0 },
     blueprint_compat = false,
     rarity = 2,
     cost = 5,
@@ -235,7 +235,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "cassie",
     atlas = 'Joker',
-    pos = { x = 5, y = 4 },
+    pos = { x = 3, y = 2 },
     blueprint_compat = true,
     rarity = 2,
     cost = 4,
@@ -293,7 +293,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "logbook",
     atlas = 'Joker',
-    pos = { x = 5, y = 5 },
+    pos = { x = 6, y = 1 },
     blueprint_compat = false,
     rarity = 3,
     cost = 7,
@@ -331,7 +331,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "gator",
     atlas = 'Joker',
-    pos = { x = 0, y = 2 },
+    pos = { x = 0, y = 1 },
     blueprint_compat = false,
     rarity = 2,
     cost = 7,
@@ -415,7 +415,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "learning",
     atlas = 'Joker',
-    pos = { x = 7, y = 2 },
+    pos = { x = 4, y = 1 },
 
     blueprint_compat = false,
     rarity = 3,
@@ -498,7 +498,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "pickles",
     atlas = 'Joker',
-    pos = { x = 1, y = 5 },
+    pos = { x = 9, y = 1 },
     blueprint_compat = false,
     rarity = 1,
     cost = 1,
@@ -528,7 +528,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "s_puppet",
     atlas = 'Joker',
-    pos = { x = 4, y = 3 },
+    pos = { x = 2, y = 2 },
 
     blueprint_compat = false,
     rarity = 3,
@@ -562,7 +562,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "toy_chica",
     atlas = 'Joker',
-    pos = { x = 7, y = 3 },
+    pos = { x = 5, y = 2 },
 
     blueprint_compat = false,
     rarity = 2,
@@ -638,7 +638,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "m_hippo",
     atlas = 'Joker',
-    pos = { x = 9, y = 1 },
+    pos = { x = 1, y = 0 },
 
     blueprint_compat = true,
     rarity = 2,
@@ -693,7 +693,7 @@ SMODS.Joker {
     rarity = 3,
     cost = 8,
     atlas = 'Joker',
-    pos = { x = 1, y = 4 },
+    pos = { x = 3, y = 1 },
     config = { extra = { odds = 2, faces = 5 } },
     loc_vars = function(self, info_queue, card)
         return { vars = { G.GAME and G.GAME.probabilities.normal or 1, card.ability.extra.odds, card.ability.extra.faces } }
@@ -723,7 +723,7 @@ SMODS.Joker {
     rarity = 2,
     cost = 5,
     atlas = 'Joker',
-    pos = { x = 2, y = 4 },
+    pos = { x = 0, y = 2 },
 
     config = { extra = { odds = 2 } },
     loc_vars = function(self, info_queue, card)
@@ -767,7 +767,7 @@ SMODS.Joker {
     rarity = 2,
     cost = 5,
     atlas = 'Joker',
-    pos = { x = 3, y = 5 },
+    pos = { x = 4, y = 2 },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue+1] = G.P_CENTERS.m_wild
@@ -789,7 +789,7 @@ SMODS.Joker {
     rarity = 3,
     cost = 7,
     atlas = 'Joker',
-    pos = { x = 8, y = 4 },
+    pos = { x = 6, y = 2 },
     config = { extra = { hands_left = 10 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
@@ -803,7 +803,7 @@ SMODS.Joker {
     rarity = 1,
     cost = 3,
     atlas = 'Joker',
-    pos = { x = 0, y = 5 },
+    pos = { x = 8, y = 1 },
     config = { extra = { chips = 100 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
@@ -846,7 +846,7 @@ SMODS.Joker {
     rarity = 1,
     cost = 3,
     atlas = 'Joker',
-    pos = { x = 3, y = 4 },
+    pos = { x = 1, y = 2 },
     config = { extra = { chip_mod = 50 }, },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
@@ -872,7 +872,7 @@ SMODS.Joker {
     rarity = 2,
     cost = 5,
     atlas = 'Joker',
-    pos = { x = 5, y = 2 },
+    pos = { x = 2, y = 1 },
     config = {extra = { chips = 100 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
