@@ -57,7 +57,7 @@ local data_FNAFWORLD = {}
     end
 
 local data_FNAF6 = {}
-    for line in NFS.lines(SMODS.current_mod.path.."/imported/FNAF6.txt") do
+    for line in NFS.lines(SMODS.current_mod.path.."/imported/FFPS.txt") do
         local key, value = string.match(line, "(.*)=(.*)")
         if key and value then
             data_FNAF6[key] = tonumber(value)
@@ -190,7 +190,7 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 4,
     cost = 20,
-    config = { extra = { xmult = 1 + (0.25 * Freddy_Mult), xmult_gain = 0.25 } },
+    config = { extra = { xmult = 1 + (0.125 * Freddy_Mult), xmult_gain = 0.125 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_game_support", set = "Other" }
         return { vars = { card.ability.extra.xmult_gain, card.ability.extra.xmult } }

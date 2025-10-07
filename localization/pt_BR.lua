@@ -438,10 +438,12 @@ return {
                 },
             },
             fnaf_game_support = {
-                name = "Supporte de Game Data",
+                name = "Suporte de Game Data",
                 text = {
                     "Esse mod suporta",
-                    "FNAF 1",
+                    "FNAF 1 - 4",
+                    "Sister Location",
+                    "FFPS",
                     "UCN",
                 },
             },

@@ -278,7 +278,6 @@ SMODS.Joker {
     cost = 5,
     config = { extra = { cards = 3 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.cards } }
     end,
     calculate = function(self, card, context)
@@ -299,7 +298,6 @@ SMODS.Joker {
     cost = 7,
     config = { extra = { seal = 'fnaf_guard' } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
     end,
     calculate = function(self, card, context)
@@ -394,7 +392,6 @@ SMODS.Joker {
     cost = 6,
     config = { extra = { price = 1 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.price } }
     end,
     calculate = function(self, card, context)
@@ -645,7 +642,6 @@ SMODS.Joker {
     cost = 7,
     config = { extra = { poker_hand = 'Flush House', poker_hand2 = 'Five of a Kind', poker_hand3 = 'Flush Five' } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return {
             vars = {
                 localize(card.ability.extra.poker_hand, 'poker_hands'),
