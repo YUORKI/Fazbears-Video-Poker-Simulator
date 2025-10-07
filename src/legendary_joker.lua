@@ -15,6 +15,38 @@ local data_FNAF1 = {}
             data_FNAF1[key] = tonumber(value)
         end
     end
+
+local data_FNAF2 = {}
+    for line in NFS.lines(SMODS.current_mod.path.."/imported/FNAF2.txt") do
+        local key, value = string.match(line, "(.*)=(.*)")
+        if key and value then
+            data_FNAF2[key] = tonumber(value)
+        end
+    end
+
+local data_FNAF3 = {}
+    for line in NFS.lines(SMODS.current_mod.path.."/imported/FNAF3.txt") do
+        local key, value = string.match(line, "(.*)=(.*)")
+        if key and value then
+            data_FNAF3[key] = tonumber(value)
+        end
+    end
+
+local data_FNAF4 = {}
+    for line in NFS.lines(SMODS.current_mod.path.."/imported/FNAF4.txt") do
+        local key, value = string.match(line, "(.*)=(.*)")
+        if key and value then
+            data_FNAF4[key] = tonumber(value)
+        end
+    end
+
+local data_FNAFSL = {}
+    for line in NFS.lines(SMODS.current_mod.path.."/imported/FNAFSL.txt") do
+        local key, value = string.match(line, "(.*)=(.*)")
+        if key and value then
+            data_FNAFSL[key] = tonumber(value)
+        end
+    end
   
 
 SMODS.Joker {
@@ -100,9 +132,26 @@ for _, sum in pairs(data_FNAF1) do
     Freddy_Mult = Freddy_Mult + sum
 end
 
+for _, sum in pairs(data_FNAF2) do
+    Freddy_Mult = Freddy_Mult + sum
+end
+
+for _, sum in pairs(data_FNAF3) do
+    Freddy_Mult = Freddy_Mult + sum
+end
+
+for _, sum in pairs(data_FNAF4) do
+    Freddy_Mult = Freddy_Mult + sum
+end
+
+for _, sum in pairs(data_FNAFSL) do
+    Freddy_Mult = Freddy_Mult + sum
+end
+
 for _, sum in pairs(data_UCN) do
     Freddy_Mult = Freddy_Mult + sum
 end
+
 
 Freddy_Mult = Freddy_Mult - data_UCN.hs
 
