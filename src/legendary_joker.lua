@@ -47,7 +47,22 @@ local data_FNAFSL = {}
             data_FNAFSL[key] = tonumber(value)
         end
     end
-  
+
+local data_FNAFWORLD = {}
+    for line in NFS.lines(SMODS.current_mod.path.."/imported/FNAFWORLD.txt") do
+        local key, value = string.match(line, "(.*)=(.*)")
+        if key and value then
+            data_FNAFWORLD[key] = tonumber(value)
+        end
+    end
+
+local data_FNAF6 = {}
+    for line in NFS.lines(SMODS.current_mod.path.."/imported/FNAF6.txt") do
+        local key, value = string.match(line, "(.*)=(.*)")
+        if key and value then
+            data_FNAF6[key] = tonumber(value)
+        end
+    end
 
 SMODS.Joker {
     key = "bonnie",
@@ -130,33 +145,41 @@ local  Freddy_Mult = 0
 
 for _, sum in pairs(data_FNAF1) do
     Freddy_Mult = Freddy_Mult + sum
-end
+end -- 3
 
 for _, sum in pairs(data_FNAF2) do
     Freddy_Mult = Freddy_Mult + sum
-end
+end -- 12
 
 for _, sum in pairs(data_FNAF3) do
     Freddy_Mult = Freddy_Mult + sum
-end
+end -- 4
 
 for _, sum in pairs(data_FNAF4) do
     Freddy_Mult = Freddy_Mult + sum
-end
+end -- 10
 
 for _, sum in pairs(data_FNAFSL) do
     Freddy_Mult = Freddy_Mult + sum
-end
+end -- 3
+
+for _, sum in pairs(data_FNAFWORLD) do
+    Freddy_Mult = Freddy_Mult + sum
+end -- 9
+
+for _, sum in pairs(data_FNAF6) do
+    Freddy_Mult = Freddy_Mult + sum
+end -- 5
 
 for _, sum in pairs(data_UCN) do
     Freddy_Mult = Freddy_Mult + sum
-end
+end -- 17
 
 
 Freddy_Mult = Freddy_Mult - data_UCN.hs
 
-if Freddy_Mult > 19 then
-    Freddy_Mult = 19
+if Freddy_Mult > 63 then
+    Freddy_Mult = 63
 end
 
 SMODS.Joker {
