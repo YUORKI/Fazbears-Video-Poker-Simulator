@@ -30,6 +30,24 @@ Heres the list of what file corresponds to what game
 FNAF 1:
 freddy -> FNAF1.txt
 
+FNAF 2:
+freddy2 -> FNAF2.txt
+
+FNAF 3:
+freddy3 -> FNAF3.txt
+
+FNAF 4:
+fn4 -> FNAF4.txt
+
+FNAF WORLD:
+info -> FNAFWORLD.txt
+
+FNAF Sister Location:
+sl -> FNAFSL.txt
+
+Freddy Fazbear's Pizzeria Simulator:
+FNAF6 -> FFPS.txt
+
 UCN:
 CN -> UCN.txt
 
