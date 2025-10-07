@@ -1,0 +1,4 @@
+beatgame=0
+beat6=0
+goodend=0
+4thstar=0

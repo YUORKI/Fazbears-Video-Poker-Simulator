@@ -1,0 +1,5 @@
+com=0
+ins=0
+bla=0
+ban=0
+6th=1
