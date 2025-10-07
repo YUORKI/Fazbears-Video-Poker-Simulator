@@ -52,7 +52,7 @@ SMODS.Consumable{
     key = 'philately',
     set = 'fnaf_item',
     atlas = 'TarotFnaf',
-    pos = {x = 1, y = 2},
+    pos = {x = 9, y = 1},
     config = { max_highlighted = 1 },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }

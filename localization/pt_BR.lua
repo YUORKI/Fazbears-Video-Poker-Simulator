@@ -86,7 +86,7 @@ return {
                 },
             },            
             c_fnaf_kid = {
-                name = "Kid",
+                name = "Juventude",
                 text = {
                     "Aprimora {C:attention}#1#{} carta",
                     "selecionada para",
@@ -105,7 +105,7 @@ return {
                 },
             },
             c_fnaf_bracelet = {
-                name = "Bracelet",
+                name = "Bracelete",
                 text = {
                     "Adiciona um {C:uncommon}Selo Segurança{}",
                     "a {C:attention}1{} carta selecionada",
@@ -257,7 +257,7 @@ return {
                 name = "Cassie",
                 text = {
                     "Usar um {C:green}item{} tem uma",
-                    "Chance de {C:green}#1# in #2#{}",
+                    "Chance de {C:green}#1# em #2#{}",
                     "de criar outro",
                 },
             },
@@ -340,12 +340,12 @@ return {
             },
 
             j_fnaf_freddy = {
-                name = "Freddy",
+                name = "Freddy Fazbear",
                 text = {
-                    "{X:mult,C:white} X#1# {} Mult per Marks of Completion",
-                    "in fnaf games (Clickteam)",
-                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-                    "{C:red,s:1.1}Import your data in your mod folder"
+                    "{X:mult,C:white} X#1# {} Multi por Marcos de conclusão",
+                    "em jogos de fnaf (Clickteam)",
+                    "{C:inactive}(No momento {X:mult,C:white} X#2# {C:inactive} Multi)",
+                    "{C:red,s:1.1}Importe sua data de UCN na sua pasta do mod"
                 },
             },
 

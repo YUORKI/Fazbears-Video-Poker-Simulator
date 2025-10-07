@@ -86,7 +86,7 @@ return {
                 },
             },            
             c_fnaf_kid = {
-                name = "Kid",
+                name = "Youth",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
                     "card into a",
@@ -356,7 +356,7 @@ return {
             },
 
             j_fnaf_freddy = {
-                name = "Freddy",
+                name = "Freddy Fazbear",
                 text = {
                     "{X:mult,C:white} X#1# {} Mult per Marks of Completion",
                     "in fnaf games (Clickteam)",
