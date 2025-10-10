@@ -532,7 +532,6 @@ SMODS.Joker {
     cost = 8,
     config = { extra = { seal = 'fnaf_security' } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         info_queue[#info_queue + 1] = G.P_CENTERS.m_fnaf_kid
     end,
@@ -931,7 +930,6 @@ SMODS.Joker {
     pos = { x = 9, y = 0 },
     config = { extra = { broke = 40 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.broke } }
     end,
     calculate = function(self, card, context)
