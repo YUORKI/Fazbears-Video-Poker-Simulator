@@ -42,7 +42,6 @@ SMODS.Consumable{
     pos = {x = 4, y = 1},
     config = { max_highlighted = 2, mod_conv = 'm_fnaf_pizza' },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
@@ -55,7 +54,6 @@ SMODS.Consumable{
     pos = {x = 9, y = 1},
     config = { max_highlighted = 1 },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.max_highlighted } }
     end,
     use = function(self, card, area, copier)
@@ -96,7 +94,6 @@ SMODS.Consumable{
     pos = {x = 6, y = 1},
     config = { extra = { cards = 3 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         return { vars = { card.ability.extra.cards } }
     end,
     use = function(self, card, area, copier)
@@ -114,8 +111,6 @@ SMODS.Consumable{
     pos = {x = 7, y = 1},
     config = { extra = { cards = 2 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         return { vars = { card.ability.extra.cards } }
     end,
     use = function(self, card, area, copier)
@@ -142,7 +137,6 @@ SMODS.Consumable{
     atlas = 'TarotFnaf',
     pos = {x = 8, y = 1},
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         info_queue[#info_queue + 1] = { key = 'tag_boss', set = 'Tag' }
         return { vars = { localize { type = 'name_text', set = 'Tag', key = 'tag_boss' } } }
     end,
@@ -168,7 +162,6 @@ SMODS.Consumable {
     pos = {x = 1, y = 2},
     config = { extra = { cards = 2 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.cards } }
     end,
     use = function(self, card, area, copier)
