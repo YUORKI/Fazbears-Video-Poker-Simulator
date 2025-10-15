@@ -472,6 +472,7 @@ return {
         },
         dictionary = {
             k_item_pack = "Item Pack"
+            vs_options_setting_1 = "Test Config",
         },
     }
 }
