@@ -471,8 +471,8 @@ return {
             fnaf_guard_seal = "Guard Seal",
         },
         dictionary = {
-            k_item_pack = "Item Pack"
-            vs_options_setting_1 = "Test Config",
+            k_item_pack = "Item Pack",
+            fnaf_options_setting_1 = "Test Config",
         },
     }
 }

@@ -419,7 +419,6 @@ SMODS.Joker {
     cost = 9,
     config = { extra = { odds = 20 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { G.GAME and G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
     end,
     calculate = function(self, card, context)
