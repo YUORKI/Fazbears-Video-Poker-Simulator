@@ -270,7 +270,7 @@ return {
                 },
             },
             j_fnaf_cassie = {
-                name = "Cassie",
+                name = "Cassie's Roxy-Talky",
                 text = {
                     "Using a {C:green}item{} has a",
                     "{C:green}#1# in #2#{} chance",
