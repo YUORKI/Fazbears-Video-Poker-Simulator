@@ -472,7 +472,8 @@ return {
         },
         dictionary = {
             k_item_pack = "Item Pack",
-            fnaf_options_setting_1 = "Test Config",
+            fnaf_va = "Voicelines for Cards",
+            fnaf_va2 = "Toggle Voicelines (Configs are WIP)",
         },
     }
 }

@@ -2,10 +2,8 @@ local config = SMODS.current_mod.config
 SMODS.current_mod.config_tab = function()
 
     local voice_toggle = create_toggle({
-        label = 'Voicelines for Cards'
-        info = {
-            "Toggle Voicelines (Configs are WIP)"
-        }
+        label = localize('fnaf_va'),
+        ref_value = config.voice
     })
 
     return {n = G.UIT.ROOT, config = {r = 0.15 , minw = 8 , minh = 6 , align = "tm", padding = 0.1 , colour = G.C.BLACK }, 
