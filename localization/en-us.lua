@@ -473,7 +473,6 @@ return {
         dictionary = {
             k_item_pack = "Item Pack",
             fnaf_va = "Voicelines for Cards",
-            fnaf_va2 = "Toggle Voicelines (Configs are WIP)",
         },
     }
 }

@@ -178,12 +178,12 @@ SMODS.Sound({
 --- Glitchtrap voicelines
 
 SMODS.Sound({
-    key = "Glitchtrap_summon", 
+    key = "Glitchtrap_audio", 
     path = "Glitchtrap_summon.ogg",
 })
 
 SMODS.Sound({
-    key = "Glitchtrap_summon2", 
+    key = "Glitchtrap_audio2", 
     path = "Glitchtrap_summon2.ogg",
 })
 
@@ -275,44 +275,3 @@ SMODS.Sound({
     path = "BB_voice3.ogg",
 })
 
---- Rockstar Freddy
-SMODS.Sound({
-    key = "RF_Deposit", 
-    path = "RockFreddy_Deposit.ogg",
-})
-
-SMODS.Sound({
-    key = "RF_Deposited", 
-    path = "RockFreddy_Deposited.ogg",
-})
-
---- Toy Chica
-SMODS.Sound({
-    key = "TChica_ability", 
-    path = "ToyChica_ability.ogg",
-})
-
-SMODS.Sound({
-    key = "TChica_ability2", 
-    path = "ToyChica_ability2.ogg",
-})
-
-SMODS.Sound({
-    key = "TChica_summon", 
-    path = "ToyChica_summon.ogg",
-})
-
-SMODS.Sound({
-    key = "TChica_Laugh", 
-    path = "ToyChica_laugh.ogg",
-})
-
-SMODS.Sound({
-    key = "TChica_endofblind", 
-    path = "ToyChica_endofblind.ogg",
-})
-
-SMODS.Sound({
-    key = "TChica_3", 
-    path = "ToyChica3.ogg",
-})

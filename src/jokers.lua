@@ -16,6 +16,12 @@ function Game:update(dt)
     end
 end
 
+Voice = function(audio)
+    if FNAF.config.voices then
+        play_sound(audio[math.random(#audio)])
+    end
+end
+
 SMODS.Joker {
     key = 'endo_01',
     atlas = 'Joker',
@@ -80,20 +86,12 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main then
-            local bb_voice = math.random(1, 3)
             return {
                 x_chips = card.ability.extra.x_chips,
                 func = function()
-                    if (pseudorandom('fnaf_bb_voice') < 1 / 3) then
-                        card:juice_up(0.1, 0.2)
-                        if bb_voice == 1 then
-                            play_sound('fnaf_bb_voice1')
-                        elseif bb_voice == 2 then
-                            play_sound('fnaf_bb_voice2')
-                        elseif bb_voice == 3 then
-                            play_sound('fnaf_bb_voice3')
-                        end
-                    end
+                    card:juice_up(0.1, 0.2)
+                    local _bb_voices = {"fnaf_bb_voice1","fnaf_bb_voice2","fnaf_bb_voice3"}
+                    play_sound(_bb_voices[math.random(#_bb_voices)])
                 end
             }
         end
@@ -173,7 +171,8 @@ SMODS.Joker {
             G.E_MANAGER:add_event(Event({
                 func = function()
                     for _ = 1, jokers_to_create do
-                        play_sound('fnaf_DeeDee1')
+                        local deedee_voice = {"fnaf_DeeDee1","fnaf_DeeDee2"}
+                        Voicelines(deedee_voice)
                         SMODS.add_card {
                             set = 'Joker',
                             rarity = 'Common', 'Uncommon', 'Rare'
@@ -222,8 +221,9 @@ SMODS.Joker {
                     message = 'Glitched',
                     colour = G.C.PURPLE,                
                     func = function()
-                        if (pseudorandom('fnaf_freddy_scored') < 1 / 20) then
-                            sound = 'fnaf_Glitchtrap_summon'
+                        if (pseudorandom('fnaf_glitchtrap_scored') < 1 / 20) then
+                            local glitch_voice = {"fnaf_Glitchtrap_audio","fnaf_Glitchtrap_audio2"}
+                            Voicelines(glitch_voice)
                         end
                     end
                 }
@@ -363,22 +363,14 @@ SMODS.Joker {
         end
     end,
     add_to_deck = function(self, card, from_debuff)
-        local Monty_spawn = math.random(1, 2)
         card:juice_up(0.1, 0.2)
-        if Monty_spawn == 1 then
-            play_sound('fnaf_Monty_Rock')
-        elseif Monty_spawn == 2 then
-            play_sound('fnaf_Monty_RockAndRoll')
-        end
+        local _monty_summon = {"fnaf_Monty_Rock","fnaf_Monty_RockAndRoll","fnaf_Mont_heylittleguy"}
+        Voicelines(_monty_summon)
     end,
     remove_from_deck = function(self, card, from_debuff)
-        local Monty_spawn = math.random(1, 2)
         card:juice_up(0.1, 0.2)
-        if Monty_spawn == 1 then
-            play_sound('fnaf_Monty_growl')
-        elseif Monty_spawn == 2 then
-            play_sound('fnaf_Monty_growl2')
-        end
+        local _monty_spawn = {"fnaf_Monty_growl","fnaf_Monty_growl2"}
+        Voicelines(_monty_spawn)
     end,
 }
 
@@ -451,7 +443,7 @@ SMODS.Joker {
                 if SMODS.has_enhancement(scored_card, "m_fnaf_pizza") and not scored_card.debuff and not scored_card.vampired then
                     enhanced[#enhanced + 1] = scored_card
                     local _Glam_Pizza = {"fnaf_GlamChica_Pizza","fnaf_GlamChica_Pizza1","fnaf_GlamChica_Pizza2","fnaf_GlamChica_Pizza3"}
-                    play_sound(_Glam_Pizza[math.random(#_Glam_Pizza)])
+                    Voicelines(_Glam_Pizza)
                     scored_card.vampired = true
                     SMODS.destroy_cards(scored_card)
                     G.E_MANAGER:add_event(Event({
@@ -478,7 +470,7 @@ SMODS.Joker {
                     func = function()
                         card:juice_up(0.1, 0.2)
                         local _GlamChica_yes = {"fnaf_GlamChica_Eating","fnaf_GlamChica_Eating2"}
-                        play_sound(_GlamChica_yes[math.random(#_GlamChica_yes)])
+                        Voicelines(_GlamChica_yes)
                     end
                 }
             end
@@ -743,7 +735,7 @@ SMODS.Joker {
                         if (pseudorandom('fnaf_orville_scored') < 1 / 5) then
                             card:juice_up(0.1, 0.2)
                             local _Orville_score = {"fnaf_Orville01","fnaf_Orville02","fnaf_Orville03","fnaf_Orville04"}
-                            play_sound(_Orville_score[math.random(#_Orville_score)])
+                            Voicelines(_Orville_score)
                         end
                     end
                 }

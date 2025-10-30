@@ -64,6 +64,12 @@ local data_FNAF6 = {}
         end
     end
 
+Voicelines = function(audio)
+    if FNAF.config.voices then
+        play_sound(audio[math.random(#audio)])
+    end
+end
+
 SMODS.Joker {
     key = "bonnie",
     atlas = 'Joker',
@@ -90,12 +96,7 @@ SMODS.Joker {
     check_for_unlock = function(self, args)
         return args.type == 'win_custom'
     end
-}
-
-Chica_sfx_ee = function()
-    local _chica_sound_ee = {"fnaf_Chica_sfx","fnaf_Chica_sfx2","fnaf_Chica_sfx3","fnaf_Chica_sfx4","fnaf_Chica_sfx5","fnaf_Chica_sfx6"}
-    play_sound(_chica_sound_ee[math.random(#_chica_sound_ee)])
-end
+} 
 
 SMODS.Joker {
     key = "chica",
@@ -119,7 +120,8 @@ SMODS.Joker {
                 func = function()
                     if (pseudorandom('fnaf_Chica_scored') < 1 / 50) then
                         card:juice_up(0.1, 0.2)
-                        Chica_sfx_ee()
+                        local _chica_sound_ee = {"fnaf_Chica_sfx","fnaf_Chica_sfx2","fnaf_Chica_sfx3","fnaf_Chica_sfx4","fnaf_Chica_sfx5","fnaf_Chica_sfx6"}
+                        Voicelines(_chica_sound_ee)
                     end
                 end
             }
@@ -132,7 +134,7 @@ SMODS.Joker {
                 Chica_sfx_ee()
             else
                 local _chica_summon = {"fnaf_Chica_score","fnaf_Chica_score2"}
-                play_sound(_chica_summon[math.random(#_chica_summon)])
+                Voicelines(_chica_summon)
             end
         end
     end,
@@ -204,7 +206,7 @@ SMODS.Joker {
                     if (pseudorandom('fnaf_freddy_scored') < 1 / 4) then
                         card:juice_up(0.1, 0.2)
                         local _freddy_score = {"fnaf_freddy_score","fnaf_freddy_score2","fnaf_freddy_score3"}
-                        play_sound(_freddy_score[math.random(#_freddy_score)])
+                        Voicelines(_freddy_score)
                     end
                 end
             }
@@ -212,20 +214,14 @@ SMODS.Joker {
 
         if context.end_of_round and G.GAME.blind.boss and context.main_eval and (pseudorandom('fnaf_endblind') < 1 / 2) then
             card:juice_up(0.1, 0.2)
-            play_sound('fnaf_freddy_endofblind')
+            local _freddy_endblind = {"fnaf_freddy_endofblind"}
+            Voicelines(_freddy_endblind)
         end
     end,
     add_to_deck = function(self, card, from_debuff)
-        local freddy_spawn = math.random(1, 4)
-        if freddy_spawn == 1 then
-            play_sound('fnaf_Freddy_summon')
-        elseif freddy_spawn == 2 then
-            play_sound('fnaf_Freddy_summon2')
-        elseif freddy_spawn == 3 then
-            play_sound('fnaf_Freddy_summon3')
-        elseif freddy_spawn == 4 then
-            play_sound('fnaf_Freddy_summon4')
-        end
+        local freddy_spawn = {"fnaf_Freddy_summon","fnaf_Freddy_summon2","fnaf_Freddy_summon3","fnaf_Freddy_summon4",}
+        Voicelines(freddy_spawn)
+        
     end,
     check_for_unlock = function(self, args)
         return args.type == 'win_custom'
@@ -253,7 +249,7 @@ SMODS.Joker {
                     if (pseudorandom('fnaf_foxy_scored') < 1 / 4) then
                         card:juice_up(0.1, 0.2)
                         local _foxy_score = {"fnaf_foxy_score","fnaf_foxy_score2","fnaf_foxy_score3","fnaf_foxy_score4","fnaf_foxy_score5"}
-                        play_sound(_foxy_score[math.random(#_foxy_score)])
+                        Voicelines(_foxy_score)
                     end
                 end
             }
@@ -261,17 +257,13 @@ SMODS.Joker {
 
         if context.end_of_round and G.GAME.blind.boss and context.main_eval and (pseudorandom('fnaf_endblind') < 1 / 2) then
             card:juice_up(0.1, 0.2)
-            play_sound('fnaf_foxy_endofblind')
+            local _foxy_endblind = {"fnaf_foxy_endofblind"}
+            Voicelines(_foxy_endblind)
         end
     end,
     add_to_deck = function(self, card, from_debuff)
-        local foxy_spawn = math.random(1, 2)
-        card:juice_up(0.1, 0.2)
-        if foxy_spawn == 1 then
-            play_sound('fnaf_foxy_summon1')
-        elseif foxy_spawn == 2 then
-            play_sound('fnaf_foxy_summon2')
-        end
+        local foxy_spawn = {"fnaf_foxy_summon1","fnaf_Foxy_summon2",}
+        Voicelines(foxy_spawn)
     end,
     check_for_unlock = function(self, args)
         return args.type == 'win_custom'
@@ -303,7 +295,8 @@ SMODS.Joker {
         end
     end,
     add_to_deck = function(self, card, from_debuff)
-        play_sound('fnaf_Golden_Mumble')
+        local golden_spawn = {"fnaf_Golden_Mumble",}
+        Voicelines(golden_spawn)
     end,
     check_for_unlock = function(self, args)
         return args.type == 'win_custom'
