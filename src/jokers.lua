@@ -16,12 +16,6 @@ function Game:update(dt)
     end
 end
 
-Voice = function(audio)
-    if FNAF.config.voices then
-        play_sound(audio[math.random(#audio)])
-    end
-end
-
 SMODS.Joker {
     key = 'endo_01',
     atlas = 'Joker',
@@ -57,7 +51,6 @@ SMODS.Joker {
     eternal_compat = false,
     perishable_compat = false,
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_dont", set = "Other" }
     end,
     add_to_deck = function(self, card, from_debuff)
@@ -81,7 +74,6 @@ SMODS.Joker {
     no_collection = true,
     config = { extra = { x_chips = 0.5, round = 0, maxround = 3}},
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.x_chips, card.ability.extra.round, card.ability.extra.maxround }}
     end,
     calculate = function(self, card, context)
@@ -241,7 +233,6 @@ SMODS.Joker {
     cost = 4,
     config = { extra = { odds = 4 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
     end,
     calculate = function(self, card, context)
@@ -492,7 +483,6 @@ SMODS.Joker {
     cost = 1,
     config = { extra = { slots = 1 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.slots } }
     end,
 
@@ -589,7 +579,6 @@ SMODS.Joker {
     cost = 6,
     config = { extra = { seal = 'Gold', chips_mod = 25, chips = 0 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
 
         local gold_tally = 0
@@ -713,7 +702,6 @@ SMODS.Joker {
 
     config = { extra = { odds = 2 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
     end,
     calculate = function(self, card, context)
         if context.after and context.main_eval and not context.blueprint then
@@ -792,7 +780,6 @@ SMODS.Joker {
     pos = { x = 8, y = 1 },
     config = { extra = { chips = 100 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.chips } }
     end,
     calculate = function(self, card, context) -- code made by Joker Forge. I dont know how the fuck this work

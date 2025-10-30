@@ -1,4 +1,4 @@
-beatgame=1
+beatgame=0
 beat6=0
 c1=0
 c2=0

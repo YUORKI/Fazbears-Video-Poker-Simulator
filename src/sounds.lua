@@ -275,3 +275,9 @@ SMODS.Sound({
     path = "BB_voice3.ogg",
 })
 
+
+Voicelines = function(audio)
+    if FNAF.config.voices then
+        play_sound(audio[math.random(#audio)])
+    end
+end

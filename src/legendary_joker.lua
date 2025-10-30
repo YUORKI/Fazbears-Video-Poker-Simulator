@@ -64,12 +64,6 @@ local data_FNAF6 = {}
         end
     end
 
-Voicelines = function(audio)
-    if FNAF.config.voices then
-        play_sound(audio[math.random(#audio)])
-    end
-end
-
 SMODS.Joker {
     key = "bonnie",
     atlas = 'Joker',
