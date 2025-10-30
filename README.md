@@ -41,7 +41,7 @@ Currently, this mod adds:
 - Achievements
 - Config page
 
-More info at this [Roadmap](https://github.com/YUORKI/Fazbears-Video-Poker-Simulator/issues/1)
+More info at this [Roadmap](https://github.com/YUORKI/Fazbears-Video-Poker-Simulator/discussions/2#discussion-9090732)
 
 ## Installation
 
