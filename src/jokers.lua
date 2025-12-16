@@ -271,10 +271,13 @@ SMODS.Joker {
         return { vars = { card.ability.extra.cards } }
     end,
     calculate = function(self, card, context)
-        if context.drawing_cards and G.GAME.current_round.hands_left == 1 then
-            for i = 0, card.ability.extra.cards do
-                draw_card(G.deck, G.hand, 100, 'up', true)
-            end
+        if context.hand_drawn and G.GAME.current_round.hands_left == 1 and not card.ability.extra.triggered then
+            card.ability.extra.triggered = true
+            return {func = function() SMODS.draw_cards(card.ability.extra.cards) end}
+        end
+        
+        if context.end_of_round and context.main_eval then
+            card.ability.extra.triggered = false
         end
     end,
 }
