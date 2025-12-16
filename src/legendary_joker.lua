@@ -189,6 +189,11 @@ SMODS.Joker {
     config = { extra = { xmult = 1 + (0.125 * Freddy_Mult), xmult_gain = 0.125 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_game_support", set = "Other" }
+        
+        if Freddy_Mult == 0 then
+            info_queue[#info_queue + 1] = { key = "fnaf_save_import", set = "Other" }
+        end
+
         return { vars = { card.ability.extra.xmult_gain, card.ability.extra.xmult } }
     end,    
     calculate = function(self, card, context)
@@ -275,6 +280,9 @@ SMODS.Joker {
     cost = 20,
     config = { extra = { mult = data_UCN.hs or 1 }, },
     loc_vars = function(self, info_queue, card)
+        if data_UCN.hs == 0 then
+            info_queue[#info_queue + 1] = { key = "fnaf_save_import", set = "Other" }
+        end
         return { vars = { card.ability.extra.mult or 1 } }
     end,
     calculate = function(self, card, context)

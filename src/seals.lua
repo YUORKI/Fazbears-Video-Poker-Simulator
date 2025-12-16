@@ -2,7 +2,7 @@
 SMODS.Seal {
     key = 'security',
     atlas = 'Enhancers',
-    pos = { x = 5, y = 0 },
+    pos = { x = 4, y = 0 },
     badge_colour = G.C.GREEN,
     loc_vars = function(self, info_queue, card)
     end,

@@ -86,7 +86,7 @@ return {
                 },
             },            
             c_fnaf_kid = {
-                name = "Youth",
+                name = "Six of Cups",
                 text = {
                     "Enhances {C:attention}#1#{} selected",
                     "card into a",
@@ -361,7 +361,6 @@ return {
                     "{X:mult,C:white} X#1# {} Mult per Marks of Completion",
                     "in fnaf games (Clickteam)",
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
-                    "{C:red,s:1.1}Import your data in your mod folder"
                 },
             },
 
@@ -370,7 +369,6 @@ return {
                 text = {
                     "Your {C:attention}UCN{} sore will be used as {C:red,s:1.1}Mult{}",
                     "{C:inactive}(Currently {C:red,s:1.1} #1# {C:inactive} Mult)",
-                    "{C:red,s:1.1}Import your UCN data in your mod folder"
                 },
             }
         },
@@ -457,8 +455,19 @@ return {
                 name = "Game Data Supported",
                 text = {
                     "This mod supports",
-                    "FNAF 1",
+                    "FNAF 1 - 4",
+                    "FNAF World",
+                    "FNAF SL",
+                    "FFPS",
                     "UCN",
+                },
+            },
+            fnaf_save_import = {
+                name = "Game data Unavailable",
+                text = {
+                    "{C:red,s:1.1}No game data imported",
+                    "{C:red,s:1.1}Import your data",
+                    "{C:red,s:1.1}in your mod folder",
                 },
             },
         },
@@ -472,7 +481,8 @@ return {
         },
         dictionary = {
             k_item_pack = "Item Pack",
-            fnaf_va = "Voicelines for Cards",
+            fnaf_va = "Voicelines for cards",
+            fnaf_va_volumeslider = "Volume for voicelines",
         },
     }
 }

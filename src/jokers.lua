@@ -109,7 +109,6 @@ SMODS.Joker {
     rarity = 2,
     cost = 5,
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = G.P_CENTERS.m_fnaf_pizza
     end,
     calculate = function(self, card, context)
@@ -273,7 +272,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.drawing_cards and G.GAME.current_round.hands_left == 1 then
-            for i = 1, card.ability.extra.cards do
+            for i = 0, card.ability.extra.cards do
                 draw_card(G.deck, G.hand, 100, 'up', true)
             end
         end
@@ -424,7 +423,6 @@ SMODS.Joker {
     cost = 7,
     config = { extra = { Xmult_gain = 0.15, Xmult = 1 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.Xmult_gain, card.ability.extra.Xmult } }
     end,
     calculate = function(self, card, context)
@@ -546,7 +544,6 @@ SMODS.Joker {
     cost = 3,
     config = { extra = { chips = 0, chip_mod = 30 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.chips, card.ability.extra.chip_mod } }
     end,
     calculate = function(self, card, context)
@@ -743,7 +740,6 @@ SMODS.Joker {
     atlas = 'Joker',
     pos = { x = 4, y = 2 },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue+1] = G.P_CENTERS.m_wild
     end,
 }
@@ -766,7 +762,6 @@ SMODS.Joker {
     pos = { x = 6, y = 2 },
     config = { extra = { hands_left = 10 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.hands_left } }
     end,
 }
@@ -822,7 +817,6 @@ SMODS.Joker {
     pos = { x = 1, y = 2 },
     config = { extra = { chip_mod = 50 }, },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.chip_mod, G.GAME.skips * card.ability.extra.chip_mod } }
     end,
     calculate = function(self, card, context)
@@ -848,7 +842,6 @@ SMODS.Joker {
     pos = { x = 2, y = 1 },
     config = {extra = { chips = 100 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.chips } }
     end,
     calculate = function(self, card, context)

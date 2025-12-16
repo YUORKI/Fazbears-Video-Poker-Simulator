@@ -86,7 +86,7 @@ return {
                 },
             },            
             c_fnaf_kid = {
-                name = "Juventude",
+                name = "Seis de Copas",
                 text = {
                     "Aprimora {C:attention}#1#{} carta",
                     "selecionada para",
@@ -345,7 +345,6 @@ return {
                     "{X:mult,C:white} X#1# {} Multi por Marcos de conclusão",
                     "em jogos de fnaf (Clickteam)",
                     "{C:inactive}(No momento {X:mult,C:white} X#2# {C:inactive} Multi)",
-                    "{C:red,s:1.1}Importe sua data de UCN na sua pasta do mod"
                 },
             },
 
@@ -354,7 +353,6 @@ return {
                 text = {
                     "Seu pontuação da {C:attention}UCN{} sera usado como {C:red,s:1.1}Multi{}",
                     "{C:inactive}(No momento {C:red,s:1.1} #1# {C:inactive} Multi)",
-                    "{C:red,s:1.1}Importe sua data de UCN na sua pasta do mod"
                 },
             }
         },
@@ -442,9 +440,18 @@ return {
                 text = {
                     "Esse mod suporta",
                     "FNAF 1 - 4",
-                    "Sister Location",
+                    "FNAF World",
+                    "FNAF SL",
                     "FFPS",
                     "UCN",
+                },
+            },
+            fnaf_save_import = {
+                name = "Game data Unavailable",
+                text = {
+                    "{C:red,s:1.1}Sem data de jogo importada",
+                    "{C:red,s:1.1}Importe sua data",
+                    "{C:red,s:1.1}na sua pasta de mods",
                 },
             },
         },
@@ -458,7 +465,8 @@ return {
         },
         dictionary = {
             k_item_pack = "Item Pack",
-            fnaf_va = "Linhas de voz das Cartas",
+            fnaf_va = "Linhas de voz das cartas",
+            fnaf_va_volumeslider = "Volume das linhas de voz",
         },
     }
 }

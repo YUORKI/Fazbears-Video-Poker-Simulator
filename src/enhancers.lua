@@ -34,7 +34,7 @@ SMODS.Enhancement {
 SMODS.Enhancement {
     key = 'glitch',
     atlas = 'Enhancers',
-    pos = { x = 6, y = 0 },
+    pos = { x = 5, y = 0 },
     soul_pos = { x = 1, y = 0 },
     config = { extra = { max = 15, min = 0 } },
     loc_vars = function(self, info_queue, card)
