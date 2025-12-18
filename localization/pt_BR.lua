@@ -316,6 +316,15 @@ return {
                 },
             },
 
+            j_fnaf_toy_freddy = {
+                name = "Toy Freddy",
+                text = {
+                    "Todas as cartas de {C:attention}Realeza{} são",
+                    "consideradas",
+                    "cartas de {C:attention}Ás{}",
+                },
+            },
+
             -- Legendary
 
             j_fnaf_bonnie = {

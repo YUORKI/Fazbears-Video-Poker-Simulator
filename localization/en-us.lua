@@ -332,6 +332,16 @@ return {
                 },
             },
 
+            j_fnaf_toy_freddy = {
+                name = "Toy Freddy",
+                text = {
+                    "All {C:attention}Face{} cards are",
+                    "considered",
+                    "{C:attention}Ace{} cards",
+                },
+            },
+
+
             -- Legendary
 
             j_fnaf_bonnie = {

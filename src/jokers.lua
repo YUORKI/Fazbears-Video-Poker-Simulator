@@ -757,6 +757,26 @@ function Card.is_suit(self, ...)
 end
 
 SMODS.Joker {
+    key = "toy_freddy",
+    blueprint_compat = false,
+    rarity = 3,
+    cost = 7,
+    atlas = 'Joker',
+    pos = { x = 5, y = 3 },
+}
+
+local card_get_id_ref = Card.get_id
+function Card:get_id()
+    local original_id = card_get_id_ref(self)
+    if not original_id then return original_id end
+
+    if next(SMODS.find_card("j_fnaf_toy_freddy")) then
+        if original_id >= 11 and original_id <= 13 then return 14 end
+    end
+    return original_id
+end
+
+SMODS.Joker {
     key = "rock_chica",
     blueprint_compat = false,
     rarity = 3,
