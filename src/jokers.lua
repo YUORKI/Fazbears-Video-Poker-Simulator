@@ -473,6 +473,14 @@ SMODS.Joker {
             }
         end
     end,
+    in_pool = function(self, args)
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, 'm_fnaf_pizza') then
+                return true
+            end
+        end
+        return false
+    end
 }
 
 SMODS.Joker {
