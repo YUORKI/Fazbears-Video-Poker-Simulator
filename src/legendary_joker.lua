@@ -67,6 +67,7 @@ local data_FNAF6 = {}
 SMODS.Joker {
     key = "bonnie",
     atlas = 'Joker',
+    unlocked = false,
     pos = { x = 1, y = 3 },
     soul_pos = { x = 1, y = 4 },
 
@@ -87,14 +88,12 @@ SMODS.Joker {
             G.GAME.probabilities[k] = v / card.ability.extra.odds
         end
     end,
-    check_for_unlock = function(self, args)
-        return args.type == 'win_custom'
-    end
 } 
 
 SMODS.Joker {
     key = "chica",
     atlas = 'Joker',
+    unlocked = false,
     pos = { x = 2, y = 3 },
     soul_pos = { x = 2, y = 4 },
     blueprint_compat = false,
@@ -132,9 +131,6 @@ SMODS.Joker {
             end
         end
     end,
-    check_for_unlock = function(self, args)
-        return args.type == 'win_custom'
-    end
 }
 
 local  Freddy_Mult = 0
@@ -184,6 +180,7 @@ SMODS.Joker {
     pos = { x = 0, y = 3 },
     soul_pos = { x = 0, y = 4 },
     blueprint_compat = true,
+    unlocked = false,
     rarity = 4,
     cost = 20,
     config = { extra = { xmult = 1 + (0.125 * Freddy_Mult), xmult_gain = 0.125 } },
@@ -222,9 +219,6 @@ SMODS.Joker {
         Voicelines(freddy_spawn)
         
     end,
-    check_for_unlock = function(self, args)
-        return args.type == 'win_custom'
-    end
 }
 
 SMODS.Joker {
@@ -232,7 +226,7 @@ SMODS.Joker {
     atlas = 'Joker',
     pos = { x = 3, y = 3 },
     soul_pos = { x = 3, y = 4 },
-
+    unlocked = false,
     blueprint_compat = true,
     rarity = 4,
     cost = 20,
@@ -264,9 +258,6 @@ SMODS.Joker {
         local foxy_spawn = {"fnaf_foxy_summon1","fnaf_Foxy_summon2",}
         Voicelines(foxy_spawn)
     end,
-    check_for_unlock = function(self, args)
-        return args.type == 'win_custom'
-    end
 }
 
 SMODS.Joker {
@@ -274,7 +265,7 @@ SMODS.Joker {
     atlas = 'Joker',
     pos = { x = 4, y = 3 },
     soul_pos = { x = 4, y = 4 },
-
+    unlocked = false,
     blueprint_compat = true,
     rarity = 4,
     cost = 20,
@@ -300,9 +291,5 @@ SMODS.Joker {
         local golden_spawn = {"fnaf_Golden_Mumble",}
         Voicelines(golden_spawn)
     end,
-    check_for_unlock = function(self, args)
-        return args.type == 'win_custom'
-    end
-
 }
 

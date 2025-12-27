@@ -227,7 +227,7 @@ SMODS.Joker {
     key = "cassie",
     atlas = 'Joker',
     pos = { x = 3, y = 2 },
-    blueprint_compat = true,
+    blueprint_compat = true,    
     rarity = 2,
     cost = 4,
     config = { extra = { odds = 4 } },
@@ -420,7 +420,7 @@ SMODS.Joker {
     key = "glam_chica",
     atlas = 'Joker',
     pos = { x = 2, y = 0 },
-
+    unlocked = false,
     blueprint_compat = false,
     rarity = 2,
     cost = 7,
@@ -475,8 +475,23 @@ SMODS.Joker {
     end,
     in_pool = function(self, args)
         for _, playing_card in ipairs(G.playing_cards or {}) do
-            if SMODS.has_enhancement(playing_card, 'm_fnaf_pizza') then
+            if SMODS.has_enhancement(playing_card, "m_fnaf_pizza") then
                 return true
+            end
+        end
+        return false
+    end,
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { 5, localize { type = 'name_text', key = 'm_fnaf_pizza', set = 'Enhanced' } } }
+    end,
+    check_for_unlock = function(self, args) -- equivalent to `unlock_condition = { type = 'modify_deck', extra = { count = 5, enhancement = 'Glass Card', e_key = 'm_glass' } }`
+        if args.type == 'modify_deck' then
+            local count = 0
+            for _, playing_card in ipairs(G.playing_cards or {}) do
+                if SMODS.has_enhancement(playing_card, "m_fnaf_pizza") then count = count + 1 end
+                if count >= 5 then
+                    return true
+                end
             end
         end
         return false
@@ -484,33 +499,34 @@ SMODS.Joker {
 }
 
 SMODS.Joker {
-    key = "pickles",
-    atlas = 'Joker',
-    pos = { x = 9, y = 1 },
+    key = "rock_chica",
+    unlocked = false,
     blueprint_compat = false,
-    rarity = 1,
-    cost = 1,
-    config = { extra = { slots = 1 } },
+    rarity = 3,
+    cost = 7,
+    atlas = 'Joker',
+    pos = { x = 6, y = 2 },
+    config = { extra = { hands_left = 10 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.slots } }
+        return { vars = { card.ability.extra.hands_left } }
     end,
-
-    calculate = function(self, card, context)
-        if G.GAME.round_resets.blind_ante >= 38
-        then
-            G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
-            G.GAME.round_resets.blind_ante = 1
-            return { message = 'the pickle', colour = G.C.GREEN }
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { 10, localize { type = 'name_text', key = 'm_fnaf_pizza', set = 'Enhanced' } } }
+    end,
+    check_for_unlock = function(self, args) -- equivalent to `unlock_condition = { type = 'modify_deck', extra = { count = 5, enhancement = 'Glass Card', e_key = 'm_glass' } }`
+        if args.type == 'modify_deck' then
+            local count = 0
+            for _, playing_card in ipairs(G.playing_cards or {}) do
+                if SMODS.has_enhancement(playing_card, "m_fnaf_pizza") then count = count + 1 end
+                if count >= 10 then
+                    return true
+                end
+            end
         end
-    end,
-
-    add_to_deck = function(self, card, from_debuff)
-        G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.slots
-    end,
-    remove_from_deck = function(self, card, from_debuff)
-        G.jokers.config.card_limit = G.jokers.config.card_limit - card.ability.extra.slots
+        return false
     end
 }
+
 
 SMODS.Joker {
     key = "s_puppet",
@@ -623,7 +639,7 @@ SMODS.Joker {
     key = "m_hippo",
     atlas = 'Joker',
     pos = { x = 1, y = 0 },
-
+    unlocked = false,
     blueprint_compat = true,
     rarity = 2,
     cost = 7,
@@ -753,6 +769,9 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_CENTERS.m_wild
     end,
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { 200, G.PROFILES[G.SETTINGS.profile].career_stats.c_face_cards_played } }
+    end,
 }
 
 local is_suit_ref = Card.is_suit
@@ -783,19 +802,6 @@ function Card:get_id()
     end
     return original_id
 end
-
-SMODS.Joker {
-    key = "rock_chica",
-    blueprint_compat = false,
-    rarity = 3,
-    cost = 7,
-    atlas = 'Joker',
-    pos = { x = 6, y = 2 },
-    config = { extra = { hands_left = 10 } },
-    loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.hands_left } }
-    end,
-}
 
 SMODS.Joker {
     key = "time_clock",
@@ -843,7 +849,8 @@ SMODS.Joker {
     key = "frog",
     blueprint_compat = true,
     rarity = 1,
-    cost = 3,
+    cost = 3,    
+    unlocked = false,
     atlas = 'Joker',
     pos = { x = 1, y = 2 },
     config = { extra = { chip_mod = 50 }, },
@@ -862,6 +869,9 @@ SMODS.Joker {
             }
         end
     end,
+    check_for_unlock = function(self, args)
+        return args.type == 'continue_game'
+    end
 }
 
 SMODS.Joker {
@@ -869,6 +879,7 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 2,
     cost = 5,
+    unlocked = false,
     atlas = 'Joker',
     pos = { x = 2, y = 1 },
     config = {extra = { chips = 100 } },
@@ -918,6 +929,20 @@ SMODS.Joker {
                 }
             end
         end
+    end,
+    check_for_unlock = function(self, args)
+        if args.type == 'hand_contents' then
+            local tally = 0
+            for j = 1, #args.cards do
+                if SMODS.has_enhancement(args.cards[j], 'm_wild') then
+                    tally = tally + 1
+                    if tally == 5 then
+                        return true
+                    end
+                end
+            end
+        end
+        return false
     end
 }
 
@@ -962,5 +987,39 @@ SMODS.Joker {
     remove_from_deck = function(self, card, from_debuff)
         G.GAME.bankrupt_at = G.GAME.bankrupt_at + card.ability.extra.broke
     end,
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { 20 } }
+    end,
+    check_for_unlock = function(self, args)
+        return args.type == 'money' and G.GAME.dollars == -20 -- needs to check to fix unlock
+    end
 }
 
+SMODS.Joker {
+    key = "pickles",
+    atlas = 'Joker',
+    pos = { x = 9, y = 1 },
+    blueprint_compat = false,
+    rarity = 1,
+    cost = 1,
+    config = { extra = { slots = 1 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.slots } }
+    end,
+
+    calculate = function(self, card, context)
+        if G.GAME.round_resets.blind_ante >= 38
+        then
+            G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
+            G.GAME.round_resets.blind_ante = 1
+            return { message = 'the pickle', colour = G.C.GREEN }
+        end
+    end,
+
+    add_to_deck = function(self, card, from_debuff)
+        G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.slots
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        G.jokers.config.card_limit = G.jokers.config.card_limit - card.ability.extra.slots
+    end
+}

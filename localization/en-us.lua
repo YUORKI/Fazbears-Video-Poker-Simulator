@@ -136,6 +136,10 @@ return {
                     "{C:attention}Blind{} skipped this run",
                     "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
                 },
+                unlock = {
+                    "Continue a saved run",
+                    "from the main menu",
+                },
             },
             j_fnaf_r_freddy = {
                 name = "Rockstar Freddy",
@@ -214,6 +218,11 @@ return {
                     "{C:red,s:1.1}Destroy all those cards before scoring{}",
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
                 },
+                unlock = {
+                    "Have at least {E:1,C:attention}#1#",
+                    "{E:1,C:attention}#2#s{} in",
+                    "your deck",
+                },
             },
             j_fnaf_pickles = {
                 name = "Pickles",
@@ -236,6 +245,9 @@ return {
                     "Go up to {C:red}-$#1#{} in debt",
                     "the run {C:red,s:1.1}ends{} if you're in debt",
                     "after a boss blind",
+                },
+                unlock = {
+                    "Have {E:1,C:red}-$#1#",
                 },
             },
             j_fnaf_learning = {
@@ -268,6 +280,9 @@ return {
                     "creates a {C:spectral}Spectral{} card",
                     "{C:inactive}(Must have room)",
                 },
+                unlock = {
+					"Play a {C:attention}Secret Hand{}"
+				},
             },
             j_fnaf_cassie = {
                 name = "Cassie's Roxy-Talky",
@@ -275,6 +290,10 @@ return {
                     "Using a {C:green}item{} has a",
                     "{C:green}#1# in #2#{} chance",
                     "to create another one",
+                },
+                unlock = {
+                    "Discover every",
+                    "{E:1,C:green}Item{} card",
                 },
             },
             j_fnaf_toy_chica = {
@@ -312,7 +331,7 @@ return {
                 name = "Survival Logbook",
                 text = {
                     "{C:attention}Face{} cards get a",
-                    "{C:attention}#1#{} when scored",
+                    "{C:green}#Guard Seal#{} when scored",
                 },
             },
             j_fnaf_c_baby = {
@@ -322,6 +341,11 @@ return {
                     "if your hand played has all {C:attention}Suits{}",
                     '{C:inactive}(Hearts / Diamonds / Spades / Clubs)'
                 },
+                unlock = {
+                    "Play a 5 card hand",
+                    "that contains only",
+                    "{C:attention,E:1}Wild{} cards",
+                },
             },
 
             j_fnaf_rock_chica = {
@@ -329,6 +353,11 @@ return {
                 text = {
                     "{C:attention}Pizza cards{}" ,
                     "have {C:green,E:1,S:1.1}#1#{} more {C:attention}usages"
+                },
+                unlock = {
+                    "Have at least {E:1,C:attention}#1#",
+                    "{E:1,C:attention}#2#s{} in",
+                    "your deck",
                 },
             },
 
@@ -349,6 +378,9 @@ return {
                 text = {
                     "{X:green,C:white} x#1# {} all {C:green,E:1,S:1.1}listed{} {C:green,E:1,S:1.1}probabilities"
                 },
+                unlock = {
+                    "{E:1,s:1.3}?????",
+                },
             },
 
             j_fnaf_chica = {
@@ -356,12 +388,18 @@ return {
                 text = {
                     "{C:attention}-#1#%{} All Blind Scores"
                 },
+                unlock = {
+                    "{E:1,s:1.3}?????",
+                },
             },
 
             j_fnaf_foxy = {
                 name = "Foxy",
                 text = {
                     "Retrigger all played cards"
+                },
+                unlock = {
+                    "{E:1,s:1.3}?????",
                 },
             },
 
@@ -372,6 +410,9 @@ return {
                     "in fnaf games (Clickteam)",
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
                 },
+                unlock = {
+                    "{E:1,s:1.3}?????",
+                },
             },
 
             j_fnaf_golden = {
@@ -379,6 +420,9 @@ return {
                 text = {
                     "Your {C:attention}UCN{} sore will be used as {C:red,s:1.1}Mult{}",
                     "{C:inactive}(Currently {C:red,s:1.1} #1# {C:inactive} Mult)",
+                },
+                unlock = {
+                    "{E:1,s:1.3}?????",
                 },
             }
         },

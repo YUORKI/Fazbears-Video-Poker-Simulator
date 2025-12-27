@@ -21,7 +21,7 @@ SMODS.Voucher {
     key = 'starter_deck',
     atlas = 'Vouchers',
     pos = { x = 0, y = 1 },
-    unlocked = false,
+    unlocked = true,
     requires = { 'v_fnaf_collection' },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }

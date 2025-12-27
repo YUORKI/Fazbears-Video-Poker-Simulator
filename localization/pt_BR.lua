@@ -136,6 +136,10 @@ return {
                     "{C:attention}Blind{} ignorado nesta rodada",
                     "{C:inactive}(No momento, {C:chips}+#2#{C:inactive} Fichas)",
                 },
+                unlock = {
+                    "Continue uma tentativa salva",
+                    "através do menu principal",
+                },
             },
             j_fnaf_r_freddy = {
                 name = "Rockstar Freddy",
@@ -198,6 +202,11 @@ return {
                     "{C:red,s:1.1}Destrói todas essas cartas antes de pontuar{}",
                     "{C:inactive}(No momento, {X:mult,C:white} X#2# {C:inactive} Multi)",
                 },
+                unlock = {
+                    "Tenha pelo menos {E:1,C:attention}#1#",
+                    "{E:1,C:attention}#2#s{} no",
+                    "seu baralho",
+                },
             },
             j_fnaf_pickles = {
                 name = "Pickles",
@@ -220,6 +229,9 @@ return {
                     "essa {C:attention}rodada {C:red,s:1.1}termina{} se",
                     "você estiver em dívida",
                     "Depois da {C:attention}Blind de Chefe",
+                },
+                unlock = {
+                    "Tenha {E:1,C:red}-$#1#",
                 },
             },
             j_fnaf_learning = {
@@ -252,6 +264,9 @@ return {
                     "carta {C:spectral}Espectral{} aleatória",
                     "{C:inactive}(Deve ter espaço)",
                 },
+                unlock = {
+					"Jogue uma {C:attention}Mão Secreta{}"
+				},
             },
             j_fnaf_cassie = {
                 name = "Roxy-Talky da Cassie",
@@ -259,6 +274,10 @@ return {
                     "Usar um {C:green}item{} tem uma",
                     "Chance de {C:green}#1# em #2#{}",
                     "de criar outro",
+                },
+                unlock = {
+                    "Descubra cada",
+                    "carta de {E:1,C:green}Item{}",
                 },
             },
             j_fnaf_toy_chica = {
@@ -306,6 +325,11 @@ return {
                     "se sua mão jogada possuir todos {C:attention}Naipes{}",
                     '{C:inactive}(Copas / Ouros / Espadas / Paus)'
                 },
+                unlock={
+                    "Jogue uma mão de 5 cartas",
+                    "contendo somente",
+                    "cartas {C:attention,E:1}Naipe Curinga{}",
+                },
             },
 
             j_fnaf_rock_chica = {
@@ -313,6 +337,11 @@ return {
                 text = {
                     "{C:attention}Carta Pizza{}" ,
                     "tem mais {C:green,E:1,S:1.1}#1#{} {C:attention}usos"
+                },
+                unlock = {
+                    "Tenha pelo menos {E:1,C:attention}#1#",
+                    "{E:1,C:attention}#2#s{} no",
+                    "seu baralho",
                 },
             },
 
@@ -332,6 +361,9 @@ return {
                 text = {
                     "{X:green,C:white} x#1# {} todas {C:green,E:1,S:1.1}probabilidades listadas"
                 },
+                unlock = {
+                    "{E:1,s:1.3}?????",
+                },
             },
 
             j_fnaf_chica = {
@@ -339,12 +371,18 @@ return {
                 text = {
                     "{C:attention}-#1#%{} Todas Pontuações de Blind"
                 },
+                unlock = {
+                    "{E:1,s:1.3}?????",
+                },
             },
 
             j_fnaf_foxy = {
                 name = "Foxy",
                 text = {
                     "Reativa todas as cartas jogadas"
+                },
+                unlock = {
+                    "{E:1,s:1.3}?????",
                 },
             },
 
@@ -355,6 +393,9 @@ return {
                     "em jogos de fnaf (Clickteam)",
                     "{C:inactive}(No momento {X:mult,C:white} X#2# {C:inactive} Multi)",
                 },
+                unlock = {
+                    "{E:1,s:1.3}?????",
+                },
             },
 
             j_fnaf_golden = {
@@ -362,6 +403,9 @@ return {
                 text = {
                     "Seu pontuação da {C:attention}UCN{} sera usado como {C:red,s:1.1}Multi{}",
                     "{C:inactive}(No momento {C:red,s:1.1} #1# {C:inactive} Multi)",
+                },
+                unlock = {
+                    "{E:1,s:1.3}?????",
                 },
             }
         },
