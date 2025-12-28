@@ -288,6 +288,13 @@ return {
                     "{C:inactive}(No momento {C:chips}+#1#{C:inactive} Fichas)",
                 },
             },
+            j_fnaf_digi = {
+                name = "Digi-Typer",
+                text = {
+                    "{C:attention}Selos{} sem {C:attention}efeito{} quando pontuada",
+                    "Pontuam {C:chips}+#1#{} Fichas",
+                },
+            },
             j_fnaf_missing = {
                 name = "Cartaz Desaparecido",
                 text = {
@@ -505,6 +512,12 @@ return {
                     "{C:red,s:1.1}Sem data de jogo importada",
                     "{C:red,s:1.1}Importe sua data",
                     "{C:red,s:1.1}na sua pasta de mods",
+                },
+            },
+            fnaf_mod_comp = {
+                name = "Mod compatibility",
+                text = {
+                    "Only works with Base Balatro and FVPS",
                 },
             },
         },

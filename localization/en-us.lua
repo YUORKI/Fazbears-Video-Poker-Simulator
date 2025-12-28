@@ -300,8 +300,15 @@ return {
                 name = "Toy Chica",
                 text = {
                     "{C:chips}+#2#{} Chips",
-                    " for every card destroyed",
+                    "for every card destroyed",
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
+                },
+            },
+            j_fnaf_digi = {
+                name = "Digi-Typer",
+                text = {
+                    "{C:attention}Seals{} with no {C:attention}scored{} effect",
+                    "will score {C:chips}+#1#{} Chips",
                 },
             },
             j_fnaf_missing = {
@@ -522,6 +529,12 @@ return {
                     "{C:red,s:1.1}No game data imported",
                     "{C:red,s:1.1}Import your data",
                     "{C:red,s:1.1}in your mod folder",
+                },
+            },
+            fnaf_mod_comp = {
+                name = "Mod compatibility",
+                text = {
+                    "Only works with Base Balatro and FVPS",
                 },
             },
         },

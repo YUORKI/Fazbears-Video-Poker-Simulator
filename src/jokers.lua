@@ -875,6 +875,30 @@ SMODS.Joker {
 }
 
 SMODS.Joker {
+    key = "digi",
+    blueprint_compat = false,
+    rarity = 2,
+    cost = 4,
+    atlas = 'Joker',
+    pos = { x = 7, y = 3 },
+    config = {extra = { chips = 20 } },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = info_queue[#info_queue + 1] = { key = "fnaf_mod_comp", set = "Other" }
+        return { vars = { card.ability.extra.chips } }
+    end,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play then
+            if (context.other_card.seal == "Purple" or context.other_card.seal == "Blue"
+                or context.other_card.seal == "fnaf_security" or context.other_card.seal == "fnaf_guard" ) then
+                return {
+                    chips = card.ability.extra.chips
+                }
+            end
+        end
+    end,
+}
+
+SMODS.Joker {
     key = "c_baby",
     blueprint_compat = true,
     rarity = 2,
@@ -953,6 +977,7 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 1,
     cost = 5,
+    unlocked = false,
     atlas = 'Joker',
     pos = { x = 9, y = 0 },
     config = { extra = { broke = 40 } },
@@ -991,7 +1016,7 @@ SMODS.Joker {
         return { vars = { 20 } }
     end,
     check_for_unlock = function(self, args)
-        return args.type == 'money' and G.GAME.dollars == -20 -- needs to check to fix unlock
+        return args.type == 'money' and to_big(G.GAME.dollars) == to_big(G.GAME.bankrupt_at)
     end
 }
 
