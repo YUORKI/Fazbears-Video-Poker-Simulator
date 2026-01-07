@@ -74,6 +74,20 @@ return {
                     "card in your hand",
                 },
             },
+
+            c_fnaf_clearance = {
+                name = "Clearance Level card",
+                text = {
+                    "Upgrades the Data Diver"
+                },
+            },
+
+            c_fnaf_spatula = {
+                name = "Spatula",
+                text = {
+                    "Flips an joker"
+                },
+            },
         },
 
         Tarot = {
@@ -317,7 +331,7 @@ return {
                     "Playing a hand with {C:attention}#3#{} Face cards",
                     "have a {C:green}#1# in #2#{} chance to create ",
                     "a {C:attention}consumable{} card",
-                    "{C:inactive}(Spectral cards not included)",
+                    "{C:inactive}(Except Spectral cards)",
                 },
             },
             j_fnaf_orville = {
@@ -371,12 +385,31 @@ return {
             j_fnaf_toy_freddy = {
                 name = "Toy Freddy",
                 text = {
-                    "All {C:attention}Face{} cards are",
-                    "considered",
+                    "All {C:attention}Face{} cards", 
+                    "are considered",
                     "{C:attention}Ace{} cards",
                 },
             },
 
+            j_fnaf_diver = {
+                name = "Data Diver",
+                text = {
+                    "{C:attention}Clearance level{} cards will spawn", 
+                    "Using them {C:attention}upgrade{} this joker", 
+                    "for additional {C:attention}effects{} each",
+                    "{C:inactive}#1#/#2#",
+                },
+            },
+
+            j_fnaf_king = {
+                name = "Prize King",
+                text = {
+                    "{C:green}#2# in #3#{} chance",
+                    "to create a random consumable",
+                    "for every {C:money}$#1#{} spent",
+                    "{C:inactive}(Except Spectral cards)",
+                },
+            },
 
             -- Legendary
 
@@ -534,7 +567,19 @@ return {
             fnaf_mod_comp = {
                 name = "Mod compatibility",
                 text = {
-                    "Only works with Base Balatro and FVPS",
+                    "Only works", 
+                    "with Base Balatro", 
+                    "and FVPS",
+                },
+            },
+
+            fnaf_bug = {
+                name = "Contains an Know Bug",
+                text = {
+                    "This Card has a know Bug",
+                    "which is being fix",
+                    "Please consult the mod's repo",
+                    "To see if it's safe to use",
                 },
             },
         },

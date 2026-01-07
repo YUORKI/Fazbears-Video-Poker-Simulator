@@ -74,6 +74,20 @@ return {
                     "na sua mão",
                 },
             },
+
+            c_fnaf_clearance = {
+                name = "Carta Nível de Acesso",
+                text = {
+                    "Upa o Data Diver"
+                },
+            },
+
+            c_fnaf_spatula = {
+                name = "Spatula",
+                text = {
+                    "Flips an joker"
+                },
+            },
         },
 
         Tarot = {
@@ -253,7 +267,9 @@ return {
             j_fnaf_toy_bonnie = {
                 name = "Toy Bonnie",
                 text = {
-                    "{C:attention}7s{} funcionam como {C:attention}Naipe Curinga{}",
+                    "{C:attention}7s{} funcionam", 
+                    "como", 
+                    "{C:attention}Naipe Curinga{}",
                 },
             },
             j_fnaf_m_hippo = {
@@ -291,7 +307,7 @@ return {
             j_fnaf_digi = {
                 name = "Digi-Typer",
                 text = {
-                    "{C:attention}Selos{} sem {C:attention}efeito{} quando pontuada",
+                    "{C:attention}Selos{} sem {C:attention}efeito{}",
                     "Pontuam {C:chips}+#1#{} Fichas",
                 },
             },
@@ -301,7 +317,7 @@ return {
                     "Jogar uma mão com {C:attention}#3#{} Cartas de Realeza",
                     "tem chance de {C:green}#1# em #2#{} de criar",
                     "uma carta {C:attention}consumível{}",
-                    "{C:inactive}(Cartas Espectrais não incluidas)",
+                    "{C:inactive}(Exceto Cartas Espectrais)",
                 },
             },
             j_fnaf_orville = {
@@ -329,7 +345,8 @@ return {
                 name = "Circus Baby",
                 text = {
                     '{C:chips}+#1#{} Fichas',
-                    "se sua mão jogada possuir todos {C:attention}Naipes{}",
+                    "se sua mão jogada", 
+                    "possuir todos {C:attention}Naipes{}",
                     '{C:inactive}(Copas / Ouros / Espadas / Paus)'
                 },
                 unlock={
@@ -356,8 +373,27 @@ return {
                 name = "Toy Freddy",
                 text = {
                     "Todas as cartas de {C:attention}Realeza{} são",
-                    "consideradas",
-                    "cartas de {C:attention}Ás{}",
+                    "consideradas {C:attention}Ás{}",
+                },
+            },
+
+            j_fnaf_diver = {
+                name = "Data Diver",
+                text = {
+                    "Cartas {C:attention}Nível de Acesso{} irão spawnar", 
+                    "Usar elas {C:attention}upam{} esse curinga", 
+                    "Para {C:attention}efeitos{} adicionais cada",
+                    "{C:inactive}#1#/#2#",
+                },
+            },
+
+            j_fnaf_king = {
+                name = "Prize King",
+                text = {
+                    "Chance de {C:green}#2# em #3#{}",
+                    "de criar uma carta {C:attention}consumível{}",
+                    "por cada {C:money}$#1#{} gastado",
+                    "{C:inactive}(Exceto Cartas Espectrais)",
                 },
             },
 
@@ -478,15 +514,15 @@ return {
             fnaf_code_WIP = {
                 name = "WIP: Code",
                 text = {
-                    "Code is in Work in Progress",
+                    "Codigo esta Work in Progress",
                 },
             },
             fnaf_sprite_WIP = {
                 name = "WIP: Sprite",
                 text = {
-                    "Sprite is in ",
+                    "Sprite ainda em",
                     "Work in Progress",
-                    "or Placeholder",
+                    "ou Placeholder",
                 },
             },
             fnaf_dont = {
@@ -507,7 +543,7 @@ return {
                 },
             },
             fnaf_save_import = {
-                name = "Game data Unavailable",
+                name = "Data de Jogo Indisponível",
                 text = {
                     "{C:red,s:1.1}Sem data de jogo importada",
                     "{C:red,s:1.1}Importe sua data",
@@ -515,9 +551,20 @@ return {
                 },
             },
             fnaf_mod_comp = {
-                name = "Mod compatibility",
+                name = "Compatibilidade de Mod",
                 text = {
-                    "Only works with Base Balatro and FVPS",
+                    "Somente funciona", 
+                    "Com Balatro Base", 
+                    "e FVPS",
+                },
+            },
+            fnaf_bug = {
+                name = "Contém um bug conhecido",
+                text = {
+                    "Essa Carta tem um Bug",
+                    "que esta sendo cosertado",
+                    "Por favor cosulte o repo do mod",
+                    "para ver se e seguro de usar",
                 },
             },
         },

@@ -187,3 +187,20 @@ SMODS.Consumable {
 }
 
 
+SMODS.Consumable{
+    key = 'clearance', 
+    set = 'fnaf_item', 
+    atlas = 'TarotFnaf', 
+    pos = {x = 0, y = 1},
+    cost = 4,
+    loc_vars = function(self, info_queue, card)
+    end,
+    use = function(self, card, area, copier)
+    end,
+    can_use = function(self, card)
+        return next(SMODS.find_card("j_fnaf_diver"))
+    end,
+    in_pool = function(self, args)
+        return next(SMODS.find_card("j_fnaf_diver"))
+    end
+}

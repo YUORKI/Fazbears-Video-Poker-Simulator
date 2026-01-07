@@ -723,10 +723,6 @@ SMODS.Joker {
     cost = 5,
     atlas = 'Joker',
     pos = { x = 0, y = 2 },
-
-    config = { extra = { odds = 2 } },
-    loc_vars = function(self, info_queue, card)
-    end,
     calculate = function(self, card, context)
         if context.after and context.main_eval and not context.blueprint then
             local enhanced = {}
@@ -875,15 +871,100 @@ SMODS.Joker {
 }
 
 SMODS.Joker {
-    key = "digi",
+    key = "diver",
     blueprint_compat = false,
+    rarity = 1,
+    cost = 4,
+    atlas = 'Joker',
+    pos = { x = 9, y = 2 },
+    config = { extra = { levels = 0, maxlevel = 6, chips = 0, mult = 0, xmult = 0, h_size = 0} },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_bug", set = "Other" }
+        return { vars = { card.ability.extra.levels, card.ability.extra.maxlevel } }
+    end,
+    calculate = function(self, card, context)
+        if context.using_consumeable and not context.blueprint and context.consumeable.ability.set == 'fnaf_item' 
+        and not (card.ability.extra.levels == card.ability.extra.maxlevel) and context.consumeable.config.center.key == 'c_fnaf_clearance' then
+            card.ability.extra.levels = card.ability.extra.levels + 1
+
+            card.ability.extra.chips = 100 * card.ability.extra.levels -- 1
+            card.ability.extra.h_size = math.max(0, card.ability.extra.levels - 1) -- 2
+            card.ability.extra.mult = math.max(0, 5 * (card.ability.extra.levels - 2)) -- 3
+            card.ability.extra.xmult = math.max(1, 1 + (0.125 * (card.ability.extra.levels - 3)))  -- 4
+            -- 5
+            -- 6
+
+            if card.ability.extra.levels >= 2 then
+                G.hand:change_size(1)
+            end
+        end
+
+        if context.joker_main then
+            
+            return {
+                chips = card.ability.extra.chips,
+                mult = card.ability.extra.mult,
+                xmult = card.ability.extra.xmult,
+            }
+        end
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        G.hand:change_size(-card.ability.extra.h_size)
+    end
+}
+
+SMODS.Joker {
+    key = "king",
+    blueprint_compat = true,
+    rarity = 2,
+    cost = 5,
+    atlas = 'Joker',
+    pos = { x = 7, y = 0},
+    config = {extra = { money = 5, odds = 3} },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_mod_comp", set = "Other" }
+        return { vars = { card.ability.extra.money, G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
+    end,
+    calculate = function(self, card, context)
+        if context.money_altered and to_big(context.amount) <= to_big(-5)
+        and SMODS.pseudorandom_probability(card, 'fnaf_king', G.GAME.probabilities.normal, card.ability.extra.odds) 
+        and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit and G.STATES.SHOP then
+            G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+            G.E_MANAGER:add_event(Event({
+                trigger = 'before',
+                delay = 0.0,
+                func = (function()
+                    local sets = {'Tarot', 'Planet', 'fnaf_item'}
+                    local random_set = pseudorandom_element(sets, 'random_consumable_set')
+                    SMODS.add_card {
+                        set = random_set ,
+                        key_append = 'fnaf_king'
+                    }
+                    G.GAME.consumeable_buffer = 0
+                    return true
+                end)
+            }))
+            return {
+                message = "GAME WIN!",
+                colour = G.C.Gold,
+            }
+        end
+    end
+}
+
+SMODS.Joker {
+    key = "digi",
+    blueprint_compat = true,
     rarity = 2,
     cost = 4,
     atlas = 'Joker',
     pos = { x = 7, y = 3 },
     config = {extra = { chips = 20 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = info_queue[#info_queue + 1] = { key = "fnaf_mod_comp", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        info_queue[#info_queue + 1] = { key = "fnaf_mod_comp", set = "Other" }
         return { vars = { card.ability.extra.chips } }
     end,
     calculate = function(self, card, context)
