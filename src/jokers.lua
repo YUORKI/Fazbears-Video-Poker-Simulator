@@ -210,7 +210,7 @@ SMODS.Joker {
             if aces > 0 then
                 return {
                     message = 'Glitched',
-                    colour = G.C.PURPLE,                
+                    colour = G.C.PURPLE,
                     func = function()
                         if (pseudorandom('fnaf_glitchtrap_scored') < 1 / 20) then
                             local glitch_voice = {"fnaf_Glitchtrap_audio","fnaf_Glitchtrap_audio2"}
@@ -227,7 +227,7 @@ SMODS.Joker {
     key = "cassie",
     atlas = 'Joker',
     pos = { x = 3, y = 2 },
-    blueprint_compat = true,    
+    blueprint_compat = true,
     rarity = 2,
     cost = 4,
     config = { extra = { odds = 4 } },
@@ -235,7 +235,7 @@ SMODS.Joker {
         return { vars = { G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
     end,
     calculate = function(self, card, context)
-        if context.using_consumeable and not context.blueprint and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit 
+        if context.using_consumeable and not context.blueprint and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit
         and context.consumeable.ability.set == 'fnaf_item' and (pseudorandom('fnaf_cassie') < G.GAME.probabilities.normal / card.ability.extra.odds) then
             G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
             G.E_MANAGER:add_event(Event({
@@ -254,7 +254,7 @@ SMODS.Joker {
                 message = "+1 Item",
                 colour = G.C.GREEN,
             }
-            
+
         end
     end,
 }
@@ -262,7 +262,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "jackie",
     atlas = 'Joker',
-    pos = { x = 8, y = 0 },
+    pos = { x = 7, y = 2 },
     blueprint_compat = true,
     rarity = 2,
     cost = 5,
@@ -275,10 +275,16 @@ SMODS.Joker {
             card.ability.extra.triggered = true
             return {func = function() SMODS.draw_cards(card.ability.extra.cards) end}
         end
-        
+
         if context.end_of_round and context.main_eval then
             card.ability.extra.triggered = false
         end
+    end,
+    add_to_deck = function(self, card, from_debuff)
+        card.children.center:set_sprite_pos({x=8, y= 0})
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        card.children.center:set_sprite_pos({x=7, y= 2})
     end,
 }
 
@@ -339,10 +345,10 @@ SMODS.Joker {
             end
             if r_cards > 0 then
                 card.ability.extra.xmult = card.ability.extra.xmult + r_cards * card.ability.extra.xmult_gain
-                return { 
-                    message = localize { 
-                        type = 'variable', 
-                        key = 'a_xmult', 
+                return {
+                    message = localize {
+                        type = 'variable',
+                        key = 'a_xmult',
                         vars = { card.ability.extra.xmult },
                         sound = 'fnaf_Monty_laugh1'
                     }
@@ -451,12 +457,12 @@ SMODS.Joker {
             if #enhanced > 0 then
                 card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_gain * #enhanced
                 return {
-                    message = localize { 
-                        type = 'variable', 
-                        key = 'a_xmult', 
-                        vars = { 
-                            card.ability.extra.Xmult 
-                        } 
+                    message = localize {
+                        type = 'variable',
+                        key = 'a_xmult',
+                        vars = {
+                            card.ability.extra.Xmult
+                        }
                     },
                     colour = G.C.MULT,
                     func = function()
@@ -531,7 +537,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "s_puppet",
     atlas = 'Joker',
-    pos = { x = 2, y = 2 },
+    pos = { x = 8, y = 2 },
 
     blueprint_compat = false,
     rarity = 3,
@@ -550,6 +556,7 @@ SMODS.Joker {
                         colour = G.C.RED
                     }
                 else
+                    card.children.center:set_sprite_pos({x=2, y= 2})
                     context.other_card:set_seal(card.ability.extra.seal, nil, true)
                     return {
                         message = 'Secured',
@@ -558,6 +565,12 @@ SMODS.Joker {
                 end
             end
         end
+    end,
+    add_to_deck = function(self, card, from_debuff)
+        card.children.center:set_sprite_pos({x=2, y= 2})
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        card.children.center:set_sprite_pos({x=8, y= 2})
     end,
 }
 
@@ -736,8 +749,8 @@ SMODS.Joker {
             end
 
             if OrvilleUsed > 0 then
-                return { 
-                    message = 'MAGIC', 
+                return {
+                    message = 'MAGIC',
                     colour = G.C.ORANGE,
                     func = function()
                         if (pseudorandom('fnaf_orville_scored') < 1 / 5) then
@@ -750,7 +763,7 @@ SMODS.Joker {
             else
                 return true
             end
-            
+
         end
     end,
 }
@@ -820,7 +833,7 @@ SMODS.Joker {
                     break
                 end
             end
-    
+
                 return rankFound
             end)() and (function()
                 local rankFound = true
@@ -830,7 +843,7 @@ SMODS.Joker {
                         break
                     end
                 end
-    
+
     return rankFound
 end)()) then
                 return {
@@ -845,7 +858,7 @@ SMODS.Joker {
     key = "frog",
     blueprint_compat = true,
     rarity = 1,
-    cost = 3,    
+    cost = 3,
     unlocked = false,
     atlas = 'Joker',
     pos = { x = 1, y = 2 },
@@ -879,12 +892,11 @@ SMODS.Joker {
     pos = { x = 9, y = 2 },
     config = { extra = { levels = 0, maxlevel = 6, chips = 0, mult = 0, xmult = 0, h_size = 0} },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_bug", set = "Other" }
         return { vars = { card.ability.extra.levels, card.ability.extra.maxlevel } }
     end,
     calculate = function(self, card, context)
-        if context.using_consumeable and not context.blueprint and context.consumeable.ability.set == 'fnaf_item' 
+        if context.using_consumeable and not context.blueprint and context.consumeable.ability.set == 'fnaf_item'
         and not (card.ability.extra.levels == card.ability.extra.maxlevel) and context.consumeable.config.center.key == 'c_fnaf_clearance' then
             card.ability.extra.levels = card.ability.extra.levels + 1
 
@@ -901,7 +913,7 @@ SMODS.Joker {
         end
 
         if context.joker_main then
-            
+
             return {
                 chips = card.ability.extra.chips,
                 mult = card.ability.extra.mult,
@@ -920,7 +932,7 @@ SMODS.Joker {
     rarity = 2,
     cost = 5,
     atlas = 'Joker',
-    pos = { x = 7, y = 0},
+    pos = { x = 6, y = 3 },
     config = {extra = { money = 5, odds = 3} },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
@@ -929,7 +941,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.money_altered and to_big(context.amount) <= to_big(-5)
-        and SMODS.pseudorandom_probability(card, 'fnaf_king', G.GAME.probabilities.normal, card.ability.extra.odds) 
+        and SMODS.pseudorandom_probability(card, 'fnaf_king', G.GAME.probabilities.normal, card.ability.extra.odds)
         and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit and G.STATES.SHOP then
             G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
             G.E_MANAGER:add_event(Event({
@@ -937,9 +949,9 @@ SMODS.Joker {
                 delay = 0.0,
                 func = (function()
                     local sets = {'Tarot', 'Planet', 'fnaf_item'}
-                    local random_set = pseudorandom_element(sets, 'random_consumable_set')
+                    local King = pseudorandom_element(sets, 'random_consumable_set')
                     SMODS.add_card {
-                        set = random_set ,
+                        set = King ,
                         key_append = 'fnaf_king'
                     }
                     G.GAME.consumeable_buffer = 0
@@ -977,6 +989,122 @@ SMODS.Joker {
             end
         end
     end,
+}
+
+SMODS.Joker {
+    key = "nedd",
+    blueprint_compat = true,
+    rarity = 2,
+    cost = 4,
+    atlas = 'Joker',
+    pos = { x = 8, y = 3 },
+    config = {
+        extra = {
+                buff_description = localize('k_plus_joker'), -- 1
+                debuff_description = localize('k_plus_joker'), -- 2
+                nedd_buff = 0, nedd_debuff = 0,
+                chips = 400,
+                mult = 50,
+                xmultplier = 0.70,
+                h_size = 3,
+                hands = 1
+            }
+        },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        return { vars = { card.ability.extra.buff_description, card.ability.extra.debuff_description } }
+    end,
+    calculate = function(self, card, context)
+
+        local chip
+        local multi
+        local xmulti
+        local xchips
+
+        if context.setting_blind then
+
+            -- random generator
+            card.ability.extra.nedd_buff = pseudorandom('neddbuff', 1, 5)
+            print(card.ability.extra.nedd_buff)
+            card.ability.extra.nedd_debuff = pseudorandom('nedddebuff', 1, 5)
+            print(card.ability.extra.nedd_debuff)
+
+            while card.ability.extra.nedd_buff == card.ability.extra.nedd_debuff do
+                card.ability.extra.nedd_debuff = pseudorandom('nedddebuff', 1, 5)
+                print(card.ability.extra.nedd_debuff)
+            end
+
+
+
+            if card.ability.extra.nedd_buff == 1 then
+                return { message = 'the pickle', colour = G.C.GREEN }
+            elseif card.ability.extra.nedd_buff == 2 then
+
+            elseif card.ability.extra.nedd_buff == 3 then
+
+            elseif card.ability.extra.nedd_buff == 4 then
+                G.hand:change_size(card.ability.extra.h_size)
+            elseif card.ability.extra.nedd_buff == 5 then
+                ease_hands_played(card.ability.extra.hands)
+            end
+
+            -- debuff
+            if card.ability.extra.nedd_debuff == 1 then
+
+            elseif card.ability.extra.nedd_debuff == 2 then
+
+            elseif card.ability.extra.nedd_debuff == 3 then
+                ease_discard(-card.ability.extra.hands)
+            elseif card.ability.extra.nedd_debuff == 4 then
+                G.hand:change_size(-card.ability.extra.h_size)
+            elseif card.ability.extra.nedd_debuff == 5 then
+                ease_hands_played(-card.ability.extra.hands)
+            end
+
+        end
+
+        if context.end_of_round and context.main_eval then
+
+            Nedd_remove_buff(card.ability.extra.h_size, card.ability.extra.hands, card.ability.extra.nedd_buff, card.ability.extra.nedd_debuff )
+
+            chip = 0
+            multi = 0
+            xmulti = 0
+            xchips = 0
+
+        end
+
+        if context.joker_main then
+
+
+            if card.ability.extra.nedd_buff == 1 then
+                chip = card.ability.extra.chips
+            elseif card.ability.extra.nedd_buff == 2 then
+                multi = card.ability.extra.mult
+            elseif card.ability.extra.nedd_buff == 3 then
+                xmulti = 2 - card.ability.extra.xmultplier
+            end
+
+            --- debuff
+            if card.ability.extra.nedd_debuff == 1 then
+                xchips = card.ability.extra.xmultplier
+            elseif card.ability.extra.nedd_debuff == 2 then
+                xmulti = card.ability.extra.xmultplier
+            end
+
+            return {
+                chips = chip,
+                mult = multi,
+                xmult = xmulti,
+                x_chips = xchips
+            }
+        end
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+
+        Nedd_remove_buff(card.ability.extra.h_size, card.ability.extra.hands, card.ability.extra.nedd_buff, card.ability.extra.nedd_debuff )
+
+    end
 }
 
 SMODS.Joker {
@@ -1084,7 +1212,7 @@ SMODS.Joker {
                     return true
                 end
             }))
-           
+
         end
     end,
     add_to_deck = function(self, card, from_debuff)

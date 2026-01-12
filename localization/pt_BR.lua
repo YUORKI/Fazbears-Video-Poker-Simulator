@@ -577,7 +577,8 @@ return {
             fnaf_guard_seal = "Selo Guarda",
         },
         dictionary = {
-            k_item_pack = "Item Pack",
+            k_item_pack = "Pacote de Item",
+            k_plus_pizza = "+1 Pizza",
             fnaf_va = "Linhas de voz das cartas",
             fnaf_va_volumeslider = "Volume das linhas de voz",
         },

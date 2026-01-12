@@ -411,6 +411,18 @@ return {
                 },
             },
 
+            j_fnaf_nedd = {
+                name = "Nedd Bear",
+                text = {
+                    "Gives a random", 
+                    "{C:chips}Bonus{} and {C:red}Debuff{}", 
+                    "when {C:attention}Blind{} is selected",
+                    "",
+                    '#1#',
+                    '#2#',
+                },
+            },
+
             -- Legendary
 
             j_fnaf_bonnie = {
@@ -593,6 +605,10 @@ return {
         },
         dictionary = {
             k_item_pack = "Item Pack",
+
+            k_fnaf_nobuff = "No Buff Selected",
+            k_fnaf_nodebuff = "No Debuff Selected",
+
             fnaf_va = "Voicelines for cards",
             fnaf_va_volumeslider = "Volume for voicelines",
         },
