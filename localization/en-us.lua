@@ -605,7 +605,8 @@ return {
         },
         dictionary = {
             k_item_pack = "Item Pack",
-
+            
+            k_plus_pizza = "+1 Pizza",
             k_fnaf_nobuff = "No Buff Selected",
             k_fnaf_nodebuff = "No Debuff Selected",
 
