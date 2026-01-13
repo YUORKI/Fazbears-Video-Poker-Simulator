@@ -271,7 +271,8 @@ SMODS.Joker {
         return { vars = { card.ability.extra.cards } }
     end,
     calculate = function(self, card, context)
-        if context.hand_drawn and G.GAME.current_round.hands_left == 1 and not card.ability.extra.triggered then
+        if context.hand_drawn and G.GAME.current_round.hands_left == 1 and not card.ability.extra.triggered then 
+            card.children.center:set_sprite_pos({x=8, y= 0})
             card.ability.extra.triggered = true
             return {func = function() SMODS.draw_cards(card.ability.extra.cards) end}
         end
@@ -975,7 +976,6 @@ SMODS.Joker {
     pos = { x = 7, y = 3 },
     config = {extra = { chips = 20 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_mod_comp", set = "Other" }
         return { vars = { card.ability.extra.chips } }
     end,
@@ -1000,8 +1000,8 @@ SMODS.Joker {
     pos = { x = 8, y = 3 },
     config = {
         extra = {
-                buff_description = localize('k_plus_joker'), -- 1
-                debuff_description = localize('k_plus_joker'), -- 2
+                buff_description = 'k_fnaf_nobuff',
+                debuff_description = 'k_fnaf_nodebuff',
                 nedd_buff = 0, nedd_debuff = 0,
                 chips = 400,
                 mult = 50,
@@ -1011,8 +1011,14 @@ SMODS.Joker {
             }
         },
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        return { vars = { card.ability.extra.buff_description, card.ability.extra.debuff_description } }
+        return { 
+            vars = { 
+                localize(card.ability.extra.buff_description, 'dictionary' ),
+                localize(card.ability.extra.debuff_description, 'dictionary' )
+            } 
+        }
     end,
     calculate = function(self, card, context)
 
