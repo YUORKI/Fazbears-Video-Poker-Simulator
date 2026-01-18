@@ -3,7 +3,7 @@ SMODS.ConsumableType {
     key = 'fnaf_item',
 
     loc_txt = {
-        collection = 'Item Cards', 
+        collection = 'Item Cards',
         name = 'Item',
         undiscovered = {
             name = 'Not Discovered',
@@ -88,9 +88,9 @@ SMODS.Consumable{
 }
 
 SMODS.Consumable{
-    key = 'grabber', 
-    set = 'fnaf_item', 
-    atlas = 'TarotFnaf', 
+    key = 'grabber',
+    set = 'fnaf_item',
+    atlas = 'TarotFnaf',
     pos = {x = 6, y = 1},
     config = { extra = { cards = 3 } },
     loc_vars = function(self, info_queue, card)
@@ -117,7 +117,7 @@ SMODS.Consumable{
         local _edition = poll_edition('fnaf_item_boost_edition' .. G.GAME.round_resets.ante, 2, true)
         local _seal = SMODS.poll_seal({ mod = 10 })
         for i = 1, card.ability.extra.cards do
-            SMODS.add_card{ 
+            SMODS.add_card{
                 set = "Playing Card",
                 edition = _edition,
                 seal = _seal,
@@ -188,9 +188,9 @@ SMODS.Consumable {
 
 
 SMODS.Consumable{
-    key = 'clearance', 
-    set = 'fnaf_item', 
-    atlas = 'TarotFnaf', 
+    key = 'clearance',
+    set = 'fnaf_item',
+    atlas = 'TarotFnaf',
     pos = {x = 0, y = 1},
     cost = 4,
     loc_vars = function(self, info_queue, card)

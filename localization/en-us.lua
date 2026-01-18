@@ -7,7 +7,7 @@ return {
                 name = "Pizza Card",
                 text = {
                     "{C:chips}+#1#{} Chips",
-                    "no rank or suit",                    
+                    "no rank or suit",
                     "Expires after {C:attention}#2#{} Usages",
                 },
             },
@@ -98,7 +98,7 @@ return {
                     "card into a",
                     "{C:attention}#2#",
                 },
-            },            
+            },
             c_fnaf_kid = {
                 name = "Six of Cups",
                 text = {
@@ -107,9 +107,9 @@ return {
                     "{C:attention}#2#",
                 },
             },
-        },        
-        
-        Spectral = { 
+        },
+
+        Spectral = {
             c_fnaf_secur_log = {
                 name = "Security Logbook",
                 text = {
@@ -214,21 +214,21 @@ return {
             j_fnaf_vanessa = {
                 name = "Vanessa",
                 text = {
-                    "{C:red,s:1.1}+#1#{} Mult for every card ", 
+                    "{C:red,s:1.1}+#1#{} Mult for every card ",
                     "trigger with {C:attention}Security Seal",
                 },
             },
             j_fnaf_ennard = {
                 name = "Ennard",
                 text = {
-                    "Gains {C:money}$#1#{} for", 
+                    "Gains {C:money}$#1#{} for",
                     "every card destroyed",
                 },
             },
             j_fnaf_glam_chica = {
                 name = "Glamrock Chica",
                 text = {
-                    "Gains {X:mult,C:white} X#1# {} Mult per {C:attention}Pizza Card{} played", 
+                    "Gains {X:mult,C:white} X#1# {} Mult per {C:attention}Pizza Card{} played",
                     "{C:red,s:1.1}Destroy all those cards before scoring{}",
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
                 },
@@ -252,7 +252,7 @@ return {
                     "held in hand at the",
                     "{C:attention}end of the round",
                 },
-            }, 
+            },
             j_fnaf_helpy = {
                 name = "Helpy",
                 text = {
@@ -385,7 +385,7 @@ return {
             j_fnaf_toy_freddy = {
                 name = "Toy Freddy",
                 text = {
-                    "All {C:attention}Face{} cards", 
+                    "All {C:attention}Face{} cards",
                     "are considered",
                     "{C:attention}Ace{} cards",
                 },
@@ -394,8 +394,8 @@ return {
             j_fnaf_diver = {
                 name = "Data Diver",
                 text = {
-                    "{C:attention}Clearance level{} cards will spawn", 
-                    "Using them {C:attention}upgrade{} this joker", 
+                    "{C:attention}Clearance level{} cards will spawn",
+                    "Using them {C:attention}upgrade{} this joker",
                     "for additional {C:attention}effects{} each",
                     "{C:inactive}#1#/#2#",
                 },
@@ -414,8 +414,8 @@ return {
             j_fnaf_nedd = {
                 name = "Nedd Bear",
                 text = {
-                    "Gives a random", 
-                    "{C:chips}Bonus{} and {C:red}Debuff{}", 
+                    "Gives a random",
+                    "{C:chips}Bonus{} and {C:red}Debuff{}",
                     "when {C:attention}Blind{} is selected",
                     "",
                     '{C:chips}#1#',
@@ -479,7 +479,7 @@ return {
             }
         },
 
-        Voucher = { 
+        Voucher = {
             v_fnaf_collection = {
                 name = "Collection",
                 text = {
@@ -579,8 +579,8 @@ return {
             fnaf_mod_comp = {
                 name = "Mod compatibility",
                 text = {
-                    "Only works", 
-                    "with Base Balatro", 
+                    "Only works",
+                    "with Base Balatro",
                     "and FVPS",
                 },
             },
@@ -597,7 +597,7 @@ return {
         },
 
     },
-    
+
     misc = {
         labels = {
             fnaf_security_seal = "Security Seal",
@@ -606,7 +606,7 @@ return {
         dictionary = {
             k_item_pack = "Item Pack",
             k_plus_pizza = "+1 Pizza",
-            
+
             k_fnaf_nobuff = "No Buff Selected",
             k_fnaf_nodebuff = "No Debuff Selected",
 

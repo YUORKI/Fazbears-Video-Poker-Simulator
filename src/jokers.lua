@@ -271,7 +271,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.cards } }
     end,
     calculate = function(self, card, context)
-        if context.hand_drawn and G.GAME.current_round.hands_left == 1 and not card.ability.extra.triggered then 
+        if context.hand_drawn and G.GAME.current_round.hands_left == 1 and not card.ability.extra.triggered then
             card.children.center:set_sprite_pos({x=8, y= 0})
             card.ability.extra.triggered = true
             return {func = function() SMODS.draw_cards(card.ability.extra.cards) end}
@@ -335,7 +335,6 @@ SMODS.Joker {
     cost = 7,
     config = { extra = { xmult = 1, xmult_gain = 0.1 } },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.xmult_gain, card.ability.extra.xmult } }
     end,
     calculate = function(self, card, context)
@@ -1011,13 +1010,12 @@ SMODS.Joker {
             }
         },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_code_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
-        return { 
-            vars = { 
+        return {
+            vars = {
                 localize(card.ability.extra.buff_description, 'dictionary' ),
                 localize(card.ability.extra.debuff_description, 'dictionary' )
-            } 
+            }
         }
     end,
     calculate = function(self, card, context)
@@ -1040,9 +1038,6 @@ SMODS.Joker {
                 print(card.ability.extra.nedd_debuff)
             end
 
-
-
-            
             if card.ability.extra.nedd_buff == 4 then
                 G.hand:change_size(card.ability.extra.h_size)
             elseif card.ability.extra.nedd_buff == 5 then
@@ -1091,7 +1086,6 @@ SMODS.Joker {
         end
 
         if context.joker_main then
-
 
             if card.ability.extra.nedd_buff == 1 then
                 chip = card.ability.extra.chips

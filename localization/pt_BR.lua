@@ -98,7 +98,7 @@ return {
                     "selecionada para",
                     "{C:attention}#2#",
                 },
-            },            
+            },
             c_fnaf_kid = {
                 name = "Seis de Copas",
                 text = {
@@ -107,9 +107,9 @@ return {
                     "{C:attention}#2#",
                 },
             },
-        },        
-        
-        Spectral = { 
+        },
+
+        Spectral = {
             c_fnaf_secur_log = {
                 name = "Security Logbook",
                 text = {
@@ -205,7 +205,7 @@ return {
             j_fnaf_ennard = {
                 name = "Ennard",
                 text = {
-                    "Ganha {C:money}$#1#{} por", 
+                    "Ganha {C:money}$#1#{} por",
                     "cada carta destruida",
                 },
             },
@@ -235,7 +235,7 @@ return {
                     "para cartas {C:attention}Criança{} na mão",
                     "{C:attention}no fim da rodada",
                 },
-            }, 
+            },
             j_fnaf_helpy = {
                 name = "Helpy",
                 text = {
@@ -267,8 +267,8 @@ return {
             j_fnaf_toy_bonnie = {
                 name = "Toy Bonnie",
                 text = {
-                    "{C:attention}7s{} funcionam", 
-                    "como", 
+                    "{C:attention}7s{} funcionam",
+                    "como",
                     "{C:attention}Naipe Curinga{}",
                 },
             },
@@ -345,7 +345,7 @@ return {
                 name = "Circus Baby",
                 text = {
                     '{C:chips}+#1#{} Fichas',
-                    "se sua mão jogada", 
+                    "se sua mão jogada",
                     "possuir todos {C:attention}Naipes{}",
                     '{C:inactive}(Copas / Ouros / Espadas / Paus)'
                 },
@@ -380,8 +380,8 @@ return {
             j_fnaf_diver = {
                 name = "Data Diver",
                 text = {
-                    "Cartas {C:attention}Nível de Acesso{} irão spawnar", 
-                    "Usar elas {C:attention}upam{} esse curinga", 
+                    "Cartas {C:attention}Nível de Acesso{} irão spawnar",
+                    "Usar elas {C:attention}upam{} esse curinga",
                     "Para {C:attention}efeitos{} adicionais cada",
                     "{C:inactive}#1#/#2#",
                 },
@@ -394,6 +394,17 @@ return {
                     "de criar uma carta {C:attention}consumível{}",
                     "por cada {C:money}$#1#{} gastado",
                     "{C:inactive}(Exceto Cartas Espectrais)",
+                },
+            },
+
+            j_fnaf_nedd = {
+                name = "Nedd Bear",
+                text = {
+                    "Da um {C:chips}Bonus{} e {C:red}Debuff{}",
+                    "Aleatório quando uma",
+                    "{C:attention}Blind{} e selecionada",
+                    '{C:chips}#1#',
+                    '{C:red}#2#',
                 },
             },
 
@@ -453,7 +464,7 @@ return {
             }
         },
 
-        Voucher = { 
+        Voucher = {
             v_fnaf_collection = {
                 name = "Collection",
                 text = {
@@ -553,8 +564,8 @@ return {
             fnaf_mod_comp = {
                 name = "Compatibilidade de Mod",
                 text = {
-                    "Somente funciona", 
-                    "Com Balatro Base", 
+                    "Somente funciona",
+                    "Com Balatro Base",
                     "e FVPS",
                 },
             },
@@ -570,7 +581,7 @@ return {
         },
 
     },
-    
+
     misc = {
         labels = {
             fnaf_security_seal = "Selo Segurança",
