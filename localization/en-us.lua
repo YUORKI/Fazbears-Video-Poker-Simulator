@@ -418,8 +418,8 @@ return {
                     "{C:chips}Bonus{} and {C:red}Debuff{}", 
                     "when {C:attention}Blind{} is selected",
                     "",
-                    '#1#',
-                    '#2#',
+                    '{C:chips}#1#',
+                    '{C:red}#2#',
                 },
             },
 
@@ -609,6 +609,20 @@ return {
             
             k_fnaf_nobuff = "No Buff Selected",
             k_fnaf_nodebuff = "No Debuff Selected",
+
+            k_fnaf_buff_1 = "+400 Chips",
+            k_fnaf_buff_2 = "+50 Mult",
+            k_fnaf_buff_3 = "X1.3 Mult",
+            k_fnaf_buff_4 = "+3 Size",
+            k_fnaf_buff_5 = "+1 Hand",
+
+            k_fnaf_debuff_1 = "X0.7 Chips",
+            k_fnaf_debuff_2 = "X0.7 Mult",
+            k_fnaf_debuff_3 = "-1 Discard",
+            k_fnaf_debuff_4 = "-3 Size",
+            k_fnaf_debuff_5 = "-1 Hand",
+
+            k_fnaf_reset = "Reset",
 
             fnaf_va = "Voicelines for cards",
             fnaf_va_volumeslider = "Volume for voicelines",

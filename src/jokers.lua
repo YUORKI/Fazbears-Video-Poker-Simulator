@@ -1042,30 +1042,33 @@ SMODS.Joker {
 
 
 
-            if card.ability.extra.nedd_buff == 1 then
-                return { message = 'the pickle', colour = G.C.GREEN }
-            elseif card.ability.extra.nedd_buff == 2 then
-
-            elseif card.ability.extra.nedd_buff == 3 then
-
-            elseif card.ability.extra.nedd_buff == 4 then
+            
+            if card.ability.extra.nedd_buff == 4 then
                 G.hand:change_size(card.ability.extra.h_size)
             elseif card.ability.extra.nedd_buff == 5 then
                 ease_hands_played(card.ability.extra.hands)
             end
 
             -- debuff
-            if card.ability.extra.nedd_debuff == 1 then
-
-            elseif card.ability.extra.nedd_debuff == 2 then
-
-            elseif card.ability.extra.nedd_debuff == 3 then
+            if card.ability.extra.nedd_debuff == 3 then
                 ease_discard(-card.ability.extra.hands)
             elseif card.ability.extra.nedd_debuff == 4 then
                 G.hand:change_size(-card.ability.extra.h_size)
             elseif card.ability.extra.nedd_debuff == 5 then
                 ease_hands_played(-card.ability.extra.hands)
             end
+
+            card.ability.extra.buff_description = 'k_fnaf_buff_'..tostring(card.ability.extra.nedd_buff)
+            card.ability.extra.debuff_description = 'k_fnaf_debuff_'..tostring(card.ability.extra.nedd_debuff)
+
+            return {
+                message = localize('k_fnaf_buff_'..tostring(card.ability.extra.nedd_buff) ),
+                colour = G.C.CHIPS,
+                extra = {
+                    message = localize('k_fnaf_debuff_'..tostring(card.ability.extra.nedd_debuff) ),
+                    colour = G.C.RED,
+                }
+            }
 
         end
 
@@ -1078,6 +1081,13 @@ SMODS.Joker {
             xmulti = 0
             xchips = 0
 
+            card.ability.extra.buff_description = 'k_fnaf_nobuff'
+            card.ability.extra.debuff_description = 'k_fnaf_nodebuff'
+
+            return {
+                message = localize('k_fnaf_reset'),
+                colour = HEX('363636'),
+            }
         end
 
         if context.joker_main then
@@ -1109,7 +1119,8 @@ SMODS.Joker {
     remove_from_deck = function(self, card, from_debuff)
 
         Nedd_remove_buff(card.ability.extra.h_size, card.ability.extra.hands, card.ability.extra.nedd_buff, card.ability.extra.nedd_debuff )
-
+        card.ability.extra.buff_description = 'k_fnaf_nobuff'
+        card.ability.extra.debuff_description = 'k_fnaf_nodebuff'
     end
 }
 

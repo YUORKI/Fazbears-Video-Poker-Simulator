@@ -579,6 +579,24 @@ return {
         dictionary = {
             k_item_pack = "Pacote de Item",
             k_plus_pizza = "+1 Pizza",
+
+            k_fnaf_nobuff = "Sem Buff selecionado",
+            k_fnaf_nodebuff = "Sem Debuff selecionado",
+
+            k_fnaf_buff_1 = "+400 Fichas",
+            k_fnaf_buff_2 = "+50 Multi",
+            k_fnaf_buff_3 = "X1.3 Multi",
+            k_fnaf_buff_4 = "+3 Fichas",
+            k_fnaf_buff_5 = "+1 Mão",
+
+            k_fnaf_debuff_1 = "X0.7 Fichas",
+            k_fnaf_debuff_2 = "X0.7 Multi",
+            k_fnaf_debuff_3 = "-1 Descarte",
+            k_fnaf_debuff_4 = "-3 Tamanho",
+            k_fnaf_debuff_5 = "-1 Mão",
+
+            k_fnaf_reset = "Reset",
+
             fnaf_va = "Linhas de voz das cartas",
             fnaf_va_volumeslider = "Volume das linhas de voz",
         },
