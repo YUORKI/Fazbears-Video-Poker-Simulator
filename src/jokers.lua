@@ -1010,7 +1010,6 @@ SMODS.Joker {
             }
         },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return {
             vars = {
                 localize(card.ability.extra.buff_description, 'dictionary' ),
@@ -1027,15 +1026,14 @@ SMODS.Joker {
 
         if context.setting_blind then
 
+            card.children.center:set_sprite_pos({x=9, y= 3})
+
             -- random generator
             card.ability.extra.nedd_buff = pseudorandom('neddbuff', 1, 5)
-            print(card.ability.extra.nedd_buff)
             card.ability.extra.nedd_debuff = pseudorandom('nedddebuff', 1, 5)
-            print(card.ability.extra.nedd_debuff)
 
             while card.ability.extra.nedd_buff == card.ability.extra.nedd_debuff do
                 card.ability.extra.nedd_debuff = pseudorandom('nedddebuff', 1, 5)
-                print(card.ability.extra.nedd_debuff)
             end
 
             if card.ability.extra.nedd_buff == 4 then
@@ -1075,6 +1073,8 @@ SMODS.Joker {
             multi = 0
             xmulti = 0
             xchips = 0
+
+            card.children.center:set_sprite_pos({x=8, y= 3})
 
             card.ability.extra.buff_description = 'k_fnaf_nobuff'
             card.ability.extra.debuff_description = 'k_fnaf_nodebuff'

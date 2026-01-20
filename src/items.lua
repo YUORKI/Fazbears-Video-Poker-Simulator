@@ -24,7 +24,7 @@ SMODS.ConsumableType {
 
     primary_colour = G.C.GREEN,
     secondary_colour = G.C.GREEN,
-    collection_rows = { 3, 3 },
+    collection_rows = { 4, 4 },
 
     shop_rate = 2
 }
@@ -203,4 +203,23 @@ SMODS.Consumable{
     in_pool = function(self, args)
         return next(SMODS.find_card("j_fnaf_diver"))
     end
+}
+
+SMODS.Consumable{
+    key = 'battery',
+    set = 'fnaf_item',
+    atlas = 'TarotFnaf',
+    pos = {x = 2, y = 2},
+    cost = 5,
+    config = {extra = 1},
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra } }
+    end,
+    use = function(self, card, area, copier)
+        ease_hands_played(card.ability.extra)
+    end,
+    can_use = function(self, card)
+        return G.GAME.blind.in_blind
+    end
+    
 }

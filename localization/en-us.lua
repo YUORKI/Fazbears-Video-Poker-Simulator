@@ -82,10 +82,10 @@ return {
                 },
             },
 
-            c_fnaf_spatula = {
-                name = "Spatula",
+            c_fnaf_battery = {
+                name = "Battery",
                 text = {
-                    "Flips an joker"
+                    "Gain {C:chips}+#1# hand"
                 },
             },
         },
