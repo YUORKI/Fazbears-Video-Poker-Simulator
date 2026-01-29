@@ -493,6 +493,19 @@ return {
                     "appear in any of",
                     "the {C:attention}Item Packs",
                 },
+            },
+            v_fnaf_voucher = {
+                name = "Faz-Voucher",
+                text = {
+                    "{C:attention}+#1#{} Voucher slot",
+                },
+            },
+            v_fnaf_coupon = {
+                name = "Faz-Coupon",
+                text = {
+                    "{C:attention}+#1#{} free {C:green}Reroll",
+                    "per shop",
+                },
             }
         },
 

@@ -478,6 +478,19 @@ return {
                     "aparecer em qualquer um",
                     "dos {C:attention}Pacotes de Item",
                 },
+            },
+            v_fnaf_voucher = {
+                name = "Faz-Voucher",
+                text = {
+                    "{C:attention}+#1#{} Espaço Voucher",
+                },
+            },
+            v_fnaf_coupon = {
+                name = "Faz-Coupon",
+                text={
+                    "{C:attention}+#1#{} {C:green}atualização(ões){} grátis",
+                    "na loja",
+                },
             }
         },
 
