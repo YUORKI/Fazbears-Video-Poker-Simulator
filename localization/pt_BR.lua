@@ -384,6 +384,10 @@ return {
                     "Usar elas {C:attention}upam{} esse curinga",
                     "Para {C:attention}efeitos{} adicionais cada",
                     "{C:inactive}#1#/#2#",
+                    "{C:chips}+#3#{} Fichas",
+                    "{C:attention}+#4#{} Tamanho",
+                    "{C:red}+#5#{} Multi",
+                    "{X:mult,C:white}X#6#{} Multi",
                 },
             },
 
@@ -610,7 +614,7 @@ return {
             k_fnaf_buff_1 = "+400 Fichas",
             k_fnaf_buff_2 = "+50 Multi",
             k_fnaf_buff_3 = "X1.3 Multi",
-            k_fnaf_buff_4 = "+3 Fichas",
+            k_fnaf_buff_4 = "+3 Tamanho",
             k_fnaf_buff_5 = "+1 Mão",
 
             k_fnaf_debuff_1 = "X0.7 Fichas",

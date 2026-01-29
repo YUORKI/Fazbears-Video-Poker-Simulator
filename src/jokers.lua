@@ -893,7 +893,7 @@ SMODS.Joker {
     config = { extra = { levels = 0, maxlevel = 6, chips = 0, mult = 0, xmult = 0, h_size = 0} },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_bug", set = "Other" }
-        return { vars = { card.ability.extra.levels, card.ability.extra.maxlevel } }
+        return { vars = { card.ability.extra.levels, card.ability.extra.maxlevel, card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.xmult, card.ability.extra.h_size} }
     end,
     calculate = function(self, card, context)
         if context.using_consumeable and not context.blueprint and context.consumeable.ability.set == 'fnaf_item'

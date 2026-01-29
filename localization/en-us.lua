@@ -398,6 +398,10 @@ return {
                     "Using them {C:attention}upgrade{} this joker",
                     "for additional {C:attention}effects{} each",
                     "{C:inactive}#1#/#2#",
+                    "{C:chips}+#3#{} Chips",
+                    "{C:attention}+#4#{} Hand Size",
+                    "{C:red}+#5#{} Mult",
+                    "{X:mult,C:white}X#6#{} Mult",
                 },
             },
 
@@ -634,6 +638,12 @@ return {
             k_fnaf_debuff_3 = "-1 Discard",
             k_fnaf_debuff_4 = "-3 Size",
             k_fnaf_debuff_5 = "-1 Hand",
+
+            k_fnaf_chips = "Chips",
+            k_fnaf_mult = "Mult",
+            k_fnaf_h_size = "Hand Size",
+            
+            
 
             k_fnaf_reset = "Reset",
 
