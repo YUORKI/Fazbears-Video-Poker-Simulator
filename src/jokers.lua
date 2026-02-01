@@ -935,7 +935,6 @@ SMODS.Joker {
     pos = { x = 6, y = 3 },
     config = {extra = { money = 5, odds = 3} },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_mod_comp", set = "Other" }
         return { vars = { card.ability.extra.money, G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
     end,
