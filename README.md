@@ -21,14 +21,14 @@
 </div>
 
 Currently, this mod adds:
-- 30 Jokers
-- 2 Vouchers
+- 35 Jokers
+- 4 Vouchers
 - 2 Tarot Cards
 - 2 Spectral Cards
 - 3 Enhanced Cards
 - 2 Seals
 - 1 Consumable types (containing their own booster pack):
-  - 6 Item cards : used for utility during rounds
+  - 8 Item cards : used for utility during rounds
  
 ### Planned content
 - Finished Sprite work
@@ -39,7 +39,6 @@ Currently, this mod adds:
   - Have Items Cards that interact with Jokers (similar to [Pokermon](https://github.com/InertSteak/Pokermon))
 - Challenges
 - Achievements
-- Config page
 
 More info at this [Roadmap](https://github.com/YUORKI/Fazbears-Video-Poker-Simulator/discussions/2#discussion-9090732)
 
