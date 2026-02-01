@@ -17,7 +17,7 @@
 **Fazbear's Video Poker Simulator** is a Balatro mod that aims to add Five Nights at Freddy's™ themed content to balatro, such as new Jokers, Enhancements, Seals and Consumables
 
 <div style="text-align: center;">
-    <img width="100%" src="/assets/Sem%20t%C3%ADtulo.png">
+    <img width="100%" src="assets/Sem título.png">
 </div>
 
 Currently, this mod adds:
