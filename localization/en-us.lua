@@ -399,9 +399,9 @@ return {
                     "for additional {C:attention}effects{} each",
                     "{C:inactive}#1#/#2#",
                     "{C:chips}+#3#{} Chips",
-                    "{C:attention}+#4#{} Hand Size",
-                    "{C:red}+#5#{} Mult",
-                    "{X:mult,C:white}X#6#{} Mult",
+                    "{C:attention}+#6#{} Hand Size",
+                    "{C:red}+#4#{} Mult",
+                    "{X:mult,C:white}X#5#{} Mult",
                 },
             },
 
