@@ -30,17 +30,7 @@ Currently, this mod adds:
 - 1 Consumable types (containing their own booster pack):
   - 8 Item cards : used for utility during rounds
  
-### Planned content
-- Finished Sprite work
-- More Jokers
-- Themed Boss Blinds
-- More Consumable
-  - Remnant cards (similar to [Stands](https://balatromods.miraheze.org/wiki/Cardsauce/Stands) on [Cardsauce](https://github.com/BarrierTrio/Cardsauce)) 
-  - Have Items Cards that interact with Jokers (similar to [Pokermon](https://github.com/InertSteak/Pokermon))
-- Challenges
-- Achievements
-
-More info at this [Roadmap](https://github.com/YUORKI/Fazbears-Video-Poker-Simulator/discussions/2#discussion-9090732)
+Check the Roadmap for info at upcoming content this [Roadmap](https://github.com/YUORKI/Fazbears-Video-Poker-Simulator/discussions/2#discussion-9090732)
 
 ## Installation
 
