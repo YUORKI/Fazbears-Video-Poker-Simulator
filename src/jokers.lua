@@ -979,7 +979,7 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play then
-            if (context.other_card.seal == "Purple" or context.other_card.seal == "Blue"
+            if (context.other_card.seal == "Purple" or context.other_card.seal == "Blue" or context.other_card.seal == "fnaf_vip"
                 or context.other_card.seal == "fnaf_security" or context.other_card.seal == "fnaf_guard" ) then
                 return {
                     chips = card.ability.extra.chips
@@ -1237,6 +1237,20 @@ SMODS.Joker {
     check_for_unlock = function(self, args)
         return args.type == 'money' and to_big(G.GAME.dollars) == to_big(G.GAME.bankrupt_at)
     end
+}
+
+SMODS.Joker {
+    key = 'r_wolf',
+    atlas = 'Joker',
+    pos = { x = 5, y = 4 },
+    rarity = 3,
+    cost = 5,
+    blueprint_compat = false,
+    eternal_compat = true,
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
+        info_queue[#info_queue + 1] = {key = "fnaf_code_WIP", set = "Other"}
+    end,
 }
 
 SMODS.Joker {

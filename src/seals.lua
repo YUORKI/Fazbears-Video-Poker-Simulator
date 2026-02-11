@@ -38,9 +38,17 @@ SMODS.Seal {
     atlas = 'Enhancers',
     pos = { x = 5, y = 0 },
     badge_colour = G.C.GREEN,
+    always_scores = false,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
     end,
+    calculate = function(self, card, context)
+        if next(SMODS.find_card('j_fnaf_r_wolf')) and context.modify_scoring_hand and not context.blueprint then
+            return {
+                always_scores = true,
+            }
+        end
+    end
 }
 
 SMODS.current_mod.set_debuff = function(card)

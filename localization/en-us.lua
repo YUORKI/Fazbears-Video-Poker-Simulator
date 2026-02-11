@@ -427,6 +427,13 @@ return {
                 },
             },
 
+            j_fnaf_r_wolf = {
+                name = "Roxanne Wolf",
+                text = {
+                    "????????",
+                },
+            },
+
             -- Legendary
 
             j_fnaf_bonnie = {
