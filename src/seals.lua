@@ -33,6 +33,16 @@ SMODS.Seal {
     end
 }
 
+SMODS.Seal {
+    key = 'vip',
+    atlas = 'Enhancers',
+    pos = { x = 5, y = 0 },
+    badge_colour = G.C.GREEN,
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
+    end,
+}
+
 SMODS.current_mod.set_debuff = function(card)
     if card.seal == "fnaf_security" then
         return "prevent_debuff"

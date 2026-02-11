@@ -518,6 +518,12 @@ return {
                     "{C:inactive}(Deve ter espaço)",
                 },
             },
+            fnaf_vip_seal = {
+                name = "Selo Vip",
+                text = {
+                    "???",
+                },
+            },
             p_fnaf_item_normal = {
                 name = "Pacote de Item",
                 text = {
@@ -603,6 +609,7 @@ return {
         labels = {
             fnaf_security_seal = "Selo Segurança",
             fnaf_guard_seal = "Selo Guarda",
+            fnaf_vip_seal = "Selo Vip",
         },
         dictionary = {
             k_item_pack = "Pacote de Item",

@@ -533,6 +533,12 @@ return {
                     "{C:inactive}(Must have room)",
                 },
             },
+            fnaf_vip_seal = {
+                name = "Vip Seal",
+                text = {
+                    "Doesn't have effects on it's own",
+                },
+            },
             p_fnaf_item_normal = {
                 name = "Item Pack",
                 text = {
@@ -619,6 +625,7 @@ return {
         labels = {
             fnaf_security_seal = "Security Seal",
             fnaf_guard_seal = "Guard Seal",
+            fnaf_vip_seal = "Vip Seal",
         },
         dictionary = {
             k_item_pack = "Item Pack",

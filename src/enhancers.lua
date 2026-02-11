@@ -34,7 +34,7 @@ SMODS.Enhancement {
 SMODS.Enhancement {
     key = 'glitch',
     atlas = 'Enhancers',
-    pos = { x = 5, y = 0 },
+    pos = { x = 2, y = 0 },
     soul_pos = { x = 1, y = 0 },
     config = { extra = { max = 15, min = 0 } },
     loc_vars = function(self, info_queue, card)
@@ -74,17 +74,15 @@ SMODS.Enhancement {
             }
         end
     end
-    
+
 }
 
 SMODS.Enhancement {
-    key = 'kid',    
-    atlas = 'Enhancers',
-    pos = { x = 2, y = 0 },
+    key = 'kid',
+    pos = { x = 1, y = 0 },
     display_size = { w = 71 * 0.7, h = 95 * 0.7 },
     config = { x_chips = 1.2 },
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         return { vars = { card.ability.x_chips } }
     end,
 
