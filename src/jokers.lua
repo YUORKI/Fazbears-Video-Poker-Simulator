@@ -972,7 +972,7 @@ SMODS.Joker {
     cost = 4,
     atlas = 'Joker',
     pos = { x = 7, y = 3 },
-    config = {extra = { chips = 20 } },
+    config = {extra = { chips = 20, } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_mod_comp", set = "Other" }
         return { vars = { card.ability.extra.chips } }
@@ -1247,9 +1247,41 @@ SMODS.Joker {
     cost = 5,
     blueprint_compat = false,
     eternal_compat = true,
+    config = { extra = { seal = 'fnaf_vip' } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
-        info_queue[#info_queue + 1] = {key = "fnaf_code_WIP", set = "Other"}
+        info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
+    end,
+    calculate = function(self, card, context)
+        if context.modify_scoring_hand and context.other_card:get_seal(card.ability.extra.seal) then
+            return {
+                add_to_hand = true
+            }
+        end
+    end
+}
+
+SMODS.Joker {
+    key = 'vipig',
+    atlas = 'Joker',
+    pos = { x = 6, y = 4 },
+    rarity = 3,
+    cost = 5,
+    blueprint_compat = false,
+    eternal_compat = true,
+    config = { extra = { repetitions = 1, seal = 'fnaf_vip' } },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
+        info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
+        return { vars = { card.ability.extra.repetitions } }
+    end,
+    calculate = function(self, card, context)
+        if context.repetition and context.cardarea == G.play 
+        and context.other_card == context.scoring_hand[1] and context.other_card.seal == card.ability.extra.seal then
+            return {
+                repetitions = card.ability.extra.repetitions
+            }
+        end
     end,
 }
 

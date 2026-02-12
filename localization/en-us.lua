@@ -434,6 +434,15 @@ return {
                 },
             },
 
+            j_fnaf_vipig = {
+                name = "Very Informative Pig",
+                text = {
+                    "Retrigger {C:attention}first{} played card",
+                    "with {C:attention}Vip Seal{} used in scoring",
+                    "{C:attention}#1#{} additional times",
+                },
+            },
+
             -- Legendary
 
             j_fnaf_bonnie = {
