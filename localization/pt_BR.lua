@@ -415,16 +415,18 @@ return {
             j_fnaf_r_wolf = {
                 name = "Roxanne Wolf",
                 text = {
-                    "????????",
+                    "Cada {C:attention}carta jogada",
+                    "com {C:attention}Selo Vip{}",
+                    "conta na pontuação",
                 },
             },
 
             j_fnaf_vipig = {
                 name = "Very Informative Pig",
                 text = {
-                    "Retrigger {C:attention}first{} played card",
-                    "with {C:attention}Vip Seal{} used in scoring",
-                    "{C:attention}#1#{} additional times",
+                    "Reativa a {C:attention}primeira{} carta jogada",
+                    "com {C:attention}Selo Vip{} usada em pontuação",
+                    "{C:attention}#1#{} vezes adicionais",
                 },
             },
 
