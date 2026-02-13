@@ -81,4 +81,3 @@ SMODS.Consumable {
         }))
     end,
 }
-

@@ -285,6 +285,10 @@ return {
                 text = {
                     "{C:attention}7s{} works similar to {C:attention}Wild Cards{}",
                 },
+                unlock = {
+                    "Have a {C:attention}#2#{}",
+                    "With a {C:attention}#1#{} rank",
+                },
             },
             j_fnaf_m_hippo = {
                 name = "Mystic Hippo",

@@ -697,6 +697,14 @@ SMODS.Joker {
             end
         end
     end,
+    check_for_unlock = function(self, args)
+        for k, v in pairs(G.handlist) do
+            if G.GAME.hands[v].visible and not SMODS.PokerHands[v].visible then
+                return true
+            end
+	    end
+        return false
+    end
 }
 
 SMODS.Joker {
@@ -771,6 +779,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "toy_bonnie",
     blueprint_compat = false,
+    unlocked = false,
     rarity = 2,
     cost = 5,
     atlas = 'Joker',
@@ -779,8 +788,16 @@ SMODS.Joker {
         info_queue[#info_queue+1] = G.P_CENTERS.m_wild
     end,
     locked_loc_vars = function(self, info_queue, card)
-        return { vars = { 200, G.PROFILES[G.SETTINGS.profile].career_stats.c_face_cards_played } }
+        return { vars = { 7, localize { type = 'name_text', key = 'm_wild', set = 'Enhanced' } } }
     end,
+    check_for_unlock = function(self,args)
+        for _, card in ipairs(G.playing_cards or {}) do
+            if card:get_id() == 7 and SMODS.has_enhancement(card, "m_wild") then
+                return true
+            end
+        end
+        return false
+    end
 }
 
 local is_suit_ref = Card.is_suit
@@ -1258,7 +1275,15 @@ SMODS.Joker {
                 add_to_hand = true
             }
         end
-    end
+    end,
+    in_pool = function(self, args)
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if playing_card.seal == self.config.extra.seal then
+                return true
+            end
+        end
+        return false
+    end,
 }
 
 SMODS.Joker {
@@ -1282,6 +1307,14 @@ SMODS.Joker {
                 repetitions = card.ability.extra.repetitions
             }
         end
+    end,
+    in_pool = function(self, args)
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if playing_card.seal == self.config.extra.seal then
+                return true
+            end
+        end
+        return false
     end,
 }
 
