@@ -82,10 +82,19 @@ return {
                 },
             },
 
-            c_fnaf_spatula = {
-                name = "Spatula",
+            c_fnaf_battery = {
+                name = "Battery",
                 text = {
-                    "Flips an joker"
+                    "Ganha {C:chips}+#1# Mão"
+                },
+            },
+
+            c_fnaf_vip_pass = {
+                name = "Vip Pass",
+                text = {
+                    "Adiciona um {C:gold}Selo Vip{}",
+                    "a {C:attention}#1#{} carta selecionada",
+                    "na sua mão",
                 },
             },
         },
@@ -114,7 +123,7 @@ return {
                 name = "Security Logbook",
                 text = {
                     "Adiciona um {C:gold}Selo Guarda{}",
-                    "a {C:attention}1{} carta selecionada",
+                    "a {C:attention}#1#{} carta selecionada",
                     "na sua mão",
                 },
             },
@@ -122,7 +131,7 @@ return {
                 name = "Bracelete",
                 text = {
                     "Adiciona um {C:uncommon}Selo Segurança{}",
-                    "a {C:attention}1{} carta selecionada",
+                    "a {C:attention}#1#{} carta selecionada",
                     "na sua mão",
                 },
             },
@@ -270,6 +279,10 @@ return {
                     "{C:attention}7s{} funcionam",
                     "como",
                     "{C:attention}Naipe Curinga{}",
+                },
+                unlock = {
+                    "Tenha uma {C:attention}#2#{}",
+                    "Com um {C:attention}#1#{} de rank",
                 },
             },
             j_fnaf_m_hippo = {
@@ -539,7 +552,7 @@ return {
             fnaf_vip_seal = {
                 name = "Selo Vip",
                 text = {
-                    "???",
+                    "Não possui efeitos por si só ",
                 },
             },
             p_fnaf_item_normal = {

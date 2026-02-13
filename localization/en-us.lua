@@ -88,6 +88,15 @@ return {
                     "Gain {C:chips}+#1# hand"
                 },
             },
+
+             c_fnaf_vip_pass = {
+                name = "Vip Pass",
+                text = {
+                    "Add a {C:gold}Vip Seal{}",
+                    "to {C:attention}#1#{} selected",
+                    "card in your hand",
+                },
+            },
         },
 
         Tarot = {
@@ -114,7 +123,7 @@ return {
                 name = "Security Logbook",
                 text = {
                     "Add a {C:gold}Guard Seal{}",
-                    "to {C:attention}1{} selected",
+                    "to {C:attention}#1#{} selected",
                     "card in your hand",
                 },
             },
@@ -122,7 +131,7 @@ return {
                 name = "Bracelet",
                 text = {
                     "Add a {C:uncommon}Security Seal{}",
-                    "to {C:attention}1{} selected",
+                    "to {C:attention}#1#{} selected",
                     "card in your hand",
                 },
             },
