@@ -430,7 +430,9 @@ return {
             j_fnaf_r_wolf = {
                 name = "Roxanne Wolf",
                 text = {
-                    "????????",
+                    "Every {C:attention}played card",
+					"with {C:attention}Vip Seal{}",
+                    "counts in scoring",
                 },
             },
 
