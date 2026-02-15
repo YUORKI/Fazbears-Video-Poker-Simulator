@@ -491,7 +491,7 @@ return {
                 name = "Golden Freddy",
                 text = {
                     "Seu pontuação da {C:attention}UCN{} sera usado como {C:red,s:1.1}Multi{}",
-                    "{C:inactive}(No momento {C:red,s:1.1} #1# {C:inactive} Multi)",
+                    "{C:inactive}(No momento {C:red,s:1.1}#1#{C:inactive} Multi)",
                 },
                 unlock = {
                     "{E:1,s:1.3}?????",
@@ -613,6 +613,7 @@ return {
                     "{C:red,s:1.1}Sem data de jogo importada",
                     "{C:red,s:1.1}Importe sua data",
                     "{C:red,s:1.1}na sua pasta de mods",
+                    "{C:red,s:1.1}ou va para as configurações",
                 },
             },
             fnaf_mod_comp = {
@@ -665,6 +666,9 @@ return {
 
             fnaf_va = "Linhas de voz das cartas",
             fnaf_va_volumeslider = "Volume das linhas de voz",
+            fnaf_save = "Override de Save (Reinicie para Aplicar)",
+            fnaf_save_freddy = "Override do Freddy",
+            fnaf_save_golden = "Override do Golden Freddy",
         },
     }
 }

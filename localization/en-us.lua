@@ -506,7 +506,7 @@ return {
                 name = "Golden Freddy",
                 text = {
                     "Your {C:attention}UCN{} sore will be used as {C:red,s:1.1}Mult{}",
-                    "{C:inactive}(Currently {C:red,s:1.1} #1# {C:inactive} Mult)",
+                    "{C:inactive}(Currently {C:red,s:1.1}#1#{C:inactive} Mult)",
                 },
                 unlock = {
                     "{E:1,s:1.3}?????",
@@ -628,6 +628,7 @@ return {
                     "{C:red,s:1.1}No game data imported",
                     "{C:red,s:1.1}Import your data",
                     "{C:red,s:1.1}in your mod folder",
+                    "{C:red,s:1.1}or go to configs",
                 },
             },
             fnaf_mod_comp = {
@@ -687,6 +688,9 @@ return {
 
             fnaf_va = "Voicelines for cards",
             fnaf_va_volumeslider = "Volume for voicelines",
+            fnaf_save = "Save Override (Restart to apply)",
+            fnaf_save_freddy = "Freddy Override",
+            fnaf_save_golden = "Golden Freddy Override",
         },
     }
 }

@@ -5,6 +5,7 @@ Voicelines = function(audio)
     end
 end
 
+
 Nedd_remove_buff = function(extra_h_size, extra_hands, nedd_buff, nedd_debuff)
     if nedd_buff == 4 then
         G.hand:change_size(-extra_h_size)

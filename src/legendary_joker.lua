@@ -88,7 +88,7 @@ SMODS.Joker {
             G.GAME.probabilities[k] = v / card.ability.extra.odds
         end
     end,
-} 
+}
 
 SMODS.Joker {
     key = "chica",
@@ -170,8 +170,18 @@ end -- 17
 
 Freddy_Mult = Freddy_Mult - data_UCN.hs
 
+Golden_Mult = data_UCN.hs
+
 if Freddy_Mult > 63 then
     Freddy_Mult = 63
+end
+
+if FNAF.config.freddyimport then
+    Freddy_Mult = 63
+end
+
+if FNAF.config.goldenimport then
+    Golden_Mult = 10600
 end
 
 SMODS.Joker {
@@ -183,16 +193,16 @@ SMODS.Joker {
     unlocked = false,
     rarity = 4,
     cost = 20,
-    config = { extra = { xmult = 1 + (0.125 * Freddy_Mult), xmult_gain = 0.125 } },
+    config = { extra = { xmult = 1 + (0.06 * Freddy_Mult), xmult_gain = 0.06 } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_game_support", set = "Other" }
-        
+
         if Freddy_Mult == 0 then
             info_queue[#info_queue + 1] = { key = "fnaf_save_import", set = "Other" }
         end
 
         return { vars = { card.ability.extra.xmult_gain, card.ability.extra.xmult } }
-    end,    
+    end,
     calculate = function(self, card, context)
         if context.joker_main then
             local freddy_voice = math.random(1, 3)
@@ -217,7 +227,7 @@ SMODS.Joker {
     add_to_deck = function(self, card, from_debuff)
         local freddy_spawn = {"fnaf_Freddy_summon","fnaf_Freddy_summon2","fnaf_Freddy_summon3","fnaf_Freddy_summon4",}
         Voicelines(freddy_spawn)
-        
+
     end,
 }
 
@@ -269,9 +279,9 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 4,
     cost = 20,
-    config = { extra = { mult = data_UCN.hs or 1 }, },
+    config = { extra = { mult = Golden_Mult or 1 }, },
     loc_vars = function(self, info_queue, card)
-        if data_UCN.hs == 0 then
+        if Golden_Mult == 0 then
             info_queue[#info_queue + 1] = { key = "fnaf_save_import", set = "Other" }
         end
         return { vars = { card.ability.extra.mult or 1 } }
