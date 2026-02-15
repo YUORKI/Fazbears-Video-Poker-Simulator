@@ -172,6 +172,11 @@ return {
                     "in your {C:attention}full deck",
                     "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
                 },
+                unlock = {
+                    "Have at least {C:attention}#1#",
+                    "{E:1,C:attention}#2#{} in",
+                    "your deck",
+                },
             },
             j_fnaf_bb = {
                 name = "Balloon Boy",
@@ -337,6 +342,11 @@ return {
                     "{C:attention}Seals{} with no {C:attention}scored{} effect",
                     "will score {C:chips}+#1#{} Chips",
                 },
+                unlock = {
+                    "Have at least {C:attention}#1#",
+                    "{E:1,C:attention}Seals{} in",
+                    "your deck",
+                },
             },
             j_fnaf_missing = {
                 name = "Missing Poster",
@@ -401,6 +411,11 @@ return {
                     "All {C:attention}Face{} cards",
                     "are considered",
                     "{C:attention}Ace{} cards",
+                },
+                unlock = {
+                    "Play a total of",
+                    "{C:attention,E:1}#1#{} face cards",
+                    "{C:inactive}(#2#)",
                 },
             },
 

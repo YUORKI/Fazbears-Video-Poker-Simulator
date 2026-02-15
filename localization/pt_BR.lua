@@ -172,6 +172,11 @@ return {
                     "do seu {C:attention}baralho completo",
                     "{C:inactive}(No momento, {C:chips}+#2#{C:inactive} Fichas)",
                 },
+                unlock={
+                    "Tenha pelo menos {C:attention}#1#",
+                    "{E:1,C:attention}#2#{} no",
+                    "seu baralho",
+                },
             },
             j_fnaf_bb = {
                 name = "Balloon Boy",
@@ -323,6 +328,11 @@ return {
                     "{C:attention}Selos{} sem {C:attention}efeito{}",
                     "Pontuam {C:chips}+#1#{} Fichas",
                 },
+                unlock={
+                    "Tenha pelo menos {C:attention}#1#",
+                    "{E:1,C:attention}Selos{} no",
+                    "seu baralho",
+                },
             },
             j_fnaf_missing = {
                 name = "Cartaz Desaparecido",
@@ -387,6 +397,11 @@ return {
                 text = {
                     "Todas as cartas de {C:attention}Realeza{} são",
                     "consideradas {C:attention}Ás{}",
+                },
+                unlock={
+                    "Jogue um total de",
+                    "{C:attention,E:1}#1#{} cartas de Realeza",
+                    "{C:inactive}(#2#)",
                 },
             },
 

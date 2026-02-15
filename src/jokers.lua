@@ -610,7 +610,7 @@ SMODS.Joker {
     key = "r_freddy",
     atlas = 'Joker',
     pos = { x = 7, y = 1 },
-
+    unlocked = false,
     blueprint_compat = true,
     rarity = 2,
     cost = 6,
@@ -645,6 +645,21 @@ SMODS.Joker {
         end
         return false
     end,
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { 3, localize { type = 'name_text', key = 'gold_seal', set = 'Other' } } }
+    end,
+    check_for_unlock = function(self, args) -- equivalent to `unlock_condition = { type = 'modify_deck', extra = { count = 3, enhancement = 'Wild Card', e_key = 'm_wild' } }`
+        if args.type == 'modify_deck' then
+            local count = 0
+            for _, playing_card in ipairs(G.playing_cards or {}) do
+                if playing_card.seal == 'Gold' then count = count + 1 end
+                if count >= 3 then
+                    return true
+                end
+            end
+        end
+        return false
+    end
 }
 
 
@@ -812,10 +827,20 @@ end
 SMODS.Joker {
     key = "toy_freddy",
     blueprint_compat = false,
+    unlocked = false,
     rarity = 3,
     cost = 7,
     atlas = 'Joker',
     pos = { x = 5, y = 3 },
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { 400, G.PROFILES[G.SETTINGS.profile].career_stats.c_face_cards_played } }
+    end,
+    check_for_unlock = function(self, args) -- equivalent to `unlock_condition = { type = 'c_face_cards_played', extra = 300 }`
+        if args.type == 'career_stat' and args.statname == 'c_face_cards_played' then
+            return G.PROFILES[G.SETTINGS.profile].career_stats[args.statname] >= 400
+        end
+        return false
+    end
 }
 
 local card_get_id_ref = Card.get_id
@@ -987,6 +1012,7 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 2,
     cost = 4,
+    unlocked = false,
     atlas = 'Joker',
     pos = { x = 7, y = 3 },
     config = {extra = { chips = 20, } },
@@ -1004,6 +1030,21 @@ SMODS.Joker {
             end
         end
     end,
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { 5 } }
+    end,
+    check_for_unlock = function(self, args) -- equivalent to `unlock_condition = { type = 'modify_deck', extra = { count = 3, enhancement = 'Wild Card', e_key = 'm_wild' } }`
+        if args.type == 'modify_deck' then
+            local count = 0
+            for _, playing_card in ipairs(G.playing_cards or {}) do
+                if playing_card.seal then count = count + 1 end
+                if count >= 5 then
+                    return true
+                end
+            end
+        end
+        return false
+    end
 }
 
 SMODS.Joker {
