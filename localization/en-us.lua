@@ -89,7 +89,7 @@ return {
                 },
             },
 
-             c_fnaf_vip_pass = {
+            c_fnaf_vip_pass = {
                 name = "Vip Pass",
                 text = {
                     "Add a {C:gold}Vip Seal{}",
@@ -97,6 +97,15 @@ return {
                     "card in your hand",
                 },
             },
+
+            c_fnaf_handsize = {
+                name = "Freddy Mask",
+                text = {
+                    "{C:attention}#1#{} hand size",
+                    "for this blind"
+                }
+            },
+
         },
 
         Tarot = {
@@ -692,12 +701,6 @@ return {
             k_fnaf_debuff_3 = "-1 Discard",
             k_fnaf_debuff_4 = "-3 Size",
             k_fnaf_debuff_5 = "-1 Hand",
-
-            k_fnaf_chips = "Chips",
-            k_fnaf_mult = "Mult",
-            k_fnaf_h_size = "Hand Size",
-            
-            
 
             k_fnaf_reset = "Reset",
 

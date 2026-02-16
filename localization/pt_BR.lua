@@ -97,6 +97,14 @@ return {
                     "na sua mão",
                 },
             },
+
+            c_fnaf_handsize = {
+                name = "Mascara do Freddy",
+                text = {
+                    "{C:attention}#1#{} Tamanho da mão",
+                    "para essa blind"
+                }
+            },
         },
 
         Tarot = {

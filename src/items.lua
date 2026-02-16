@@ -223,6 +223,25 @@ SMODS.Consumable{
     end
 }
 
+SMODS.Consumable{
+    key = 'handsize',
+    set = 'fnaf_item',
+    atlas = 'TarotFnaf',
+    pos = {x = 2, y = 1},
+    cost = 5,
+    config = {extra = 3},
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        return { vars = { card.ability.extra } }
+    end,
+    use = function(self, card, area, copier)
+        G.hand:change_size(card.ability.extra)
+        G.GAME.round_resets.temp_handsize = (G.GAME.round_resets.temp_handsize or 0) + card.ability.extra
+    end,
+    can_use = function(self, card)
+        return G.GAME.blind.in_blind
+    end
+}
 
 SMODS.Consumable {
     key = 'vip_pass',
