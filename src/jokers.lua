@@ -228,6 +228,7 @@ SMODS.Joker {
     atlas = 'Joker',
     pos = { x = 3, y = 2 },
     blueprint_compat = true,
+    unlocked = false,
     rarity = 2,
     cost = 4,
     config = { extra = { odds = 4 } },
@@ -257,6 +258,24 @@ SMODS.Joker {
 
         end
     end,
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { 4 } }
+    end,
+    check_for_unlock = function(self, args) -- equivalent to `unlock_condition = { type = 'discover_amount', tarot_count = 22 }`
+        local cards_discovered = 0
+        local your_consumable_name_here = 'fnaf_item'        
+        for _, card in pairs(G.P_CENTER_POOLS[your_consumable_name_here]) do
+            if card.discovered then
+                cards_discovered = cards_discovered + 1
+            end
+        end
+
+        if cards_discovered == 4 then
+            return true
+        end
+
+        return false
+    end
 }
 
 SMODS.Joker {
@@ -930,6 +949,7 @@ SMODS.Joker {
     blueprint_compat = false,
     rarity = 1,
     cost = 4,
+    unlocked = false,
     atlas = 'Joker',
     pos = { x = 9, y = 2 },
     config = { extra = { levels = 0, maxlevel = 6, chips = 0, mult = 0, xmult = 0, h_size = 0} },
@@ -965,6 +985,24 @@ SMODS.Joker {
     end,
     remove_from_deck = function(self, card, from_debuff)
         G.hand:change_size(-card.ability.extra.h_size)
+    end,
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { 6 } }
+    end,
+    check_for_unlock = function(self, args) -- equivalent to `unlock_condition = { type = 'discover_amount', tarot_count = 22 }`
+        local cards_discovered = 0
+        local your_consumable_name_here = 'fnaf_item'        
+        for _, card in pairs(G.P_CENTER_POOLS[your_consumable_name_here]) do
+            if card.discovered then
+                cards_discovered = cards_discovered + 1
+            end
+        end
+
+        if cards_discovered == 6 then
+            return true
+        end
+
+        return false
     end
 }
 

@@ -1,4 +1,4 @@
-Voicelines = function(audio)
+Voicelines = function(audio) --Voicelines for Cards
     local volume = FNAF.config.volumes
     if FNAF.config.voices then
         play_sound(audio[math.random(#audio)], nil, volume / 100 )
@@ -22,3 +22,4 @@ Nedd_remove_buff = function(extra_h_size, extra_hands, nedd_buff, nedd_debuff)
     end
 
 end
+

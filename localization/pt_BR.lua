@@ -318,8 +318,8 @@ return {
                     "de criar outro",
                 },
                 unlock = {
-                    "Descubra cada",
-                    "carta de {E:1,C:green}Item{}",
+                    "Descubra #1#",
+                    "cartas de {E:1,C:green}Item{}",
                 },
             },
             j_fnaf_toy_chica = {
@@ -424,6 +424,10 @@ return {
                     "{C:attention}+#4#{} Tamanho",
                     "{C:red}+#5#{} Multi",
                     "{X:mult,C:white}X#6#{} Multi",
+                },
+                unlock = {
+                    "Descubra #1#",
+                    "cartas de {E:1,C:green}Item{}",
                 },
             },
 

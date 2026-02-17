@@ -333,7 +333,7 @@ return {
                     "to create another one",
                 },
                 unlock = {
-                    "Discover every",
+                    "Discover {C:attention}#1#",
                     "{E:1,C:green}Item{} card",
                 },
             },
@@ -439,6 +439,10 @@ return {
                     "{C:attention}+#6#{} Hand Size",
                     "{C:red}+#4#{} Mult",
                     "{X:mult,C:white}X#5#{} Mult",
+                },
+                unlock = {
+                    "Discover {C:attention}#1#",
+                    "{E:1,C:green}Item{} card",
                 },
             },
 
