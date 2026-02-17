@@ -527,7 +527,7 @@ SMODS.Joker {
     key = "rock_chica",
     unlocked = false,
     blueprint_compat = false,
-    rarity = 3,
+    rarity = 2,
     cost = 7,
     atlas = 'Joker',
     pos = { x = 6, y = 2 },
@@ -688,7 +688,7 @@ SMODS.Joker {
     pos = { x = 1, y = 0 },
     unlocked = false,
     blueprint_compat = true,
-    rarity = 2,
+    rarity = 3,
     cost = 7,
     config = { extra = { poker_hand = 'Flush House', poker_hand2 = 'Five of a Kind', poker_hand3 = 'Flush Five' } },
     loc_vars = function(self, info_queue, card)
@@ -918,8 +918,8 @@ end)()) then
 SMODS.Joker {
     key = "frog",
     blueprint_compat = true,
-    rarity = 1,
-    cost = 3,
+    rarity = 2,
+    cost = 6,
     unlocked = false,
     atlas = 'Joker',
     pos = { x = 1, y = 2 },
@@ -1069,14 +1069,14 @@ SMODS.Joker {
         end
     end,
     locked_loc_vars = function(self, info_queue, card)
-        return { vars = { 5 } }
+        return { vars = { 7 } }
     end,
     check_for_unlock = function(self, args) -- equivalent to `unlock_condition = { type = 'modify_deck', extra = { count = 3, enhancement = 'Wild Card', e_key = 'm_wild' } }`
         if args.type == 'modify_deck' then
             local count = 0
             for _, playing_card in ipairs(G.playing_cards or {}) do
                 if playing_card.seal then count = count + 1 end
-                if count >= 5 then
+                if count >= 7 then
                     return true
                 end
             end
@@ -1339,8 +1339,8 @@ SMODS.Joker {
     key = 'r_wolf',
     atlas = 'Joker',
     pos = { x = 5, y = 4 },
-    rarity = 3,
-    cost = 5,
+    rarity = 2,
+    cost = 7,
     blueprint_compat = false,
     eternal_compat = true,
     config = { extra = { seal = 'fnaf_vip' } },
@@ -1369,8 +1369,8 @@ SMODS.Joker {
     key = 'vipig',
     atlas = 'Joker',
     pos = { x = 6, y = 4 },
-    rarity = 3,
-    cost = 5,
+    rarity = 2,
+    cost = 7,
     blueprint_compat = false,
     eternal_compat = true,
     config = { extra = { repetitions = 1, seal = 'fnaf_vip' } },
