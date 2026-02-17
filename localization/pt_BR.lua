@@ -18,7 +18,7 @@ return {
                 }
             },
             m_fnaf_kid = {
-                name = "Criança",
+                name = "Carta Criança",
                 text = {
                     "{X:chips,C:white} X#1# {} Fichas",
                 }
@@ -101,7 +101,7 @@ return {
             c_fnaf_handsize = {
                 name = "Mascara do Freddy",
                 text = {
-                    "{C:attention}#1#{} Tamanho da mão",
+                    "{C:attention}+#1#{} Tamanho da mão",
                     "para essa blind"
                 }
             },
@@ -130,7 +130,7 @@ return {
             c_fnaf_secur_log = {
                 name = "Security Logbook",
                 text = {
-                    "Adiciona um {C:gold}Selo Guarda{}",
+                    "Adiciona um {C:gold}#2#{}",
                     "a {C:attention}#1#{} carta selecionada",
                     "na sua mão",
                 },
@@ -138,7 +138,7 @@ return {
             c_fnaf_bracelet = {
                 name = "Bracelete",
                 text = {
-                    "Adiciona um {C:uncommon}Selo Segurança{}",
+                    "Adiciona um {C:uncommon}#2#{}",
                     "a {C:attention}#1#{} carta selecionada",
                     "na sua mão",
                 },
@@ -219,8 +219,8 @@ return {
             j_fnaf_glitchtrap = {
                 name = "Glitchtrap",
                 text = {
-                    "Todas as cartas de {C:attention}Ases{}",
-                    "se tornam cartas {C:attention}Bugadas{}",
+                    "Todas as cartas de {C:attention}Ás{}",
+                    "se tornam {C:Tarot}#1#{}",
                     "quando pontuadas",
                 },
             },
@@ -234,7 +234,7 @@ return {
             j_fnaf_glam_chica = {
                 name = "Glamrock Chica",
                 text = {
-                    "Ganha {X:mult,C:white} X#1# {} Multi por Carta {C:attention}Pizza{} jogada",
+                    "Ganha {X:mult,C:white} X#1# {} Multi por cada {C:attention}#3#{} jogada",
                     "{C:red,s:1.1}Destrói todas essas cartas antes de pontuar{}",
                     "{C:inactive}(No momento, {X:mult,C:white} X#2# {C:inactive} Multi)",
                 },
@@ -253,8 +253,8 @@ return {
             j_fnaf_s_puppet = {
                 name = "Security Puppet",
                 text = {
-                    "Adiciona um {C:attention}Selo Segurança",
-                    "para cartas {C:attention}Criança{} na mão",
+                    "Adiciona um {C:attention}#1#",
+                    "para cada {C:attention}#2#{} na mão",
                     "{C:attention}no fim da rodada",
                 },
             },
@@ -369,7 +369,7 @@ return {
                 name = "Survival Logbook",
                 text = {
                     "Cartas de {C:attention}Realeza{} ganham",
-                    "{C:attention}Selo Guarda{} quando pontuadas",
+                    "{C:attention}#1#{} quando pontuadas",
                 },
             },
             j_fnaf_c_baby = {
@@ -456,7 +456,7 @@ return {
                 name = "Roxanne Wolf",
                 text = {
                     "Cada {C:attention}carta jogada",
-                    "com {C:attention}Selo Vip{}",
+                    "com {C:attention}#1#{}",
                     "conta na pontuação",
                 },
             },
@@ -465,8 +465,17 @@ return {
                 name = "Very Informative Pig",
                 text = {
                     "Reativa a {C:attention}primeira{} carta jogada",
-                    "com {C:attention}Selo Vip{} usada em pontuação",
+                    "com {C:attention}#2#{} usada em pontuação",
                     "{C:attention}#1#{} vezes adicionais",
+                },
+            },
+
+            j_fnaf_vanny = {
+                name = "Vanny",
+                text = {
+                    "Cada {C:attention}#2#{}",
+                    "na mão",
+                    "dá {C:chips}+#1#{} Fichas",
                 },
             },
 

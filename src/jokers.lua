@@ -191,6 +191,7 @@ SMODS.Joker {
     cost = 5,
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS.m_fnaf_glitch
+        return { vars = { localize { type = 'name_text', set = 'Enhanced', key = 'm_fnaf_glitch' } } }
     end,
     calculate = function(self, card, context)
         if context.before and not context.blueprint then
@@ -308,6 +309,7 @@ SMODS.Joker {
     end,
 }
 
+-- Survival Logbook
 SMODS.Joker {
     key = "logbook",
     atlas = 'Joker',
@@ -318,6 +320,7 @@ SMODS.Joker {
     config = { extra = { seal = 'fnaf_guard' } },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
+        return { vars = { localize { type = 'name_text', key = 'fnaf_guard_seal', set = 'Other' }  } }
     end,
     calculate = function(self, card, context)
         if context.before and context.main_eval and not context.blueprint then
@@ -451,7 +454,8 @@ SMODS.Joker {
     cost = 7,
     config = { extra = { Xmult_gain = 0.15, Xmult = 1 } },
     loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.extra.Xmult_gain, card.ability.extra.Xmult } }
+        info_queue[#info_queue + 1] = G.P_CENTERS['m_fnaf_pizza']
+        return { vars = { card.ability.extra.Xmult_gain, card.ability.extra.Xmult, localize { type = 'name_text', set = 'Enhanced', key = 'm_fnaf_pizza' } } }
     end,
     calculate = function(self, card, context)
         if context.before and context.main_eval and not context.blueprint then
@@ -557,7 +561,6 @@ SMODS.Joker {
     key = "s_puppet",
     atlas = 'Joker',
     pos = { x = 8, y = 2 },
-
     blueprint_compat = false,
     rarity = 3,
     cost = 8,
@@ -565,6 +568,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         info_queue[#info_queue + 1] = G.P_CENTERS.m_fnaf_kid
+        return { vars = { localize { type = 'name_text', key = 'fnaf_security_seal', set = 'Other' }, localize { type = 'name_text', key = 'm_fnaf_kid', set = 'Enhanced' } } }
     end,
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.hand and context.end_of_round then
@@ -1347,6 +1351,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
+        return { vars = { localize { type = 'name_text', key = 'fnaf_vip_seal', set = 'Other' } } }
     end,
     calculate = function(self, card, context)
         if context.modify_scoring_hand and context.other_card:get_seal(card.ability.extra.seal) then
@@ -1377,7 +1382,7 @@ SMODS.Joker {
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-        return { vars = { card.ability.extra.repetitions } }
+        return { vars = { card.ability.extra.repetitions, localize { type = 'name_text', key = 'fnaf_vip_seal', set = 'Other' } } }
     end,
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.play 
@@ -1395,6 +1400,35 @@ SMODS.Joker {
         end
         return false
     end,
+}
+
+SMODS.Joker {
+    key = "vanny",
+    blueprint_compat = false,
+    rarity = 1,
+    cost = 7,
+    atlas = 'Joker',
+    pos = { x = 7, y = 4 },
+    config = { extra = { chips = 55, seal = 'fnaf_security' } },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
+        return { vars = { card.ability.extra.chips, localize { type = 'name_text', key = 'fnaf_security_seal', set = 'Other' } } }
+    end,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.hand and not context.end_of_round and context.other_card.seal == card.ability.extra.seal then
+            if context.other_card.debuff then
+                return {
+                    message = localize('k_debuffed'),
+                    colour = G.C.RED
+                }
+            else
+                return {
+                    chips = card.ability.extra.chips
+                }
+            end
+        end
+    end,
+
 }
 
 SMODS.Joker {

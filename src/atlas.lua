@@ -7,6 +7,14 @@ SMODS.Atlas{
 }
 
 SMODS.Atlas{
+    key = 'Legendary', --atlas key
+    path = 'legendary.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
+    px = 71, --width of one card
+    py = 95 -- height of one card
+}
+
+
+SMODS.Atlas{
     key = 'Enhancers', --atlas key
     path = 'Enhancers.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
     px = 71, --width of one card

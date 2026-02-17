@@ -18,7 +18,7 @@ return {
                 }
             },
             m_fnaf_kid = {
-                name = "Kid",
+                name = "Kid Card",
                 text = {
                     "{X:chips,C:white} X#1# {} Chips",
                 }
@@ -101,7 +101,7 @@ return {
             c_fnaf_handsize = {
                 name = "Freddy Mask",
                 text = {
-                    "{C:attention}#1#{} hand size",
+                    "{C:attention}+#1#{} hand size",
                     "for this blind"
                 }
             },
@@ -131,7 +131,7 @@ return {
             c_fnaf_secur_log = {
                 name = "Security Logbook",
                 text = {
-                    "Add a {C:gold}Guard Seal{}",
+                    "Add a {C:gold}#2#{}",
                     "to {C:attention}#1#{} selected",
                     "card in your hand",
                 },
@@ -139,7 +139,7 @@ return {
             c_fnaf_bracelet = {
                 name = "Bracelet",
                 text = {
-                    "Add a {C:uncommon}Security Seal{}",
+                    "Add a {C:uncommon}#2#{}",
                     "to {C:attention}#1#{} selected",
                     "card in your hand",
                 },
@@ -220,8 +220,8 @@ return {
             j_fnaf_glitchtrap = {
                 name = "Glitchtrap",
                 text = {
-                    "All played {C:attention}ace{} cards",
-                    "become {C:attention}Glitched{}",
+                    "All played {C:attention}Ace{} cards",
+                    "become {C:tarot}#1#{}",
                     "when scored",
                 },
             },
@@ -234,13 +234,6 @@ return {
                     "{C:inactive}(Currently {C:attention}#3#{C:inactive})",
                 },
             },
-            j_fnaf_vanessa = {
-                name = "Vanessa",
-                text = {
-                    "{C:red,s:1.1}+#1#{} Mult for every card ",
-                    "trigger with {C:attention}Security Seal",
-                },
-            },
             j_fnaf_ennard = {
                 name = "Ennard",
                 text = {
@@ -251,7 +244,7 @@ return {
             j_fnaf_glam_chica = {
                 name = "Glamrock Chica",
                 text = {
-                    "Gains {X:mult,C:white} X#1# {} Mult per {C:attention}Pizza Card{} played",
+                    "Gains {X:mult,C:white} X#1# {} Mult per {C:attention}#3#{} played",
                     "{C:red,s:1.1}Destroy all those cards before scoring{}",
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
                 },
@@ -270,8 +263,8 @@ return {
             j_fnaf_s_puppet = {
                 name = "Security Puppet",
                 text = {
-                    "Adds a {C:attention}Security seal",
-                    "to {C:attention}kid{} cards",
+                    "Adds a {C:attention}#1#",
+                    "to {C:attention}#2#s",
                     "held in hand at the",
                     "{C:attention}end of the round",
                 },
@@ -384,7 +377,7 @@ return {
                 name = "Survival Logbook",
                 text = {
                     "{C:attention}Face{} cards get a",
-                    "{C:green}#Guard Seal#{} when scored",
+                    "{C:green}#1#{} when scored",
                 },
             },
             j_fnaf_c_baby = {
@@ -472,7 +465,7 @@ return {
                 name = "Roxanne Wolf",
                 text = {
                     "Every {C:attention}played card",
-					"with {C:attention}Vip Seal{}",
+					"with {C:attention}#1#{}",
                     "counts in scoring",
                 },
             },
@@ -481,8 +474,17 @@ return {
                 name = "Very Informative Pig",
                 text = {
                     "Retrigger {C:attention}first{} played card",
-                    "with {C:attention}Vip Seal{} used in scoring",
+                    "with {C:attention}#2#{} used in scoring",
                     "{C:attention}#1#{} additional times",
+                },
+            },
+
+            j_fnaf_vanny = {
+                name = "Vanny",
+                text = {
+                    "Each {C:attention}#2#{}",
+                    "held in hand",
+                    "gives {C:chips}+#1#{} Chips",
                 },
             },
 
