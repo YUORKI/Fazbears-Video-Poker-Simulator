@@ -1432,6 +1432,35 @@ SMODS.Joker {
 }
 
 SMODS.Joker {
+    key = "vanessa",
+    blueprint_compat = false,
+    rarity = 1,
+    cost = 7,
+    atlas = 'Joker',
+    pos = { x = 8, y = 4 },
+    config = { extra = { mult = 12, seal = 'fnaf_security' } },
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
+        return { vars = { card.ability.extra.chips, localize { type = 'name_text', key = 'fnaf_security_seal', set = 'Other' } } }
+    end,
+    calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.hand and not context.end_of_round and context.other_card.seal == card.ability.extra.seal then
+            if context.other_card.debuff then
+                return {
+                    message = localize('k_debuffed'),
+                    colour = G.C.RED
+                }
+            else
+                return {
+                    chips = card.ability.extra.chips
+                }
+            end
+        end
+    end,
+
+}
+
+SMODS.Joker {
     key = "pickles",
     atlas = 'Joker',
     pos = { x = 9, y = 1 },
