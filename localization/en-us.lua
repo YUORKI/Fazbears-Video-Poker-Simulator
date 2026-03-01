@@ -692,28 +692,28 @@ return {
             fnaf_Animatronic = {
                 name = "Joker Type",
                 text = {
-                    "Animatronic",
+                    "{X:inactive,C:white}Animatronic",
                 },
             },
             
             fnaf_Human = {
                 name = "Joker Type",
                 text = {
-                    "Human",
+                    "{X:mult,C:white}Human",
                 },
             },
             
             fnaf_Other = {
                 name = "Joker Type",
                 text = {
-                    "???",
+                    "{X:dark_edition,C:white}???",
                 },
             },
 
             fnaf_Misc = {
                 name = "Joker Type",
                 text = {
-                    "Misc",
+                    "{X:tarot,C:white}Misc",
                 },
             },
 
