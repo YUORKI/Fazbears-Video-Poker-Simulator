@@ -26,8 +26,13 @@ SMODS.Joker {
     discovered = true,
     blueprint_compat = true,
     eternal_compat = true,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { chip_mod = 100 }, },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.chip_mod } }
     end,
     calculate = function(self, card, context)
@@ -50,7 +55,12 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = false,
     perishable_compat = false,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_dont", set = "Other" }
     end,
     add_to_deck = function(self, card, from_debuff)
@@ -72,8 +82,13 @@ SMODS.Joker {
     eternal_compat = true,
     perishable_compat = false,
     no_collection = true,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { x_chips = 0.5, round = 0, maxround = 3}},
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.x_chips, card.ability.extra.round, card.ability.extra.maxround }}
     end,
     calculate = function(self, card, context)
@@ -108,7 +123,12 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 2,
     cost = 5,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS.m_fnaf_pizza
     end,
     calculate = function(self, card, context)
@@ -147,8 +167,13 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 3,
     cost = 10,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { creates = 1 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.creates } }
     end,
     calculate = function(self, card, context)
@@ -189,7 +214,12 @@ SMODS.Joker {
     blueprint_compat = false,
     rarity = 2,
     cost = 5,
+
+    fnaf_type = "Other", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS.m_fnaf_glitch
         return { vars = { localize { type = 'name_text', set = 'Enhanced', key = 'm_fnaf_glitch' } } }
     end,
@@ -229,11 +259,16 @@ SMODS.Joker {
     atlas = 'Joker',
     pos = { x = 3, y = 2 },
     blueprint_compat = true,
-    unlocked = false,
+    unlocked = false,   
     rarity = 2,
     cost = 4,
+
+    fnaf_type = "Human", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { odds = 4 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
     end,
     calculate = function(self, card, context)
@@ -264,7 +299,7 @@ SMODS.Joker {
     end,
     check_for_unlock = function(self, args) -- equivalent to `unlock_condition = { type = 'discover_amount', tarot_count = 22 }`
         local cards_discovered = 0
-        local your_consumable_name_here = 'fnaf_item'        
+        local your_consumable_name_here = 'fnaf_item'
         for _, card in pairs(G.P_CENTER_POOLS[your_consumable_name_here]) do
             if card.discovered then
                 cards_discovered = cards_discovered + 1
@@ -286,8 +321,13 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 2,
     cost = 5,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { cards = 3 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.cards } }
     end,
     calculate = function(self, card, context)
@@ -317,8 +357,13 @@ SMODS.Joker {
     blueprint_compat = false,
     rarity = 3,
     cost = 7,
+
+    fnaf_type = "Misc", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { seal = 'fnaf_guard' } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         return { vars = { localize { type = 'name_text', key = 'fnaf_guard_seal', set = 'Other' }  } }
     end,
@@ -355,8 +400,13 @@ SMODS.Joker {
     blueprint_compat = false,
     rarity = 2,
     cost = 7,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { xmult = 1, xmult_gain = 0.1 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.xmult_gain, card.ability.extra.xmult } }
     end,
     calculate = function(self, card, context)
@@ -399,12 +449,16 @@ SMODS.Joker {
     key = "ennard",
     atlas = 'Joker',
     pos = { x = 1, y = 1 },
-
     blueprint_compat = false,
     rarity = 3,
     cost = 6,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { price = 1 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.price } }
     end,
     calculate = function(self, card, context)
@@ -426,12 +480,16 @@ SMODS.Joker {
     key = "learning",
     atlas = 'Joker',
     pos = { x = 4, y = 1 },
-
     blueprint_compat = false,
     rarity = 3,
     cost = 9,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { odds = 20 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { G.GAME and G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
     end,
     calculate = function(self, card, context)
@@ -452,8 +510,13 @@ SMODS.Joker {
     blueprint_compat = false,
     rarity = 2,
     cost = 7,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { Xmult_gain = 0.15, Xmult = 1 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_CENTERS['m_fnaf_pizza']
         return { vars = { card.ability.extra.Xmult_gain, card.ability.extra.Xmult, localize { type = 'name_text', set = 'Enhanced', key = 'm_fnaf_pizza' } } }
     end,
@@ -535,8 +598,13 @@ SMODS.Joker {
     cost = 7,
     atlas = 'Joker',
     pos = { x = 6, y = 2 },
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { hands_left = 10 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.hands_left } }
     end,
     locked_loc_vars = function(self, info_queue, card)
@@ -564,8 +632,13 @@ SMODS.Joker {
     blueprint_compat = false,
     rarity = 3,
     cost = 8,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { seal = 'fnaf_security' } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         info_queue[#info_queue + 1] = G.P_CENTERS.m_fnaf_kid
         return { vars = { localize { type = 'name_text', key = 'fnaf_security_seal', set = 'Other' }, localize { type = 'name_text', key = 'm_fnaf_kid', set = 'Enhanced' } } }
@@ -601,12 +674,16 @@ SMODS.Joker {
     key = "toy_chica",
     atlas = 'Joker',
     pos = { x = 5, y = 2 },
-
     blueprint_compat = false,
     rarity = 2,
     cost = 3,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { chips = 0, chip_mod = 30 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.chips, card.ability.extra.chip_mod } }
     end,
     calculate = function(self, card, context)
@@ -637,8 +714,13 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 2,
     cost = 6,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { seal = 'Gold', chips_mod = 25, chips = 0 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
 
         local gold_tally = 0
@@ -694,8 +776,13 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 3,
     cost = 7,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { poker_hand = 'Flush House', poker_hand2 = 'Five of a Kind', poker_hand3 = 'Flush Five' } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return {
             vars = {
                 localize(card.ability.extra.poker_hand, 'poker_hands'),
@@ -752,8 +839,13 @@ SMODS.Joker {
     cost = 8,
     atlas = 'Joker',
     pos = { x = 3, y = 1 },
+
+    fnaf_type = "Misc", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { odds = 2, faces = 5 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { G.GAME and G.GAME.probabilities.normal or 1, card.ability.extra.odds, card.ability.extra.faces } }
     end,
     calculate = function(self, card, context)
@@ -782,6 +874,12 @@ SMODS.Joker {
     cost = 5,
     atlas = 'Joker',
     pos = { x = 0, y = 2 },
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+    loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
+    end,
     calculate = function(self, card, context)
         if context.after and context.main_eval and not context.blueprint then
             local enhanced = {}
@@ -822,7 +920,12 @@ SMODS.Joker {
     cost = 5,
     atlas = 'Joker',
     pos = { x = 4, y = 2 },
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue+1] = G.P_CENTERS.m_wild
     end,
     locked_loc_vars = function(self, info_queue, card)
@@ -855,6 +958,12 @@ SMODS.Joker {
     cost = 7,
     atlas = 'Joker',
     pos = { x = 5, y = 3 },
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+    loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
+    end,
     locked_loc_vars = function(self, info_queue, card)
         return { vars = { 400, G.PROFILES[G.SETTINGS.profile].career_stats.c_face_cards_played } }
     end,
@@ -884,8 +993,13 @@ SMODS.Joker {
     cost = 3,
     atlas = 'Joker',
     pos = { x = 8, y = 1 },
+
+    fnaf_type = "Misc", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { chips = 100 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.chips } }
     end,
     calculate = function(self, card, context) -- code made by Joker Forge. I dont know how the fuck this work
@@ -927,8 +1041,13 @@ SMODS.Joker {
     unlocked = false,
     atlas = 'Joker',
     pos = { x = 1, y = 2 },
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { chip_mod = 50 }, },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.chip_mod, G.GAME.skips * card.ability.extra.chip_mod } }
     end,
     calculate = function(self, card, context)
@@ -956,8 +1075,13 @@ SMODS.Joker {
     unlocked = false,
     atlas = 'Joker',
     pos = { x = 9, y = 2 },
+
+    fnaf_type = "Misc", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { levels = 0, maxlevel = 6, chips = 0, mult = 0, xmult = 0, h_size = 0} },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_bug", set = "Other" }
         return { vars = { card.ability.extra.levels, card.ability.extra.maxlevel, card.ability.extra.chips, card.ability.extra.mult, card.ability.extra.xmult, card.ability.extra.h_size} }
     end,
@@ -995,7 +1119,7 @@ SMODS.Joker {
     end,
     check_for_unlock = function(self, args) -- equivalent to `unlock_condition = { type = 'discover_amount', tarot_count = 22 }`
         local cards_discovered = 0
-        local your_consumable_name_here = 'fnaf_item'        
+        local your_consumable_name_here = 'fnaf_item'
         for _, card in pairs(G.P_CENTER_POOLS[your_consumable_name_here]) do
             if card.discovered then
                 cards_discovered = cards_discovered + 1
@@ -1018,7 +1142,12 @@ SMODS.Joker {
     atlas = 'Joker',
     pos = { x = 6, y = 3 },
     config = {extra = { money = 5, odds = 3} },
+
+    fnaf_type = "Misc", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_mod_comp", set = "Other" }
         return { vars = { card.ability.extra.money, G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
     end,
@@ -1057,8 +1186,13 @@ SMODS.Joker {
     unlocked = false,
     atlas = 'Joker',
     pos = { x = 7, y = 3 },
+
+    fnaf_type = "Misc", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = {extra = { chips = 20, } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_mod_comp", set = "Other" }
         return { vars = { card.ability.extra.chips } }
     end,
@@ -1096,6 +1230,10 @@ SMODS.Joker {
     cost = 4,
     atlas = 'Joker',
     pos = { x = 8, y = 3 },
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = {
         extra = {
                 buff_description = 'k_fnaf_nobuff',
@@ -1109,6 +1247,7 @@ SMODS.Joker {
             }
         },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return {
             vars = {
                 localize(card.ability.extra.buff_description, 'dictionary' ),
@@ -1226,7 +1365,12 @@ SMODS.Joker {
     atlas = 'Joker',
     pos = { x = 2, y = 1 },
     config = {extra = { chips = 100 } },
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.chips } }
     end,
     calculate = function(self, card, context)
@@ -1299,8 +1443,13 @@ SMODS.Joker {
     unlocked = false,
     atlas = 'Joker',
     pos = { x = 9, y = 0 },
+
+    fnaf_type = "Misc", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { broke = 40 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.broke } }
     end,
     calculate = function(self, card, context)
@@ -1347,8 +1496,13 @@ SMODS.Joker {
     cost = 7,
     blueprint_compat = false,
     eternal_compat = true,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { seal = 'fnaf_vip' } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         return { vars = { localize { type = 'name_text', key = 'fnaf_vip_seal', set = 'Other' } } }
@@ -1378,14 +1532,19 @@ SMODS.Joker {
     cost = 7,
     blueprint_compat = false,
     eternal_compat = true,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { repetitions = 1, seal = 'fnaf_vip' } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         return { vars = { card.ability.extra.repetitions, localize { type = 'name_text', key = 'fnaf_vip_seal', set = 'Other' } } }
     end,
     calculate = function(self, card, context)
-        if context.repetition and context.cardarea == G.play 
+        if context.repetition and context.cardarea == G.play
         and context.other_card == context.scoring_hand[1] and context.other_card.seal == card.ability.extra.seal then
             return {
                 repetitions = card.ability.extra.repetitions
@@ -1409,8 +1568,14 @@ SMODS.Joker {
     cost = 7,
     atlas = 'Joker',
     pos = { x = 7, y = 4 },
+
+    fnaf_type = "Human", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { chips = 55, seal = 'fnaf_security' } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
+        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         return { vars = { card.ability.extra.chips, localize { type = 'name_text', key = 'fnaf_security_seal', set = 'Other' } } }
     end,
@@ -1428,7 +1593,14 @@ SMODS.Joker {
             end
         end
     end,
-
+    in_pool = function(self, args)
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if playing_card.seal == self.config.extra.seal then
+                return true
+            end
+        end
+        return false
+    end,
 }
 
 SMODS.Joker {
@@ -1438,13 +1610,19 @@ SMODS.Joker {
     cost = 7,
     atlas = 'Joker',
     pos = { x = 8, y = 4 },
+
+    fnaf_type = "Human", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { mult = 12, seal = 'fnaf_security' } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
+        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-        return { vars = { card.ability.extra.chips, localize { type = 'name_text', key = 'fnaf_security_seal', set = 'Other' } } }
+        return { vars = { card.ability.extra.mult, localize { type = 'name_text', key = 'fnaf_security_seal', set = 'Other' } } }
     end,
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.hand and not context.end_of_round and context.other_card.seal == card.ability.extra.seal then
+        if context.individual and context.cardarea == G.play and context.other_card.seal == card.ability.extra.seal then
             if context.other_card.debuff then
                 return {
                     message = localize('k_debuffed'),
@@ -1452,12 +1630,19 @@ SMODS.Joker {
                 }
             else
                 return {
-                    chips = card.ability.extra.chips
+                    mult = card.ability.extra.mult
                 }
             end
         end
     end,
-
+    in_pool = function(self, args)
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if playing_card.seal == self.config.extra.seal then
+                return true
+            end
+        end
+        return false
+    end,
 }
 
 SMODS.Joker {
@@ -1467,8 +1652,13 @@ SMODS.Joker {
     blueprint_compat = false,
     rarity = 1,
     cost = 1,
+
+    fnaf_type = "Misc", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { slots = 1 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.slots } }
     end,
 

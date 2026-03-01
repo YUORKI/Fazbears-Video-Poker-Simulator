@@ -479,6 +479,15 @@ return {
                 },
             },
 
+            j_fnaf_vanessa = {
+                name = "Vanessa",
+                text={
+                    "Cartas jogadas com",
+                    "{C:clubs}#2#{} dão",
+                    "{C:mult}+#1#{} Multi quando pontuadas",
+                },
+            },
+
             -- Legendary
 
             j_fnaf_bonnie = {

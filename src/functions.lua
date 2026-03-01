@@ -23,3 +23,17 @@ Nedd_remove_buff = function(extra_h_size, extra_hands, nedd_buff, nedd_debuff)
 
 end
 
+info_type = function(self, info_queue, card)
+    --info_queue[#info_queue + 1] = { key = "fnaf_" .. card.config.center.fnaf_type , set = "Other" }
+
+    --if card.config.center.fnaf_broken == true then
+        --info_queue[#info_queue + 1] = { key = "fnaf_Condition", set = "Other" }
+    --end
+
+end
+
+-- Glossary for Types of Cards
+--- Animatronics
+--- Humans
+--- ??? (Other)
+--- Misc

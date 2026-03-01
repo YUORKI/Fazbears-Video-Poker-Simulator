@@ -488,6 +488,15 @@ return {
                 },
             },
 
+            j_fnaf_vanessa = {
+                name = "Vanessa",
+                text = {
+                    "Played cards with",
+                    "{C:attention}#2#{} give",
+                    "{C:mult}+#1#{} Mult when scored",
+                },
+            },
+
             -- Legendary
 
             j_fnaf_bonnie = {
@@ -679,6 +688,42 @@ return {
                     "To see if it's safe to use",
                 },
             },
+
+            fnaf_Animatronic = {
+                name = "Joker Type",
+                text = {
+                    "Animatronic",
+                },
+            },
+            
+            fnaf_Human = {
+                name = "Joker Type",
+                text = {
+                    "Human",
+                },
+            },
+            
+            fnaf_Other = {
+                name = "Joker Type",
+                text = {
+                    "???",
+                },
+            },
+
+            fnaf_Misc = {
+                name = "Joker Type",
+                text = {
+                    "Misc",
+                },
+            },
+
+            fnaf_Condition = {
+                name = "Condition",
+                text = {
+                    "This Joker is Broken",
+                },
+            },
+
         },
 
     },

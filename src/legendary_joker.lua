@@ -74,8 +74,13 @@ SMODS.Joker {
     blueprint_compat = false,
     rarity = 4,
     cost = 20,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { odds = 10 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.odds } }
     end,
     add_to_deck = function(self, card, from_debuff)
@@ -99,8 +104,13 @@ SMODS.Joker {
     blueprint_compat = false,
     rarity = 4,
     cost = 20,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { perc = 30  } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         return { vars = { card.ability.extra.perc } }
     end,
     calculate = function(self, card, context)
@@ -193,8 +203,13 @@ SMODS.Joker {
     unlocked = false,
     rarity = 4,
     cost = 20,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { xmult = 1 + (0.06 * Freddy_Mult), xmult_gain = 0.06 } },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_game_support", set = "Other" }
 
         if Freddy_Mult == 0 then
@@ -240,8 +255,13 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 4,
     cost = 20,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { repetitions = 1 }, },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
     end,
     calculate = function(self, card, context)
         if context.repetition and context.cardarea == G.play then
@@ -279,8 +299,13 @@ SMODS.Joker {
     blueprint_compat = true,
     rarity = 4,
     cost = 20,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
     config = { extra = { mult = Golden_Mult or 1 }, },
     loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
         if Golden_Mult == 0 then
             info_queue[#info_queue + 1] = { key = "fnaf_save_import", set = "Other" }
         end
