@@ -190,7 +190,7 @@ return {
             j_fnaf_bb = {
                 name = "Balloon Boy",
                 text = {
-                    "Don't",
+                    "{T:fnaf_dont}Don't",
                 },
             },
             j_fnaf_balloon_boy = {
@@ -494,6 +494,15 @@ return {
                     "Played cards with",
                     "{C:attention}#2#{} give",
                     "{C:mult}+#1#{} Mult when scored",
+                },
+            },
+
+            j_fnaf_catalog = {
+                name = "Catalog",
+                text = {
+                    "Gives {C:chips}+#1#{} Chips for",
+                    "each {X:inactive,C:white}Animatronic{} in hand",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
                 },
             },
 

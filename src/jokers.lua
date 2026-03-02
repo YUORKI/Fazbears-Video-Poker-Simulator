@@ -1491,7 +1491,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = 'r_wolf',
     atlas = 'Joker',
-    pos = { x = 5, y = 4 },
+    pos = { x = 0, y = 3 },
     rarity = 2,
     cost = 7,
     blueprint_compat = false,
@@ -1527,7 +1527,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = 'vipig',
     atlas = 'Joker',
-    pos = { x = 6, y = 4 },
+    pos = { x = 1, y = 3 },
     rarity = 2,
     cost = 7,
     blueprint_compat = false,
@@ -1567,7 +1567,7 @@ SMODS.Joker {
     rarity = 1,
     cost = 7,
     atlas = 'Joker',
-    pos = { x = 7, y = 4 },
+    pos = { x = 2, y = 3 },
 
     fnaf_type = "Human", -- Type of Card
     fnaf_broken = false, -- Fixable or Not
@@ -1609,7 +1609,7 @@ SMODS.Joker {
     rarity = 1,
     cost = 7,
     atlas = 'Joker',
-    pos = { x = 8, y = 4 },
+    pos = { x = 3, y = 3 },
 
     fnaf_type = "Human", -- Type of Card
     fnaf_broken = false, -- Fixable or Not
@@ -1643,6 +1643,37 @@ SMODS.Joker {
         end
         return false
     end,
+}
+
+SMODS.Joker {
+    key = 'catalog',
+    atlas = 'Joker',
+    pos = { x = 4, y = 3 },
+    rarity = 2,
+    cost = 4,
+    unlocked = true,
+    discovered = true,
+    blueprint_compat = true,
+    eternal_compat = true,
+
+    fnaf_type = "Misc", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
+    config = { extra = { chip = 80 }, },
+    loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
+        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
+        return { vars = { card.ability.extra.chip, card.ability.extra.chip * #Find_type("Animatronic", card) } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            print(#Find_type("Animatronic", card))
+            local Chips = card.ability.extra.chip * #Find_type("Animatronic", card)
+            return {
+                chips = Chips
+            }
+        end
+    end
 }
 
 SMODS.Joker {

@@ -488,6 +488,16 @@ return {
                 },
             },
 
+            j_fnaf_catalog = {
+                name = "Catalogo",
+                text = {
+                    "Dá {C:chips}+#1#{} Fichas para",
+                    "cada {X:inactive,C:white}Animatronic{} na Mão",
+                    "do seu {C:attention}baralho completo",
+                    "{C:inactive}(No momento, {C:chips}+#2#{C:inactive} Fichas)",
+                },
+            },
+
             -- Legendary
 
             j_fnaf_bonnie = {
@@ -676,6 +686,36 @@ return {
                     "que esta sendo cosertado",
                     "Por favor cosulte o repo do mod",
                     "para ver se e seguro de usar",
+                },
+            },
+            fnaf_Animatronic = {
+                name = "Curinga Tipo",
+                text = {
+                    "{X:inactive,C:white}Animatronic",
+                },
+            },
+            fnaf_Human = {
+                name = "Curinga Tipo",
+                text = {
+                    "{X:mult,C:white}Humano",
+                },
+            },
+            fnaf_Other = {
+                name = "Curinga Tipo",
+                text = {
+                    "{X:dark_edition,C:white}???",
+                },
+            },
+            fnaf_Misc = {
+                name = "Curinga Tipo",
+                text = {
+                    "{X:tarot,C:white}Misc",
+                },
+            },
+            fnaf_Condition = {
+                name = "Condição",
+                text = {
+                    "Esse Curinga esta Quebrado",
                 },
             },
         },
