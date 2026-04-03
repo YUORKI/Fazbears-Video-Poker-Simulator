@@ -1667,7 +1667,6 @@ SMODS.Joker {
     end,
     calculate = function(self, card, context)
         if context.joker_main then
-            print(#Find_type("Animatronic", card))
             local Chips = card.ability.extra.chip * #Find_type("Animatronic", card)
             return {
                 chips = Chips
