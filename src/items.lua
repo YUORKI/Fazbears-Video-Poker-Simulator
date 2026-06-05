@@ -247,11 +247,10 @@ SMODS.Consumable {
     key = 'vip_pass',
     set = 'fnaf_item',
     atlas = 'TarotFnaf', 
-    pos = {x = 5, y = 0},
+    pos = {x = 3, y = 2},
     config = { extra = { seal = 'fnaf_vip' }, max_highlighted = 1 },
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.max_highlighted } }
     end,
     use = function(self, card, area, copier)

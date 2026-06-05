@@ -459,6 +459,11 @@ return {
                     "com {C:attention}#1#{}",
                     "conta na pontuação",
                 },
+                unlock={
+                    "Tenha pelo menos {C:attention}#1#",
+                    "{E:1,C:attention}#2#{} no",
+                    "seu baralho",
+                },
             },
 
             j_fnaf_vipig = {
@@ -467,6 +472,11 @@ return {
                     "Reativa a {C:attention}primeira{} carta jogada",
                     "com {C:attention}#2#{} usada em pontuação",
                     "{C:attention}#1#{} vezes adicionais",
+                },
+                unlock={
+                    "Tenha pelo menos {C:attention}#1#",
+                    "{E:1,C:attention}#2#{} no",
+                    "seu baralho",
                 },
             },
 

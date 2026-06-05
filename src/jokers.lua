@@ -1496,6 +1496,7 @@ SMODS.Joker {
     cost = 7,
     blueprint_compat = false,
     eternal_compat = true,
+    unlocked = false,
 
     fnaf_type = "Animatronic", -- Type of Card
     fnaf_broken = false, -- Fixable or Not
@@ -1521,6 +1522,21 @@ SMODS.Joker {
         end
         return false
     end,
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { 1, localize { type = 'name_text', key = 'fnaf_vip_seal', set = 'Other' } } }
+    end,
+    check_for_unlock = function(self, args) 
+        if args.type == 'modify_deck' then
+            local count = 0
+            for _, playing_card in ipairs(G.playing_cards or {}) do
+                if playing_card.seal == 'fnaf_vip' then count = count + 1 end
+                if count >= 1 then
+                    return true
+                end
+            end
+        end
+        return false
+    end
 }
 
 SMODS.Joker {
@@ -1540,6 +1556,7 @@ SMODS.Joker {
     cost = 7,
     blueprint_compat = false,
     eternal_compat = true,
+    unlocked = false,
 
     fnaf_type = "Animatronic", -- Type of Card
     fnaf_broken = false, -- Fixable or Not
@@ -1566,6 +1583,21 @@ SMODS.Joker {
         end
         return false
     end,
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { 5, localize { type = 'name_text', key = 'fnaf_vip_seal', set = 'Other' } } }
+    end,
+    check_for_unlock = function(self, args) 
+        if args.type == 'modify_deck' then
+            local count = 0
+            for _, playing_card in ipairs(G.playing_cards or {}) do
+                if playing_card.seal == 'fnaf_vip' then count = count + 1 end
+                if count >= 5 then
+                    return true
+                end
+            end
+        end
+        return false
+    end
 }
 
 SMODS.Joker {
@@ -1656,8 +1688,7 @@ SMODS.Joker {
     pos = { x = 4, y = 3 },
     rarity = 2,
     cost = 4,
-    unlocked = true,
-    discovered = true,
+
     blueprint_compat = true,
     eternal_compat = true,
 

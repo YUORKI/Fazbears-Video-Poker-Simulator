@@ -468,6 +468,11 @@ return {
 					"with {C:attention}#1#{}",
                     "counts in scoring",
                 },
+                unlock = {
+                    "Have at least {C:attention}#1#",
+                    "{E:1,C:attention}#2#{} in",
+                    "your deck",
+                },
             },
 
             j_fnaf_vipig = {
@@ -476,6 +481,11 @@ return {
                     "Retrigger {C:attention}first{} played card",
                     "with {C:attention}#2#{} used in scoring",
                     "{C:attention}#1#{} additional times",
+                },
+                unlock = {
+                    "Have at least {C:attention}#1#",
+                    "{E:1,C:attention}#2#{} in",
+                    "your deck",
                 },
             },
 
