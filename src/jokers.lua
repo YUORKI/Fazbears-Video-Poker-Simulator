@@ -1503,7 +1503,6 @@ SMODS.Joker {
     config = { extra = { seal = 'fnaf_vip' } },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         return { vars = { localize { type = 'name_text', key = 'fnaf_vip_seal', set = 'Other' } } }
     end,
@@ -1527,7 +1526,16 @@ SMODS.Joker {
 SMODS.Joker {
     key = 'vipig',
     atlas = 'Joker',
-    pos = { x = 1, y = 3 },
+    pos = { x = 5, y = 1 },
+    soul_pos = {
+        x = 1, y = 3,
+        draw = function(card, scale_mod, rotate_mod)
+            card.hover_tilt = card.hover_tilt * 1.5
+            card.children.floating_sprite:draw_shader('hologram', nil, card.ARGS.send_to_shader, nil,
+                card.children.center, 2 * scale_mod, 2 * rotate_mod)
+            card.hover_tilt = card.hover_tilt / 1.5
+        end
+    },
     rarity = 2,
     cost = 7,
     blueprint_compat = false,
@@ -1539,7 +1547,6 @@ SMODS.Joker {
     config = { extra = { repetitions = 1, seal = 'fnaf_vip' } },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         return { vars = { card.ability.extra.repetitions, localize { type = 'name_text', key = 'fnaf_vip_seal', set = 'Other' } } }
     end,
@@ -1575,7 +1582,6 @@ SMODS.Joker {
     config = { extra = { chips = 55, seal = 'fnaf_security' } },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         return { vars = { card.ability.extra.chips, localize { type = 'name_text', key = 'fnaf_security_seal', set = 'Other' } } }
     end,
@@ -1617,7 +1623,6 @@ SMODS.Joker {
     config = { extra = { mult = 12, seal = 'fnaf_security' } },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
         return { vars = { card.ability.extra.mult, localize { type = 'name_text', key = 'fnaf_security_seal', set = 'Other' } } }
     end,
@@ -1662,7 +1667,6 @@ SMODS.Joker {
     config = { extra = { chip = 80 }, },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
-        info_queue[#info_queue + 1] = {key = "fnaf_sprite_WIP", set = "Other"}
         return { vars = { card.ability.extra.chip, card.ability.extra.chip * #Find_type("Animatronic", card) } }
     end,
     calculate = function(self, card, context)

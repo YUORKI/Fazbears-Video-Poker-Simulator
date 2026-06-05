@@ -615,7 +615,8 @@ return {
             fnaf_vip_seal = {
                 name = "Vip Seal",
                 text = {
-                    "Doesn't have effects on it's own",
+                    "Doesn't have effects",
+                    "on it's own",
                 },
             },
             p_fnaf_item_normal = {
