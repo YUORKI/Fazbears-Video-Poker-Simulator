@@ -417,7 +417,7 @@ SMODS.Joker {
             end
             if r_cards > 0 then
                 card.ability.extra.xmult = card.ability.extra.xmult + r_cards * card.ability.extra.xmult_gain
-                if card.ability.extra.xmult >= 2 then check_for_unlock({ type = "montysmash" }) end
+                if card.ability.extra.xmult > 1.9 then check_for_unlock({ type = "montysmash" }) end
                 return {
                     message = localize {
                         type = 'variable',
