@@ -741,6 +741,7 @@ return {
         dictionary = {
             k_item_pack = "Pacote de Item",
             k_plus_pizza = "+1 Pizza",
+            k_plus_item = "+1 Item",
 
             k_fnaf_nobuff = "Sem Buff selecionado",
             k_fnaf_nodebuff = "Sem Debuff selecionado",
