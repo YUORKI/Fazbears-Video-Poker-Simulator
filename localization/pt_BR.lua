@@ -766,5 +766,17 @@ return {
             fnaf_save_freddy = "Override do Freddy",
             fnaf_save_golden = "Override do Golden Freddy",
         },
+        achievement_descriptions={
+            ach_fnaf_fazlegend = "Descubra um Animatronic Lendário",
+            ach_fnaf_bbrun = "Vença uma run com Balloon Boy",
+            ach_fnaf_itemdiscover = "Descubra todos cartas de Item",
+            ach_fnaf_montysmash = "Consiga que Montgomery Gator chegue a X2 Mult",
+        },
+        achievement_names={
+            ach_fnaf_fazlegend = "Classico",
+            ach_fnaf_bbrun = "Criança Enfurecedora",
+            ach_fnaf_itemdiscover = "Night of Frights",
+            ach_fnaf_montysmash = "Rock and Roll",
+        },
     }
 }
