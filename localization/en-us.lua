@@ -786,11 +786,13 @@ return {
             ach_fnaf_fazlegend = "Discover a Legendary Animatronic",
             ach_fnaf_bbrun = "Win a run with Balloon Boy",
             ach_fnaf_itemdiscover = "Discover all Item Cards",
+            ach_fnaf_montysmash = "Get Montgomery Gator to X2 Mult",
         },
         achievement_names={
             ach_fnaf_fazlegend = "Classic",
             ach_fnaf_bbrun = "Enragement child",
             ach_fnaf_itemdiscover = "Night of Frights",
+            ach_fnaf_montysmash = "Rock and Roll",
         },
     }
 }

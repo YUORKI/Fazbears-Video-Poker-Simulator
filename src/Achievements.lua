@@ -38,3 +38,13 @@ SMODS.Achievement {
         end
     end
 }
+
+SMODS.Achievement {
+    key = 'montysmash',
+    hidden_name = true,
+    bypass_all_unlocked = true,
+    reset_on_startup = true,
+    unlock_condition = function(self, args)
+        if args.type == "montysmash" then return true end
+    end
+}
