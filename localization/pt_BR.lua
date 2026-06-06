@@ -105,6 +105,13 @@ return {
                     "para essa blind"
                 }
             },
+            
+            c_fnaf_guitar = {
+                name = "Guitarra do Rockstar Bonnie",
+                text = {
+                    "Devolva para o Rockstar Bonnie"
+                }
+            },
         },
 
         Tarot = {
@@ -508,6 +515,15 @@ return {
                 },
             },
 
+            j_fnaf_r_bonnie = {
+                name = "Rockstar Bonnie",
+                text = {
+                    "Sua guitarra ira aparecer aleatoriamente",
+                    "Pega-la ira dar {C:mult}+#1#{} mult para esse curinga",
+                    "{C:inactive}(No momento {C:red,s:1.1}+#1#{C:inactive} Multi)",
+                },
+            },
+
             -- Legendary
 
             j_fnaf_bonnie = {
@@ -556,7 +572,7 @@ return {
                 name = "Golden Freddy",
                 text = {
                     "Seu pontuação da {C:attention}UCN{} sera usado como {C:red,s:1.1}Multi{}",
-                    "{C:inactive}(No momento {C:red,s:1.1}#1#{C:inactive} Multi)",
+                    "{C:inactive}(No momento {C:red,s:1.1}+#1#{C:inactive} Multi)",
                 },
                 unlock = {
                     "{E:1,s:1.3}?????",

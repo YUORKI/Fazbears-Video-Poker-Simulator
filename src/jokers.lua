@@ -1712,6 +1712,39 @@ SMODS.Joker {
 }
 
 SMODS.Joker {
+    key = 'r_bonnie',
+    atlas = 'Joker',
+    pos = { x = 6, y = 0  },
+    rarity = 2,
+    cost = 5,
+
+    eternal_compat = true,
+
+    fnaf_type = "Misc", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
+    config = { extra = { mult_gain = 5, mult = 0 }, },
+    loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
+        return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult } }
+    end,
+    calculate = function(self, card, context)
+        if context.using_consumeable and not context.blueprint 
+        and context.consumeable.ability.set == 'fnaf_item' and context.consumeable.config.center.key == 'c_fnaf_guitar' then
+            
+            card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
+
+        end
+
+        if context.joker_main then
+            return {
+                mult = card.ability.extra.mult,
+            }
+        end
+    end
+}
+
+SMODS.Joker {
     key = "pickles",
     atlas = 'Joker',
     pos = { x = 9, y = 1 },

@@ -106,6 +106,13 @@ return {
                 }
             },
 
+            c_fnaf_guitar = {
+                name = "Rockstar Bonnie's Guitar",
+                text = {
+                    "Give it back to Rockstar Bonnie"
+                }
+            },
+
         },
 
         Tarot = {
@@ -225,15 +232,6 @@ return {
                     "when scored",
                 },
             },
-            j_fnaf_eleanor = {
-                name = "Eleanor",
-                text = {
-                    "{X:mult,C:white} X#1# {} Mult if you have",
-                    "at least {C:attention}#2#{} Enhanced",
-                    "cards in your full deck",
-                    "{C:inactive}(Currently {C:attention}#3#{C:inactive})",
-                },
-            },
             j_fnaf_ennard = {
                 name = "Ennard",
                 text = {
@@ -246,7 +244,7 @@ return {
                 text = {
                     "Gains {X:mult,C:white} X#1# {} Mult per {C:attention}#3#{} played",
                     "{C:red,s:1.1}Destroy all those cards before scoring{}",
-                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
                 },
                 unlock = {
                     "Have at least {E:1,C:attention}#1#",
@@ -293,7 +291,7 @@ return {
                 text = {
                     "Gains {X:mult,C:white} X#1# {} Mult for ",
                     "every card destroyed",
-                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
                 },
             },
             j_fnaf_toy_bonnie = {
@@ -516,6 +514,15 @@ return {
                 },
             },
 
+            j_fnaf_r_bonnie = {
+                name = "Rockstar Bonnie",
+                text = {
+                    "His guitar will appear randomly",
+                    "grabbing it will give {C:mult}+#1#{} mult to this joker",
+                    "{C:inactive}(Currently {C:red,s:1.1}+#2#{C:inactive} Mult)",
+                },
+            },
+
             -- Legendary
 
             j_fnaf_bonnie = {
@@ -553,7 +560,7 @@ return {
                 text = {
                     "{X:mult,C:white} X#1# {} Mult per Marks of Completion",
                     "in fnaf games (Clickteam)",
-                    "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
                 },
                 unlock = {
                     "{E:1,s:1.3}?????",
@@ -564,7 +571,7 @@ return {
                 name = "Golden Freddy",
                 text = {
                     "Your {C:attention}UCN{} sore will be used as {C:red,s:1.1}Mult{}",
-                    "{C:inactive}(Currently {C:red,s:1.1}#1#{C:inactive} Mult)",
+                    "{C:inactive}(Currently {C:red,s:1.1}+#1#{C:inactive} Mult)",
                 },
                 unlock = {
                     "{E:1,s:1.3}?????",
