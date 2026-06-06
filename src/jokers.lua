@@ -288,7 +288,7 @@ SMODS.Joker {
                 end)
             }))
             return {
-                message = "+1 Item",
+                message = localize('k_plus_item'),
                 colour = G.C.GREEN,
             }
 

@@ -757,6 +757,7 @@ return {
         dictionary = {
             k_item_pack = "Item Pack",
             k_plus_pizza = "+1 Pizza",
+            k_plus_item = "+1 Item",
 
             k_fnaf_nobuff = "No Buff Selected",
             k_fnaf_nodebuff = "No Debuff Selected",
@@ -780,6 +781,12 @@ return {
             fnaf_save = "Save Override (Restart to apply)",
             fnaf_save_freddy = "Freddy Override",
             fnaf_save_golden = "Golden Freddy Override",
+        },
+        achievement_descriptions={
+            ach_fnaf_fazlegend = "Discover a Legendary Animatronic",
+        },
+        achievement_names={
+            ach_fnaf_fazlegend = "Classic",
         },
     }
 }
