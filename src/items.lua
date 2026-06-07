@@ -24,7 +24,7 @@ SMODS.ConsumableType {
 
     primary_colour = G.C.GREEN,
     secondary_colour = G.C.GREEN,
-    collection_rows = { 4, 4 },
+    collection_rows = { 5, 6 },
 
     shop_rate = 2
 }
@@ -293,7 +293,7 @@ SMODS.Consumable{
     set = 'fnaf_item',
     atlas = 'TarotFnaf',
     pos = {x = 5, y = 1},
-    cost = 4,
+    cost = 0,
     loc_vars = function(self, info_queue, card)
     end,
     use = function(self, card, area, copier)

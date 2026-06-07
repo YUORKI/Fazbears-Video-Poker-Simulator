@@ -418,12 +418,15 @@ SMODS.Joker {
             if r_cards > 0 then
                 card.ability.extra.xmult = card.ability.extra.xmult + r_cards * card.ability.extra.xmult_gain
                 if card.ability.extra.xmult > 1.9 then check_for_unlock({ type = "montysmash" }) end
+
+                local _monty_laugh = {"fnaf_Monty_laugh1"}
+                Voicelines(_monty_laugh)
+
                 return {
                     message = localize {
                         type = 'variable',
                         key = 'a_xmult',
                         vars = { card.ability.extra.xmult },
-                        sound = 'fnaf_Monty_laugh1'
                     }
                 }
             end
@@ -1738,6 +1741,13 @@ SMODS.Joker {
             
             card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
 
+            return {
+                message = localize {
+                    type = 'variable',
+                    key = 'a_xmult',
+                    vars = { card.ability.extra.xmult },
+                }
+            }
         end
 
         if context.joker_main then
