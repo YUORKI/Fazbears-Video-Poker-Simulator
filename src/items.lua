@@ -198,7 +198,11 @@ SMODS.Consumable{
     use = function(self, card, area, copier)
     end,
     can_use = function(self, card)
-        return next(SMODS.find_card("j_fnaf_diver"))
+        if G.jokers.highlighted[1] then
+            if G.jokers.highlighted[1].config.center.key == 'j_fnaf_diver' then
+                return true
+            end
+        end
     end,
     in_pool = function(self, args)
         return next(SMODS.find_card("j_fnaf_diver"))
