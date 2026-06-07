@@ -1100,6 +1100,11 @@ SMODS.Joker {
             if card.ability.extra.levels >= 2 then
                 G.hand:change_size(1)
             end
+            
+            return {
+                message = localize('k_plus_level'),
+                colour = G.C.ORANGE,
+            }
         end
 
         if context.joker_main then

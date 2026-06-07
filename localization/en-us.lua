@@ -765,6 +765,7 @@ return {
             k_item_pack = "Item Pack",
             k_plus_pizza = "+1 Pizza",
             k_plus_item = "+1 Item",
+            k_plus_level = "+1 Level",
 
             k_fnaf_nobuff = "No Buff Selected",
             k_fnaf_nodebuff = "No Debuff Selected",
