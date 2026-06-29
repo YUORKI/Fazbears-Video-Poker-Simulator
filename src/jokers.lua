@@ -239,8 +239,19 @@ SMODS.Joker {
                 end
             end
             if aces > 0 then
+                local glitmess = {
+                    'ERROR', 'UNKNOWN', 'invalid_string_message',
+                    'invalid_object', '?????', 'help me', 'gcbe3yt2bv8wewe',
+                    'a3dhgtw45t4syf', '204', '404', '401', 'HELP ME', 'GET ME OUT',
+                    '403', '405', '409', 'U2FsdGVkX19jYXlcFjSOhm+i0TiwwGSNBgtymxG6QoA=',
+                    'U2FsdGVkX1+50ys/pku6OkPwLL/pHxEv5DDMlPek15w=', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ',
+                    'U2FsdGVkX19SM1rdTy7gwk5UdrVd9tMy7aAjd/Yi3rc=', 'THEY WILL PAY FOR WHAT THEY DID',
+                }
+                local message
+                message = math.random(#glitmess)
+
                 return {
-                    message = 'Glitched',
+                    message = glitmess[message],
                     colour = G.C.PURPLE,
                     func = function()
                         if (pseudorandom('fnaf_glitchtrap_scored') < 1 / 20) then
@@ -259,7 +270,7 @@ SMODS.Joker {
     atlas = 'Joker',
     pos = { x = 3, y = 2 },
     blueprint_compat = true,
-    unlocked = false,   
+    unlocked = false,
     rarity = 2,
     cost = 4,
 
@@ -384,7 +395,7 @@ SMODS.Joker {
             end
             if faces > 0 then
                 return {
-                    message = 'Promoted?',
+                    message = localize('k_logbook_pro'),
                     colour = HEX('bea233')
                 }
             end
@@ -659,7 +670,7 @@ SMODS.Joker {
                     card.children.center:set_sprite_pos({x=2, y= 2})
                     context.other_card:set_seal(card.ability.extra.seal, nil, true)
                     return {
-                        message = 'Secured',
+                        message = localize('k_s_puppet'),
                         colour = G.C.GREEN
                     }
                 end
@@ -863,7 +874,10 @@ SMODS.Joker {
                         and SMODS.pseudorandom_probability(card, 'fnaf_missing', G.GAME.probabilities.normal, card.ability.extra.odds) then
                         trigger = 1
                         SMODS.add_card({ set = _type })
-                        return { message = 'found', colour = HEX('363636') }
+                        return {
+                            message = localize('k_missing'),
+                            colour = HEX('363636')
+                        }
                     end
                 end
             end
@@ -898,7 +912,7 @@ SMODS.Joker {
 
             if OrvilleUsed > 0 then
                 return {
-                    message = 'MAGIC',
+                    message = localize('k_orville'),
                     colour = G.C.ORANGE,
                     func = function()
                         if (pseudorandom('fnaf_orville_scored') < 1 / 5) then
@@ -1103,7 +1117,7 @@ SMODS.Joker {
             if card.ability.extra.levels >= 2 then
                 G.hand:change_size(1)
             end
-            
+
             return {
                 message = localize('k_plus_level'),
                 colour = G.C.ORANGE,
@@ -1533,7 +1547,7 @@ SMODS.Joker {
     locked_loc_vars = function(self, info_queue, card)
         return { vars = { 1, localize { type = 'name_text', key = 'fnaf_vip_seal', set = 'Other' } } }
     end,
-    check_for_unlock = function(self, args) 
+    check_for_unlock = function(self, args)
         if args.type == 'modify_deck' then
             local count = 0
             for _, playing_card in ipairs(G.playing_cards or {}) do
@@ -1594,7 +1608,7 @@ SMODS.Joker {
     locked_loc_vars = function(self, info_queue, card)
         return { vars = { 5, localize { type = 'name_text', key = 'fnaf_vip_seal', set = 'Other' } } }
     end,
-    check_for_unlock = function(self, args) 
+    check_for_unlock = function(self, args)
         if args.type == 'modify_deck' then
             local count = 0
             for _, playing_card in ipairs(G.playing_cards or {}) do
@@ -1736,9 +1750,9 @@ SMODS.Joker {
         return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult } }
     end,
     calculate = function(self, card, context)
-        if context.using_consumeable and not context.blueprint 
+        if context.using_consumeable and not context.blueprint
         and context.consumeable.ability.set == 'fnaf_item' and context.consumeable.config.center.key == 'c_fnaf_guitar' then
-            
+
             card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
 
             return {
@@ -1780,7 +1794,7 @@ SMODS.Joker {
         then
             G.GAME.round_resets.blind_ante = G.GAME.round_resets.blind_ante or G.GAME.round_resets.ante
             G.GAME.round_resets.blind_ante = 1
-            return { message = 'the pickle', colour = G.C.GREEN }
+            return { message = 'The Pickle', colour = G.C.GREEN }
         end
     end,
 

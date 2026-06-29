@@ -766,6 +766,10 @@ return {
             k_plus_pizza = "+1 Pizza",
             k_plus_item = "+1 Item",
             k_plus_level = "+1 Level",
+            k_missing = "Found",
+            k_logbook_pro = "Promoted?",
+            k_orville = "MAGIC",
+            k_s_puppet = "Secured",
 
             k_fnaf_nobuff = "No Buff Selected",
             k_fnaf_nodebuff = "No Debuff Selected",
