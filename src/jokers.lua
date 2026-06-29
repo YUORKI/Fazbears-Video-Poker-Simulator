@@ -240,8 +240,8 @@ SMODS.Joker {
             end
             if aces > 0 then
                 local glitmess = {
-                    'ERROR', 'UNKNOWN', 'invalid_string_message',
-                    'invalid_object', '?????', 'help me', 'gcbe3yt2bv8wewe',
+                    'ERROR', 'UNKNOWN', 'invalid_string_message', 'unknown_object',
+                    'invalid_object', '?????', 'help me', 'gcbe3yt2bv8wewe', "Error: Couldn't find script vr_headset_transfer_memory",
                     'a3dhgtw45t4syf', '204', '404', '401', 'HELP ME', 'GET ME OUT',
                     '403', '405', '409', 'U2FsdGVkX19jYXlcFjSOhm+i0TiwwGSNBgtymxG6QoA=',
                     'U2FsdGVkX1+50ys/pku6OkPwLL/pHxEv5DDMlPek15w=', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ',
