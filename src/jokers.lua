@@ -1853,6 +1853,58 @@ SMODS.Joker {
 }
 
 SMODS.Joker {
+    key = "darkrabbit",
+    atlas = 'Joker2',
+    pos = { x = 4, y = 0 },
+    blueprint_compat = true,
+    perishable_compat = false,
+    rarity = 2,
+    cost = 6,
+
+    fnaf_type = "Misc", -- Type of Card
+    fnaf_broken = Other, -- Fixable or Not
+
+    config = { extra = { chips = 0, chip_mod = 150 } },
+    loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
+        return { vars = { card.ability.extra.chips, card.ability.extra.chip_mod, localize { type = 'name_text', set = 'Enhanced', key = 'm_fnaf_glitch' } } }
+    end,
+
+    calculate = function(self, card, context)
+        if context.before and not context.blueprint then
+            local enhanced = {}
+            for _, scored_card in ipairs(context.scoring_hand) do
+                if SMODS.has_enhancement(scored_card, "m_fnaf_glitch") and not scored_card.debuff and not scored_card.vampired then
+                    enhanced[#enhanced + 1] = scored_card
+                    scored_card.vampired = true
+                    scored_card:set_ability('c_base', nil, true)
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            scored_card:juice_up()
+                            scored_card.vampired = nil
+                            return true
+                        end
+                    }))
+                end
+            end
+
+            if #enhanced > 0 then
+                card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.chip_mod * #enhanced
+                return {
+                    message = localize { type = 'variable', key = 'a_chips', vars = { card.ability.extra.chips } },
+                    colour = G.C.BLUE,
+                }
+            end
+        end
+        if context.joker_main then
+            return {
+                chips = card.ability.extra.chips
+            }
+        end
+    end,
+}
+
+SMODS.Joker {
     key = "pickles",
     atlas = 'Joker',
     pos = { x = 9, y = 1 },

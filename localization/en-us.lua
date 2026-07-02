@@ -258,7 +258,8 @@ return {
             j_fnaf_glam_chica = {
                 name = "Glamrock Chica",
                 text = {
-                    "Gains {X:mult,C:white} X#1# {} Mult per {C:attention}#3#{} played",
+                    "This Joker gains {X:mult,C:white} X#1# {} Mult", 
+                    "per {C:attention}#3#{} played",
                     "{C:red,s:1.1}Destroy all those cards before scoring{}",
                     "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
                 },
@@ -305,8 +306,8 @@ return {
             j_fnaf_gator = {
                 name = "Montgomery Gator",
                 text = {
-                    "Gains {X:mult,C:white} X#1# {} Mult for ",
-                    "every card destroyed",
+                    "This Joker gains {X:mult,C:white}X#1#{} Mult",
+                    "for every card destroyed",
                     "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
                 },
             },
@@ -347,7 +348,7 @@ return {
             j_fnaf_toy_chica = {
                 name = "Toy Chica",
                 text = {
-                    "{C:chips}+#2#{} Chips",
+                    "This Joker gains {C:chips}+#2#{} Chips",
                     "for every card destroyed",
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
                 },
@@ -555,6 +556,17 @@ return {
                     "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} and {C:red,s:1.1}+#4#{C:inactive} Mult)",
                 },
             },
+
+            j_fnaf_darkrabbit = {
+                name = "The Entity (M.X.E.S.)",
+                text = {
+                    "This Joker gains {C:chips}+#2#{} Chips",
+                    "per scoring {C:tarot}#3#{} played,",
+                    "removes card {C:tarot}Glitch",
+                    "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
+                },
+            },
+
 
             -- Legendary
 

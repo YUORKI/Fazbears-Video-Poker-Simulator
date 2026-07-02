@@ -257,7 +257,7 @@ return {
             j_fnaf_glam_chica = {
                 name = "Glamrock Chica",
                 text = {
-                    "Ganha {X:mult,C:white} X#1# {} Multi por cada {C:attention}#3#{} jogada",
+                    "Este Curinga ganha {X:mult,C:white}X#1#{} Multi por cada {C:attention}#3#{} jogada",
                     "{C:red,s:1.1}Destrói todas essas cartas antes de pontuar{}",
                     "{C:inactive}(No momento, {X:mult,C:white} X#2# {C:inactive} Multi)",
                 },
@@ -304,8 +304,8 @@ return {
             j_fnaf_gator = {
                 name = "Montgomery Gator",
                 text = {
-                    "Ganha {X:mult,C:white} X#1# {} Multi por",
-                    "cada carta destruída",
+                    "Este Curinga ganha {X:mult,C:white}X#1#{} Multi",
+                    "por cada carta destruída",
                     "{C:inactive}(No momento, {X:mult,C:white} X#2# {C:inactive} Multi)",
                 },
             },
@@ -348,7 +348,7 @@ return {
             j_fnaf_toy_chica = {
                 name = "Toy Chica",
                 text = {
-                    "{C:chips}+#2#{} Fichas",
+                    "Este Curinga ganha {C:chips}+#2#{} Fichas",
                     "por cada carta destruida",
                     "{C:inactive}(No momento {C:chips}+#1#{C:inactive} Fichas)",
                 },
@@ -556,6 +556,16 @@ return {
                     "{X:mult,C:white}X#1#{} Multi por {C:attention}Peça Sobressalente{} na mão",
                     "{C:red,s:1.1}+#3#{} Multi por {C:attention}Peça Sobressalente{} usada",
                     "{C:inactive}(No momento {X:mult,C:white}X#2#{C:inactive} e {C:red,s:1.1}+#4#{C:inactive} Multi)",
+                },
+            },
+
+            j_fnaf_darkrabbit = {
+                name = "A Entidade (M.X.E.S.)",
+                text = {
+                    "Este Curinga ganha {C:chips}+#2#{} Fichas",
+                    "por {C:tarot}#3#{} jogada,",
+                    "remove o {C:tarot}Glitch",
+                    "{C:inactive}(No momento {C:chips}+#1#{C:inactive} Fichas)",
                 },
             },
 
