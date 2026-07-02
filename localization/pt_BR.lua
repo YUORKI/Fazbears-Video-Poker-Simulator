@@ -105,11 +105,27 @@ return {
                     "para essa blind"
                 }
             },
-            
+
             c_fnaf_guitar = {
                 name = "Guitarra do Rockstar Bonnie",
                 text = {
                     "Devolva para o Rockstar Bonnie"
+                }
+            },
+
+            c_fnaf_sparepart = {
+                name = "Peça Sobressalente",
+                text = {
+                    "Usado para certa {C:attention}ações",
+                    "{C:inactive}(Não toma espaço)"
+                }
+            },
+
+            c_fnaf_fazwrench = {
+                name = "Faz-Wrench",
+                text = {
+                    "Pode ser usado para {C:attention}consertar",
+                    "certos {C:attention}animatronics",
                 }
             },
         },
@@ -524,6 +540,25 @@ return {
                 },
             },
 
+            j_fnaf_mangle = {
+                name = "Mangle",
+                text = {
+                    "{X:mult,C:white}X#1#{} Multi por",
+                    "{C:attention}Peça Sobressalente{}",
+                    "na mão",
+                    "{C:inactive}(No momento {X:mult,C:white}X#2#{C:inactive} Multi)",
+                },
+            },
+
+            j_fnaf_mangle_fixed = {
+                name = "Toy Foxy",
+                text = {
+                    "{X:mult,C:white}X#1#{} Multi por {C:attention}Peça Sobressalente{} na mão",
+                    "{C:red,s:1.1}+#3#{} Multi por {C:attention}Peça Sobressalente{} usada",
+                    "{C:inactive}(No momento {X:mult,C:white}X#2#{C:inactive} e {C:red,s:1.1}+#4#{C:inactive} Multi)",
+                },
+            },
+
             -- Legendary
 
             j_fnaf_bonnie = {
@@ -633,7 +668,9 @@ return {
             fnaf_vip_seal = {
                 name = "Selo Vip",
                 text = {
-                    "Não possui efeitos por si só ",
+                    "Não possui",
+                    "{C:red,s:1.1}efeitos",
+                    "por si só ",
                 },
             },
             p_fnaf_item_normal = {
@@ -741,7 +778,8 @@ return {
             fnaf_Condition = {
                 name = "Condição",
                 text = {
-                    "Esse Curinga esta Quebrado",
+                    "Esse Curinga", 
+                    "esta {C:attention}Quebrado",
                 },
             },
         },

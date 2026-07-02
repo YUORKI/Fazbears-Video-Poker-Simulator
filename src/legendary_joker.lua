@@ -285,7 +285,7 @@ SMODS.Joker {
         end
     end,
     add_to_deck = function(self, card, from_debuff)
-        local foxy_spawn = {"fnaf_foxy_summon1","fnaf_Foxy_summon2",}
+        local foxy_spawn = {"fnaf_Foxy_summon1","fnaf_Foxy_summon2",}
         Voicelines(foxy_spawn)
     end,
 }

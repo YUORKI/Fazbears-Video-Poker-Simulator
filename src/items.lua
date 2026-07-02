@@ -24,7 +24,7 @@ SMODS.ConsumableType {
 
     primary_colour = G.C.GREEN,
     secondary_colour = G.C.GREEN,
-    collection_rows = { 5, 6 },
+    collection_rows = { 6, 6 },
 
     shop_rate = 2
 }
@@ -308,4 +308,62 @@ SMODS.Consumable{
     in_pool = function(self, args)
         return next(SMODS.find_card("j_fnaf_r_bonnie"))
     end
+}
+
+SMODS.Consumable{
+    key = 'sparepart',
+    set = 'fnaf_item',
+    atlas = 'TarotFnaf',
+    pos = {x = 1, y = 1},
+    cost = 2,
+    loc_vars = function(self, info_queue, card)
+    end,
+    use = function(self, card, area, copier)
+    end,
+    add_to_deck = function(self, card, from_debuff)
+        G.consumeables.config.card_limit = G.consumeables.config.card_limit + 1
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        G.consumeables.config.card_limit = G.consumeables.config.card_limit - 1
+    end,
+    can_use = function(self, card)
+        return true
+    end
+}
+
+SMODS.Consumable{
+    key = 'fazwrench',
+    set = 'fnaf_item',
+    atlas = 'TarotFnaf',
+    pos = {x = 3, y = 1},
+    cost = 0,
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_Condition", set = "Other" }
+    end,
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                play_sound('fnaf_lego_building', nil, 0.6)
+                G.jokers.highlighted[1]:juice_up(0.462, 0.365)
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 6.2,
+                    func = function()
+                        G.jokers.highlighted[1]:set_ability(tostring(G.jokers.highlighted[1].config.center.key) .. "_fixed")
+                        play_sound('fnaf_lego_finish_building', nil, 0.6)
+                        G.jokers.highlighted[1]:juice_up(1, 1)
+                        return true
+                    end
+                }))
+                return true
+            end
+        }))
+    end,
+    can_use = function(self, card)
+        if G.jokers.highlighted[1] then
+            if G.jokers.highlighted[1].config.center.fnaf_broken == true then
+                return true
+            end
+        end
+    end,
 }

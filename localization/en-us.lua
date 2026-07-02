@@ -113,6 +113,22 @@ return {
                 }
             },
 
+            c_fnaf_sparepart = {
+                name = "Spare Part",
+                text = {
+                    "Used for certain {C:attention}actions",
+                    "{C:inactive}(Doesn't take space)"
+                }
+            },
+
+            c_fnaf_fazwrench = {
+                name = "Faz-Wrench",
+                text = {
+                    "Can be used to {C:attention}fix",
+                    "certain {C:attention}animatronics",
+                }
+            },
+
         },
 
         Tarot = {
@@ -523,6 +539,23 @@ return {
                 },
             },
 
+            j_fnaf_mangle = {
+                name = "Mangle",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult per {C:attention}Spare Part{} held",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
+                },
+            },
+
+            j_fnaf_mangle_fixed = {
+                name = "Toy Foxy",
+                text = {
+                    "{X:mult,C:white}X#1#{} Mult per {C:attention}Spare Part{} held",
+                    "{C:red,s:1.1}+#3#{} Mult per {C:attention}Spare Part{} used",
+                    "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} and {C:red,s:1.1}+#4#{C:inactive} Mult)",
+                },
+            },
+
             -- Legendary
 
             j_fnaf_bonnie = {
@@ -722,14 +755,14 @@ return {
                     "{X:inactive,C:white}Animatronic",
                 },
             },
-            
+
             fnaf_Human = {
                 name = "Joker Type",
                 text = {
                     "{X:mult,C:white}Human",
                 },
             },
-            
+
             fnaf_Other = {
                 name = "Joker Type",
                 text = {
@@ -747,7 +780,8 @@ return {
             fnaf_Condition = {
                 name = "Condition",
                 text = {
-                    "This Joker is Broken",
+                    "This Joker",
+                    "is {C:attention}Broken",
                 },
             },
 

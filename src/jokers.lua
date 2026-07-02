@@ -1477,19 +1477,19 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if G.GAME.dollars < to_big(0) and context.end_of_round and G.GAME.blind.boss and not context.blueprint then
             G.E_MANAGER:add_event(Event({
-                    func = function()
-                        play_sound('tarot1')
-                        card:juice_up(0.3, 0.4)
-                        G.E_MANAGER:add_event(Event({
-                            trigger = 'after',
-                            delay = 1.2,
-                            blockable = false,
-                            func = function()
-                                G.STATE = G.STATES.GAME_OVER
-                                G.STATE_COMPLETE = false
-                                return true
-                            end
-                        }))
+                func = function()
+                    play_sound('tarot1')
+                    card:juice_up(0.3, 0.4)
+                    G.E_MANAGER:add_event(Event({
+                        trigger = 'after',
+                        delay = 1.2,
+                        blockable = false,
+                        func = function()
+                            G.STATE = G.STATES.GAME_OVER
+                            G.STATE_COMPLETE = false
+                            return true
+                        end
+                    }))
                     return true
                 end
             }))
@@ -1741,7 +1741,7 @@ SMODS.Joker {
 
     eternal_compat = true,
 
-    fnaf_type = "Misc", -- Type of Card
+    fnaf_type = "Animatronic", -- Type of Card
     fnaf_broken = false, -- Fixable or Not
 
     config = { extra = { mult_gain = 5, mult = 0 }, },
@@ -1759,7 +1759,7 @@ SMODS.Joker {
                 message = localize {
                     type = 'variable',
                     key = 'a_xmult',
-                    vars = { card.ability.extra.xmult },
+                    vars = { card.ability.extra.mult },
                 }
             }
         end
@@ -1769,6 +1769,86 @@ SMODS.Joker {
                 mult = card.ability.extra.mult,
             }
         end
+    end
+}
+
+SMODS.Joker {
+    key = 'mangle',
+    atlas = 'Joker2',
+    pos = { x = 2, y = 0  },
+    rarity = 2,
+    cost = 5,
+
+    eternal_compat = false,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = true, -- Fixable or Not
+
+    config = { extra = { xmult_gain = 0.3, xmult = 0 }, },
+    loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
+        local parts_tally = 1
+        if G.consumeables then
+            for _, consumable in ipairs(G.consumeables.cards) do
+                if consumable.ability.set == "fnaf_item" and next(SMODS.find_card('c_fnaf_sparepart')) then
+                    parts_tally = parts_tally + card.ability.extra.xmult_gain
+                end
+            end
+            card.ability.extra.xmult = parts_tally
+        end
+        return { vars = { card.ability.extra.xmult_gain, card.ability.extra.xmult, card.ability.extra.mult_gain, card.ability.extra.mult } }
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            return {
+                xmult = card.ability.extra.xmult,
+                mult = card.ability.extra.mult
+            }
+        end
+    end
+}
+
+SMODS.Joker {
+    key = 'mangle_fixed',
+    atlas = 'Joker2',
+    pos = { x = 3, y = 0  },
+    rarity = 3,
+    cost = 9,
+
+    eternal_compat = false,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
+    config = { extra = { xmult_gain = 0.3, xmult = 1, mult_gain = 5, mult = 0 }, },
+    loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
+        local parts_tally = 1
+        if G.consumeables then
+            for _, consumable in ipairs(G.consumeables.cards) do
+                if consumable.ability.set == "fnaf_item" and next(SMODS.find_card('c_fnaf_sparepart')) then
+                    parts_tally = parts_tally + card.ability.extra.xmult_gain
+                end
+            end
+            card.ability.extra.xmult = parts_tally
+        end
+        return { vars = { card.ability.extra.xmult_gain, card.ability.extra.xmult, card.ability.extra.mult_gain, card.ability.extra.mult } }
+    end,
+    calculate = function(self, card, context)
+        if context.using_consumeable and not context.blueprint and context.consumeable.ability.set == 'fnaf_item' 
+        and context.consumeable.config.center.key == 'c_fnaf_sparepart' then
+            card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
+        end
+
+        if context.joker_main then
+            return {
+                xmult = card.ability.extra.xmult,
+                mult = card.ability.extra.mult
+            }
+        end
+    end,
+    in_pool = function(self, args)
+        return false
     end
 }
 

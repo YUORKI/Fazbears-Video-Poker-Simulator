@@ -7,6 +7,13 @@ SMODS.Atlas{
 }
 
 SMODS.Atlas{
+    key = 'Joker2', --atlas key
+    path = 'Joker_2.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
+    px = 71, --width of one card
+    py = 95 -- height of one card
+}
+
+SMODS.Atlas{
     key = 'Legendary', --atlas key
     path = 'legendary.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
     px = 71, --width of one card
