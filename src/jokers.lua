@@ -1635,11 +1635,11 @@ SMODS.Joker {
     cost = 7,
     atlas = 'Joker',
     pos = { x = 2, y = 3 },
-
+    unlocked = false,
     fnaf_type = "Human", -- Type of Card
     fnaf_broken = false, -- Fixable or Not
 
-    config = { extra = { chips = 55, seal = 'fnaf_security' } },
+    config = { extra = { chips = 55, seal = 'fnaf_security', unlock_count = 1  } },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
@@ -1667,6 +1667,21 @@ SMODS.Joker {
         end
         return false
     end,
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.unlock_count, localize { type = 'name_text', key = 'fnaf_security_seal', set = 'Other' } } }
+    end,
+    check_for_unlock = function(self, args)
+        if args.type == 'modify_deck' then
+            local count = 0
+            for _, playing_card in ipairs(G.playing_cards or {}) do
+                if playing_card.seal == 'fnaf_security' then count = count + 1 end
+                if count >= 1 then
+                    return true
+                end
+            end
+        end
+        return false
+    end
 }
 
 SMODS.Joker {
@@ -1676,7 +1691,7 @@ SMODS.Joker {
     cost = 7,
     atlas = 'Joker',
     pos = { x = 3, y = 3 },
-
+    unlocked = false,
     fnaf_type = "Human", -- Type of Card
     fnaf_broken = false, -- Fixable or Not
 
@@ -1708,6 +1723,21 @@ SMODS.Joker {
         end
         return false
     end,
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { 3, localize { type = 'name_text', key = 'fnaf_security_seal', set = 'Other' } } }
+    end,
+    check_for_unlock = function(self, args)
+        if args.type == 'modify_deck' then
+            local count = 0
+            for _, playing_card in ipairs(G.playing_cards or {}) do
+                if playing_card.seal == 'fnaf_security' then count = count + 1 end
+                if count >= 3 then
+                    return true
+                end
+            end
+        end
+        return false
+    end
 }
 
 SMODS.Joker {
@@ -1868,12 +1898,12 @@ SMODS.Joker {
     blueprint_compat = true,
     perishable_compat = false,
     rarity = 2,
-    cost = 6,
-
+    cost = 4,
+    unlocked = false,
     fnaf_type = "Misc", -- Type of Card
     fnaf_broken = false, -- Fixable or Not
 
-    config = { extra = { chips = 0, chip_mod = 150 } },
+    config = { extra = { chips = 0, chip_mod = 150, unlock_count = 3 } },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
         info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
@@ -1912,6 +1942,29 @@ SMODS.Joker {
             }
         end
     end,
+    in_pool = function(self, args)
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, "m_fnaf_glitch") then
+                return true
+            end
+        end
+        return false
+    end,
+    locked_loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.unlock_count, localize { type = 'name_text', key = 'm_fnaf_glitch', set = 'Enhanced' } } }
+    end,
+    check_for_unlock = function(self, args, card) -- equivalent to `unlock_condition = { type = 'modify_deck', extra = { count = 5, enhancement = 'Glass Card', e_key = 'm_glass' } }`
+        if args.type == 'modify_deck' then
+            local count = 0
+            for _, playing_card in ipairs(G.playing_cards or {}) do
+                if SMODS.has_enhancement(playing_card, "m_fnaf_glitch") then count = count + 1 end
+                if count >= 3 then
+                    return true
+                end
+            end
+        end
+        return false
+    end
 }
 
 SMODS.Joker {
@@ -1921,7 +1974,7 @@ SMODS.Joker {
     blueprint_compat = true,
     perishable_compat = false,
     rarity = 3,
-    cost = 7,
+    cost = 5,
 
     fnaf_type = "Animatronic", -- Type of Card
     fnaf_broken = false, -- Fixable or Not

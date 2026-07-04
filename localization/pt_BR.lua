@@ -510,6 +510,11 @@ return {
                     "na mão",
                     "dá {C:chips}+#1#{} Fichas",
                 },
+                unlock={
+                    "Tenha pelo menos {C:attention}#1#",
+                    "{E:1,C:attention}#2#{} no",
+                    "seu baralho",
+                },
             },
 
             j_fnaf_vanessa = {
@@ -518,6 +523,11 @@ return {
                     "Cartas jogadas com",
                     "{C:clubs}#2#{} dão",
                     "{C:mult}+#1#{} Multi quando pontuadas",
+                },
+                unlock={
+                    "Tenha pelo menos {C:attention}#1#",
+                    "{E:1,C:attention}#2#{} no",
+                    "seu baralho",
                 },
             },
 
@@ -567,6 +577,11 @@ return {
                     "por {C:tarot}#3#{} jogada",
                     "remove o {C:tarot}Glitch",
                     "{C:inactive}(No momento {C:chips}+#1#{C:inactive} Fichas)",
+                },
+                unlock = {
+                    "Tenha pelo menos {E:1,C:attention}#1#",
+                    "{E:1,C:attention}#2#s{} no",
+                    "seu baralho",
                 },
             },
 

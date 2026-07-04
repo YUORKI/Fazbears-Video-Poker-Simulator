@@ -511,6 +511,11 @@ return {
                     "held in hand",
                     "gives {C:chips}+#1#{} Chips",
                 },
+                unlock = {
+                    "Have at least {C:attention}#1#",
+                    "{E:1,C:attention}#2#{} in",
+                    "your deck",
+                },
             },
 
             j_fnaf_vanessa = {
@@ -519,6 +524,11 @@ return {
                     "Played cards with",
                     "{C:attention}#2#{} give",
                     "{C:mult}+#1#{} Mult when scored",
+                },
+                unlock = {
+                    "Have at least {C:attention}#1#",
+                    "{E:1,C:attention}#2#{} in",
+                    "your deck",
                 },
             },
 
@@ -565,6 +575,11 @@ return {
                     "per scoring {C:tarot}#3#{} played",
                     "{C:red,s:1.1}Removes{} card {C:tarot}Glitch",
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
+                },
+                unlock = {
+                    "Have at least {E:1,C:attention}#1#",
+                    "{E:1,C:attention}#2#s{} in",
+                    "your deck",
                 },
             },
 
