@@ -538,11 +538,17 @@ SMODS.Joker {
     calculate = function(self, card, context)
         if context.before and context.main_eval and not context.blueprint then
             local enhanced = {}
+            local _Glam_Pizza = {"fnaf_GlamChica_Pizza","fnaf_GlamChica_Pizza1","fnaf_GlamChica_Pizza2","fnaf_GlamChica_Pizza3"}
+
             for _, scored_card in ipairs(context.scoring_hand) do
                 if SMODS.has_enhancement(scored_card, "m_fnaf_pizza") and not scored_card.debuff and not scored_card.vampired then
                     enhanced[#enhanced + 1] = scored_card
-                    local _Glam_Pizza = {"fnaf_GlamChica_Pizza","fnaf_GlamChica_Pizza1","fnaf_GlamChica_Pizza2","fnaf_GlamChica_Pizza3"}
-                    Voicelines(_Glam_Pizza)
+
+                    if #enhanced == 1 then
+                        Voicelines(_Glam_Pizza)
+                        card:juice_up(0.1, 0.2)
+                    end
+
                     scored_card.vampired = true
                     SMODS.destroy_cards(scored_card)
                     G.E_MANAGER:add_event(Event({
@@ -1747,6 +1753,7 @@ SMODS.Joker {
     config = { extra = { mult_gain = 5, mult = 0 }, },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult } }
     end,
     calculate = function(self, card, context)
@@ -1787,6 +1794,7 @@ SMODS.Joker {
     config = { extra = { xmult_gain = 0.3, xmult = 0 }, },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         local parts_tally = 1
         if G.consumeables then
             for _, consumable in ipairs(G.consumeables.cards) do
@@ -1823,6 +1831,7 @@ SMODS.Joker {
     config = { extra = { xmult_gain = 0.3, xmult = 1, mult_gain = 5, mult = 0 }, },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         local parts_tally = 1
         if G.consumeables then
             for _, consumable in ipairs(G.consumeables.cards) do
@@ -1835,7 +1844,7 @@ SMODS.Joker {
         return { vars = { card.ability.extra.xmult_gain, card.ability.extra.xmult, card.ability.extra.mult_gain, card.ability.extra.mult } }
     end,
     calculate = function(self, card, context)
-        if context.using_consumeable and not context.blueprint and context.consumeable.ability.set == 'fnaf_item' 
+        if context.using_consumeable and not context.blueprint and context.consumeable.ability.set == 'fnaf_item'
         and context.consumeable.config.center.key == 'c_fnaf_sparepart' then
             card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_gain
         end
@@ -1862,11 +1871,12 @@ SMODS.Joker {
     cost = 6,
 
     fnaf_type = "Misc", -- Type of Card
-    fnaf_broken = Other, -- Fixable or Not
+    fnaf_broken = false, -- Fixable or Not
 
     config = { extra = { chips = 0, chip_mod = 150 } },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.chips, card.ability.extra.chip_mod, localize { type = 'name_text', set = 'Enhanced', key = 'm_fnaf_glitch' } } }
     end,
 
@@ -1900,6 +1910,50 @@ SMODS.Joker {
             return {
                 chips = card.ability.extra.chips
             }
+        end
+    end,
+}
+
+SMODS.Joker {
+    key = "dreadbear",
+    atlas = 'Joker2',
+    pos = { x = 0, y = 0 },
+    blueprint_compat = true,
+    perishable_compat = false,
+    rarity = 3,
+    cost = 7,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
+    config = { extra = { odds = 5 } },
+    loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        return { vars = { G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
+    end,
+    calculate = function(self, card, context)
+        if context.remove_playing_cards then
+            for i = 1, #context.removed do
+                if SMODS.pseudorandom_probability(card, 'fnaf_revive', G.GAME.probabilities.normal, card.ability.extra.odds) then
+                    G.playing_card = (G.playing_card and G.playing_card + 1) or 1
+                    local copy_card = copy_card(context.removed[i], nil, nil, G.playing_card)
+                    copy_card:add_to_deck()
+                    G.deck.config.card_limit = G.deck.config.card_limit + 1
+                    table.insert(G.playing_cards, copy_card)
+                    G.hand:emplace(copy_card)
+                    copy_card.states.visible = nil
+
+                    G.E_MANAGER:add_event(Event({
+                        func = function()
+                            copy_card:start_materialize()
+                            return true
+                        end
+                    }))
+                end
+
+            end
+
         end
     end,
 }

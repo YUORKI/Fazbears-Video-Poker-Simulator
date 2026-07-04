@@ -235,7 +235,6 @@ SMODS.Consumable{
     cost = 5,
     config = {extra = 3},
     loc_vars = function(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra } }
     end,
     use = function(self, card, area, copier)
@@ -295,6 +294,7 @@ SMODS.Consumable{
     pos = {x = 5, y = 1},
     cost = 0,
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
     end,
     use = function(self, card, area, copier)
     end,
@@ -317,6 +317,7 @@ SMODS.Consumable{
     pos = {x = 1, y = 1},
     cost = 2,
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
     end,
     use = function(self, card, area, copier)
     end,
@@ -338,6 +339,7 @@ SMODS.Consumable{
     pos = {x = 3, y = 1},
     cost = 0,
     loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         info_queue[#info_queue + 1] = { key = "fnaf_Condition", set = "Other" }
     end,
     use = function(self, card, area, copier)

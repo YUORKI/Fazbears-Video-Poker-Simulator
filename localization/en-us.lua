@@ -567,6 +567,14 @@ return {
                 },
             },
 
+            j_fnaf_dreadbear = {
+                name = "Dreadbear",
+                text = {
+                    "{C:attention}Destroyed Cards{} have a",
+                    "{C:green}#1# in #2#{} chance",
+                    "to be {C:attention}resurrected",
+                },
+            },
 
             -- Legendary
 

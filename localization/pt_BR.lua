@@ -569,6 +569,15 @@ return {
                 },
             },
 
+            j_fnaf_dreadbear = {
+                name = "Dreadbear",
+                text = {
+                    "{C:attention}Cartas Destruidas{} tem uma",
+                    "Chance de {C:green}#1# em #2#{}",
+                    "de serem {C:attention}ressuscitadas",
+                },
+            },
+
             -- Legendary
 
             j_fnaf_bonnie = {
