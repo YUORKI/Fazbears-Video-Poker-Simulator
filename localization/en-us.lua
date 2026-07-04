@@ -258,7 +258,7 @@ return {
             j_fnaf_glam_chica = {
                 name = "Glamrock Chica",
                 text = {
-                    "This Joker gains {X:mult,C:white} X#1# {} Mult", 
+                    "This Joker gains {X:mult,C:white} X#1# {} Mult",
                     "per {C:attention}#3#{} played",
                     "{C:red,s:1.1}Destroy all those cards before scoring{}",
                     "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
@@ -534,8 +534,9 @@ return {
             j_fnaf_r_bonnie = {
                 name = "Rockstar Bonnie",
                 text = {
-                    "His guitar will appear randomly",
-                    "grabbing it will give {C:mult}+#1#{} mult to this joker",
+                    "His {C:attention}guitar{} appears in the {C:attention}shop,",
+                    "Using it will give {C:mult}+#1#{} mult",
+                    "to this joker",
                     "{C:inactive}(Currently {C:red,s:1.1}+#2#{C:inactive} Mult)",
                 },
             },
@@ -561,8 +562,8 @@ return {
                 name = "The Entity (M.X.E.S.)",
                 text = {
                     "This Joker gains {C:chips}+#2#{} Chips",
-                    "per scoring {C:tarot}#3#{} played,",
-                    "removes card {C:tarot}Glitch",
+                    "per scoring {C:tarot}#3#{} played",
+                    "{C:red,s:1.1}Removes{} card {C:tarot}Glitch",
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
                 },
             },

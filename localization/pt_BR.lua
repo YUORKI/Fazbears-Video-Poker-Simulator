@@ -534,9 +534,10 @@ return {
             j_fnaf_r_bonnie = {
                 name = "Rockstar Bonnie",
                 text = {
-                    "Sua guitarra ira aparecer aleatoriamente",
-                    "Pega-la ira dar {C:mult}+#1#{} mult para esse curinga",
-                    "{C:inactive}(No momento {C:red,s:1.1}+#1#{C:inactive} Multi)",
+                    "Sua {C:attention}guitarra{} aparece na {C:attention}loja,",
+                    "Pega-la ira dar {C:mult}+#1#{} mult",
+                    "para esse curinga",
+                    "{C:inactive}(No momento {C:red,s:1.1}+#2#{C:inactive} Multi)",
                 },
             },
 
@@ -563,7 +564,7 @@ return {
                 name = "A Entidade (M.X.E.S.)",
                 text = {
                     "Este Curinga ganha {C:chips}+#2#{} Fichas",
-                    "por {C:tarot}#3#{} jogada,",
+                    "por {C:tarot}#3#{} jogada",
                     "remove o {C:tarot}Glitch",
                     "{C:inactive}(No momento {C:chips}+#1#{C:inactive} Fichas)",
                 },
@@ -797,7 +798,7 @@ return {
             fnaf_Condition = {
                 name = "Condição",
                 text = {
-                    "Esse Curinga", 
+                    "Esse Curinga",
                     "esta {C:attention}Quebrado",
                 },
             },

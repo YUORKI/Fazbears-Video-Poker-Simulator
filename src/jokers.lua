@@ -1917,7 +1917,7 @@ SMODS.Joker {
 SMODS.Joker {
     key = "dreadbear",
     atlas = 'Joker2',
-    pos = { x = 0, y = 0 },
+    pos = { x = 5, y = 0 },
     blueprint_compat = true,
     perishable_compat = false,
     rarity = 3,
