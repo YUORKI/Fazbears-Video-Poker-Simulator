@@ -1,16 +1,8 @@
-assert(SMODS.load_file("src/config.lua"))()
-assert(SMODS.load_file("src/ui.lua"))()
-assert(SMODS.load_file("src/functions.lua"))()
-assert(SMODS.load_file("src/enhancers.lua"))()
-assert(SMODS.load_file("src/seals.lua"))()
-assert(SMODS.load_file("src/atlas.lua"))()
-assert(SMODS.load_file("src/sounds.lua"))()
-assert(SMODS.load_file("src/tarot.lua"))()
-assert(SMODS.load_file("src/items.lua"))()
-assert(SMODS.load_file("src/booster.lua"))()
-assert(SMODS.load_file("src/voucher.lua"))()
-assert(SMODS.load_file("src/spectral.lua"))()
-assert(SMODS.load_file("src/fetch.lua"))()
-assert(SMODS.load_file("src/jokers.lua"))()
-assert(SMODS.load_file("src/Achievements.lua"))()
-assert(SMODS.load_file("src/legendary_joker.lua"))()
+local mod_path = "" .. SMODS.current_mod.path
+local files = NFS.getDirectoryItems(mod_path .. "src")
+for _, file in ipairs(files) do
+	if string.match(file, "%.lua$") then
+		local f, err = SMODS.load_file("src/" .. file)
+		assert(f, err)()
+	end
+end
