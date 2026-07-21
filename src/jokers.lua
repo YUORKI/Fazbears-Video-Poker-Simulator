@@ -1783,7 +1783,6 @@ SMODS.Joker {
     config = { extra = { mult_gain = 5, mult = 0 }, },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.mult_gain, card.ability.extra.mult } }
     end,
     calculate = function(self, card, context)
@@ -1895,6 +1894,7 @@ SMODS.Joker {
     key = "darkrabbit",
     atlas = 'Joker2',
     pos = { x = 4, y = 0 },
+    soul_pos = { x = 9, y = 0 },
     blueprint_compat = true,
     perishable_compat = false,
     rarity = 2,
@@ -1906,7 +1906,6 @@ SMODS.Joker {
     config = { extra = { chips = 0, chip_mod = 150, unlock_count = 3 } },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { card.ability.extra.chips, card.ability.extra.chip_mod, localize { type = 'name_text', set = 'Enhanced', key = 'm_fnaf_glitch' } } }
     end,
 
@@ -1941,6 +1940,12 @@ SMODS.Joker {
                 chips = card.ability.extra.chips
             }
         end
+    end,
+    add_to_deck = function(self, card, from_debuff)
+        card.children.floating_sprite:set_sprite_pos({x=6, y= 0})
+    end,
+    remove_from_deck = function(self, card, from_debuff)
+        card.children.floating_sprite:set_sprite_pos({x=9, y= 0})
     end,
     in_pool = function(self, args)
         for _, playing_card in ipairs(G.playing_cards or {}) do
@@ -1982,7 +1987,6 @@ SMODS.Joker {
     config = { extra = { odds = 5 } },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         return { vars = { G.GAME.probabilities.normal or 1, card.ability.extra.odds } }
     end,
     calculate = function(self, card, context)
