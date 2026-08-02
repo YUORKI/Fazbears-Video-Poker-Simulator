@@ -8,6 +8,6 @@
   "priority": 0,  
   "badge_colour": "775430",
   "display_name": "FVPS",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "dependencies": ["Steamodded (>=1.0.0~BETA-0509c)"]
 }

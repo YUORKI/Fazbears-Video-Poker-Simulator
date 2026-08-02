@@ -21,14 +21,14 @@
 </div>
 
 Currently, this mod adds:
-- 40 Jokers
+- 45 Jokers
 - 4 Vouchers
 - 2 Tarot Cards
 - 2 Spectral Cards
 - 3 Enhanced Cards
 - 3 Seals
 - 1 Consumable types (containing their own booster pack):
-  - 10 Item cards : used for utility during rounds
+  - 13 Item cards : used for utility during rounds
  
 Check the Roadmap for info at upcoming content this [Roadmap](https://github.com/YUORKI/Fazbears-Video-Poker-Simulator/discussions/2#discussion-9090732)
 
