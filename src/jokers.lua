@@ -1823,7 +1823,6 @@ SMODS.Joker {
     config = { extra = { xmult_gain = 0.3, xmult = 0 }, },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         local parts_tally = 1
         if G.consumeables then
             for _, consumable in ipairs(G.consumeables.cards) do
@@ -1860,7 +1859,6 @@ SMODS.Joker {
     config = { extra = { xmult_gain = 0.3, xmult = 1, mult_gain = 5, mult = 0 }, },
     loc_vars = function(self, info_queue, card)
         info_type(self, info_queue, card)
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
         local parts_tally = 1
         if G.consumeables then
             for _, consumable in ipairs(G.consumeables.cards) do

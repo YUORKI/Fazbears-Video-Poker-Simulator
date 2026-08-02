@@ -40,6 +40,13 @@ SMODS.Seal {
     always_scores = false,
     loc_vars = function(self, info_queue, card)
     end,
+    draw = function(self, card, layer)
+        if (layer == 'card' or layer == 'both') and card.sprite_facing == 'front' then
+            G.shared_seals[card.seal].role.draw_major = card
+            G.shared_seals[card.seal]:draw_shader('dissolve', nil, nil, nil, card.children.center)
+            G.shared_seals[card.seal]:draw_shader('voucher', nil, card.ARGS.send_to_shader, nil, card.children.center)
+        end
+    end
 }
 
 SMODS.current_mod.set_debuff = function(card)

@@ -545,7 +545,7 @@ return {
                 name = "Rockstar Bonnie",
                 text = {
                     "His {C:attention}guitar{} appears in the {C:attention}shop,",
-                    "Using it will give {C:mult}+#1#{} mult",
+                    "Using it will give {C:mult}+#1#{} Mult",
                     "to this joker",
                     "{C:inactive}(Currently {C:red,s:1.1}+#2#{C:inactive} Mult)",
                 },
