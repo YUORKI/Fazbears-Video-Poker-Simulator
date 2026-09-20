@@ -60,7 +60,7 @@ SMODS.Consumable{
         local bad_context = context.repetition or context.individual or context.blueprint
         if context.after and not card.ability.destroyed and card.ability.activated and not bad_context then
             local uses = card.ability.extra.uses
-            FNAF_BALATRO.fnaf_remnant.run_remn(card, uses)
+            FNAF_BALATRO.fnaf_remnant.run_remn(card, 1)
         end
     end,
 

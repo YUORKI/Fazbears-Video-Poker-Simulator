@@ -93,13 +93,17 @@ FNAF_BALATRO.fnaf_remnant = {
         end
     end,
 
-    run_remn = function(card, loc_str, mod)
+    run_remn = function(card, mod)
         card.ability.extra.uses = card.ability.extra.uses + (mod or 1)
-        if card.ability.extra.uses >= card.ability.usages then
+        if card.ability.extra.uses >= card.ability.extra.usages then
             FNAF_BALATRO.fnaf_remnant.remove_rem(card)
         else
             card_eval_status_text(card, 'extra', nil, nil, nil, {
-                message = localize(card.ability.uses or 'b_trigger'),
+                message = localize {
+                        type = 'variable',
+                        key = 'a_uses',
+                        vars = { card.ability.extra.uses, card.ability.extra.usages },
+                    },
                 colour = G.C.REMN,
                 sound = 'tarot1',
                 delay = 0.50,

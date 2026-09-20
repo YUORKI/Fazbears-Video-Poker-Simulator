@@ -880,6 +880,9 @@ return {
             b_trigger = "Triggered"
 
         },
+        v_dictionary={
+            a_uses = "#1#/#2#",
+        },
         achievement_descriptions={
             ach_fnaf_fazlegend = "Discover a Legendary Animatronic",
             ach_fnaf_bbrun = "Win a run with Balloon Boy",
