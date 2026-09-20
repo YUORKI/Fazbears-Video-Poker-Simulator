@@ -131,6 +131,16 @@ return {
 
         },
 
+        fnaf_remnant = {
+            c_fnaf_meltedhead = {
+                name = "Melted Head Remnant",
+                text = {
+                    "{C:chips}+#1#{} Chips per Joker Animatronic",
+                    " on hand (8 uses)",
+                },
+            },
+        },
+
         Tarot = {
             c_fnaf_rabbit = {
                 name = "invalid_tarot_object",
@@ -863,6 +873,10 @@ return {
             fnaf_save = "Save Override (Restart to apply)",
             fnaf_save_freddy = "Freddy Override",
             fnaf_save_golden = "Golden Freddy Override",
+
+            b_activate = "Injected",
+            b_deactivate = "Extracted"
+
         },
         achievement_descriptions={
             ach_fnaf_fazlegend = "Discover a Legendary Animatronic",
