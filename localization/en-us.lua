@@ -136,7 +136,8 @@ return {
                 name = "Melted Head Remnant",
                 text = {
                     "{C:chips}+#1#{} Chips per Joker Animatronic",
-                    " on hand (8 uses)",
+                    "while {C:attention}injected{}",
+                    "(#3#/#2# usages)",
                 },
             },
         },
@@ -874,8 +875,9 @@ return {
             fnaf_save_freddy = "Freddy Override",
             fnaf_save_golden = "Golden Freddy Override",
 
-            b_activate = "Injected",
-            b_deactivate = "Extracted"
+            b_activate = "INJECT",
+            b_deactivate = "EXTRACT",
+            b_trigger = "Triggered"
 
         },
         achievement_descriptions={

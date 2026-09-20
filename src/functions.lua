@@ -1,10 +1,11 @@
+G.C.REMN = HEX('FF535353')
+
 Voicelines = function(audio) --Voicelines for Cards
     local volume = FNAF.config.volumes
     if FNAF.config.voices then
         play_sound(audio[math.random(#audio)], nil, volume / 100 )
     end
 end
-
 
 Nedd_remove_buff = function(extra_h_size, extra_hands, nedd_buff, nedd_debuff)
     if nedd_buff == 4 then
@@ -93,15 +94,15 @@ FNAF_BALATRO.fnaf_remnant = {
     end,
 
     run_remn = function(card, loc_str, mod)
-        card.ability.uses = card.ability.uses + (mod or 1)
-        if card.ability.uses >= card.ability.runtime then
+        card.ability.extra.uses = card.ability.extra.uses + (mod or 1)
+        if card.ability.extra.uses >= card.ability.usages then
             FNAF_BALATRO.fnaf_remnant.remove_rem(card)
         else
             card_eval_status_text(card, 'extra', nil, nil, nil, {
-                message = "Gone",
-                colour = G.C.remnant,
+                message = localize(card.ability.uses or 'b_trigger'),
+                colour = G.C.REMN,
                 sound = 'tarot1',
-                delay = 0.45,
+                delay = 0.50,
             })
         end
     end,
@@ -161,7 +162,7 @@ function Card:set_ability(center, initial, delay_sprites)
         self.ability.activation = true
         self.ability.activated = false
         self.ability.destroyed = false
-        self.ability.runtime = center.runtime or 3
+        self.ability.usages = center.usages or 3
         self.ability.uses = 0
     end
 
