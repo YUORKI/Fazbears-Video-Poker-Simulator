@@ -1,18 +1,19 @@
-FNAF = SMODS.current_mod
-FNAF.save_config = function(self)
+FNAF_BALATRO.save_config = function(self)
     SMODS.save_mod_config(self)
 end
+
+G.SETTINGS.SOUND.volumes = G.SETTINGS.SOUND.volumes or 100
 
 local config = SMODS.current_mod.config
 SMODS.current_mod.config_tab = function()
 
     local voice_toggle = create_toggle({
         label = localize('fnaf_va'),
-        ref_table = FNAF.config,
+        ref_table = FNAF_BALATRO.config,
         juice = true,
         ref_value = 'voices', -- what var does this button match
         callback = function()
-            FNAF:save_config()
+            FNAF_BALATRO:save_config()
         end
     })
 
@@ -22,8 +23,9 @@ SMODS.current_mod.config_tab = function()
         max = 100,
         step = 1,
         w = 5,
-        ref_table = FNAF.config,
-        ref_value = 'volumes',
+        h = 0.5,
+        ref_table = G.SETTINGS.SOUND,
+        ref_value = 'volumes' or 100,
     })
 
     -- Save Override
@@ -32,11 +34,11 @@ SMODS.current_mod.config_tab = function()
 
     local freddy_toggle = create_toggle({
         label = localize('fnaf_save_freddy'),
-        ref_table = FNAF.config,
+        ref_table = FNAF_BALATRO.config,
         juice = true,
         ref_value = 'freddyimport',
         callback = function()
-            FNAF:save_config()
+            FNAF_BALATRO:save_config()
         end
     })
 
@@ -44,11 +46,11 @@ SMODS.current_mod.config_tab = function()
 
     local golden_toggle = create_toggle({
         label = localize('fnaf_save_golden'),
-        ref_table = FNAF.config,
+        ref_table = FNAF_BALATRO.config,
         juice = true,
         ref_value = 'goldenimport',
         callback = function()
-            FNAF:save_config()
+            FNAF_BALATRO:save_config()
         end
     })
 

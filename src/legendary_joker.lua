@@ -186,11 +186,11 @@ if Freddy_Mult > 63 then
     Freddy_Mult = 63
 end
 
-if FNAF.config.freddyimport then
+if FNAF_BALATRO.config.freddyimport then
     Freddy_Mult = 63
 end
 
-if FNAF.config.goldenimport then
+if FNAF_BALATRO.config.goldenimport then
     Golden_Mult = 10600
 end
 

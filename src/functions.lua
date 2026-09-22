@@ -1,7 +1,7 @@
 G.C.REMN = HEX('FF535353')
 
 Voicelines = function(audio) --Voicelines for Cards
-    local volume = FNAF.config.volumes
+    local volume = G.SETTINGS.SOUND.volumes
     if FNAF.config.voices then
         play_sound(audio[math.random(#audio)], nil, volume / 100 )
     end
