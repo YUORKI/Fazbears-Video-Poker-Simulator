@@ -1,7 +1,7 @@
 G.C.REMN = HEX('FF535353')
 
 Voicelines = function(audio) --Voicelines for Cards
-    local volume = G.SETTINGS.SOUND.volumes
+    local volume = G.SETTINGS.SOUND.voice_volume
     if FNAF_BALATRO.config.voices then
         play_sound(audio[math.random(#audio)], nil, volume / 100 )
     else

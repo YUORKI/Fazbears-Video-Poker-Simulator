@@ -2,7 +2,7 @@ FNAF_BALATRO.save_config = function(self)
     SMODS.save_mod_config(self)
 end
 
-G.SETTINGS.SOUND.volumes = G.SETTINGS.SOUND.volumes or 100
+G.SETTINGS.SOUND.voice_volume = G.SETTINGS.SOUND.voice_volume or 100
 
 local config = SMODS.current_mod.config
 SMODS.current_mod.config_tab = function()
@@ -25,7 +25,7 @@ SMODS.current_mod.config_tab = function()
         w = 5,
         h = 0.5,
         ref_table = G.SETTINGS.SOUND,
-        ref_value = 'volumes' or 100,
+        ref_value = 'voice_volume',
     })
 
     -- Save Override
