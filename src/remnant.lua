@@ -28,7 +28,7 @@ SMODS.ConsumableType {
     stack = false,
     divide = false,
 
-    shop_rate = 2
+    shop_rate = 4
 }
 
 SMODS.UndiscoveredSprite{
@@ -69,5 +69,5 @@ SMODS.Consumable{
         card.area == G.consumeables then
             return true
         end
-    end
+    end,
 }

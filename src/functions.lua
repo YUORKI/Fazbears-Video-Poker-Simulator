@@ -36,15 +36,15 @@ info_type = function(self, info_queue, card)
 end
 
 Find_type = function(type, card)
-  local found = {}
-  if G.jokers and G.jokers.cards then
-    for k, v in pairs(G.jokers.cards) do
-      if v.config.center.fnaf_type == type then
-        table.insert(found, v)
-      end
+    local found = {}
+    if G.jokers and G.jokers.cards then
+        for k, v in pairs(G.jokers.cards) do
+            if v.config.center.fnaf_type == type then
+                table.insert(found, v)
+            end
+        end
     end
-  end
-  return found
+    return found
 end
 
 
