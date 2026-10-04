@@ -34,6 +34,10 @@ Check the Roadmap for info at upcoming content this [Roadmap](https://github.com
 
 ## Installation
 
+Fazbears Video Poker Simulator is available on [Thunderstore](https://thunderstore.io/c/balatro/p/YUORKI/Fazbears_Video_Poker_Simulator/).
+
+**Manual Installation**:
+
 This mod requires both [Lovely](https://github.com/ethangreen-dev/lovely-injector) and [Steammodded](https://github.com/Steamopollys/Steamodded) **(Version 1.0.0-beta-0827c or later)** to be installed in your copy of Balatro.
 
 Afterwards, simply drag the files from the latest release and put it in your Mods folder (`%APPDATA%\Balatro\Mods`), and go to the `imported` and add your data from your fnaf games on (`%APPDATA%\Roaming\MMFApplications`) (there will be a read me file explaining how to import it)
