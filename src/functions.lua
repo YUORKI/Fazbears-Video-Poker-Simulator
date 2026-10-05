@@ -1,4 +1,11 @@
-G.C.REMN = HEX('FF535353')
+G.C.REMN = HEX('f58f30')
+
+local ref_loc_colour = loc_colour
+function loc_colour(_c, _default)
+	ref_loc_colour(_c, _default)
+	G.ARGS.LOC_COLOURS.remn = G.C.REMN
+    return G.ARGS.LOC_COLOURS[_c] or _default or G.C.UI.TEXT_DARK
+end
 
 Voicelines = function(audio) --Voicelines for Cards
     local volume = G.SETTINGS.SOUND.voice_volume

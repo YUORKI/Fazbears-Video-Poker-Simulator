@@ -133,11 +133,45 @@ return {
 
         fnaf_remnant = {
             c_fnaf_meltedhead = {
-                name = "Melted Head Remnant",
+                name = "Melted Head",
                 text = {
-                    "{C:chips}+#1#{} Chips per Joker Animatronic",
-                    "while {C:attention}injected{}",
-                    "(#3#/#2# usages)",
+                    {
+                        "{C:chips}+#1#{} Chips per", 
+                        "Joker {X:inactive,C:white}Animatronic",
+                        "While {C:attention}injected{}",
+                    },
+                    {
+                        "{C:remn}Deterioation{}: {C:attention}#2#{} Hands",
+                        "{C:inactive}(#3#/#2# usages)",
+                    }
+                },
+            },
+            c_fnaf_discolored = {
+                name = "Discolored Drawing",
+                text = {
+                    {
+                        "While {C:attention}injected{}: Cards with", 
+                        "{C:hearts}Hearts{} and {C:spades}Spades{}",
+                        "count as the same suit",
+                    },
+                    {
+                        "{C:remn}Deterioation{}: {C:attention}#1#{} Hands",
+                        "{C:inactive}(#2#/#1# usages)",
+                    }
+                },
+            },
+            c_fnaf_starpack = {
+                name = "Star Sticker Pack",
+                text = {
+                    {
+                        "While {C:attention}injected{}: Creates a", 
+                        "{C:blue}Planet card{} if {C:attention}all scored cards{}", 
+                        "have a {C:blue}Blue Seal{}",
+                    },
+                    {
+                        "{C:remn}Deterioation{}: {C:attention}#1#{} Triggers",
+                        "{C:inactive}(#2#/#1# usages)",
+                    }
                 },
             },
         },
@@ -831,6 +865,14 @@ return {
                     "is {C:attention}Broken",
                 },
             },
+            fnaf_remnant_info = {
+				name = "Remnant Cards",
+				text = {
+					"{C:attention}Limited-use{} passives",
+					"on consumable slots",
+					"Can be {C:attention}toggled{} on/off",
+				},
+			},
 
         },
 

@@ -130,6 +130,25 @@ return {
             },
         },
 
+        fnaf_remnant = {
+            c_fnaf_meltedhead = {
+                name = "Melted Head",
+                text = {
+                    "{C:chips}+#1#{} Chips per Joker Animatronic",
+                    "while {C:attention}injected{}",
+                    "(#3#/#2# usages)",
+                },
+            },
+            c_fnaf_discolored = {
+                name = "Discolored Remnant",
+                text = {
+                    "{C:hearts}Hearts{} and {C:spades}Spades{}",
+                    "count as the same suit",
+                },
+            },
+        },
+
+
         Tarot = {
             c_fnaf_rabbit = {
                 name = "invalid_tarot_object",
@@ -817,6 +836,14 @@ return {
                     "esta {C:attention}Quebrado",
                 },
             },
+            fnaf_remnant_info = {
+				name = "Cartas Remnant",
+				text = {
+					"Passivas de {C:attention}Uso Limitado{}",
+					"no slot de consumíveis",
+					"Podem ser {C:attention}Ligados/Desligados{}",
+				},
+			},
         },
 
     },

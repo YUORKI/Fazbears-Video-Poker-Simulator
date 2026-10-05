@@ -1,7 +1,10 @@
 {
-  "name": "Fazbear's Video Poker Simulator",
-  "version_number": "0.0.3",  
-  "description": "Overhaul the game to be FNAF themed",
-  "website_url": "https://github.com/YUORKI/Fazbears-Video-Poker-Simulator",
-  "dependencies": ["Steamodded (>=1.0.0~BETA-0509c)"]
+	"name": "Fazbears_Video_Poker_Simulator",
+	"version_number": "0.0.31",  
+	"description": "Fazbear's Video Poker Simulator is a Balatro mod that aims to add Five Nights at Freddy's™ themed content to balatro, such as new Jokers, Enhancements, Seals and Consumables",
+	"website_url": "https://github.com/YUORKI/Fazbears-Video-Poker-Simulator",
+	"dependencies": [
+        "Steamodded-Steamodded-26.829.0",
+        "Thunderstore-lovely-0.9.0"
+    ]
 }
