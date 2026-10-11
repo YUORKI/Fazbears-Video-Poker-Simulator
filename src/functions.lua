@@ -61,6 +61,8 @@ end
 --- ??? (Other)
 --- Misc
 
+
+
 FNAF_BALATRO.fnaf_remnant = {
     --- Returns the first non-debuffed remnant card with a specified key, nil if none qualify
     --- @return table | nil # Balatro card object of activated remnant Tape, or nil
@@ -90,6 +92,16 @@ FNAF_BALATRO.fnaf_remnant = {
         return count
     end,
 
+    hover_remn = function(self)
+        local stop_hover = Card.stop_hover;
+        function Card:stop_hover()
+            stop_hover(self)
+            if G.consumeables and self.ability.activated == false then
+                self.children.floating_sprite:set_sprite_pos({x=9, y= 2})
+            end
+        end
+    end,
+
     --- activates the remnant cards
     --- @param card Card 
     activ_remn = function(card)
@@ -99,6 +111,7 @@ FNAF_BALATRO.fnaf_remnant = {
             card.ability.activated = false
         else
             card.ability.activated = true
+            card.children.center:set_sprite_pos({x=9, y= 0})
         end
     end,
 

@@ -42,6 +42,7 @@ SMODS.Consumable{
     set = 'fnaf_remnant',
     atlas = 'TarotFnaf',
     pos = {x = 4, y = 0},
+    soul_pos = {x = 4, y = 2},
     config = { extra = { chips = 20, usages = 6, uses = 0, } },
     activated = false,
     destroyed = false,
@@ -62,6 +63,10 @@ SMODS.Consumable{
         local bad_context = context.repetition or context.individual or context.blueprint
         if context.after and not card.ability.destroyed and card.ability.activated and not bad_context then
             FNAF_BALATRO.fnaf_remnant.run_remn(card, 1)
+        end
+
+        if not card.ability.activated then
+            card.children.center:set_sprite_pos({x=4, y= 0})
         end
     end,
 
@@ -120,6 +125,7 @@ SMODS.Consumable{
     set = 'fnaf_remnant',
     atlas = 'TarotFnaf',
     pos = {x = 6, y = 0},
+    soul_pos = {x = 6, y = 2},
     config = { extra = { usages = 4, uses = 0, seal = 'Blue'} },
     activated = false,
     destroyed = false,
@@ -155,6 +161,9 @@ SMODS.Consumable{
                     }))
             end
         end
+        if not card.ability.activated then
+            card.children.center:set_sprite_pos({x=6, y= 0})
+        end
     end,
 
     can_use = function(self, card)
@@ -164,3 +173,4 @@ SMODS.Consumable{
         end
     end
 }
+
