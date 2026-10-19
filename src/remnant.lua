@@ -1,4 +1,3 @@
----@diagnostic disable: undefined-global
 SMODS.ConsumableType {
     key = 'fnaf_remnant',
 
@@ -24,7 +23,7 @@ SMODS.ConsumableType {
 
     primary_colour = G.C.REMN,
     secondary_colour = G.C.REMN,
-    collection_rows = { 6, 6 },
+    collection_rows = { 3 },
     stack = false,
     divide = false,
 
@@ -37,19 +36,33 @@ SMODS.UndiscoveredSprite{
     pos = {x = 0, y = 2}
 }
 
+Draw_remn = function(card, scale_mod, rotate_mod)
+    if card ~= G.CONTROLLER.hovering.target and card ~= G.CONTROLLER.focused.target then 
+        card.children.floating_sprite:draw_shader('dissolve',0, nil, nil, card.children.center,scale_mod, rotate_mod,nil, 0.1 + 0.03*math.sin(1.8*G.TIMERS.REAL),nil, 0.6)
+        card.children.floating_sprite:draw_shader('dissolve', nil, nil, nil, card.children.center, scale_mod, rotate_mod)
+    else 
+        if card.ability.activated then
+            card.children.floating_sprite:draw_shader('dissolve',0, nil, nil, card.children.center,scale_mod, rotate_mod,nil, 0.1 + 0.03*math.sin(1.8*G.TIMERS.REAL),nil, 0.6)
+            card.children.floating_sprite:draw_shader('dissolve', nil, nil, nil, card.children.center, scale_mod, rotate_mod)
+        end
+    end
+end
+
 SMODS.Consumable{
     key = 'meltedhead',
     set = 'fnaf_remnant',
     atlas = 'TarotFnaf',
     pos = {x = 4, y = 0},
-    soul_pos = {x = 4, y = 2},
+    soul_pos = {x = 4, y = 2,
+        draw = Draw_remn
+    },
     config = { extra = { chips = 20, usages = 6, uses = 0, } },
     activated = false,
     destroyed = false,
 
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = {key = "fnaf_remnant_info", set = "Other"}
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        
         return { vars = { card.ability.extra.chips, card.ability.extra.usages, card.ability.extra.uses } }
     end,
 
@@ -63,10 +76,6 @@ SMODS.Consumable{
         local bad_context = context.repetition or context.individual or context.blueprint
         if context.after and not card.ability.destroyed and card.ability.activated and not bad_context then
             FNAF_BALATRO.fnaf_remnant.run_remn(card, 1)
-        end
-
-        if not card.ability.activated then
-            card.children.center:set_sprite_pos({x=4, y= 0})
         end
     end,
 
@@ -86,13 +95,16 @@ SMODS.Consumable{
     set = 'fnaf_remnant',
     atlas = 'TarotFnaf',
     pos = {x = 5, y = 0},
+    soul_pos = {x = 5, y = 2,
+        draw = Draw_remn
+    },
     config = { extra = { usages = 4, uses = 0, } },
     activated = false,
     destroyed = false,
 
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = {key = "fnaf_remnant_info", set = "Other"}
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        
         return { vars = { card.ability.extra.usages, card.ability.extra.uses } }
     end,
 
@@ -125,7 +137,9 @@ SMODS.Consumable{
     set = 'fnaf_remnant',
     atlas = 'TarotFnaf',
     pos = {x = 6, y = 0},
-    soul_pos = {x = 6, y = 2},
+    soul_pos = {x = 6, y = 2,
+        draw = Draw_remn
+    },
     config = { extra = { usages = 4, uses = 0, seal = 'Blue'} },
     activated = false,
     destroyed = false,
@@ -133,7 +147,7 @@ SMODS.Consumable{
     loc_vars = function(self, info_queue, card)
         info_queue[#info_queue+1] = {key = "fnaf_remnant_info", set = "Other"}
         info_queue[#info_queue + 1] = G.P_SEALS[card.ability.extra.seal]
-        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        
         return { vars = { card.ability.extra.usages, card.ability.extra.uses } }
     end,
 
@@ -173,4 +187,3 @@ SMODS.Consumable{
         end
     end
 }
-

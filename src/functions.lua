@@ -61,7 +61,7 @@ end
 --- ??? (Other)
 --- Misc
 
-
+local glass = {"glass1","glass2","glass3"}
 
 FNAF_BALATRO.fnaf_remnant = {
     --- Returns the first non-debuffed remnant card with a specified key, nil if none qualify
@@ -92,16 +92,6 @@ FNAF_BALATRO.fnaf_remnant = {
         return count
     end,
 
-    hover_remn = function(self)
-        local stop_hover = Card.stop_hover;
-        function Card:stop_hover()
-            stop_hover(self)
-            if G.consumeables and self.ability.activated == false then
-                self.children.floating_sprite:set_sprite_pos({x=9, y= 2})
-            end
-        end
-    end,
-
     --- activates the remnant cards
     --- @param card Card 
     activ_remn = function(card)
@@ -109,6 +99,7 @@ FNAF_BALATRO.fnaf_remnant = {
 
         if card.ability.activated then
             card.ability.activated = false
+            card.children.center:set_sprite_pos({x= card.config.center.pos.x, y= card.config.center.pos.y})
         else
             card.ability.activated = true
             card.children.center:set_sprite_pos({x=9, y= 0})
@@ -149,7 +140,7 @@ FNAF_BALATRO.fnaf_remnant = {
                 delay(0.15)
 
                 if not silent then
-                    play_sound('tarot1')
+                    play_sound(glass[math.random(#glass)])
                 end
                 card.T.r = -0.1
                 card:juice_up(0.3, 0.4)
