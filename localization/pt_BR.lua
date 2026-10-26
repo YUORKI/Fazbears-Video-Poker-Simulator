@@ -132,18 +132,75 @@ return {
 
         fnaf_remnant = {
             c_fnaf_meltedhead = {
-                name = "Melted Head",
+                name = "Cabeça Derretida",
                 text = {
-                    "{C:chips}+#1#{} Chips per Joker Animatronic",
-                    "while {C:attention}injected{}",
-                    "(#3#/#2# usages)",
+                    {
+                        "Enquanto {C:attention}injetado{}:",
+                        "{C:chips}+#1#{} Chips per",
+                        "Joker {X:inactive,C:white}Animatronic",
+                    },
+                    {
+                        "{C:remn}Deterioração{}: {C:attention}#2#{} Mãos",
+                        "{C:inactive}(#3#/#2# Usos)",
+                    }
                 },
             },
             c_fnaf_discolored = {
-                name = "Discolored Remnant",
+                name = "Desenho Descolorido",
                 text = {
-                    "{C:hearts}Hearts{} and {C:spades}Spades{}",
-                    "count as the same suit",
+                    {
+                        "Enquanto {C:attention}injetado{}:",
+                        "Cards with {C:hearts}Hearts{} and {C:spades}Spades{}",
+                        "count as the same suit",
+                    },
+                    {
+                        "{C:remn}Deterioração{}: {C:attention}#1#{} Mãos",
+                        "{C:inactive}(#2#/#1# Usos)",
+                    }
+                },
+            },
+            c_fnaf_starpack = {
+                name = "Folha de Adesivos de Estrelas",
+                text = {
+                    {
+                        "Enquanto {C:attention}injetado{}:",
+                        "Creates a {C:blue}Planet card{}",
+                        "if the {C:attention}hand scored{}",
+                        "has a {C:blue}Blue Seal{}",
+                    },
+                    {
+                        "{C:remn}Deterioração{}: {C:attention}#1#{} Triggers",
+                        "{C:inactive}(#2#/#1# Usos)",
+                    }
+                },
+            },
+
+            c_fnaf_greed = {
+                name = "greed",
+                text = {
+                    {
+                        "Enquanto {C:attention}injetado{}:",
+                        "Earn {C:money}$#3#{} per {C:attention}card scored",
+                    },
+                    {
+                        "{C:remn}Deterioração{}: {C:attention}#1#{} Mãos",
+                        "{C:inactive}(#2#/#1# Usos)",
+                    }
+                },
+            },
+
+            c_fnaf_Fortnite_Remnant = {
+                name = "[PH] Animatronic Possession",
+                text = {
+                    {
+                        "Enquanto {C:attention}injetado{}:",
+                        "Retrigger all played",
+					    "{C:tarot}#4#{} cards {C:attention}#3#{} time(s)",
+                    },
+                    {
+                        "{C:remn}Deterioração{}: {C:attention}#1#{} Mãos",
+                        "{C:inactive}(#2#/#1# Usos)",
+                    }
                 },
             },
         },

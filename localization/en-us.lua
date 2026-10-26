@@ -136,12 +136,12 @@ return {
                 name = "Melted Head",
                 text = {
                     {
-                        "{C:chips}+#1#{} Chips per", 
+                        "While {C:attention}injected{}:",
+                        "{C:chips}+#1#{} Chips per",
                         "Joker {X:inactive,C:white}Animatronic",
-                        "While {C:attention}injected{}",
                     },
                     {
-                        "{C:remn}Deterioation{}: {C:attention}#2#{} Hands",
+                        "{C:remn}Deterioration{}: {C:attention}#2#{} Hands",
                         "{C:inactive}(#3#/#2# usages)",
                     }
                 },
@@ -150,26 +150,56 @@ return {
                 name = "Discolored Drawing",
                 text = {
                     {
-                        "While {C:attention}injected{}: Cards with", 
-                        "{C:hearts}Hearts{} and {C:spades}Spades{}",
+                        "While {C:attention}injected{}:",
+                        "Cards with {C:hearts}Hearts{} and {C:spades}Spades{}",
                         "count as the same suit",
                     },
                     {
-                        "{C:remn}Deterioation{}: {C:attention}#1#{} Hands",
+                        "{C:remn}Deterioration{}: {C:attention}#1#{} Hands",
                         "{C:inactive}(#2#/#1# usages)",
                     }
                 },
             },
             c_fnaf_starpack = {
-                name = "Star Sticker Pack",
+                name = "Star Sticker Sheet",
                 text = {
                     {
-                        "While {C:attention}injected{}: Creates a", 
-                        "{C:blue}Planet card{} if {C:attention}all scored cards{}", 
-                        "have a {C:blue}Blue Seal{}",
+                        "While {C:attention}injected{}:",
+                        "Creates a {C:blue}Planet card{}",
+                        "if the {C:attention}hand scored{}",
+                        "has a {C:blue}Blue Seal{}",
                     },
                     {
-                        "{C:remn}Deterioation{}: {C:attention}#1#{} Triggers",
+                        "{C:remn}Deterioration{}: {C:attention}#1#{} Triggers",
+                        "{C:inactive}(#2#/#1# usages)",
+                    }
+                },
+            },
+
+            c_fnaf_greed = {
+                name = "greed",
+                text = {
+                    {
+                        "While {C:attention}injected{}:",
+                        "Earn {C:money}$#3#{} per {C:attention}card scored",
+                    },
+                    {
+                        "{C:remn}Deterioration{}: {C:attention}#1#{} Hands",
+                        "{C:inactive}(#2#/#1# usages)",
+                    }
+                },
+            },
+
+            c_fnaf_Fortnite_Remnant = {
+                name = "[PH] Animatronic Possession",
+                text = {
+                    {
+                        "While {C:attention}injected{}:",
+                        "Retrigger all played",
+					    "{C:tarot}#4#{} cards {C:attention}#3#{} time(s)",
+                    },
+                    {
+                        "{C:remn}Deterioration{}: {C:attention}#1#{} Hands",
                         "{C:inactive}(#2#/#1# usages)",
                     }
                 },
@@ -771,6 +801,13 @@ return {
                     "{C:attention}#2#{C:green} Item cards{}",
                 },
             },
+            p_fnaf_remn_normal = {
+                name = "Remnant Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:remn} Remnant Cards{}",
+                },
+            },
             fnaf_code_WIP = {
                 name = "WIP: Code",
                 text = {
@@ -886,7 +923,7 @@ return {
         },
         dictionary = {
             k_item_pack = "Item Pack",
-            k_remnant_pack = "Item Pack",
+            k_remnant_pack = "Remn Pack",
             k_plus_pizza = "+1 Pizza",
             k_plus_item = "+1 Item",
             k_plus_level = "+1 Level",
