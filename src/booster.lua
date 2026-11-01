@@ -588,3 +588,111 @@ SMODS.Booster {
         return _card
     end,
 }
+
+SMODS.Booster {
+    key = "remn_jumbo_1",
+    weight = 0.5,
+    kind = 'fnaf_remnant',
+    cost = 4,
+    atlas = "BoosterFnaf",
+    pos = { x = 4, y = 1 },
+    config = { extra = 5, choose = 1 },
+    group_key = "k_jumbo_remnant_pack",
+    select_card = 'consumeables',
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {key = "fnaf_remnant_info", set = "Other"}
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = {
+                math.min(cfg.choose + (G.GAME.modifiers.booster_choice_mod or 0),
+                    math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0))),
+                math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0)) },
+            key = self.key:sub(1, -3), 
+        }
+    end,
+    ease_background_colour = function(self)
+        ease_background_colour_blind(G.STATES.TAROT_PACK)
+    end,
+    particles = function(self)
+        G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
+            timer = 0.015,
+            scale = 0.2,
+            initialize = true,
+            lifespan = 1,
+            speed = 1.1,
+            padding = -1,
+            attach = G.ROOM_ATTACH,
+            colours = { G.C.WHITE, lighten(G.C.PURPLE, 0.4), lighten(G.C.PURPLE, 0.2), lighten(G.C.GOLD, 0.2) },
+            fill = true
+        })
+        G.booster_pack_sparkles.fade_alpha = 1
+        G.booster_pack_sparkles:fade(1, 0)
+    end,
+    create_card = function(self, card, i)
+        local _card
+        _card = {
+            set = "fnaf_remnant",
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append =
+            "fnaf_remn_booster_1"
+        }
+        return _card
+    end,
+}
+
+SMODS.Booster {
+    key = "remn_mega_1",
+    weight = 0.15,
+    kind = 'fnaf_remnant',
+    cost = 4,
+    atlas = "BoosterFnaf",
+    pos = { x = 5, y = 1 },
+    config = { extra = 5, choose = 2 },
+    group_key = "k_mega_remnant_pack",
+    select_card = 'consumeables',
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {key = "fnaf_remnant_info", set = "Other"}
+        info_queue[#info_queue + 1] = { key = "fnaf_sprite_WIP", set = "Other" }
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = {
+                math.min(cfg.choose + (G.GAME.modifiers.booster_choice_mod or 0),
+                    math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0))),
+                math.max(1, cfg.extra + (G.GAME.modifiers.booster_size_mod or 0)) },
+            key = self.key:sub(1, -3), 
+        }
+    end,
+    ease_background_colour = function(self)
+        ease_background_colour_blind(G.STATES.TAROT_PACK)
+    end,
+    particles = function(self)
+        G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
+            timer = 0.015,
+            scale = 0.2,
+            initialize = true,
+            lifespan = 1,
+            speed = 1.1,
+            padding = -1,
+            attach = G.ROOM_ATTACH,
+            colours = { G.C.WHITE, lighten(G.C.PURPLE, 0.4), lighten(G.C.PURPLE, 0.2), lighten(G.C.GOLD, 0.2) },
+            fill = true
+        })
+        G.booster_pack_sparkles.fade_alpha = 1
+        G.booster_pack_sparkles:fade(1, 0)
+    end,
+    create_card = function(self, card, i)
+        local _card
+        _card = {
+            set = "fnaf_remnant",
+            area = G.pack_cards,
+            skip_materialize = true,
+            soulable = true,
+            key_append =
+            "fnaf_remn_booster_1"
+        }
+        return _card
+    end,
+}

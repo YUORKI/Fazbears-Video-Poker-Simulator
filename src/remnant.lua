@@ -23,14 +23,14 @@ SMODS.ConsumableType {
 
     primary_colour = G.C.REMN,
     secondary_colour = G.C.REMN,
-    collection_rows = { 5 },
+    collection_rows = { 4, 4 },
 
     shop_rate = 0
 }
 
 SMODS.UndiscoveredSprite{
-    key = 'fnaf_item',
-    atlas = 'TarotFnaf',
+    key = 'fnaf_remnant',
+    atlas = 'RemnantFnaf',
     pos = {x = 9, y = 2}
 }
 
@@ -49,9 +49,9 @@ end
 SMODS.Consumable{
     key = 'meltedhead',
     set = 'fnaf_remnant',
-    atlas = 'TarotFnaf',
-    pos = {x = 4, y = 0},
-    soul_pos = {x = 4, y = 2,
+    atlas = 'RemnantFnaf',
+    pos = {x = 0, y = 0},
+    soul_pos = {x = 0, y = 1,
         draw = Draw_remn
     },
     config = { extra = { chips = 20, usages = 6, uses = 0, } },
@@ -90,9 +90,9 @@ SMODS.Consumable{
 SMODS.Consumable{
     key = 'discolored',
     set = 'fnaf_remnant',
-    atlas = 'TarotFnaf',
-    pos = {x = 5, y = 0},
-    soul_pos = {x = 5, y = 2,
+    atlas = 'RemnantFnaf',
+    pos = {x = 1, y = 0},
+    soul_pos = {x = 1, y = 1,
         draw = Draw_remn
     },
     config = { extra = { usages = 4, uses = 0, } },
@@ -131,9 +131,9 @@ end
 SMODS.Consumable{
     key = 'starpack',
     set = 'fnaf_remnant',
-    atlas = 'TarotFnaf',
-    pos = {x = 6, y = 0},
-    soul_pos = {x = 6, y = 2,
+    atlas = 'RemnantFnaf',
+    pos = {x = 2, y = 0},
+    soul_pos = {x = 2, y = 1,
         draw = Draw_remn
     },
     config = { extra = { usages = 4, uses = 0, seal = 'Blue' } },
@@ -186,9 +186,9 @@ SMODS.Consumable{
 SMODS.Consumable{
     key = 'greed',
     set = 'fnaf_remnant',
-    atlas = 'TarotFnaf',
-    pos = {x = 7, y = 0},
-    soul_pos = {x = 7, y = 2,
+    atlas = 'RemnantFnaf',
+    pos = {x = 3, y = 0},
+    soul_pos = {x = 3, y = 1,
         draw = Draw_remn
     },
     config = { extra = { usages = 4, uses = 0, dollars = 1 } },
@@ -204,7 +204,7 @@ SMODS.Consumable{
     calculate = function(self, card, context)
         local bad_context = context.repetition or context.individual or context.blueprint
         local count = 0
-        if context.after and not card.ability.destroyed and card.ability.activated and not bad_context then 
+        if context.after and not card.ability.destroyed and card.ability.activated and not bad_context then
             for _, scored_card in ipairs(context.scoring_hand) do
                 if not scored_card.debuff and not scored_card.vampired then
                     count = count + 1
@@ -231,9 +231,9 @@ SMODS.Consumable{
 SMODS.Consumable{
     key = 'Fortnite_Remnant',
     set = 'fnaf_remnant',
-    atlas = 'TarotFnaf',
-    pos = {x = 8, y = 0},
-    soul_pos = {x = 8, y = 2,
+    atlas = 'RemnantFnaf',
+    pos = {x = 4, y = 0},
+    soul_pos = {x = 4, y = 1,
         draw = Draw_remn
     },
     config = { extra = { usages = 4, uses = 0, repetitions = 1 } },
@@ -256,7 +256,7 @@ SMODS.Consumable{
         end
         local bad_context = context.repetition or context.individual or context.blueprint
         local rept = 0
-        if context.after and not card.ability.destroyed and card.ability.activated and not bad_context then 
+        if context.after and not card.ability.destroyed and card.ability.activated and not bad_context then
             for _, scored_card in ipairs(context.scoring_hand) do
                 if SMODS.has_enhancement(scored_card, "m_fnaf_glitch") and not scored_card.debuff and not scored_card.vampired then
                     rept = rept + 1
@@ -268,6 +268,126 @@ SMODS.Consumable{
                     FNAF_BALATRO.fnaf_remnant.run_remn(card, 1)
                 }
             end
+        end
+    end,
+    in_pool = function(self, args)
+        for _, playing_card in ipairs(G.playing_cards or {}) do
+            if SMODS.has_enhancement(playing_card, "m_fnaf_glitch") then
+                return true
+            end
+        end
+        return false
+    end,
+    can_use = function(self, card)
+        if to_big(#G.consumeables.cards) < to_big(G.consumeables.config.card_limit) or
+        card.area == G.consumeables then
+            return true
+        end
+    end
+}
+
+SMODS.Consumable{
+    key = 'discount',
+    set = 'fnaf_remnant',
+    atlas = 'RemnantFnaf',
+    pos = {x = 5, y = 0},
+    soul_pos = {x = 5, y = 1,
+        draw = Draw_remn
+    },
+    config = { extra = { usages = 3, uses = 0, perc = 20 } },
+    activated = false,
+    destroyed = false,
+
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {key = "fnaf_remnant_info", set = "Other"}
+        info_queue[#info_queue+1] = {key = "fnaf_sprite_WIP", set = "Other"}
+        return { vars = { card.ability.extra.usages, card.ability.extra.uses, card.ability.extra.perc } }
+    end,
+
+    calculate = function(self, card, context)
+        local bad_context = context.repetition or context.individual or context.blueprint
+        if context.setting_blind and not card.ability.destroyed and card.ability.activated and not bad_context then
+            G.GAME.blind.chips = G.GAME.blind.chips - ((card.ability.extra.perc / 100) * G.GAME.blind.chips)
+            G.GAME.blind.chip_text = number_format(G.GAME.blind.chips)
+            FNAF_BALATRO.fnaf_remnant.run_remn(card, 1)
+            return {
+                message = '-20% score',
+                colour = G.C.ORANGE,
+            }
+        end
+    end,
+
+    can_use = function(self, card)
+        if to_big(#G.consumeables.cards) < to_big(G.consumeables.config.card_limit) or
+        card.area == G.consumeables then
+            return true
+        end
+    end
+}
+
+SMODS.Consumable{
+    key = 'remnmisc',
+    set = 'fnaf_remnant',
+    atlas = 'RemnantFnaf',
+    pos = {x = 6, y = 0},
+    soul_pos = {x = 6, y = 1,
+        draw = Draw_remn
+    },
+    config = { extra = { mult = 10, usages = 6, uses = 0, } },
+    activated = false,
+    destroyed = false,
+
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {key = "fnaf_remnant_info", set = "Other"}
+        info_queue[#info_queue+1] = {key = "fnaf_sprite_WIP", set = "Other"}
+        return { vars = { card.ability.extra.mult, card.ability.extra.usages, card.ability.extra.uses } }
+    end,
+
+    calculate = function(self, card, context)
+        if card.ability.activated and context.other_joker and
+        context.other_joker.config.center.fnaf_type == 'Misc' then
+            return {
+                mult = card.ability.extra.mult,
+            }
+        end
+        local bad_context = context.repetition or context.individual or context.blueprint
+        if context.after and not card.ability.destroyed and card.ability.activated and not bad_context then
+            FNAF_BALATRO.fnaf_remnant.run_remn(card, 1)
+        end
+    end,
+
+    can_use = function(self, card)
+        local joker_anim = #Find_type("Misc", card)
+        if to_big(#G.consumeables.cards) < to_big(G.consumeables.config.card_limit) or
+        card.area == G.consumeables then
+            if joker_anim > 0 then
+                return true
+            end
+        end
+    end,
+}
+
+SMODS.Consumable{
+    key = 'remntarot',
+    set = 'fnaf_remnant',
+    atlas = 'RemnantFnaf',
+    pos = {x = 7, y = 0},
+    soul_pos = {x = 7, y = 1,
+        draw = Draw_remn
+    },
+    config = { extra = { usages = 4, uses = 0, } },
+    activated = false,
+    destroyed = false,
+
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {key = "fnaf_remnant_info", set = "Other"}
+        info_queue[#info_queue+1] = {key = "fnaf_sprite_WIP", set = "Other"}
+        return { vars = { card.ability.extra.usages, card.ability.extra.uses } }
+    end,
+
+    calculate = function(self, card, context)
+        if context.using_consumeable and context.consumeable.config.center.key == "c_magician" then
+            FNAF_BALATRO.fnaf_remnant.run_remn(card, 1)
         end
     end,
 

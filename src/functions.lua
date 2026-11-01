@@ -209,3 +209,144 @@ G.FUNCS.use_card = function(e, mute, nosave)
 
     return ref_use_card(e, mute, nosave)
 end
+
+
+-- stuff related to remntarot 
+
+Set_max_highlight = function(amount, card)
+    if FNAF_BALATRO.fnaf_remnant.find_active_remn("c_fnaf_remntarot") then
+        card.ability.consumeable = copy_table(card.ability.consumeable)
+        card.ability.consumeable.max_highlighted = amount + 1
+        card.ability.max_highlighted = amount + 1
+    else
+        card.ability.consumeable = copy_table(card.ability.consumeable)
+        card.ability.consumeable.max_highlighted = amount
+        card.ability.max_highlighted = amount
+    end
+end
+
+SMODS.Tarot:take_ownership('c_magician', -- object key (class prefix not required)
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(2, card)
+        end,
+    },
+    true -- silent | suppresses mod badge
+)
+
+SMODS.Tarot:take_ownership('c_empress',
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(2, card)
+        end,
+    },
+    true
+)
+
+SMODS.Tarot:take_ownership('c_heirophant',
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(2, card)
+        end,
+    },
+    true
+)
+
+SMODS.Tarot:take_ownership('c_lovers',
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(1, card)
+        end,
+    },
+    true
+)
+
+SMODS.Tarot:take_ownership('c_chariot',
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(1, card)
+        end,
+    },
+    true
+)
+
+SMODS.Tarot:take_ownership('c_justice',
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(1, card)
+        end,
+    },
+    true
+)
+
+SMODS.Tarot:take_ownership('c_strength',
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(2, card)
+        end,
+    },
+    true
+)
+
+SMODS.Tarot:take_ownership('c_hanged_man',
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(1, card)
+        end,
+    },
+    true
+)
+
+SMODS.Tarot:take_ownership('c_devil',
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(1, card)
+        end,
+    },
+    true
+)
+
+SMODS.Tarot:take_ownership('c_tower',
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(1, card)
+        end,
+    },
+    true
+)
+
+SMODS.Tarot:take_ownership('c_star',
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(3, card)
+        end,
+    },
+    true
+)
+
+SMODS.Tarot:take_ownership('c_moon',
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(3, card)
+        end,
+    },
+    true
+)
+
+SMODS.Tarot:take_ownership('c_sun',
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(3, card)
+        end,
+    },
+    true
+)
+
+SMODS.Tarot:take_ownership('c_world',
+    {
+        calculate = function(self, card, context)
+            Set_max_highlight(3, card)
+        end,
+    },
+    true
+)
