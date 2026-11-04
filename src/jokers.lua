@@ -1130,7 +1130,7 @@ SMODS.Joker {
             }
         end
 
-        if context.joker_main and card.ability.extra.levels > 0 then
+        if context.joker_main then
 
             return {
                 chips = card.ability.extra.chips,
