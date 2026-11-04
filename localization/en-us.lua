@@ -129,6 +129,15 @@ return {
                 }
             },
 
+            c_fnaf_injection = {
+                name = "Remnant Vial",
+                text = {
+                    "Creates up to {C:attention}#1#",
+                    "random {C:tarot}Remnant{} cards",
+                    "{C:inactive}(Must have room)",
+                },
+            },
+
         },
 
         fnaf_remnant = {
@@ -138,7 +147,7 @@ return {
                     {
                         "While {C:attention}injected{}:",
                         "{C:chips}+#1#{} Chips per",
-                        "Joker {X:inactive,C:white}Animatronic",
+                        "{X:inactive,C:white}Animatronic",
                     },
                     {
                         "{C:remn}Deterioration{}: {C:attention}#2#{} Hands",
@@ -200,6 +209,48 @@ return {
                     },
                     {
                         "{C:remn}Deterioration{}: {C:attention}#1#{} Hands",
+                        "{C:inactive}(#2#/#1# usages)",
+                    }
+                },
+            },
+
+            c_fnaf_discount = {
+                name = "Discount",
+                text = {
+                    {
+                        "{C:attention}-#3#%{} All Blind Scores",
+                    },
+                    {
+                        "{C:remn}Deterioration{}: {C:attention}#1#{} Blinds",
+                        "{C:inactive}(#2#/#1# usages)",
+                    }
+                },
+            },
+
+            c_fnaf_remnmisc = {
+                name = "Light Remnant",
+                text = {
+                    {
+                        "While {C:attention}injected{}:",
+                        "{C:chips}+#1#{} Mult per",
+                        "{X:tarot,C:white}Misc{} Jokers",
+                    },
+                    {
+                        "{C:remn}Deterioration{}: {C:attention}#2#{} Hands",
+                        "{C:inactive}(#3#/#2# usages)",
+                    }
+                },
+            },
+
+            c_fnaf_remntarot = {
+                name = "Tarot enhancer",
+                text = {
+                    {
+                        "While {C:attention}injected{}:",
+                        "+1 selectable card when using tarots",
+                    },
+                    {
+                        "{C:remn}Deterioration{}: {C:attention}#1#{} Triggers",
                         "{C:inactive}(#2#/#1# usages)",
                     }
                 },
@@ -750,7 +801,14 @@ return {
                     "{C:attention}+#1#{} free {C:green}Reroll",
                     "per shop",
                 },
-            }
+            },
+            v_fnaf_remnant_voucher = {
+                name = "Remnant Cards",
+                text = {
+					"{C:tarot}Remnant Cards{} can be purchased",
+					"from the {C:attention}shop{}"
+				},
+            },
         },
 
         Other = {
@@ -805,7 +863,21 @@ return {
                 name = "Remnant Pack",
                 text = {
                     "Choose {C:attention}#1#{} of up to",
-                    "{C:attention}#2#{C:remn} Remnant Cards{}",
+                    "{C:attention}#2#{C:Tarot} Remnant{} Cards",
+                },
+            },
+            p_fnaf_remn_jumbo = {
+                name = "Jumbo Remnant Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:Tarot} Remnant{} Cards",
+                },
+            },
+            p_fnaf_remn_mega = {
+                name = "Mega Remnant Pack",
+                text = {
+                    "Choose {C:attention}#1#{} of up to",
+                    "{C:attention}#2#{C:Tarot} Remnant{} Cards",
                 },
             },
             fnaf_code_WIP = {
@@ -923,7 +995,9 @@ return {
         },
         dictionary = {
             k_item_pack = "Item Pack",
-            k_remnant_pack = "Remn Pack",
+            k_remnant_pack = "Remnant Pack",
+            k_jumbo_remnant_pack = "Jumbo Remnant Pack",
+            k_mega_remnant_pack = "Mega Remnant Pack",
             k_plus_pizza = "+1 Pizza",
             k_plus_item = "+1 Item",
             k_plus_level = "+1 Level",

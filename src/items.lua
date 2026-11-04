@@ -366,3 +366,35 @@ SMODS.Consumable{
         end
     end,
 }
+
+SMODS.Consumable{
+    key = 'injection',
+    set = 'fnaf_item',
+    atlas = 'TarotFnaf',
+    pos = {x = 4, y = 2},
+    config = { extra = { remn = 1 } },
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.remn } }
+    end,
+    use = function(self, card, area, copier)
+        for i = 1, math.min(card.ability.extra.remn, G.consumeables.config.card_limit - #G.consumeables.cards) do
+            G.E_MANAGER:add_event(Event({
+                trigger = 'after',
+                delay = 0.4,
+                func = function()
+                    if G.consumeables.config.card_limit > #G.consumeables.cards then
+                        play_sound('timpani')
+                        SMODS.add_card({ set = 'fnaf_remnant', key_append = "item_injection" })
+                        card:juice_up(0.3, 0.5)
+                    end
+                    return true
+                end
+            }))
+        end
+        delay(0.6)
+    end,
+    can_use = function(self, card)
+        return (G.consumeables and #G.consumeables.cards < G.consumeables.config.card_limit) or
+            (card.area == G.consumeables)
+    end
+}

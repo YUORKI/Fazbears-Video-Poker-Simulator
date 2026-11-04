@@ -1,45 +1,52 @@
 ---@diagnostic disable: undefined-global
 SMODS.Atlas{
-    key = 'Joker', --atlas key
-    path = 'Joker.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
-    px = 71, --width of one card
-    py = 95 -- height of one card
+    key = 'Joker',
+    path = 'Joker.png',
+    px = 71,
+    py = 95
 }
 
 SMODS.Atlas{
-    key = 'Joker2', --atlas key
-    path = 'Joker_2.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
-    px = 71, --width of one card
-    py = 95 -- height of one card
+    key = 'Joker2',
+    path = 'Joker_2.png',
+    px = 71,
+    py = 95
 }
 
 SMODS.Atlas{
-    key = 'Legendary', --atlas key
-    path = 'legendary.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
-    px = 71, --width of one card
-    py = 95 -- height of one card
+    key = 'Legendary',
+    path = 'legendary.png',
+    px = 71,
+    py = 95
 }
 
 
 SMODS.Atlas{
-    key = 'Enhancers', --atlas key
-    path = 'Enhancers.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
-    px = 71, --width of one card
-    py = 95 -- height of one card
+    key = 'Enhancers',
+    path = 'Enhancers.png',
+    px = 71,
+    py = 95
 }
 
 SMODS.Atlas{
-    key = 'TarotFnaf', --atlas key
-    path = 'Tarots.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
-    px = 71, --width of one card
-    py = 95 -- height of one card
+    key = 'TarotFnaf',
+    path = 'Tarots.png',
+    px = 71,
+    py = 95
 }
 
 SMODS.Atlas{
-    key = 'VoucherFnaf', --atlas key
-    path = 'Vouchers.png', --atlas' path in (yourMod)/assets/1x or (yourMod)/assets/2x
-    px = 71, --width of one card
-    py = 95 -- height of one card
+    key = 'RemnantFnaf',
+    path = 'Remnant.png',
+    px = 71,
+    py = 95
+}
+
+SMODS.Atlas{
+    key = 'VoucherFnaf',
+    path = 'Vouchers.png',
+    px = 71,
+    py = 95
 }
 
 SMODS.Atlas{

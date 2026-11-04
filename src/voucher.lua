@@ -63,3 +63,22 @@ SMODS.Voucher {
         }))
     end
 }
+
+SMODS.Voucher {
+    key = 'remnant_voucher',
+    atlas = 'Vouchers',
+    pos = { x = 2, y = 0 },
+    config = { extra = { rate = 2 } },
+    unlocked = true,
+    loc_vars = function(self, info_queue, card)
+        info_queue[#info_queue+1] = {key = "fnaf_sprite_WIP", set = "Other"}
+    end,
+    redeem = function(self, card)
+        G.E_MANAGER:add_event(Event({
+        func = (function()
+                G.GAME.fnaf_remnant_rate = card.ability.rate
+                return true
+            end)
+        }))
+    end
+}
