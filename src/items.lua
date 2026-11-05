@@ -192,7 +192,7 @@ SMODS.Consumable{
     set = 'fnaf_item',
     atlas = 'TarotFnaf',
     pos = {x = 0, y = 1},
-    cost = 4,
+    cost = 2,
     loc_vars = function(self, info_queue, card)
     end,
     use = function(self, card, area, copier)
@@ -292,7 +292,7 @@ SMODS.Consumable{
     set = 'fnaf_item',
     atlas = 'TarotFnaf',
     pos = {x = 5, y = 1},
-    cost = 0,
+    cost = 1,
     loc_vars = function(self, info_queue, card)
     end,
     use = function(self, card, area, copier)

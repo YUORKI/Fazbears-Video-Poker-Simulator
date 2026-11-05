@@ -355,6 +355,7 @@ SMODS.Tarot:take_ownership('c_world',
 local card_set_cost_value_ref = Card.set_cost_value
 function Card:set_cost_value(...) -- SMODS addition
     local ret = card_set_cost_value_ref(self, ...)
+    if self.config.center.key == "c_fnaf_fazwrench" then self.cost = 0 end
     if next(SMODS.find_card("j_fnaf_r_bonnie")) then
         if self.config.center.key == "c_fnaf_guitar" then self.cost = 0 end
     end
