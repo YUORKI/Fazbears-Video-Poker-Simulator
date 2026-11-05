@@ -4,7 +4,7 @@ SMODS.Enhancement {
     key = 'pizza',
     atlas = 'Enhancers',
     pos = { x = 0, y = 0 },
-    config = { bonus = 200, extra = {hands_left = 5}},
+    config = { bonus = 100, extra = {hands_left = 5}},
     replace_base_card = true,
     no_rank = true,
     no_suit = true,

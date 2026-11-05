@@ -1794,7 +1794,7 @@ SMODS.Joker {
             return {
                 message = localize {
                     type = 'variable',
-                    key = 'a_xmult',
+                    key = 'a_mult',
                     vars = { card.ability.extra.mult },
                 }
             }
