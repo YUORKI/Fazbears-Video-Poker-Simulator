@@ -103,11 +103,49 @@ SMODS.Joker {
             }
         end
 
-        if context.setting_blind and not context.blueprint then
+        if context.setting_blind and not context.blueprint and not G.GAME.challenge == 'c_fnaf_fuck_balloonboy'  then
             card.ability.extra.round = card.ability.extra.round + 1
             if card.ability.extra.round >= card.ability.extra.maxround then
                 card.ability.eternal = nil
             end
+        end
+    end,
+    in_pool = function(self, args)
+        return false
+    end
+}
+
+SMODS.Joker {
+    key = 'bb_challenge',
+    atlas = 'Joker',
+    pos = { x = 0, y = 0 },
+    rarity = 1,
+    cost = 3,
+    unlocked = true,
+    discovered = false,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = false,
+    no_collection = true,
+
+    fnaf_type = "Animatronic", -- Type of Card
+    fnaf_broken = false, -- Fixable or Not
+
+    config = { extra = { x_chips = 0.5}},
+    loc_vars = function(self, info_queue, card)
+        info_type(self, info_queue, card)
+        return { vars = { card.ability.extra.x_chips}}
+    end,
+    calculate = function(self, card, context)
+        if context.joker_main then
+            return {
+                x_chips = card.ability.extra.x_chips,
+                func = function()
+                    card:juice_up(0.1, 0.2)
+                    local _bb_voices = {"fnaf_bb_voice1","fnaf_bb_voice2","fnaf_bb_voice3"}
+                    play_sound(_bb_voices[math.random(#_bb_voices)])
+                end
+            }
         end
     end,
     in_pool = function(self, args)

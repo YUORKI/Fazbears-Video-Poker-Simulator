@@ -8,6 +8,9 @@ SMODS.Consumable {
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
+    calculate = function(self, card, context)
+        Set_max_highlight(1, card)
+    end,
 
 }
 
@@ -21,5 +24,7 @@ SMODS.Consumable {
         info_queue[#info_queue + 1] = G.P_CENTERS[card.ability.mod_conv]
         return { vars = { card.ability.max_highlighted, localize { type = 'name_text', set = 'Enhanced', key = card.ability.mod_conv } } }
     end,
-
+    calculate = function(self, card, context)
+        Set_max_highlight(1, card)
+    end,
 }

@@ -128,6 +128,15 @@ return {
                     "certos {C:attention}animatronics",
                 }
             },
+
+            c_fnaf_injection = {
+                name = "Frasco de Remnant",
+                text = {
+                    "Cria até {C:attention}#1#",
+                    "cartas de {C:tarot}Remnant{} aleatórias",
+                    "{C:inactive}(Deve ter espaço)",
+                },
+            },
         },
 
         fnaf_remnant = {
@@ -136,8 +145,8 @@ return {
                 text = {
                     {
                         "Enquanto {C:attention}injetado{}:",
-                        "{C:chips}+#1#{} Chips per",
-                        "Joker {X:inactive,C:white}Animatronic",
+                        "{C:chips}+#1#{} Chips por",
+                        "Curingas {X:inactive,C:white}Animatronicos",
                     },
                     {
                         "{C:remn}Deterioração{}: {C:attention}#2#{} Mãos",
@@ -150,8 +159,8 @@ return {
                 text = {
                     {
                         "Enquanto {C:attention}injetado{}:",
-                        "Cards with {C:hearts}Hearts{} and {C:spades}Spades{}",
-                        "count as the same suit",
+                        "Cartas com {C:hearts}Copas{} e {C:spades}Espadas{}",
+                        "contam como o mesmo naipe,",
                     },
                     {
                         "{C:remn}Deterioração{}: {C:attention}#1#{} Mãos",
@@ -164,9 +173,8 @@ return {
                 text = {
                     {
                         "Enquanto {C:attention}injetado{}:",
-                        "Creates a {C:blue}Planet card{}",
-                        "if the {C:attention}hand scored{}",
-                        "has a {C:blue}Blue Seal{}",
+                        "Cria uma {C:blue}cartas de Planeta{}",
+                        "se a {C:attention}Mão de Pôquer{} has a {C:blue}Blue Seal{}",
                     },
                     {
                         "{C:remn}Deterioração{}: {C:attention}#1#{} Triggers",
@@ -180,7 +188,7 @@ return {
                 text = {
                     {
                         "Enquanto {C:attention}injetado{}:",
-                        "Earn {C:money}$#3#{} per {C:attention}card scored",
+                        "Ganhe {C:money}$#3#{} Por {C:attention}cartas pontuadas",
                     },
                     {
                         "{C:remn}Deterioração{}: {C:attention}#1#{} Mãos",
@@ -194,11 +202,55 @@ return {
                 text = {
                     {
                         "Enquanto {C:attention}injetado{}:",
-                        "Retrigger all played",
-					    "{C:tarot}#4#{} cards {C:attention}#3#{} time(s)",
+                        "Reativa todas {C:tarot}#4#{}",
+					    "{C:attention}#3#{} vez(es)",
                     },
                     {
                         "{C:remn}Deterioração{}: {C:attention}#1#{} Mãos",
+                        "{C:inactive}(#2#/#1# Usos)",
+                    }
+                },
+            },
+
+            c_fnaf_discount = {
+                name = "Discount",
+                text = {
+                    {
+                        "Enquanto {C:attention}injetado{}:",
+                        "{C:attention}-#3#%{} Todas Pontuações de Blind",
+                    },
+                    {
+                        "{C:remn}Deterioração{}: {C:attention}#1#{} Blinds",
+                        "{C:inactive}(#2#/#1# Usos)",
+                    }
+                },
+            },
+
+            c_fnaf_remnmisc = {
+                name = "Light Remnant",
+                text = {
+                    {
+                        "Enquanto {C:attention}injetado{}:",
+                        "{C:mult}+#1#{} Multi por",
+                        "Curingas {X:tarot,C:white}Misc{}",
+                    },
+                    {
+                        "{C:remn}Deterioração{}: {C:attention}#2#{} Mãos",
+                        "{C:inactive}(#3#/#2# Usos)",
+                    }
+                },
+            },
+
+            c_fnaf_remntarot = {
+                name = "Tarot enhancer",
+                text = {
+                    {
+                        "Enquanto {C:attention}injetado{}:",
+                        "{C:attention}+1{} carta selecionavel", 
+                        "ao usar uma carta de {C:tarot}Tarô{}",
+                    },
+                    {
+                        "{C:remn}Deterioração{}: {C:attention}#1#{} Triggers",
                         "{C:inactive}(#2#/#1# Usos)",
                     }
                 },
@@ -297,6 +349,14 @@ return {
                     "{C:red}Totalmente irritante",
                     "{X:chips,C:white}X#1#{} Chips",
                     "{C:red}Eterno por (#2#/#3#) rodadas.",
+                },
+            },
+            j_fnaf_bb_challenge = {
+                name = "Balloon Boy",
+                text = {
+                    "{C:red}Totalmente irritante",
+                    "{X:chips,C:white}X#1#{} Chips",
+                    "{C:red}Eterno Para Sempre",
                 },
             },
             j_fnaf_pizzabot = {
@@ -753,7 +813,15 @@ return {
                     "{C:attention}+#1#{} {C:green}atualização(ões){} grátis",
                     "na loja",
                 },
-            }
+            },
+            v_fnaf_remnant_voucher = {
+                name = "Remnant Cards",
+                text = {
+					"{C:attention}Cartas de Remnant{} podem",
+                    "ser compradas",
+                    "na {C:attention}loja",
+				},
+            },
         },
 
         Other = {
@@ -785,24 +853,45 @@ return {
                 },
             },
             p_fnaf_item_normal = {
-                name = "Pacote de Item",
+                name = "Pacote de Items",
                 text = {
                     "Escolha {C:attention}#1#{} de até",
-                    "{C:attention}#2#{C:green} cartas de Item{}",
+                    "{C:attention}#2#{} cartas de {C:green}Item{}",
                 },
             },
             p_fnaf_item_jumbo = {
-                name = "Pacote de Item Jumbo",
+                name = "Pacote de Items Jumbo",
                 text = {
                     "Escolha {C:attention}#1#{} de até",
-                    "{C:attention}#2#{C:green} cartas de Item{}",
+                    "{C:attention}#2#{} cartas de {C:green}Item{}",
                 },
             },
             p_fnaf_item_mega = {
-                name = "Pacote de Item Mega",
+                name = "Pacote de Items Mega",
                 text = {
                     "Escolha {C:attention}#1#{} de até",
-                    "{C:attention}#2#{C:green} cartas de Item{}",
+                    "{C:attention}#2#{} cartas de {C:green}Item{}",
+                },
+            },
+            p_fnaf_remn_normal = {
+                name = "Pacote Remnant",
+                text = {
+                    "Escolha {C:attention}#1#{} de até",
+                    "{C:attention}#2#{} cartas de{C:Tarot} Remnant{}",
+                },
+            },
+            p_fnaf_remn_jumbo = {
+                name = "Pacote Remnant Jumbo",
+                text = {
+                    "Escolha {C:attention}#1#{} de até",
+                    "{C:attention}#2#{} cartas de{C:Tarot} Remnant{}",
+                },
+            },
+            p_fnaf_remn_mega = {
+                name = "Pacote Remnant Mega",
+                text = {
+                    "Escolha {C:attention}#1#{} de até",
+                    "{C:attention}#2#{} cartas de{C:Tarot} Remnant{}",
                 },
             },
             fnaf_code_WIP = {
@@ -906,6 +995,9 @@ return {
     },
 
     misc = {
+        challenge_names = {
+            c_fnaf_fuck_balloonboy = "Baterias Suculentas"
+        },
         labels = {
             fnaf_security_seal = "Selo Segurança",
             fnaf_guard_seal = "Selo Guarda",
@@ -913,6 +1005,9 @@ return {
         },
         dictionary = {
             k_item_pack = "Pacote de Item",
+            k_remnant_pack = "Pacote Remnant",
+            k_jumbo_remnant_pack = "Pacote Remnant Jumbo",
+            k_mega_remnant_pack = "Pacote Remnant Mega",
             k_plus_pizza = "+1 Pizza",
             k_plus_item = "+1 Item",
             k_plus_level = "+1 Nível",
@@ -943,6 +1038,13 @@ return {
             fnaf_save = "Override de Save (Reinicie para Aplicar)",
             fnaf_save_freddy = "Override do Freddy",
             fnaf_save_golden = "Override do Golden Freddy",
+
+            b_activate = "INJECT",
+            b_deactivate = "EXTRACT",
+            b_trigger = "Triggered"
+        },
+        v_dictionary={
+            a_uses = "#1#/#2#",
         },
         achievement_descriptions={
             ach_fnaf_fazlegend = "Descubra um Animatronic Lendário",

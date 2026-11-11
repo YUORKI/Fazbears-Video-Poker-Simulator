@@ -160,7 +160,7 @@ return {
                 text = {
                     {
                         "While {C:attention}injected{}:",
-                        "Cards with {C:hearts}Hearts{} and {C:spades}Spades{}",
+                        "{C:hearts}Hearts{} and {C:spades}Spades{}",
                         "count as the same suit",
                     },
                     {
@@ -175,7 +175,7 @@ return {
                     {
                         "While {C:attention}injected{}:",
                         "Creates a {C:blue}Planet card{}",
-                        "if the {C:attention}hand scored{}",
+                        "if the {C:attention}poker hand{}",
                         "has a {C:blue}Blue Seal{}",
                     },
                     {
@@ -218,6 +218,7 @@ return {
                 name = "Discount",
                 text = {
                     {
+                        "While {C:attention}injected{}:",
                         "{C:attention}-#3#%{} All Blind Scores",
                     },
                     {
@@ -247,7 +248,8 @@ return {
                 text = {
                     {
                         "While {C:attention}injected{}:",
-                        "+1 selectable card when using tarots",
+                        "{C:attention}+1{} selectable {C:attention}card(s)", 
+                        "when using {C:tarot}Tarot{} cards",
                     },
                     {
                         "{C:remn}Deterioration{}: {C:attention}#1#{} Triggers",
@@ -348,6 +350,14 @@ return {
                     "{C:red}Utterly Annoying",
                     "{X:chips,C:white}X#1#{} Chips",
                     "{C:red}Eternal for (#2#/#3#) rounds.",
+                },
+            },
+            j_fnaf_bb_challenge = {
+                name = "Balloon Boy",
+                text = {
+                    "{C:red}Utterly Annoying",
+                    "{X:chips,C:white}X#1#{} Chips",
+                    "{C:red}Eternal forever",
                 },
             },
             j_fnaf_pizzabot = {
@@ -743,7 +753,7 @@ return {
             j_fnaf_foxy = {
                 name = "Foxy",
                 text = {
-                    "Retrigger all played cards"
+                    "{C:attention}Retrigger{} all {C:attention}played cards"
                 },
                 unlock = {
                     "{E:1,s:1.3}?????",
@@ -753,8 +763,8 @@ return {
             j_fnaf_freddy = {
                 name = "Freddy Fazbear",
                 text = {
-                    "{X:mult,C:white} X#1# {} Mult per Marks of Completion",
-                    "in fnaf games (Clickteam)",
+                    "{X:mult,C:white}X#1#{} Mult per {C:attention}Marks of Completion",
+                    "in {C:attention}FNAF games (Clickteam)",
                     "{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
                 },
                 unlock = {
@@ -805,7 +815,8 @@ return {
             v_fnaf_remnant_voucher = {
                 name = "Remnant Cards",
                 text = {
-					"{C:tarot}Remnant Cards{} can be purchased",
+					"{C:tarot}Remnant Cards{} can",
+                    "be purchased",
 					"from the {C:attention}shop{}"
 				},
             },
@@ -988,6 +999,9 @@ return {
     },
 
     misc = {
+        challenge_names = {
+            c_fnaf_fuck_balloonboy = "Succulent Batteries"
+        },
         labels = {
             fnaf_security_seal = "Security Seal",
             fnaf_guard_seal = "Guard Seal",

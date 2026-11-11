@@ -203,17 +203,34 @@ SMODS.Consumable{
 
     calculate = function(self, card, context)
         local bad_context = context.repetition or context.individual or context.blueprint
+        local Enhanc_count = 0
+        local Seals_count = 0
+        local Editions_count = 0
         local count = 0
         if context.after and not card.ability.destroyed and card.ability.activated and not bad_context then
             for _, scored_card in ipairs(context.scoring_hand) do
                 if not scored_card.debuff and not scored_card.vampired then
                     count = count + 1
+                    if scored_card.edition then
+                        Editions_count = Editions_count + 1
+                    end
+                    if next(SMODS.get_enhancements(scored_card)) then
+                        Enhanc_count = Enhanc_count + 1
+                    end
+                    if scored_card.seal then
+                        Seals_count = Seals_count + 1
+                    end
                 end
             end
 
             if count > 0  then
+                print('Count ', count)
+                print('Enhanc ', Enhanc_count)
+                print('Editions ', Editions_count)
+                print('Seal ', Seals_count)
+                print(count + Enhanc_count + Editions_count + Seals_count)
                 return {
-                    dollars = card.ability.extra.dollars * count,
+                    dollars = count + Editions_count + Seals_count + Enhanc_count,
                     FNAF_BALATRO.fnaf_remnant.run_remn(card, 1)
                 }
             end
@@ -386,8 +403,18 @@ SMODS.Consumable{
     end,
 
     calculate = function(self, card, context)
-        if context.using_consumeable and context.consumeable.config.center.key == "c_magician" then
-            FNAF_BALATRO.fnaf_remnant.run_remn(card, 1)
+        local tarot_id = { 
+            'c_magician', 'c_empress', 'c_heirophant', 'c_lovers', 'c_chariot', 'c_justice', 
+            'c_strength', 'c_hanged_man', 'c_devil', 'c_tower', 'c_star', 'c_moon', 
+            'c_sun', 'c_world', 'c_fnaf_kid', 'c_fnaf_rabbit' 
+        }
+
+        if context.using_consumeable then
+            for i, v in pairs(tarot_id) do
+                if context.using_consumeable and context.consumeable.config.center.key == tarot_id[i] then
+                    FNAF_BALATRO.fnaf_remnant.run_remn(card, 1)
+                end
+            end
         end
     end,
 
